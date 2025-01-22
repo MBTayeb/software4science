@@ -3,20 +3,21 @@
         Version control systems are a mean to store all the versions of a code online so that they are easily accessible for many people. Continuous Integration (CI) and continuous deployment (CD) are useful tools offered by many of the version control systems nowadays. As their name implies, they allow to automatically integrate and deploy code after each push. For example, they can be used to test the new code, so that the programmer is notified when it fails. The start of this service has caused a crucial shift in the DevOps (Software Development and IT Operations) industry, because it made the teamwork between developers, who write the code, and operators, who test it, much faster.
     </p>
     <p>
-        To test code for example, one wants to have exactly the same operating system used by developers. For this purpose, containers come in handy. They are similar to virtual machines, that is simulated machines within a real machine, but they are much lighter. A container is built from a container image and has no access to the operating system of the developer. Containers are much lighter than virtual boxes, because the container image only include the application layer, whereas the virtual boxes contain the kernel layer too, that is the layer that communicated between hardware and applications. <a href="https://hub.docker.com/">hub.docker.com</a> (DockerHub) is the go-to container image library. One can with its help easily access to remote container images, and make a container with exactly the wanted version of an operating system or a programming language. Due to the small size of container images, running them is also much faster than running a virtual box.
+        To test code for example, one wants to have exactly the same operating system used by developers. For this purpose, <span style="font-style: italic;">containers</span> come in handy. They are similar to virtual machines, that is simulated machines within a real machine, but they are much lighter. A container is built from a container image and has no access to the operating system of the developer. Containers are much lighter than virtual boxes, because the container image only includes the application layer, whereas the virtual boxes contain the kernel layer too, that is the layer that communicated between hardware and applications. <a href="https://hub.docker.com/">hub.docker.com</a> (DockerHub) is the go-to container image library. One can with its help easily access to remote container images, and make a container with exactly the wanted version of an operating system or a programming language. Due to the small size of container images, running them is also much faster than running a virtual box.
     </p>
     <p>
-        A standard use of CI/CD is in combination with Kubernetes, which is a system that manages the use of many containers, so that it fits the needs of the developer. First, he defines the desired state, then Kubernetes uses all its resources to meet that state. For example, when a container goes down, Kubernetes makes a new one to replace it. 
+        A standard use of CI/CD is in combination with <span style="font-style: italic;">Kubernetes</span>, which is a system that manages the use of many containers, so that it fits the needs of the developer. First, he defines the desired state, then Kubernetes uses all its resources to meet that state. For example, when a container goes down, Kubernetes makes a new one to replace it.
     </p>
     <p>
-        Setting CI/CD and Kubernetes involves YAML, which is a configuration language. What sets this one apart is the fact that it is easily readable by humans. Another cool feature in it, that may also be seen as a drawback, is that, often, different variants exist that do the same thing.
+        Setting CI/CD and Kubernetes involves <span style="font-style: italic;">YAML</span>, which is a configuration language. What sets this one apart is the fact that it is easily readable by humans. Another cool feature in it, that may also be seen as a drawback, is that, often, different variants exist that do the same thing.
     </p>
     <p>
-        There are various CI/CD providers. Since the university of Münsters offers Gitlab on 
+        There are various CI/CD providers. Since the university of Münster offers Gitlab on
         <a href="https://zivgitlab.uni-muenster.de/">
             zivgitlab.uni-muenster.de
         </a>, we will focus on Gitlab CI/CD.
-    
+
+    </p>
     <h5>Gitlab CI/CD courses:</h5>
 
     <div style="padding-left: 1em;font-weight: bolder;">
@@ -44,7 +45,7 @@
             </div>
         </div>
     </div>
-    
+
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://codebase.helmholtz.cloud/hifis/software/education/hifis-workshops/gitlab-ci">
@@ -73,8 +74,8 @@
     </div>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://youtube.com/playlist?list=PLy7NrYWoggjzSIlwxeBbcgfAdYoxCIrM2&si=vLvvsm_L8RrxpoCY">
-                https://youtube.com/playlist?list=PLy7NrYWoggjzSIlwxeBbcgfAdYoxCIrM2&si=vLvvsm_L8RrxpoCY
+            <a href="https://youtube.com/playlist?list=PLy7NrYWoggjzSIlwxeBbcgfAdYoxCIrM2&amp;si=vLvvsm_L8RrxpoCY">
+                https://youtube.com/playlist?list=PLy7NrYWoggjzSIlwxeBbcgfAdYoxCIrM2&amp;si=vLvvsm_L8RrxpoCY
             </a>
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
