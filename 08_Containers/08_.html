@@ -83,10 +83,11 @@
     </p>
     <p>
         Beside Continuous Integration, containers may make your life much easier. Whether a compiler is not available in your OS, or you don't want to waste time installing another version of it, containers can save you a lot of time. <span style="font-style: italic;">VS Code Dev Containers</span> brings the ease to another level, as only a couple of clicks are enough to set everything.
-    </p>            
+    </p>
     <p>
         To transfer data between the container and the host system, you can either mount data or copy it. To work with python 2.7 for example, the first option is done while starting the container. The following command mounts the current directory to the user folder Tom in the container:
     </p>
+    <!-- <div style="background-color: #95A5A6 ;"> -->
     <div style="border: 1px solid; border-radius: 5px;padding:1em">
         <code>docker run --rm --name MyPython2 -v ${pwd}:/home/Tom -it python:2.7 /bin/bash</code>
     </div>
