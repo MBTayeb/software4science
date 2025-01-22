@@ -8,86 +8,132 @@
         again 'half' the problem again and again until you narrowed it down to a few lines. On the command line, but usually more
         comfortable as part of GUI editors or IDEs, proper debugging programs are available, which let you step line by line through your code during execution while at the same time
         showing you the values of the variables involved. More complex problems can often be found more easily this way, as you spot 'weird' values for your variables ('not-a-number'
-        etc.) early on.</p>
-    <div style="padding-left: 0em;font-weight: bolder;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://missing.csail.mit.edu/2020/debugging-profiling/">
-                https://missing.csail.mit.edu/2020/debugging-profiling/
-            </a>
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-                -- Missing semester course on debugging (and profiling)
-            </div>
-        </div>
-    </div>
+        etc.) early on.
+    </p>
     <p>
-        Professional software <strong>testing</strong> is a business on its own, but you can easily integrate some ideas into your code development
-        process. At the basic level, languages like Python and C/C++ (but not Fortran -- see why commercial software developers hate it?) allow you to use '<strong>assertions</strong>'
-        in your code, where you can make your code stop as soon as things develop in an unexpected direction. The next step up is <strong>unit testing</strong>, i.e. to write tests
-        with known in- and output for 'units' of your code. For languages like Python and C/C++, unit testing frameworks are available to speed up this process. A good strategy is to
-        also turn all 'complex' bugs which you find later on into tests to avoid running into them again. Another step up is <strong>integration testing, </strong>i.e.
-        checking whether units are working together correctly and then<strong> system testing</strong>, where you can for instance include a
-        test suite with example cases and known results as part of your code directory.
-        (People of course have invented many more intermediate levels of testing ... )
-        A very interesting option is continuous integration, which means that after each git push, a whole range of tests (unit or up to system level) is run automatically.
-        Some people advocate '<strong>test-driven development</strong>', i.e. to first make specifications (what should the program or part do?), then write tests based on these
+        Professional software <strong>testing</strong> is a business on its own, but you can easily integrate some ideas into your code development 
+        process. At the basic level, languages like Python and C/C++ (but not Fortran -- see why commercial software developers hate it?) allow you to use '<strong>assertions</strong>' 
+        in your code, where you can make your code stop as soon as things develop in an unexpected direction. The next step up is <strong>unit testing</strong>, i.e. to write tests 
+        with known in- and output for 'units' of your code. For languages like Python and C/C++, unit testing frameworks are available to speed up this process. A good strategy is to 
+        also turn all 'complex' bugs which you find later on into tests to avoid running into them again. Another step up is <strong>integration testing, </strong>i.e.  
+        checking whether units are working together correctly and then<strong> system testing</strong>, where you can for instance include a 
+        test suite with example cases and known results as part of your code directory. 
+        (People of course have invented many more intermediate levels of testing ... ) 
+        A very interesting option is continuous integration</strong>, which means that after each git push, a whole range of tests (unit or up to system level) is run automatically. 
+        Some people advocate '<strong>test-driven development</strong>', i.e. to first make specifications (what should the program or part do?), then write tests based on these 
         specifications and make them properly fail, and only then start to write solutions that will not trigger the tests.
     </p>
     <h5>Testing tutorials:</h5>
-    <div style="padding-left: 1em;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://www.youtube.com/watch?embed=no&amp;v=vwTHeDTqhTI">
-                https://www.youtube.com/watch?v=vwTHeDTqhTI
-            </a>
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
+        <div style="padding-left: 1em;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://www.youtube.com/watch?embed=no&amp;v=vwTHeDTqhTI">
+                    https://www.youtube.com/watch?v=vwTHeDTqhTI
+                </a> 
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                </div>
+            </div>
+        </div> 
+        <div style="padding-left: 1em;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://www.heise.de/developer/artikel/Tests-schreiben-die-Grundlagen-5077457.html">
+                    https://www.heise.de/developer/artikel/Tests-schreiben-die-Grundlagen-5077457.html
+                </a> 
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                    -- testing basics (German only)
+                </div>
+            </div>
+        </div> 
+        <div style="padding-left: 1em;font-weight: bolder;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://missing.csail.mit.edu/2020/debugging-profiling/">
+                    https://missing.csail.mit.edu/2020/debugging-profiling/
+                </a>
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                    -- Missing semester course on debugging (and profiling)
+                </div>
             </div>
         </div>
-    </div>
-    <div style="padding-left: 1em;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://www.heise.de/developer/artikel/Tests-schreiben-die-Grundlagen-5077457.html">
-                https://www.heise.de/developer/artikel/Tests-schreiben-die-Grundlagen-5077457.html
-            </a>
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-                -- testing basics (German only)
+        <div style="padding-left: 1em;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://gitlab.com/hifis/hifis-workshops/test-automation-with-python/workshop-materials">https://gitlab.com/hifis/hifis-workshops/test-automation-with-python/workshop-materials</a> 
             </div>
-        </div>
-    </div>
-    <div style="padding-left: 1em;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://gitlab.com/hifis/hifis-workshops/test-automation-with-python/workshop-materials">https://gitlab.com/hifis/hifis-workshops/test-automation-with-python/workshop-materials</a>
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-                -- Python testing workshop from Helmholtz Federated IT Services (HIFIS) - many thanks to Tobias Schlauch for the link!
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                    -- Python testing workshop from Helmholtz Federated IT Services (HIFIS) - many thanks to Tobias Schlauch for the link!
+                </div>
             </div>
-        </div>
-    </div>
-    <div style="padding-left: 1em;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://www.youtube.com/playlist?embed=no&amp;list=PLzCxBiTw83uil4uoIhi3wlR3qiiulmKJ0">https://www.youtube.com/playlist?list=PLzCxBiTw83uil4uoIhi3wlR3qiiulmKJ0</a>
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-                -- HiRSE Summer of Testing: "series focussing on testing in the context of Research Software Engineering"
+        </div> 
+        <div style="padding-left: 1em;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://www.youtube.com/playlist?embed=no&amp;list=PLzCxBiTw83uil4uoIhi3wlR3qiiulmKJ0">https://www.youtube.com/playlist?list=PLzCxBiTw83uil4uoIhi3wlR3qiiulmKJ0</a> 
             </div>
-        </div>
-    </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                    -- HiRSE Summer of Testing: "series focussing on testing in the context of Research Software Engineering"
+                </div>
+            </div>
+        </div> 
 
 
     <h5>Testing resources</h5>
-    <a href="https://alan-turing-institute.github.io/rsd-engineeringcourse/ch03tests/">
-    </a>
-    <p><a href="https://alan-turing-institute.github.io/rsd-engineeringcourse/ch03tests/"></a><a href="https://github.com/sstephenson/bats">https://github.com/sstephenson/bats</a> or <a href="https://github.com/sstephenson/bats-core">https://github.com/bats-core/bats-core</a>
-        -- bash automated testing system</p>
-    <p><a href="https://docs.pytest.org/en/6.2.x/">https://docs.pytest.org/en/6.2.x/</a> -- Python test framework<br></p>
-    <p><a href="https://docs.python.org/3/library/unittest.html">https://docs.python.org/3/library/unittest.html</a> -- Python unit test framework</p>
-    <p><a href="https://wiki.python.org/moin/PythonTestingToolsTaxonomy">https://wiki.python.org/moin/PythonTestingToolsTaxonomy</a></p>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://alan-turing-institute.github.io/rsd-engineeringcourse/ch03tests/">
+                https://alan-turing-institute.github.io/rsd-engineeringcourse/ch03tests/
+            </a> 
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+            </div>
+        </div>
+    </div> 
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://github.com/sstephenson/bats">https://github.com/sstephenson/bats</a> 
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- bash automated testing system
+            </div>
+        </div>
+    </div> 
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://docs.pytest.org/en/6.2.x/">https://docs.pytest.org/en/6.2.x/</a> 
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- Python test framework
+            </div>
+        </div>
+    </div> 
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://docs.python.org/3/library/unittest.html">https://docs.python.org/3/library/unittest.html</a> 
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- Python unit test framework
+            </div>
+        </div>
+    </div> 
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://wiki.python.org/moin/PythonTestingToolsTaxonomy">
+                https://wiki.python.org/moin/PythonTestingToolsTaxonomy
+            </a> 
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+            </div>
+        </div>
+    </div> 
     <h4>Optimization</h4>
     <p>
         Optimization is a complicated topic, as 'premature optimization is the root of all evil' (D. Knuth). While initially writing
@@ -100,50 +146,135 @@
         few, absolutely central routines. So make sure you write good and not necessarily fast code in the other parts. But what is good programming style? This brings us to the next
         paragraph ...<br></p>
     <h5>Profiler tutorial:</h5>
-    <a href="http://Profiler tutorial: https://hpc-wiki.info/hpc/Gprof_Tutorial">https://hpc-wiki.info/hpc/Gprof_Tutorial</a>
-    <div><a href="https://github.com/firefox-devtools/profiler/blob/main/docs-user/guide-perf-profiling.md">https://github.com/firefox-devtools/profiler/blob/main/docs-user/guide-perf-profiling.md</a></div>
-
-    <br>
+        <div style="padding-left: 1em;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://hpc-wiki.info/hpc/Gprof_Tutorial">https://hpc-wiki.info/hpc/Gprof_Tutorial</a> 
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                </div>
+            </div>
+        </div> 
+        <div style="padding-left: 1em;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a  href="https://github.com/firefox-devtools/profiler/blob/main/docs-user/guide-perf-profiling.md">
+                    https://github.com/firefox-devtools/profiler/blob/main/docs-user/guide-perf-profiling.md</a> 
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                </div>
+            </div>
+        </div> 
     <h4>'Good' programming style:</h4>
-    <p>There are few criteria for 'good' which are not questioned by one or the other developer, but I think it is fair to say that some general
-        rules can be found, although these of course still depend on the purpuse you are coding for. In science, your code should normally be
-        first of all accurate and fast. To be robust and maintainable starts to play a higher
-        role in science, when the size of the project increases. This means the code has to be accessible (intellectually), extendable and
-        testable. Probably the most important strategy to achieve these goals is to <strong>'modularize' your code</strong>: put separate functionality in separate files, modules,
-        libraries etc.. and make use of this by resorting to existing libraries etc. where possible. Code generators (available or self-written) can be a very good option to generate
-        very complex scientific code in a reliable fashion. Making use of build systems, version control, and testing is also part of good programming style. Concerning the code
-        itself, most important is a clear structure, with meaningful names (there is no real time to save here with tmp1 to tmp10 ...) and helpful comments, which document interfaces
-        and reasons, not implementations ('this is a loop'). If you have the feeling that you have to explain a lot about a certain piece of code, it is often recommended to instead
-        'refactor' it, which means to break it down into simpler units, each requiring only a few lines of comments. Finally, remember that 'any code of your own that you haven't
-        looked at for six or more months might as well have been written by someone else' (Eagleson's law), so really make sure you include enough documentation for your future self.
-        (Now spend the rest of the day enjoying more clever bits on programming:
-        <a href="https://content.wisestep.com/quotes-programming-coding/">https://content.wisestep.com/quotes-programming-coding/</a>)
-        And yes, scientific programming is often quick and dirty:
-        <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008549">https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008549</a>
-    </p>
+        <p>
+            There are few criteria for 'good' which are not questioned by one or the other developer, but I think it is fair to say that some general
+            rules can be found, although these of course still depend on the purpose you are coding for. In science, your code should normally be
+            accurate and fast. To be robust and maintainable starts to play a higher 
+            role in science, when the size of the project increases. This means the code has to be accessible (intellectually), extendable and
+            testable. Probably the most important strategy to achieve these goals is to <strong>'modularize' your code</strong>: put separate functionality in separate files, modules,
+            libraries etc... and make use of this by resorting to existing libraries etc. where possible. Code generators (available or self-written) can be a very good option to generate
+            very complex scientific code reliably. Making use of build systems, version control, and testing is also part of good programming style. Concerning the code
+            itself, most important is a clear structure, with meaningful names (there is no real time to save here with tmp1 to tmp10 ...) and helpful comments, which document interfaces
+            and reasons, not implementations ('this is a loop'). If you have the feeling that you have to explain a lot about a certain piece of code, it is often recommended to instead
+            'refactor' it, which means to break it down into simpler units, each requiring only a few lines of comments. Finally, remember that 'any code of your own that you haven't
+            looked at for six or more months might as well have been written by someone else' (Eagleson's law), so really make sure you include enough documentation for your future self.
+            (Now spend the rest of the day enjoying more clever bits on programming: 
+            <a href="https://content.wisestep.com/quotes-programming-coding/">https://content.wisestep.com/quotes-programming-coding/</a>)
+            And yes, scientific programming is often quick and dirty: 
+            <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008549">https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008549</a>
+        </p>
     <h5>Programming style resources:</h5>
-    <a href="https://cookietemple.com/index">https://cookietemple.com/index </a>-- programming templates<br>
-    <a href="https://flake8.pycqa.org/en/latest/">https://flake8.pycqa.org/en/latest/</a> -- style enforcement<br>
-    <a href="https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/?utm_source=substack&amp;utm_medium=email">https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/?utm_source=substack&amp;utm_medium=email</a><br>
-    <span style="padding-left: 1em;color:red;">
-        -- A beginner’s guide to writing documentation
-    </span>
+        <div style="padding-left: 1em;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://cookietemple.com/index">
+                    https://cookietemple.com/index
+                </a> 
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                    -- programming templates
+                </div>
+            </div>
+        </div>
+        <div style="padding-left: 1em;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://flake8.pycqa.org/en/latest/">
+                    https://flake8.pycqa.org/en/latest/
+                </a> 
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                    -- style enforcement
+                </div>
+            </div>
+        </div> 
+        <div style="padding-left: 1em;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/?utm_source=substack&amp;utm_medium=email">
+                    "https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/?utm_source=substack&amp;utm_medium=email
+                </a> 
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                    -- A beginner’s guide to writing documentation
+                </div>
+            </div>
+        </div> 
     <h4>Container:</h4>
-    <div><a href="https://www.youtube.com/watch?v=HelrQnm3v4g">https://www.youtube.com/watch?v=HelrQnm3v4g</a></div>
-    <a href="https://codebase.helmholtz.cloud/hifis/software/education/hifis-workshops/workshop-using-containers-in-science">https://codebase.helmholtz.cloud/hifis/software/education/hifis-workshops/workshop-using-containers-in-science</a><br>
-    <div style="padding-left: 1em;">
-        -- HIFIS Workshop "Using Container in Science"
-    </div>
-    <div><a href="https://confluence.uni-muenster.de/display/RIAl/Start">https://confluence.uni-muenster.de/display/RIAl/Start</a></div>
-    <div><a href="https://the-turing-way.netlify.app/reproducible-research/renv.html?utm_source=substack&amp;utm_medium=email">https://the-turing-way.netlify.app/reproducible-research/renv.html?utm_source=substack&amp;utm_medium=email</a></div>
-
+       <div style="padding-left: 1em;font-weight: bolder;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://www.youtube.com/watch?embed=no&amp;v=HelrQnm3v4g">
+                    https://www.youtube.com/watch?v=HelrQnm3v4g
+                </a>
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-left: 1em;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://codebase.helmholtz.cloud/hifis/software/education/hifis-workshops/workshop-using-containers-in-science">
+                    https://codebase.helmholtz.cloud/hifis/software/education/hifis-workshops/workshop-using-containers-in-science
+                </a> 
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                    -- HIFIS Workshop "Using Container in Science"
+                </div>
+            </div>
+        </div> 
+        <div style="padding-left: 1em;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://confluence.uni-muenster.de/display/RIAl/Start">
+                    https://confluence.uni-muenster.de/display/RIAl/Start
+                </a> 
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                </div>
+            </div>
+        </div> 
+        <div style="padding-left: 1em;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://the-turing-way.netlify.app/reproducible-research/renv.html?utm_source=substack&amp;utm_medium=email">
+                    https://the-turing-way.netlify.app/reproducible-research/renv.html?utm_source=substack&amp;utm_medium=email
+                </a> 
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                </div>
+            </div>
+        </div> 
 </div>
 
 
 <!-- 
 <div style="padding-left: 1em;">
     <div style="text-indent: -1em;padding-left: 1em;">
-        <a href=""></a> 
+        <a href="">
+
+        </a> 
     </div>
     <div style="padding-left: 2em;text-indent: -1em;">
         <div>
