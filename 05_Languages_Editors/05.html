@@ -1,35 +1,48 @@
-
-<div>Keeping all this in mind I would like to recommend the following <strong>strategy</strong> here: Start with learning Bash, so that you feel comfortable <span class="" style="color: rgb(51, 51, 51);">operating</span> a Linux system <span class="" style="color: rgb(51, 51, 51);">especially</span> when writing scripts to automate your work. Then visit Fortran; it's still very much at the center of scientific computing and the basics are not hard to get; it is very straightforward mathematical programming. For doing your actual research move on to Python: it is much less demanding than C++ and usually everything you could only wish for not to write yourself will be available. Once your project turns quasi-professional or if you anyhow have the intention to make it that way, C++ will offer everything you need (but be prepared to spend most of the time planning to write code, instead of actually writing it). Finally, learn R, Matlab, SQL etc. if you have to, because a project requires it - you certainly won't find it impossible to do so once you have worked through this course.<br></div>
-<div><br></div>
+<div>Keeping all this in mind I would like to recommend the following <strong>strategy</strong> here: Start with learning Bash, so that you feel comfortable <span  >operating</span> a Linux system <span  >especially</span> when writing scripts to automate your work. Then visit Fortran; it's still very much at the center of scientific computing and the basics are not hard to get; it is very straightforward mathematical programming. For doing your actual research move on to Python: it is much less demanding than C++ and usually everything you could only wish for not to write yourself will be available. Once your project turns quasi-professional or if you anyhow have the intention to make it that way, C++ will offer everything you need (but be prepared to spend most of the time planning to write code, instead of actually writing it). Finally, learn R, Matlab, SQL etc. if you have to, because a project requires it - you certainly won't find it impossible to do so once you have worked through this course.<br></div>
+<br>
 <div><strong>In this course, we will follow the strategy outlined above and focus on Bash, Fortran and especially Python. </strong>(This strategy might not fit to your scientific field, especially if the whole field -- like certain parts of bio- or geo-informatics -- developed long after the high times of Fortran; in this case start with bash and move on to R, Matlab or whatever is the accepted standard in your field.)<strong> See the Additonal resources section for online resources on other languages, especially concerning C/C++. Below you will also find a focus unit on R.<br></strong></div>
-<div><strong><br></strong></div>
-<div><strong><span class="" style="color: rgb(51, 51, 51);">Online resources for learning Bash</span></strong><span class="" style="color: rgb(51, 51, 51);"> can be found in a separate work unit above.</span></div>
+<div><br></div>
+<div><strong><span  style="text-decoration: underline;">Online resources for learning Bash</span></strong><span  >:
+<br> These can be found in a separate work unit above.</span></div>
 <div>If you have worked through this unit, you have learned some 'universal' features of programming languages already:</div>
 <div><strong>First</strong>, variables need to be assigned (and sometimes declared, i.e. given a type).</div>
 <div><strong>Second</strong>, the flow of programs requires control structures like loops, conditions etc.</div>
 <div>And <strong>third</strong>, sub-units (functions, sub-routines, modules, etc.) are needed to structure code.<br></div>
-<div>Apart from this, there is some general stuff to remember for each language, like e.g. what line defines the start of a program or how do I do in- and output etc. When learning a new programming language, you are often<span class="" style="color: rgb(239, 69, 64);">times</span> fine with remembering just the basics<span class="" style="color: rgb(239, 69, 64);"></span>. If you then look for the correct 'syntax' of an element, it's usually best practice to google it ("fortran loop"), once you have understood what you are looking for.<br></div>
-<div><br></div>
-<div><strong>Online resources for learning Fortran:</strong></div>
-<div>Fortran is a compiled language, so that apart from Fortran itself you will have to learn <span class="" style="color: rgb(239, 69, 64);"></span>how to use a compiler including the use of software libaries and as compiling can be quite tedious for all but very small projects, also about the most common 'build system' <em><span class="" style="color: rgb(51, 51, 51);">make</span></em>.</div>
-<div>One of the reasons why Fortran provides such excellence performance is the existence of very high-quality<strong> compilers</strong> (the Intel Fortran compiler is a legend), which manage to produce extremely fast code.<strong> </strong>But unlike in the past, C++ compilers (including the GCC one) don't seem to be utterly behind anymore.<strong><br></strong></div>
+<div>Apart from this, there is some general stuff to remember for each language, like e.g. what line defines the start of a program or how do I do in- and output etc. When learning a new programming language, you are often<span  style="color: rgb(239, 69, 64);">times</span> fine with remembering just the basics<span  style="color: rgb(239, 69, 64);"></span>. If you then look for the correct 'syntax' of an element, it's usually best practice to google it ("fortran loop"), once you have understood what you are looking for.<br></div>
+<br>
+<div><strong style="text-decoration: underline;">Online resources for learning Fortran:</strong></div>
+<div>Fortran is a compiled language, so that apart from Fortran itself you will have to learn <span  style="color: rgb(239, 69, 64);"></span>how to use a compiler including the use of software libaries and as compiling can be quite tedious for all but very small projects, also about the most common 'build system' <em><span  >make</span></em>.</div>
+<div>One of the reasons why Fortran provides such excellence performance is the existence of very high-quality<strong> compilers</strong> (the Intel Fortran compiler is a legend), which manage to produce extremely fast code.<strong> </strong>But unlike in the past, C++ compilers (including the GCC one) don't seem to be utterly behind anymore.<br></div>
 <div><strong>The use of software libraries is essential for good programming! </strong>Libraries provide code written by someone else (usually more clever than you or me) that can be re-used for your purposes just by sticking to the calling conventions (you have to supply the correct inputs and understand what is given back). If you learn how to use libraries you can save a lot of time by not re-rewriting existing code, which in addition is usually much more error-proof than the ugly hack you just made up.</div>
 <div>The use of a <strong>build system</strong> like make is also considered good programming, as it allows not only you, but also other people to compile your code conveniently (or: at all).</div>
 <div>You will learn more about compilers, software libraries and build systems in the next work unit.<br></div>
-<div><strong><br></strong></div>
+<div><br></div>
 <div>Fortran tutorials:<br></div>
-<div>(There is again a giant number of such tutorials online, but ARCHER, the UK National Supercomputer Service, is a great resource anyhow!)<strong><br></strong></div>
-<div><a href="http://www.archer.ac.uk/training/course-material/2017/07/mfortran_camb/index.php">http://www.archer.ac.uk/training/course-material/2017/07/mfortran_camb/index.php</a> -- ARCHER 'Modern Fortran' course<strong><br></strong></div>
-<div><a href="https://www.youtube.com/watch?v=5vkUlpKzepE">https://www.youtube.com/watch?v=5vkUlpKzepE</a><strong> -- </strong>Archer Virtual Tutorial 'Modern Fortran'<strong><br></strong></div>
-<div><strong><br></strong></div>
+<div>
+    <a href="https://doku.lrz.de/programming-with-fortran-10746212.html">https://doku.lrz.de/programming-with-fortran-10746212.html</a>
+    <br>
+    <strong> -- </strong>Leibniz-Rechenzentrum (LRZ, Leibniz Supercomputing Centre) "An introduction to the Fortran programming language course"
+    <br>
+    <a href="https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf">https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf</a><strong> -- </strong>slides of the course<br>
+</div>
+<br>
+<!-- <div>(There is again a giant number of such tutorials online, but ARCHER, the UK National Supercomputer Service, is a great resource anyhow!)<br></div> -->
+<div><a href="http://www.archer.ac.uk/training/course-material/2017/07/mfortran_camb/index.php">http://www.archer.ac.uk/training/course-material/2017/07/mfortran_camb/index.php</a> -- ARCHER 'Modern Fortran' course<br></div>
+<div>
+    <a href="https://www.youtube.com/watch?embed=no&v=5vkUlpKzepE">https://www.youtube.com/watch?v=5vkUlpKzepE</a><strong> -- </strong>Archer Virtual Tutorial 'Modern Fortran'<br>
+    <a href="http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf">http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf</a><strong> -- </strong>slides of the tutorial<br>
+</div>
+<div><br></div>
 <div><strong></strong>
-    <div><strong>Online resources for learning Python </strong>can be found in a separate work unit below<strong>.<br></strong></div>
-    <div>In this work unit you will also find a basic introduction to object oriented programming (OOP).<strong><br></strong></div>
-    <div><strong><br></strong></div>
+    <div><strong style="text-decoration: underline;">Online resources for learning Python </strong>:
+    <br> These can be found in a separate work unit below<strong>.<br></strong></div>
+    <div>In this work unit you will also find a basic introduction to object oriented programming (OOP).<br></div><br>
+    <div><strong style="text-decoration: underline;">Editors</strong>:
     <div>How you <strong>edit your code</strong> is largely a question of taste, but some tools like&nbsp; VI are so widely used (and available on basically every remote server you might want to access) that you should have an idea of their basic usage, and some tools provide certain functions (for building, linking, debugging, testing, managing code) that you don't want to miss anymore once you are used to them.<br></div>
     <div><strong></strong></div>
 </div>
-<div><br></div>
+<br>
+<!-- <div> -->
 <div>This is a <strong>list of editors</strong> certainly worth checking out:</div>
 <div>Vi (rules): enjoy a plethora of features with the most commonly used source code editor (behind Windows/Java IDEs/editors)<br></div>
 <div>&nbsp;&nbsp; - a general overview: <a href="https://missing.csail.mit.edu/2020/editors/">https://missing.csail.mit.edu/2020/editors/</a><br></div>
@@ -40,8 +53,8 @@
 <div><a href="https://www.sublimetext.com/" onclick="window.open('https://www.sublimetext.com/', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;">https://www.sublimetext.com/</a> -- Sublime text, an advanced GUI (graphical user interface) editor<br></div>
 <div>notepad++ -- another advanced GUI editor, especially prominent under Windows<br></div>
 <div>Jupyter Notebooks (this is so cool, we will have a separate work unit for it below)<br></div>
-<div><br></div>
-<div>And this is a<strong> list of common integrated development environments</strong> (IDEs):</div>
+<br>
+<div style="text-decoration: underline;"><strong >Common integrated development environments</strong>(IDEs):</div>
 <div><a href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a> -- a lot of people really like Visual Studo Code, because it strikes a good balance between too little and too much</div>
 <div>- read more about it on Heise (German only): <a href="https://www.heise.de/hintergrund/Visual-Studio-Code-Ein-Code-Editor-fuer-alle-s-6128966.html">https://www.heise.de/hintergrund/Visual-Studio-Code-Ein-Code-Editor-fuer-alle-s-6128966.html</a><br></div>
 <div><a href="https://www.eclipse.org/downloads/" onclick="window.open('https://www.eclipse.org/downloads/', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;">https://www.eclipse.org/downloads/</a> -- Eclipse, supporting C/C++, Fortran, Python, R, Matlab, Julia, ... Mathematica, LaTeX, etc.<br></div>
