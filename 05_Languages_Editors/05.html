@@ -1,78 +1,159 @@
-<div>Keeping all this in mind I would like to recommend the following <strong>strategy</strong> here: Start with learning Bash, so that you feel comfortable <span  >operating</span> a Linux system <span  >especially</span> when writing scripts to automate your work. Then visit Fortran; it's still very much at the center of scientific computing and the basics are not hard to get; it is very straightforward mathematical programming. For doing your actual research move on to Python: it is much less demanding than C++ and usually everything you could only wish for not to write yourself will be available. Once your project turns quasi-professional or if you anyhow have the intention to make it that way, C++ will offer everything you need (but be prepared to spend most of the time planning to write code, instead of actually writing it). Finally, learn R, Matlab, SQL etc. if you have to, because a project requires it - you certainly won't find it impossible to do so once you have worked through this course.<br></div>
-<br>
-<div><strong>In this course, we will follow the strategy outlined above and focus on Bash, Fortran and especially Python. </strong>(This strategy might not fit to your scientific field, especially if the whole field -- like certain parts of bio- or geo-informatics -- developed long after the high times of Fortran; in this case start with bash and move on to R, Matlab or whatever is the accepted standard in your field.)<strong> See the Additonal resources section for online resources on other languages, especially concerning C/C++. Below you will also find a focus unit on R.<br></strong></div>
-<div><br></div>
-<div><strong><span  style="text-decoration: underline;">Online resources for learning Bash</span></strong><span  >:
-<br> These can be found in a separate work unit above.</span></div>
-<div>If you have worked through this unit, you have learned some 'universal' features of programming languages already:</div>
-<div><strong>First</strong>, variables need to be assigned (and sometimes declared, i.e. given a type).</div>
-<div><strong>Second</strong>, the flow of programs requires control structures like loops, conditions etc.</div>
-<div>And <strong>third</strong>, sub-units (functions, sub-routines, modules, etc.) are needed to structure code.<br></div>
-<div>Apart from this, there is some general stuff to remember for each language, like e.g. what line defines the start of a program or how do I do in- and output etc. When learning a new programming language, you are often<span  style="color: rgb(239, 69, 64);">times</span> fine with remembering just the basics<span  style="color: rgb(239, 69, 64);"></span>. If you then look for the correct 'syntax' of an element, it's usually best practice to google it ("fortran loop"), once you have understood what you are looking for.<br></div>
-<br>
-<div><strong style="text-decoration: underline;">Online resources for learning Fortran:</strong></div>
-<div>Fortran is a compiled language, so that apart from Fortran itself you will have to learn <span  style="color: rgb(239, 69, 64);"></span>how to use a compiler including the use of software libaries and as compiling can be quite tedious for all but very small projects, also about the most common 'build system' <em><span  >make</span></em>.</div>
-<div>One of the reasons why Fortran provides such excellence performance is the existence of very high-quality<strong> compilers</strong> (the Intel Fortran compiler is a legend), which manage to produce extremely fast code.<strong> </strong>But unlike in the past, C++ compilers (including the GCC one) don't seem to be utterly behind anymore.<br></div>
-<div><strong>The use of software libraries is essential for good programming! </strong>Libraries provide code written by someone else (usually more clever than you or me) that can be re-used for your purposes just by sticking to the calling conventions (you have to supply the correct inputs and understand what is given back). If you learn how to use libraries you can save a lot of time by not re-rewriting existing code, which in addition is usually much more error-proof than the ugly hack you just made up.</div>
-<div>The use of a <strong>build system</strong> like make is also considered good programming, as it allows not only you, but also other people to compile your code conveniently (or: at all).</div>
-<div>You will learn more about compilers, software libraries and build systems in the next work unit.<br></div>
-<div><br></div>
-<div>Fortran tutorials:<br></div>
-<div>
-    <a href="https://doku.lrz.de/programming-with-fortran-10746212.html">https://doku.lrz.de/programming-with-fortran-10746212.html</a>
-    <br>
-    <strong> -- </strong>Leibniz-Rechenzentrum (LRZ, Leibniz Supercomputing Centre) "An introduction to the Fortran programming language course"
-    <br>
-    <a href="https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf">https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf</a><strong> -- </strong>slides of the course<br>
+<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
+    <p dir="ltr" style="text-align: left;">
+        Doing RSEng work usually means to write (source) code in a programming language, using editors or integrated development environments (IDEs) to do so efficiently. The proper choice of these elements (languages, editors or IDEs) is not obvious or unambiguous, so it is worth the time to spend some thoughts on this issue.
+    </p>
 </div>
-<br>
-<!-- <div>(There is again a giant number of such tutorials online, but ARCHER, the UK National Supercomputer Service, is a great resource anyhow!)<br></div> -->
-<div><a href="http://www.archer.ac.uk/training/course-material/2017/07/mfortran_camb/index.php">http://www.archer.ac.uk/training/course-material/2017/07/mfortran_camb/index.php</a> -- ARCHER 'Modern Fortran' course<br></div>
-<div>
-    <a href="https://www.youtube.com/watch?embed=no&v=5vkUlpKzepE">https://www.youtube.com/watch?v=5vkUlpKzepE</a><strong> -- </strong>Archer Virtual Tutorial 'Modern Fortran'<br>
-    <a href="http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf">http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf</a><strong> -- </strong>slides of the tutorial<br>
+<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
+    <p dir="ltr" style="text-align: left;">Doing RSEng work usually means to write (source) code in a programming language, using editors or integrated development environments (IDEs) to do so efficiently. The proper choice of these elements (languages, editors or IDEs) is not obvious or unambiguous, so it is worth the time to spend some thoughts on this issue.</p>
+    <p dir="ltr" style="text-align: left;">There is a very large number of programming languages available and although for most of them there are good reasons why they are used for their specific applications, some languages a certainly better suited for scientific work. A core difference between languages is whether they must be compiled (turned into machine-readable 'binaries' via a compiler before execution) or whether they are 'interpreted', i.e. written as scripts which are 'read' and executed by a separate program. Fortran would be an example for the former, Python for the latter.</p>
+    <p dir="ltr" style="text-align: left;"><strong>Compiled languages</strong> usually have static typing (variables must be defined as being of a certain type, e.g. a real number, or a string of characters), but compilation can be optimized in several ways and <span class="" style="color: rgb(239, 69, 64);">is</span> hardware-specific, so that compiled languages are considered to deliver high performance. Accordingly, most 'high performance computing' (HPC) applications are based on compiled languages like Fortran or C/C++. <strong>Interpreted languages </strong>usually have dynamic typing (the type of variables is determined upon execution, depending on what values are given<span class="" style="color: rgb(239, 69, 64);"></span>) and are considered to be better suited for the quick and easy development of software solutions, also <span class="" style="color: rgb(51, 51, 51);">since</span> there is no time-consuming compilation step involved. Some new languages like <strong>Julia</strong> promise to provide both high performance and easy development with 'just-in-time' compilation. (Although for now I don't think Julia can be recommended as a first programming language, you will probably hear a lot of praise for Julia from experienced HPC people, <span class="" style="color: rgb(51, 51, 51);">which is why</span> I have added some information on Julia as a separate work unit below.)<br></p>
+    <p dir="ltr" style="text-align: left;">Apart from <strong>performance</strong>, the existing software '<strong>ecosystem</strong>' of a language is very important for the proper choice of a programming language. Fortran, 'the mother tongue of scientific computing' (C.E. Leith), is still at the center of HPC, first of all because there is a huge ecosystem of existing code, libraries, tools, etc. avaiable, that makes it easy to develop scientific applications in fortran, especially concerning so-called 'number-crunching' tasks (the computation of huge numbers of mathematical operations). C/C++ is arguably the most widely used language for 'high-level' commercial work, so that a large pool of professional software tools is available for C/C++, which has made C/C++ very attractive for larger scientific software projects in recent years. Considering interpreted or scripting languages, Python is well established in many fields in- and outside of science, so that with this programming language easy access to new technologies is available (cloud computing, machine learning etc.).<br></p>
+    <p dir="ltr" style="text-align: left;">Once you have mastered one or two programming languages, you will see that the core elements of programming languages are rather universal and that learning new languages is often not more complicated than memorizing a new syntax and probably keeping a few 'odd' features in mind. (The concept of '<strong>object oriented programming</strong>', or OOP, is an exception: it the basis for OOP-languages like C++ and Python and we will therefore have to learn what it is about in the section devoted to Python below.) This means that when chosing your programming languages you don't have to worry too much about ending up in a dead end. Considering performance and enviroment, the choice of programming languages for scientific applications is practically often less confusing than it initially seems, as it often simply makes sense to stick to 'popular' solutions, for which a large pool of clever people constantly work on both performance and new tools.</p>
+    <p dir="ltr" style="text-align: left;">To find out which languages are most prominent in which sector you can turn to community surveys for instance from stackoverflow <a href="https://insights.stackoverflow.com/survey/2019#development-environments-and-tools" onclick="window.open('https://insights.stackoverflow.com/survey/2019#development-environments-and-tools', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;">( e.g., https://insights.stackoverflow.com/survey/2019#development-environments-and-tools</a> or <a href="https://insights.stackoverflow.com/survey/2021#overview">https://insights.stackoverflow.com/survey/2021#overview</a>) or take a look at stackshare for a business perspective ( <a href="https://stackshare.io/" onclick="window.open('https://stackshare.io/', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;">https://stackshare.io/</a> ). But you might also want to read about the problems with measuring programming language popularity here: <a href="https://en.wikipedia.org/wiki/Measuring_programming_language_popularity">https://en.wikipedia.org/wiki/Measuring_programming_language_popularity</a> . You will find that while Java, C/C++ and Python are most popular for professional software development, the most popular languages in science are <strong>Python</strong>, <strong>C/C++</strong>, <strong>Fortran</strong> (for HPC), and 'less general' languages like R, Matlab, etc. These lists often do not include scripting languages like <strong>Bash</strong>, which underly the functionality of command line interfaces themselves (CLIs, which basically means the terminals you're typing into), which is why in addition everyone should have at least a basic understanding of 'their' CLI language.<br></p>
 </div>
-<div><br></div>
-<div><strong></strong>
-    <div><strong style="text-decoration: underline;">Online resources for learning Python </strong>:
-    <br> These can be found in a separate work unit below<strong>.<br></strong></div>
-    <div>In this work unit you will also find a basic introduction to object oriented programming (OOP).<br></div><br>
-    <div><strong style="text-decoration: underline;">Editors</strong>:
-    <div>How you <strong>edit your code</strong> is largely a question of taste, but some tools like&nbsp; VI are so widely used (and available on basically every remote server you might want to access) that you should have an idea of their basic usage, and some tools provide certain functions (for building, linking, debugging, testing, managing code) that you don't want to miss anymore once you are used to them.<br></div>
-    <div><strong></strong></div>
-</div>
-<br>
-<!-- <div> -->
-<div>This is a <strong>list of editors</strong> certainly worth checking out:</div>
-<div>Vi (rules): enjoy a plethora of features with the most commonly used source code editor (behind Windows/Java IDEs/editors)<br></div>
-<div>&nbsp;&nbsp; - a general overview: <a href="https://missing.csail.mit.edu/2020/editors/">https://missing.csail.mit.edu/2020/editors/</a><br></div>
-<div>&nbsp;&nbsp; - play a game to learn vim: <a href="https://vim-adventures.com/">https://vim-adventures.com/</a>&nbsp;&nbsp; <br></div>
-<div>&nbsp;&nbsp; - read a whole book on vim <a href="https://pragprog.com/titles/dnvim2/practical-vim-second-edition/">https://pragprog.com/titles/dnvim2/practical-vim-second-edition/</a> -- most people would consider this as overkill</div>
-<div>&nbsp;&nbsp; - behold, Vi has it's own section on stackexchange: <a href="https://vi.stackexchange.com/">https://vi.stackexchange.com/</a></div>
-<div>&nbsp;&nbsp; - and of course a huge fan community, giving helpful and/or obscure tips, if asked for or not: <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">https://vim.fandom.com/wiki/Vim_Tips_Wiki</a><br></div>
-<div><a href="https://www.sublimetext.com/" onclick="window.open('https://www.sublimetext.com/', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;">https://www.sublimetext.com/</a> -- Sublime text, an advanced GUI (graphical user interface) editor<br></div>
-<div>notepad++ -- another advanced GUI editor, especially prominent under Windows<br></div>
-<div>Jupyter Notebooks (this is so cool, we will have a separate work unit for it below)<br></div>
-<br>
-<div style="text-decoration: underline;"><strong >Common integrated development environments</strong>(IDEs):</div>
-<div><a href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a> -- a lot of people really like Visual Studo Code, because it strikes a good balance between too little and too much</div>
-<div>- read more about it on Heise (German only): <a href="https://www.heise.de/hintergrund/Visual-Studio-Code-Ein-Code-Editor-fuer-alle-s-6128966.html">https://www.heise.de/hintergrund/Visual-Studio-Code-Ein-Code-Editor-fuer-alle-s-6128966.html</a><br></div>
-<div><a href="https://www.eclipse.org/downloads/" onclick="window.open('https://www.eclipse.org/downloads/', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;">https://www.eclipse.org/downloads/</a> -- Eclipse, supporting C/C++, Fortran, Python, R, Matlab, Julia, ... Mathematica, LaTeX, etc.<br></div>
-<div><a href="https://www.jetbrains.com/pycharm/" onclick="window.open('https://www.jetbrains.com/pycharm/', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;">https://www.jetbrains.com/pycharm/</a> -- PyCharm (Python IDE)</div>
-<div>- or the 'next generation IDE' Fleet: <a href="https://www.jetbrains.com/de-de/fleet/">https://www.jetbrains.com/de-de/fleet/</a><br></div>
-<div>ht<a href="https://rstudio.com/" onclick="window.open('https://rstudio.com/', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;">tps://rstudio.com/</a> -- R-Studio (R IDE)<br></div>
-<div><a href="https://sso.uni-muenster.de/NWZ/Angebot/NWZatHome/Software/Microsoft-Azure-Dev-Tools/Softwarebestellung/index.html" onclick="window.open('https://sso.uni-muenster.de/NWZ/Angebot/NWZatHome/Software/Microsoft-Azure-Dev-Tools/Softwarebestellung/index.html', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;">https://sso.uni-muenster.de/NWZ/Angebot/NWZatHome/Software/Microsoft-Azure-Dev-Tools/Softwarebestellung/index.html</a> -- MS Visual Studio</div>
-<div style="padding-left: 1em;">
-    well integrated and most commonly used IDE for developing software under Windows,
-    <span >now also available under macOS, supports all popular languages</span>
-    <!-- supports 36 programming languages (but not Fortran?); -->
+
+<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
+    <div>Keeping all this in mind I would like to recommend the following <strong>strategy</strong> here: Start with learning Bash, so that you feel comfortable <span>operating</span> a Linux system <span>especially</span> when writing scripts to automate your work. Then visit Fortran; it's still very much at the center of scientific computing and the basics are not hard to get; it is very straightforward mathematical programming. For doing your actual research move on to Python: it is much less demanding than C++ and usually everything you could only wish for not to write yourself will be available. Once your project turns quasi-professional or if you anyhow have the intention to make it that way, C++ will offer everything you need (but be prepared to spend most of the time planning to write code, instead of actually writing it). Finally, learn R, Matlab, SQL etc. if you have to, because a project requires it - you certainly won't find it impossible to do so once you have worked through this course.<br></div>
     <br>
-    itself anyhow free, but free even with compilers via NWZ@home Azure Dev Tools for Teaching (AD4T), where you will also find a lot of other free stuff
-</div>
-<div >
-    <a  href="https://vscodium.com/">https://vscodium.com/</a>
-    -- get the latest version of MIT-licensed VS Code
+    <div><strong>In this course, we will follow the strategy outlined above and focus on Bash, Fortran and especially Python. </strong>(This strategy might not fit to your scientific field, especially if the whole field -- like certain parts of bio- or geo-informatics -- developed long after the high times of Fortran; in this case start with bash and move on to R, Matlab or whatever is the accepted standard in your field.)<strong> See the Additonal resources section for online resources on other languages, especially concerning C/C++. Below you will also find a focus unit on R.<br></strong></div>
     <br>
-    <a  href="https://neovim.io/">https://neovim.io/</a>
-    -- Vim-based text editor engineered for extensibility and usability
+    <details>
+        <summary>
+            <strong style="">Online resources for learning Bash:</strong>
+        </summary>
+        <div style="padding-left: 1em;">
+            <div> These can be found in a separate work unit above.</div>
+            <div>If you have worked through this unit, you have learned some 'universal' features of programming languages already:</div>
+            <div><strong>First</strong>, variables need to be assigned (and sometimes declared, i.e. given a type).</div>
+            <div><strong>Second</strong>, the flow of programs requires control structures like loops, conditions etc.</div>
+            <div>And <strong>third</strong>, sub-units (functions, sub-routines, modules, etc.) are needed to structure code.<br></div>
+            <div>Apart from this, there is some general stuff to remember for each language, like e.g. what line defines the start of a program or how do I do in- and output etc. When learning a new programming language, you are often<span style="color: rgb(239, 69, 64);">times</span> fine with remembering just the basics<span style="color: rgb(239, 69, 64);"></span>. If you then look for the correct 'syntax' of an element, it's usually best practice to google it ("fortran loop"), once you have understood what you are looking for.<br></div>
+            <br>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <strong style="">Online resources for learning Fortran:</strong>
+        </summary>
+        <div style="padding-left: 1em;">
+            <div>Fortran is a compiled language, so that apart from Fortran itself you will have to learn <span style="color: rgb(239, 69, 64);"></span>how to use a compiler including the use of software libaries and as compiling can be quite tedious for all but very small projects, also about the most common 'build system' <em><span>make</span></em>.</div>
+            <div>One of the reasons why Fortran provides such excellence performance is the existence of very high-quality<strong> compilers</strong> (the Intel Fortran compiler is a legend), which manage to produce extremely fast code.<strong> </strong>But unlike in the past, C++ compilers (including the GCC one) don't seem to be utterly behind anymore.<br></div>
+            <div><strong>The use of software libraries is essential for good programming! </strong>Libraries provide code written by someone else (usually more clever than you or me) that can be re-used for your purposes just by sticking to the calling conventions (you have to supply the correct inputs and understand what is given back). If you learn how to use libraries you can save a lot of time by not re-rewriting existing code, which in addition is usually much more error-proof than the ugly hack you just made up.</div>
+            <div>The use of a <strong>build system</strong> like make is also considered good programming, as it allows not only you, but also other people to compile your code conveniently (or: at all).</div>
+            <div>You will learn more about compilers, software libraries and build systems in the next work unit.<br></div>
+            <div><br></div>
+            <div>Fortran tutorials:<br></div>
+            <div>
+                <a href="https://doku.lrz.de/programming-with-fortran-10746212.html">https://doku.lrz.de/programming-with-fortran-10746212.html</a>
+                <br>
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                    <strong> -- </strong>Leibniz-Rechenzentrum (LRZ, Leibniz Supercomputing Centre) "An introduction to the Fortran programming language course"
+                </div>
+                <div>
+                    <a href="https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf">https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf</a><strong> -- </strong>slides of the course<br>
+                </div>
+            </div>
+            <br>
+            <!-- <div>(There is again a giant number of such tutorials online, but ARCHER, the UK National Supercomputer Service, is a great resource anyhow!)<br></div> -->
+            <div><a href="http://www.archer.ac.uk/training/course-material/2017/07/mfortran_camb/index.php">http://www.archer.ac.uk/training/course-material/2017/07/mfortran_camb/index.php</a> -- ARCHER 'Modern Fortran' course<br></div>
+            <div>
+                <a href="https://www.youtube.com/watch?embed=no&amp;v=5vkUlpKzepE">https://www.youtube.com/watch?v=5vkUlpKzepE</a><strong> -- </strong>Archer Virtual Tutorial 'Modern Fortran'<br>
+                <a href="http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf">http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf</a><strong> -- </strong>slides of the tutorial<br>
+            </div>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <strong style="">Online resources for learning Python </strong>:
+        </summary>
+        <!-- <br>  -->
+        <div style="padding-left: 1em;">
+            <div>These can be found in a separate work unit below.</div>
+            <br>
+            <div>In this work unit you will also find a basic introduction to object oriented programming (OOP).<br></div><br>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <strong style="">Editors</strong>:
+        </summary>
+        <div style="padding-left: 1em;">
+            <div>How you <strong>edit your code</strong> is largely a question of taste, but some tools like&nbsp; VI are so widely used (and available on basically every remote server you might want to access) that you should have an idea of their basic usage, and some tools provide certain functions (for building, linking, debugging, testing, managing code) that you don't want to miss anymore once you are used to them.<br></div>
+            <br>
+            <!-- <div> -->
+            <div>This is a <strong>list of editors</strong> certainly worth checking out:</div>
+            <div style="text-indent: -1em;padding-left: 1em;">
+                Vi: enjoy a plethora of features with the most commonly used source code editor (behind Windows/Java IDEs/editors)<br></div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>- a general overview: <a href="https://missing.csail.mit.edu/2020/editors/">https://missing.csail.mit.edu/2020/editors/</a><br></div>
+                <div>- play a game to learn vim: <a href="https://vim-adventures.com/">https://vim-adventures.com/</a>&nbsp;&nbsp; <br></div>
+                <div>- read a whole book on vim <a href="https://pragprog.com/titles/dnvim2/practical-vim-second-edition/">https://pragprog.com/titles/dnvim2/practical-vim-second-edition/</a> (most people would consider this as overkill)</div>
+                <div>- behold, Vi has it's own section on stackexchange: <a href="https://vi.stackexchange.com/">https://vi.stackexchange.com/</a></div>
+                <div>- and of course a huge fan community, giving helpful and/or obscure tips, if asked for or not: <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">https://vim.fandom.com/wiki/Vim_Tips_Wiki</a><br></div>
+            </div>
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://www.sublimetext.com/">https://www.sublimetext.com/</a> -- Sublime text, an advanced GUI (graphical user interface) editor<br>
+            </div>
+            <div style="text-indent: -1em;padding-left: 1em;">
+                notepad++ -- another advanced GUI editor, especially prominent under Windows
+            </div>
+            <div style="text-indent: -1em;padding-left: 1em;">
+                Jupyter Notebooks (this is so cool, we will have a separate work unit for it below)
+            </div>
+        </div>
+    </details>
+    <details>
+        <!-- style="text-decoration: underline;" -->
+        <summary>
+            <strong>Common integrated development environments</strong>(IDEs):
+        </summary>
+        <div style="padding-left: 1em;">
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a> -- a lot of people really like Visual Studo Code, because it strikes a good balance between too little and too much
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>
+                    - read more about it on Heise (German only): <a href="https://www.heise.de/hintergrund/Visual-Studio-Code-Ein-Code-Editor-fuer-alle-s-6128966.html">https://www.heise.de/hintergrund/Visual-Studio-Code-Ein-Code-Editor-fuer-alle-s-6128966.html</a>
+                </div>
+            </div>
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://www.eclipse.org/downloads/" >https://www.eclipse.org/downloads/</a> -- Eclipse, supporting C/C++, Fortran, Python, R, Matlab, Julia, ... Mathematica, LaTeX, etc.
+            </div>
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a> -- PyCharm (Python IDE)
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;"> 
+                - or the 'next generation IDE' Fleet: 
+                <a href="https://www.jetbrains.com/de-de/fleet/">
+                    https://www.jetbrains.com/de-de/fleet/
+                </a>
+            </div>
+            <div style="text-indent: -1em;padding-left: 1em;"><a href="https://rstudio.com/">https://rstudio.com/</a> -- R-Studio (R IDE)<br></div>
+            <div>
+                <a href="https://sso.uni-muenster.de/NWZ/Angebot/NWZatHome/Software/Microsoft-Azure-Dev-Tools/Softwarebestellung/index.html">https://sso.uni-muenster.de/NWZ/Angebot/NWZatHome/Software/Microsoft-Azure-Dev-Tools/Softwarebestellung/index.html</a>
+                -- MS Visual Studio
+            </div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>well integrated and most commonly used IDE for developing software under Windows,
+                    <span>now also available under macOS, supports all popular languages</span>
+                </div>
+                <!-- supports 36 programming languages (but not Fortran?); -->
+                <div>
+                    itself anyhow free, but free even with compilers via NWZ@home Azure Dev Tools for Teaching (AD4T), where you will also find a lot of other free stuff
+                </div>
+            </div>
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://vscodium.com/">https://vscodium.com/</a>
+                -- get the latest version of MIT-licensed VS Code
+            </div>
+            <div style="text-indent: -1em;padding-left: 1em;">
+                <a href="https://neovim.io/">https://neovim.io/</a>
+                -- Vim-based text editor engineered for extensibility and usability
+            </div>
+        </div>
+    </details>
+
 </div>
