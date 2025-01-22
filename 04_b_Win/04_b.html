@@ -433,31 +433,72 @@
     </div>
     <h5>MinGW</h5>
     <p>
-        MinGW (Minimalist GNU for Windows) is a tool that allows you to run many Linux packages natively on Windows. For example, one could use the GNU compilers like gcc for C and g++ for C++. This is a good alternative for those who don't want to use WSL. However, it is limited as one can only use the packages that are offered by MinGW.
+        MinGW (Minimalist GNU for Windows) is a tool that allows you to run many Linux packages natively on Windows. For example, one could use the GNU compilers like gcc for C and g++ for C++. This is a good alternative for those who don't want to use WSL. However, it is limited as one can only use the packages that are offered by MinGW. The initial MinGW project only offers a 32-bit compiler, but the binaries can be executed in both 32 and 64 bit. This is not interesting, as it is not updated anymore.
     </p>
+    <p>
+        In 2007, a fork was published which compiles into 64-bit, which is why it is called MinGW-w64. To use this, there are various possibilities. Strawberry Perl is an environment for the Perl interpreter on Windows, which includes MinGW-w64. This method is maybe the most straightforward. However, you can only use the binaries included. For more customization, MSYS2 offers an environment very similar to Linux on Windows. It was built on Cygwin, which is another alternative that we don't need to introduce here. After installing MSYS2, different environment are available. The MSYS environment is the parent environment, so the others inherit from it. These environment differ by the compilers used for building their packages and other things. The package-manager used in MSYS2 is pacman, which is the same as in Arch Linux.
+    </pi>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://sourceforge.net/projects/mingw/">
-                https://sourceforge.net/projects/mingw/
+            <a href="https://strawberryperl.com/">
+                https://strawberryperl.com/
             </a>
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
-                -- MinGW download link
+                -- Strawberry Perl download link
+                <br> After installation, you would need to add the MinGW-w64 binaries folder to the path variable. This is normally located in <code>C:\Strawberry\c\bin</code>.
             </div>
         </div>
     </div>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://www.youtube.com/watch?embed=no&amp;v=zbAb2O0QOq8">
-                https://www.youtube.com/watch?v=zbAb2O0QOq8
+            <a href="https://www.msys2.org/">
+                https://www.msys2.org/
             </a>
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
-                -- MinGW installation tutorial by CS Corner Sunita rai
-                <br> The video tests the installation with the compilation of a simple C program
+                -- MSYS2 official website. It provides an installation tutorial.
             </div>
         </div>
     </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://www.youtube.com/watch?embed=no&amp;v=KHWlz1GnFJU"> 
+                https://www.youtube.com/watch?v=KHWlz1GnFJU
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- MSYS2 tutorial by constref
+                <br>This tutorial also introduces the different environments and shows how to add these to Windows Terminal.
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://www.msys2.org/docs/environments/">
+                https://www.msys2.org/docs/environments/
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- Documentation on the differnent MSYS2 environments
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://wiki.archlinux.org/title/Pacman">
+                https://wiki.archlinux.org/title/Pacman
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- pacman tutorial in the official Arch Linux Wiki
+            </div>
+        </div>
+    </div>
+
 </div>
