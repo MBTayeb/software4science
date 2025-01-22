@@ -1,29 +1,56 @@
 <div style="max-width: 45em; margin-left: auto; margin-right: auto;">
-    <p>It turns out that a lot of time within software projects is spent on finding and fixing bugs, i.e. small, but obstructive errors in the
-        source code. At least for larger programming projects, the testing and optimization of code becomes a task on its own.</p>
-    <h4>Debugging, Testing:</h4>
-    <p><strong>Debugging</strong> can be (and very often is) as simple as putting an output statement at the place in your code, where things seem
-        to go wrong. If (lots of) errors turn up upon compilation, it is often helpful to just fix the first error, as the other errors might just be follow-up ones. If you have no
-        idea what (or actually where) the problem is, 'delta debugging' might help: put a statement in the middle of your code and see whether the problem occurs before or after. Then
-        again 'half' the problem again and again until you narrowed it down to a few lines. On the command line, but usually more
-        comfortable as part of GUI editors or IDEs, proper debugging programs are available, which let you step line by line through your code during execution while at the same time
-        showing you the values of the variables involved. More complex problems can often be found more easily this way, as you spot 'weird' values for your variables ('not-a-number'
-        etc.) early on.
+    <p>
+        It turns out that a lot of time within software projects is spent on finding and fixing bugs, i.e. small, but obstructive errors in the
+        source code. At least for larger programming projects, the testing and optimization of code becomes a task on its own.
     </p>
     <p>
-        Professional software <strong>testing</strong> is a business on its own, but you can easily integrate some ideas into your code development
-        process. At the basic level, languages like Python and C/C++ (but not Fortran -- see why commercial software developers hate it?) allow you to use '<strong>assertions</strong>'
-        in your code, where you can make your code stop as soon as things develop in an unexpected direction. The next step up is <strong>unit testing</strong>, i.e. to write tests
-        with known in- and output for 'units' of your code. For languages like Python and C/C++, unit testing frameworks are available to speed up this process. A good strategy is to
-        also turn all 'complex' bugs which you find later on into tests to avoid running into them again. Another step up is <strong>integration testing, </strong>i.e.
-        checking whether units are working together correctly and then<strong> system testing</strong>, where you can for instance include a
-        test suite with example cases and known results as part of your code directory.
+        <span style="font-style: italic;">Debugging</span> can be (and very often is) as simple as putting an output statement at the place in your code, where things seem to go wrong. If (lots of) errors turn up upon compilation, it is often helpful to just fix the first error, as the other errors might just be follow-up ones. If you have no idea what (or actually where) the problem is, 'delta debugging' might help: put a statement in the middle of your code and see whether the problem occurs before or after. Then again 'half' the problem again and again until you narrowed it down to a few lines. On the command line, but usually more comfortable as part of GUI editors or IDEs, proper debugging programs are available, which let you step line by line through your code during execution while at the same time showing you the values of the variables involved. More complex problems can often be found more easily this way, as you spot 'weird' values for your variables ('not-a-number' etc.) early on.
+    </p>
+    <p>
+        Professional software <span style="font-style: italic;">testing</span> is a business on its own, but you can easily integrate some ideas into your code development
+        process. At the basic level, languages like Python and C/C++ (but not Fortran -- see why commercial software developers hate it?) allow you to use '<span style="font-style: italic;">assertions</span>' in your code, where you can make your code stop as soon as things develop in an unexpected direction. The next step up is <span style="font-style: italic;">unit testing</span>, i.e. to write tests with known in- and output for 'units' of your code. For languages like Python and C/C++, unit testing frameworks are available to speed up this process. A good strategy is to also turn all 'complex' bugs which you find later on into tests to avoid running into them again. Another step up is <span style="font-style: italic;">integration testing, </span>i.e. checking whether units are working together correctly and then<span style="font-style: italic;"> system testing</span>, where you can for instance include a test suite with example cases and known results as part of your code directory.
         (People of course have invented many more intermediate levels of testing ... )
         A very interesting option is continuous integration, which means that after each git push, a whole range of tests (unit or up to system level) is run automatically.
-        Some people advocate '<strong>test-driven development</strong>', i.e. to first make specifications (what should the program or part do?), then write tests based on these
-        specifications and make them properly fail, and only then start to write solutions that will not trigger the tests.
+        Some people advocate '<span style="font-style: italic;">test-driven development</span>', i.e. to first make specifications (what should the program or part do?), then write tests based on these specifications and make them properly fail, and only then start to write solutions that will not trigger the tests.
     </p>
-    <h5>Testing tutorials:</h5>
+    <h4>Debugging tutorials:</h4> 
+    <div style="padding-left: 1em;font-weight: bolder;">
+        <div style="text-indent: -1em;padding-left: 1em">
+            <a href="https://www.youtube.com/watch?embed=no&amp;v=G9gnSGKYIg4">
+                https://www.youtube.com/watch?v=G9gnSGKYIg4
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- Official VS Code debugging tutorial with a C++ code (5 mins) 
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://www.youtube.com/watch?embed=no&amp;v=oCcTiRGPogQ">
+                https://www.youtube.com/watch?v=oCcTiRGPogQ
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- VS Code debugging tutorial with a python code (7 mins)
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://www.youtube.com/watch?embed=no&amp;v=Dq8l1_-QgAc">
+                https://www.youtube.com/watch?v=Dq8l1_-QgAc
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- Debugging tutorial using GDB (7 mins)
+            </div>
+        </div>
+    </div>
+    <h4>Testing tutorials:</h4> 
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://www.youtube.com/watch?embed=no&amp;v=vwTHeDTqhTI">
@@ -32,6 +59,7 @@
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
+                -- Tutorial on the theory of software testing (46 mins)
             </div>
         </div>
     </div>
@@ -43,7 +71,7 @@
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
-                -- testing basics (German only)
+                -- Testing basics (German only)
             </div>
         </div>
     </div>
@@ -79,20 +107,20 @@
             </div>
         </div>
     </div>
-
-
-    <h5>Testing resources</h5>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://alan-turing-institute.github.io/rsd-engineeringcourse/ch03tests/">
-                https://alan-turing-institute.github.io/rsd-engineeringcourse/ch03tests/
+            <a href="https://alan-turing-institute.github.io/rse-course/html/module05_testing_your_code/index.html">
+                https://alan-turing-institute.github.io/rse-course/html/module05_testing_your_code/index.html
             </a>
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
+                -- Testing course offered by the Alan Turing Institute (the UK’s national institute for data science and AI)
             </div>
         </div>
     </div>
+    <h4>Testing tools</h4>
+    
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://github.com/sstephenson/bats">https://github.com/sstephenson/bats</a>
@@ -131,9 +159,10 @@
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
+                -- PythonTestingToolsTaxonomy: list of python testing tools sorted depending on application 
             </div>
         </div>
     </div>
 
-    
+
 </div>
