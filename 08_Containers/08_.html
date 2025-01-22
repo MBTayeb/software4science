@@ -1,9 +1,6 @@
 <div style="max-width: 45em; margin-left: auto; margin-right: auto;">
     <p>
-        When Continuous Integration was introduced above, the main idea behind containers was explained. Here, you can dive deeper in this topic. 
-    </p>
-    <p>
-        Beside Continuous Integration, containers may make your life much easier. Whether a compiler is not available in your OS, or you don't want to waste time installing another version of it, containers can save you a lot of time. <span style="font-style: italic;">VS Code Dev Containers</span> brings the ease to another level, as only a couple of clicks are enough to set everything.
+        When Continuous Integration was introduced above, the main idea behind containers was explained. Here, you can dive deeper in this topic.
     </p>
     <h4>Links:</h4>
     <div style="padding-left: 1em;">
@@ -54,7 +51,7 @@
             </div>
         </div>
     </div>
-    
+
     <div style="padding-left: 1em;font-weight: bolder;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://www.youtube.com/watch?embed=no&amp;v=dihfA7Ol6Mw">
@@ -68,8 +65,23 @@
         </div>
     </div>
     <p>
-        To access JupyterLab or another web app running within the container, it is necessary to publish ports from the container to the host system. To understand this, some background in networking is needed. An IP adress is the identifier of a computer in a network. But when one wants to share data between two entities within a network, we want it to go exactly where it is needed, that is why we need ports. Ports allow the system to specify the origin and the destination of data. Since the container is isolated from the computer, they can't share information. Publishing a port binds the port in the container to another one and thus allows everybody in the network to access the service, unless a firewall forbids it. You can get more information in this video<a href="https://www.youtube.com/watch?embed=no&amp;v=g2fT-g9PX9o">
+        To access JupyterLab or another web app running within the container, it is necessary to publish ports from the container to the host system. To understand this, some background in networking is needed. An IP address is the identifier of a computer in a network. But when one wants to share data between two entities within a network, we want it to go exactly where it is needed, that is why we need ports. Ports allow the system to specify the origin and the destination of data. Since the container is isolated from the computer, they can't share information. Publishing a port binds the port in the container to another one and thus allows everybody in the network to access the service, unless a firewall forbids it. You can get more information in this video<a href="https://www.youtube.com/watch?embed=no&amp;v=g2fT-g9PX9o">
             https://www.youtube.com/watch?v=g2fT-g9PX9o
         </a>
+    </p>
+    <p>
+        Beside Continuous Integration, containers may make your life much easier. Whether a compiler is not available in your OS, or you don't want to waste time installing another version of it, containers can save you a lot of time. <span style="font-style: italic;">VS Code Dev Containers</span> brings the ease to another level, as only a couple of clicks are enough to set everything. 
+    </p>
+    <p>
+        To transfer data between the container and the host system, you can either mount data or copy it. To work with python 2.7 for example, the first method can be done with the following command:
+    </p>
+    <code>
+        docker run --rm --name MyPython2 -v ${pwd}:/home/Tom -it python:2.7 /bin/bash
+    </code>
+    <p>
+        <span style="font-style: italic;">-v ${pwd}:/home/Tom</span> mounts the current directory in the host system to the user folder Tom in the container.
+        <span style="font-style: italic;">--rm</span> sets automatic deletion for the container once it is stopped. 
+        <span style="font-style: italic;">-it</span> lets us interact with the container.
+        <span style="font-style: italic;">/bin/bash</span> is the command we use to start a bash shell from within the container.
     </p>
 </div>
