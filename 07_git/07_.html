@@ -1,8 +1,11 @@
+<!-- Short text-->
 <div style="max-width: 45em; margin-left: auto; margin-right: auto;">
     <p dir="ltr" style="text-align: left;">Proper code management is very important even for medium-sized programming projects. Version control systems and source code repositories are
         essential elements for a proper code management strategy.</p>
 </div>
 
+
+<!--  text page: What are version control systems?-->
 <div style="max-width: 45em; margin-left: auto; margin-right: auto;">
     <h4>Version control systems:</h4>
     <p dir="ltr" style="text-align: left;">There a a number of version control systems available (subversion, cvs, ...), but <strong>git</strong> seems to have taken over the field for
@@ -20,7 +23,7 @@
     </p>
 </div>
 
-
+<!--  text (last)-->
 <div style="max-width: 45em; margin-left: auto; margin-right: auto;">
     <p dir="ltr" style="text-align: left;">
         Some git repository hosts have established themselves as community standards, like for instance Github, which hosts a large number of open-source projects (but is owned by Microsoft since 2018). Alternatives are SourceForge, Bitbucket, Google
@@ -28,21 +31,24 @@
         etc. The WWU runs it own 'GitLab' server, which allows everyone at WWU to put their software project into a safe environment. This 'ZIV gitlab' also allows for continuous
         integration, i.e. the integration of git and testing, to which we will come back
         later on in the work unit on debugging, testing and optimization below.<br>
-    </p>    
+    </p>
     <h5>ZIV gitlab -- the WWU source code repository:</h5>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://www.uni-muenster.de/IT/services/unterstuetzungsleistung/zivgitlab/index.html">
                 https://www.uni-muenster.de/IT/services/unterstuetzungsleistung/zivgitlab/index.html
-            </a> 
+            </a>
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
             </div>
         </div>
-    </div> 
+    </div>
     <p>
         <em>NOTE:</em> If you are a student, you might not have the rights to set up repositories on ZIV gitlab yourself;in this case, please ask an employed work group member to help with this.
+    </p>
+    <p>
+        Next, various tutorials for learning version control systems are listed. Like mentioned above, the ones shown in <span style="font-weight: bolder;"></span> bold are the ones we recommend.
     </p>
     <h5>git beginner tutorials:</h5>
     <div style="padding-left: 1em;">
@@ -61,11 +67,23 @@
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
-                -- git video tutorial by Corey Schafer (macOS)
+                -- git video tutorial by Corey Schafer (macOS/UNIX)
             </div>
         </div>
     </div>
     <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://girliemac.com/blog/2017/12/26/git-purr/">
+                https://girliemac.com/blog/2017/12/26/git-purr/
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- learn git with doodles by Tomomi Imura
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 1em; font-weight: bolder;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="http://swcarpentry.github.io/git-novice/">http://swcarpentry.github.io/git-novice/</a>
         </div>
@@ -86,44 +104,11 @@
         </div>
 
     </div>
-    <div style="padding-left: 1em;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://gitlab-nrw-workshop-2022-04.gitlab.io/preparation/#/">https://gitlab-nrw-workshop-2022-04.gitlab.io/preparation/#/</a>
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-                -- Workshop "Introduction to git with gitlab" offered in <em>german</em> at FDM.nrw<br>
-                FDM.nrw is the research data management initiative of NRW
-            </div>
-            <div style="text-indent: -1em;">
-                <a href="https://gitlab-nrw-workshop-2022-04.gitlab.io/workshop/slides.html#1">https://gitlab-nrw-workshop-2022-04.gitlab.io/workshop/slides.html#1</a>
-            </div>
-            <div style="padding-left: 1em;text-indent: -1em;">
-                <div>
-                    -- Slides of the workshop
-                </div>
-            </div>
-            <div style="text-indent: -1em;">
-                <a href="https://gitlab.com/fdm-nrw-gitlabexamples/index">https://gitlab.com/fdm-nrw-gitlabexamples/index</a>
-            </div>
-            <div style="padding-left: 1em;text-indent: -1em;">
-                <div>
-                    -- examples of GitLab repositories
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <h5>git cheat sheet:</h5>
-    <div style="padding-left: 1em;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://education.github.com/git-cheat-sheet-education.pdf">https://education.github.com/git-cheat-sheet-education.pdf</a>
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-        </div>
-    </div>
+
+
+
     <h5>git intermediate tutorials:</h5>
-    <div style="padding-left: 1em;">
+    <div style="padding-left: 1em; font-weight: bolder;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://missing.csail.mit.edu/2020/version-control/">https://missing.csail.mit.edu/2020/version-control/</a>
         </div>
@@ -159,21 +144,17 @@
             </div>
         </div>
     </div>
-
-    <h5>git visualization:</h5>
-    
+    <h5>git cheat sheet:</h5>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://girliemac.com/blog/2017/12/26/git-purr/">
-                https://girliemac.com/blog/2017/12/26/git-purr/
-            </a>
+            <a href="https://education.github.com/git-cheat-sheet-education.pdf">https://education.github.com/git-cheat-sheet-education.pdf</a>
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-                -- learn git with doodles by Tomomi Imura
-            </div>
         </div>
     </div>
+    <h5>Branch visualization:</h5>
+
+
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://learngitbranching.js.org/?locale=en_US">
@@ -194,55 +175,39 @@
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
-                "Visualizing Git Concepts with D3"
+                -- "Visualizing Git Concepts with D3"
             </div>
         </div>
     </div>
-    <h5>git Documentation:</h5>
-    <div style="padding-left: 1em;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://git-scm.com/docs">https://git-scm.com/docs</a>
-        </div>
-        <!-- <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-                -- Documentation of Git
-            </div>
-        </div> -->
-    </div>
-
-    
-
-
-    
     <br>
 
-    
+
     <h5>Free git books online:</h5>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/">http://www-cs-students.stanford.edu/~blynn/gitmagic/</a> 
+            <a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/">http://www-cs-students.stanford.edu/~blynn/gitmagic/</a>
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
                 -- B. Lynn, <i>Git Magic</i>
             </div>
         </div>
-    </div> 
+    </div>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a> 
+            <a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a>
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
                 -- S. Chacon and B. Straub, <i>Pro Git</i>
             </div>
         </div>
-    </div> 
+    </div>
     <br>
-    
 
-     
-    
+
+
+
 
     <h5>binder</h5>
     <h6>-- turns git repositories into containers, with shared access through Juypter notebooks:</h6>
@@ -254,7 +219,7 @@
             <div>
             </div>
         </div>
-    </div> 
+    </div>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://binderhub.readthedocs.io/en/latest/">https://binderhub.readthedocs.io/en/latest/</a><br>
@@ -263,7 +228,8 @@
             <div>
             </div>
         </div>
-    </div> 
+    </div>
     <p></p>
 </div>
+
 
