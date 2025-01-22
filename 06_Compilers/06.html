@@ -238,8 +238,48 @@ clean:
 .PHONY: clean</code></pre>
     </div>
 	<p>
-		To compile and run a Fortran 90 file called code.f90, one should just run 
-		<code class="language-makefile">make code.exe</code>. The wildcard <i>%</i> is used  
+		Now, let us discuss how to compile and run a Fortran 90 file called code.f90. 
+		%.f90 is used to replace any file in the same directory as the makefile that has 
+		the extension .f90. If such a file exists, there will be a target
+		with the same name but with the extension .exe instead. This is called
+		a pattern rule. In our case,
+		the target will be code.exe.  
+	</p>
+	<p>
+		Makefiles always start by making the prerequisites of the first target listed 
+		before making that target.
+		Still, running <code class="language-makefile">make</code> won't do anything, as 
+		using a pattern rule is not enough for making a target, the target should be 
+		explicitly specified. 
+		Thus, one solution would be to add a target called "all" and add code.exe as a prerequisite
+		for it. This, however, requires editing the makefile, which can be time consuming
+		when many different Fortran files
+		have to be compiled. 
+	</p>
+	<p>
+		The solution recommended here is to just run 
+		<code class="language-makefile">make code.exe</code>. 
+		This way, the target is specified on the fly
+		and it is recognized by the makefile since it matches the wildcard.
+		This is much simpler and requires less editing. 
+		One should also mention, that this is 
+		only possible because the task itself is not complicated, as we only have to compile a simple Fortran
+		program. Sometimes one needs to compile multiple sources, which can't be done with this makefile.
+		You could find help on this below in the tutorial made by NeuralNine. 
+	</p>
+	<p>
+		The compilation command includes <i>automatic variables</i>, i.e. is variables that don't have
+		to be defined beforehand. 
+		<code class="language-makefile">$@</code> is filled with the target.
+		<code class="language-makefile">$<</code> is filled with the prerequisites.
+		After the compilation, the executable is run with <code class="language-makefile">$@</code>.
+	</p>
+	<p>
+		Last but not least, we use the target .PHONY to specify the phony targets, i.e the fake ones
+		that are not actual files.
+		Indeed, there could be a file called clean in the same directory, which would confuse the 
+		makefile. Using .Phony makes sure that this problem doesn't happen. If one uses the first
+		solution mentioned above, all should also be added to the phony targets. 
 	</p>
 	<h5 style="display: inline;">Online resources</h5>
 	<div style="padding-left: 1em;">
@@ -263,6 +303,20 @@ clean:
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
                 -- Automation and Make course by the Software Carpentries
+            </div>
+        </div>
+    </div>
+	<div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://www.youtube.com/watch?embed=no&amp;v=yWLkyN_Satk"> 
+                https://www.youtube.com/watch?v=yWLkyN_Satk
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- Makefile tutorial by NeuralNine<br> 
+				Makefile for compiling different C files and <i>linking</i> 
+				their binaries to make one executable.
             </div>
         </div>
     </div>
