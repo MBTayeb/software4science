@@ -1,74 +1,102 @@
-
-<p><strong>IVV NWZ self-study course Research Software Engineering (RSEng)</strong></p>
-<p>(with corrections and contributions from Carsten Kemena and Daniel Nüst - thanks a lot!)<strong> <br></strong></p>This self-study course guides the
-student in a structured manner through a number of external video, audio, text,
-and software resources, so that he will be able to study the topic of Research Software Engineering on his own. Example topics are introduction to Linux,
-using command line interfaces,&nbsp;
-editors/IDEs, compilers, software libraries, build and version control
-systems, source code repositories, as well as the debugging, testing <span class="" style="color: rgb(51, 51, 51);">and</span> optimization
-of scientific software.
-
-<p>People involved in teaching at
-    WWU should feel free to use the material provided here for their teaching
-    activities. In addition, IVV NWZ offers a one-day crash course in RSEng based
-    on (part of) the material shown here for graduate schools, institutes, etc. –
-    for this, please get in touch with Martin Korth ( <a href="mailto:dgd@uni-muenster.de">dgd@uni-muenster.de</a> ). Please also get in
-    touch with Martin if you want to contribute to this self-study course!</p>
-<p><br></p>
-<p></p>
-<p><strong>A Zoom-Workshop is offered as a first introduction and starting point for this self-study course:</strong></p>
-<p>Wednesday, 24th of May 2023, 9AM to 1PM via Zoom: <a href="https://wwu.zoom.us/j/64308219503">https://wwu.zoom.us/j/64308219503</a> (no registration necessary)</p>
-<div>For April/May 2023, the AG RSE will organize a git workshop and a 'RSE Express' with two RSE talks via Zoom. Stay tuned for updates!<br></div>
-<p>And why not join the AG RSE at University of Münster? Just get in touch via rse@uni-muenster.de!</p>
-<br>
-<span style="color:red;font-weight:700"><strong>Overview
-        of the course:</strong></span>
-
-<!-- <ol style="">
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Introduction and Overview </span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Background Information (organisations, general online-resources, …) <a style="float: right;" href="#section-1">jump</a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Basic Computer Know-How <a style="float: right;" href="#section-2">jump</a></span></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <div style="color: #000000;font-weight:400;">Introduction to Linux, Using Command Line Interfaces (CLI)  <a style="float: right;" href="#section-3">jump</a>
-            <br>
-            <ul>
-                <li>Excursion: Bash vs Powershell <span style="font-weight:bold;">... upcoming ...</span>  <a style="float: right;" href="#section-4">jump</a></li>
-            </ul>
-        </div> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Programming Languages, Editors, Integrated Development Environments (IDEs)  <a style="float: right;" href="#section-5">jump</a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Compilers, Software Libraries, Build Systems  <a style="float: right;" href="#section-6">jump</a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Version Control Systems, Source Code Repositories  <a style="float: right;" href="#section-7">jump</a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Debugging, Testing, Optimization  <a style="float: right;" href="#section-8">jump</a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Advanced RSEng Topics  <a style="float: right;" href="#section-9">jump</a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Additional Resources  <a style="float: right;" href="#section-10">jump</a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Focus unit: Jupyter Notebooks  <a style="float: right;" href="#section-11">jump</a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Focus unit: Python / OOP  <a style="float: right;" href="#section-12">jump</a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Focus unit: Julia  <a style="float: right;" href="#section-13">jump</a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Focus unit: R  <a style="float: right;" href="#section-14">jump</a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Focus unit: Software &amp; Data Citation &amp; Licensing (author: Daniel Nüst)  <a style="float: right;" href="#section-15">jump</a></span> </li>
-</ol> -->
-<ol style="">
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Introduction and Overview </span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Background Information (organisations, general online-resources, …) <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-1"></a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Basic Computer Know-How <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-2"></a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <div style="color: #000000;font-weight:400;">Introduction to Linux, Using Command Line Interfaces (CLI)  <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-3"></a>
-            <br>
-            <ul>
-                <li>Excursion: Bash vs Powershell <span style="font-weight:bold;">... upcoming ...</span>  <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-4"></a></li>
-            </ul>
-        </div> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Programming Languages, Editors, Integrated Development Environments (IDEs)  <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-5"></a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Compilers, Software Libraries, Build Systems  <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-6"></a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Version Control Systems, Source Code Repositories  <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-7"></a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Debugging, Testing, Optimization  <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-8"></a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Advanced RSEng Topics  <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-9"></a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Additional Resources  <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-10"></a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Focus unit: Jupyter Notebooks  <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-11"></a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Focus unit: Python / OOP  <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-12"></a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Focus unit: Julia  <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-13"></a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Focus unit: R  <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-14"></a></span> </li>
-    <li style="color: #c73030;font-weight: 900;"> <span style="color: #000000;font-weight:400;">Focus unit: Software &amp; Data Citation &amp; Licensing (author: Daniel Nüst)  <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" href="#section-15"></a></span> </li>
-</ol>
-<br>
-<div class="alert alert-info alert-block">There are separate IVV NWZ self-study courses on Research Software Engineering, Research Data Management, Data Science/Machine Learning, Bioinformatics/Statistics with R and upcoming Linux Administration as well as Research Data Infrastructure/Cloud Computing, i.e. Docker/Kubernetes/WWU-Kube, for more information see here: <a href="https://www.uni-muenster.de/NWZ/en/Angebot/Lehre/index.html">https://www.uni-muenster.de/NWZ/en/Angebot/Lehre/index.html</a></div>
-<br>
-<span style="color:red;font-weight:700">Note: As a learner going through the chapters of this course, you are not supposed to visit all the links. Many of the links that are listed here are for those who would like to get deeper knowledge in a specific theme.</span>
+<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
+    <h4>IVV NWZ self-study course Research Software Engineering (RSEng)</h4>
+    <p>(with corrections and contributions from Carsten Kemena and Daniel Nüst - thanks a lot!)</p>
+    <p>
+        This self-study course guides the student in a structured manner through a number of external video, audio, text, and software resources, so that he will be able to study the topic of Research Software Engineering on his own. Example topics are introduction to Linux, using command line interfaces,&nbsp; editors/IDEs, compilers, software libraries, build and version control systems, source code repositories, as well as the debugging, testing and optimization of scientific software.
+    </p>
+    <p>
+        People involved in teaching at WWU should feel free to use the material provided here for their teaching activities. In addition, IVV NWZ offers a one-day crash course in RSEng based on (part of) the material shown here for graduate schools, institutes, etc. – for this, please get in touch with Martin Korth ( <a href="mailto:dgd@uni-muenster.de">dgd@uni-muenster.de</a> ). Please also get in touch with Martin if you want to contribute to this self-study course!
+    </p>
+    <br>
+    <h5>A Zoom-Workshop is offered as a first introduction and starting point for this self-study course:</h5>
+    <p>Tuesday, 21th of November 2023, 9AM to 1PM via Zoom:&nbsp; <a href="https://wwu.zoom-x.de/j/69021561180">https://wwu.zoom-x.de/j/69021561180</a> (no registration necessary)</p>
+    <p></p>
+    <div>For February 2024, the AG RSE will organize a git workshop and a 'RSE Express' with one or two RSE talks via Zoom. Stay tuned for updates!<br></div>
+    <p>And why not join the AG RSE at University of Münster? Just get in touch via rse@uni-muenster.de!</p>
+    <br>
+    <h5 style="color:red;">Note:</h5>
+    <p>As a learner going through the chapters of this course, you are not supposed to visit all the links. Many of the links that are listed here are for those who would like to get deeper knowledge in a specific theme. The links that we most recommend will be in <span style="font-weight: 800;">bold</span>.</p>
+    <br>
+    <h5 style="color:red;">Overview of the course:</h5>
+    <ol style="">
+        <li style="color: #c73030;font-weight: 900;"> <span style="color: initial;font-weight:400;">Introduction and Overview </span> 
+        </li>
+        <li style="color: #c73030;font-weight: 900;"> <span style="color: initial;font-weight:400;">
+            Background Information (organisations, general online-resources, …) 
+            <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+            href="#section-1"></a></span> 
+        </li>
+        <li style="color: #c73030;font-weight: 900;"> <span style="color: initial;font-weight:400;">
+            Basic Computer Know-How <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+            href="#section-2"></a></span> 
+        </li>
+        <li style="color: #c73030;font-weight: 900;">
+            <div style="color: initial;font-weight:400;">
+                Introduction to Linux, Using Command Line Interfaces (CLI) <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+                href="#section-3"></a>
+                <br>
+                <ul>
+                    <li>Excursion: Bash vs Powershell <span style="font-weight:bold;">... upcoming ...</span> <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+                    href="#section-4"></a></li>
+                </ul>
+            </div>
+        </li>
+        <li style="color: #c73030;font-weight: 900;"> <span style="color: initial;font-weight:400;">
+            Programming Languages, Editors, Integrated Development Environments (IDEs) <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+            href="#section-5"></a></span> 
+        </li>
+        <li style="color: #c73030;font-weight: 900;"> <span style="color: initial;font-weight:400;">
+            Compilers, Software Libraries, Build Systems <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+            href="#section-6"></a></span> 
+        </li>
+        <li style="color: #c73030;font-weight: 900;"> 
+            <div style="color: initial;font-weight:400;">
+                Version Control Systems, Source Code Repositories <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+                href="#section-7"></a>
+                <br>
+                <ul>
+                    <li>Continuous Integration<a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+                    href="#section-8"></a></li>
+                </ul>
+            </div> 
+        </li>
+        <li style="color: #c73030;font-weight: 900;"> <span style="color: initial;font-weight:400;">
+            Debugging, Testing, Optimization <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+            href="#section-9"></a></span> 
+        </li>
+        <li style="color: #c73030;font-weight: 900;"> <span style="color: initial;font-weight:400;">
+            Advanced RSEng Topics <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+            href="#section-10"></a></span> 
+        </li>
+        <li style="color: #c73030;font-weight: 900;"> <span style="color: initial;font-weight:400;">
+            Additional Resources <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+            href="#section-11"></a></span> 
+        </li>
+        <li style="color: #c73030;font-weight: 900;"> <span style="color: initial;font-weight:400;">
+            Focus unit: Jupyter Notebooks <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+            href="#section-12"></a></span> 
+        </li>
+        <li style="color: #c73030;font-weight: 900;"> <span style="color: initial;font-weight:400;">
+            Focus unit: Python / OOP <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+            href="#section-13"></a></span> 
+        </li>
+        <li style="color: #c73030;font-weight: 900;"> <span style="color: initial;font-weight:400;">
+            Focus unit: Julia <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+            href="#section-14"></a></span> 
+        </li>
+        <li style="color: #c73030;font-weight: 900;"> <span style="color: initial;font-weight:400;">
+            Focus unit: R <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+            href="#section-15"></a></span> 
+        </li>
+        <li style="color: #c73030;font-weight: 900;"> <span style="color: initial;font-weight:400;">
+            Focus unit: Software &amp; Data Citation &amp; Licensing (author: Daniel Nüst) <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+            href="#section-16"></a></span> 
+        </li>
+        <li style="color: #c73030;font-weight: 900;"> <span style="color: initial;font-weight:400;">
+            Focus unit: Latex <a style="float: right; display: inline-block; width: 12px; height: 12px; background-color: #3498db; clip-path: polygon(100% 50%, 0 0, 0 100%); margin-left: 10px;" 
+            href="#section-17"></a></span> 
+        </li>
+    </ol>
+    <br>
+    <div class="alert alert-info alert-block">There are separate IVV NWZ self-study courses on Research Software Engineering, Research Data Management, Data Science/Machine Learning, Bioinformatics/Statistics with R and upcoming Linux Administration as well as Research Data Infrastructure/Cloud Computing, i.e. Docker/Kubernetes/WWU-Kube, for more information see here: <a href="https://www.uni-muenster.de/NWZ/en/Angebot/Lehre/index.html">https://www.uni-muenster.de/NWZ/en/Angebot/Lehre/index.html</a></div>
+</div>
