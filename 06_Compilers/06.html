@@ -224,7 +224,22 @@ clean-all :
 		IF CONFIG_ADD is set to yes, add.o is added to the objects.  
     </p>
 	<p>
-		A makefile that you could use for all Fortran 
+		The next makefile is a one that you could use to compile and run any simple Fortran 90
+		 program using gfortran without any editing.
+	</p>
+	<div style="border: 1px solid; border-radius: 5px;padding:1em">
+        <pre><code class="language-makefile">FC = gfortran
+FC_FLAGS = -Wall -Wextra -g -O0 -fbacktrace
+%.exe : %.f90 
+&#09;$(FC) $(FC_FLAGS) -o $@ $<
+&#09;$@
+clean:
+&#09;del *.exe
+.PHONY: clean</code></pre>
+    </div>
+	<p>
+		To compile and run a Fortran 90 file called code.f90, one should just run 
+		<code class="language-makefile">make code.exe</code>. The wildcard <i>%</i> is used  
 	</p>
 	<h5 style="display: inline;">Online resources</h5>
 	<div style="padding-left: 1em;">
@@ -248,6 +263,18 @@ clean-all :
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
                 -- Automation and Make course by the Software Carpentries
+            </div>
+        </div>
+    </div>
+	<div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://makefiletutorial.com">
+                https://makefiletutorial.com
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- Makefile tutorial by Chase Lambert 
             </div>
         </div>
     </div>
