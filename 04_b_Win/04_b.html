@@ -1,47 +1,100 @@
 <div style="max-width: 45em; margin-left: auto; margin-right: auto;">
     <p>
-        Since more than 70% of all computers worldwide run on Microsoft Windows, we will discuss here some relevant things for those using it as their operating system. Unfortunately, many programming tools are designed for Unix-based systems, which can cause a lot of trouble and waste a lot of time. We will list here some tools that can make your life much easier as a Windows user.
+        Since more than 70% of all computers worldwide run on Microsoft Windows, we will discuss here some relevant things for those using it as their operating system. Unfortunately, many programming tools are designed for Unix-based systems, which can cause a lot of trouble and waste a lot of time. We will list here some tools that can make your life much easier as a Windows user. We recommend using only supported versions of Windows, because many tools are not available for older versions. You can check whether your version is supported in the Windows release health page 
+        <a href="https://learn.microsoft.com/en-us/windows/release-health/">
+            https://learn.microsoft.com/en-us/windows/release-health/
+        </a>.
     </p>
     <h4>Package Managers</h4>
     <p>
-        Whether one is used to the Linux Packet managers or not, package managers can save much time. There are three main one available on Windows, i.e. Winget, Chocolatey and Scoop. Winget is made by Microsoft and very simple to use. Chocolatey is made by the community and has more packages available. However, it must first be installed and needs an elevated shell for each package installation. We recommend using Winget, since it should be enough for most users.
+        Whether one is used to the Linux Packet managers or not, package managers can save much time. There are three main ones available on Windows, i.e. Winget, Chocolatey and Scoop. Winget is made by Microsoft, very simple to use and doesn't normally require an installation for Windows 10 and later versions. Chocolatey is made by the community and has more packages available. However, it must first be installed and needs an elevated shell for each package installation. We recommend using Winget, since it should be enough for most users.
     </p>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="">
-                
+            <a href="https://learn.microsoft.com/en-us/windows/package-manager/winget/">
+                https://learn.microsoft.com/en-us/windows/package-manager/winget/
             </a>
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
-                -- 
-            </div>
-        </div>
-    </div>
-    <div style="padding-left: 1em;">
-    <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="">
-                
-            </a>
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-                -- 
+                -- Winget tutorial by Microsoft Learn
             </div>
         </div>
     </div>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="">
-                
+            <a href="https://www.youtube.com/watch?embed=no&amp;v=zOvH-BZ0uIQ">
+                https://www.youtube.com/watch?v=zOvH-BZ0uIQ
             </a>
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
-                -- 
+                -- Winget tutorial by TroubleChute 
             </div>
         </div>
-    </div>   
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://winget.run/">
+                https://winget.run/
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- Winget package search engine
+            </div>
+        </div>
+    </div>
+ 
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://chocolatey.org/install">
+                https://chocolatey.org/install
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- Official Chocolatey installation guide
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://www.youtube.com/watch?embed=no&amp;v=mQI8OWeTpRo">
+                https://www.youtube.com/watch?v=mQI8OWeTpRo
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- Chocolatey tutorial by Chris Titus Tech 
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://chocolatey.org/packages">
+                https://chocolatey.org/packages
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- Chocolatey package search engine
+            </div>
+        </div>
+    </div> 
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://scoop.sh/">
+                https://scoop.sh/
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- Scoop "A command-line installer for Windows"
+                <br> The site has a quick installation guide and a package search engine.
+            </div>
+        </div>
+    </div> 
     <h4>Windows Terminal</h4>
     <p>
         Windows Terminal is a must-have as a Windows user. It is a terminal emulator and an improvement of the old Windows Console. It brings the CLI experience to another level.
@@ -55,6 +108,7 @@
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
                 -- "Install and get started setting up Windows Terminal" tutorial by Microsoft Learn
+                <br>(If you have just read the package manager part, how about using it to install Windows Terminal?)
             </div>
         </div>
     </div>
@@ -72,7 +126,8 @@
     </div>
     <h4>Powershell</h4>
     <p>
-        Windows Powershell is a built-in command line shell in the Windows OS. What differentiates it from the other Windows command line shell "cmd.exe", also known as "Command Prompt", is the fact that it is at the same time a scripting language (like Python e.g.) and also a configuration management framework (it can be used to automatically track and control many computers at once). Thus, it can do everything a cmd can do and much more. This is why it has been named Powershell.
+        Windows Powershell is a built-in command line shell in the Windows OS. Just like the other Windows command line shell "cmd.exe", also known as "Command Prompt", it is a scripting language, which means that it can be used to automate tasks.
+        What differentiates it from cmd is the fact that it is a configuration management framework (it can be used to automatically track and control many computers at once). Thus, it can do everything a cmd can do and much more. This is why it has been named Powershell. cmd.exe scripts are called "batch files" and have the extensions ".cmd" or ".bat", while Powershell scripts have the extension ".ps1".
     </p>
     <p>
         Powershell can be compared to the Linux Bash shell. However, it is systematically different. The output of Bash commands is in text format, while the output of Powershell commands is in object format. This can cause a lot of confusion for those who are used to Bash. Moreover, all the commands in Powershell are named in the form of "verb-noun", which could be helpful for beginners. This is very different from bash though, where the commands are usually one word. For example, "Get-ChildItem" is the equivalent of "ls" in bash (short for <span style="font-style: italic;">list</span>). Still, there are many built-in aliases in Powershell that rename the commands to their Bash equivalent (e.g. "ls" works also on Powershell). 
@@ -135,6 +190,19 @@
     <h5>Online resources:</h5>
     <div style="padding-left: 1em;font-weight: bolder;">
         <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://www.youtube.com/playlist?embed=no&amp;list=PLnK11SQMNnE4vcvuAahz4KhNOS7zOfmB3">
+                https://www.youtube.com/playlist?list=PLnK11SQMNnE4vcvuAahz4KhNOS7zOfmB3
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- "Beginner PowerShell 7 Tutorials" course by JackedProgrammer
+                <br>On this channel, you can find other more advanced Powershell tutorials. 
+            </div>
+        </div>
+    </div> 
+    <div style="padding-left: 1em">
+        <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://www.youtube.com/playlist?embed=no&amp;list=PLCGGtLsUjhm2k22nFHHdupAK0hSNZVfXi">
                 https://www.youtube.com/playlist?list=PLCGGtLsUjhm2k22nFHHdupAK0hSNZVfXi
             </a>
@@ -170,6 +238,19 @@
             </div>
         </div>
     </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://www.powershellgallery.com/">
+                https://www.powershellgallery.com/
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- The PowerShell Gallery: the official powershell package repository
+                <br>The packages are coming from the community and are not always verified by Microsoft.
+            </div>
+        </div>
+    </div>
 
     <h5>Translate Bash to Powershell:</h5>
 
@@ -197,31 +278,110 @@
             </div>
         </div>
     </div>
-    <h4>Linux Environment within Windows Computer</h4>
+    <h4>Linux Environment within a Windows Computer</h4>
     <p>
         As mentioned above, Windows is often not the OS many programming languages are built for. Now we will discuss the ways one can solve this problem.
     </p>
-    <h5>MinGW</h5>
-    <p>
-
-    </p>
+    
     <h5>WSL</h5>
     <p>
-        Windows Subsystem for Linux is a Microsoft service that allows you to run a Linux OS within Windows. This has been a revolutionary step from Windows, as it allows one to have the best of both Worlds. This has improved further with the WSL 2, with which one can open many GUIs. There are many WSL distributions available directly in the Microsoft Store. 
+        Windows Subsystem for Linux is a Microsoft service that allows you to run a Linux OS within Windows. This has been a revolutionary step from Windows, as it allows one to have the best of both Worlds. This has improved further with the WSL 2, with which one can open many GUIs. There are many WSL distributions available directly in the Microsoft Store. We recommend using Ubuntu, as it is the most popular Linux distribution and has the most support.
     </p>
+    <p>
+        The following tutorials may get a bit advanced for beginners, the first parts of each tutorial are usually enough for most users. More advanced users can continue with the rest.
+    </p>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://learn.microsoft.com/en-us/windows/wsl/setup/environment">
+                https://learn.microsoft.com/en-us/windows/wsl/setup/environment
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- "Set up a WSL development environment" tutorial by Microsoft Learn
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://www.youtube.com/watch?embed=no&amp;v=vxTW22y8zV8"> 
+                https://www.youtube.com/watch?v=vxTW22y8zV8
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- WSL 2 tutorial by NetworkChuck 
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://www.youtube.com/watch?embed=no&amp;v=qYlgUDKKK5A"> 
+                https://www.youtube.com/watch?v=qYlgUDKKK5A
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- WSL 1 tutorial by NeuralNine
+
+            </div>
+        </div>
+    </div>
+    <h5>MinGW</h5>
+    <p>
+        MinGW (Minimalist GNU for Windows) is a tool that allows you to run many Linux packages natively on Windows. For example, one could use the GNU compilers like gcc for C and g++ for C++. This is a good alternative for those who don't want to use WSL. However, it is limited as one can only use the packages that are offered by MinGW.
+    </p>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://sourceforge.net/projects/mingw/">
+                https://sourceforge.net/projects/mingw/
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- MinGW download link
+            </div>
+        </div>
+    </div> 
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://www.youtube.com/watch?embed=no&amp;v=zbAb2O0QOq8"> 
+                https://www.youtube.com/watch?v=zbAb2O0QOq8
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                --  MinGW installation tutorial by CS Corner Sunita rai
+                <br> The video tests the installation with the compilation of a simple C program
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- 
-<div style="padding-left: 1em;">
-    <div style="text-indent: -1em;padding-left: 1em;">
-        <a href="">
-            
-        </a>
-    </div>
-    <div style="padding-left: 2em;text-indent: -1em;">
-        <div>
-            -- 
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="">
+                
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- 
+            </div>
         </div>
     </div>
-</div> 
+  
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://www.youtube.com/watch?embed=no&amp;v="> 
+                https://www.youtube.com/watch?v=
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                --  
+            </div>
+        </div>
+    </div>
 -->
