@@ -82,18 +82,30 @@
     <p>
         <code>--rm</code> sets automatic deletion for the container once it is stopped.
         <code>--name</code> sets a name for the container we are starting.
-        <code>-v ${pwd}:/home/Tom</code> mounts the current directory in the host system to the user folder Tom in the container.
+        <code>-v ${pwd}:/home/Tom</code> mounts the current working directory in the host system to the user folder Tom in the container.
         <code>-it</code> lets us interact with the container.
         <code>/bin/bash</code> is the command we use to start a bash shell from within the container.
     </p>
     <p>
+        Note: one also mount the container to a volume
+    </p>
+    <p>
         The second method, that is copying data between the container and the host system, is done when the container is already running. Analogous to the first option, let us start the container and then copy the current directory to the user folder Tom in the container:
     </p>
-    <pre>
-        <code>
+    <!-- <pre>        <code>
 docker run --rm --name MyPython2 -d -it python:2.7 /bin/bash
 docker cp ${pwd} MyPython2:/home/Tom 
 docker exec -it MyPython2 /bin/bash
+        </code>
+    </pre> -->
+    <pre style="background-color: #f5f5f5;
+                border: 1px solid #ccc;
+                padding: 10px;
+                border-radius: 5px;">
+        <code>
+    docker run --rm --name MyPython2 -d -it python:2.7 /bin/bash
+    docker cp ${pwd} MyPython2:/home/Tom 
+    docker exec -it MyPython2 /bin/bash
         </code>
     </pre>
     <p>
