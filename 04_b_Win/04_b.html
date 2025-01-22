@@ -1,6 +1,170 @@
-<p dir="ltr" style="text-align: left;"><strong>This section is under construction, but here is some material on the topic:</strong><br></p>
-<p dir="ltr" style="text-align: left;">Some general thoughts on this (Germany only): <a href="https://www.linux-community.de/ausgaben/linuxuser/2007/04/bash-vs-powershell/">https://www.linux-community.de/ausgaben/linuxuser/2007/04/bash-vs-powershell/</a></p>
-<p dir="ltr" style="text-align: left;">Install Powershell on Linux: <a href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-linux?view=powershell-7.1">https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-linux?view=powershell-7.1</a></p>
-<p dir="ltr" style="text-align: left;">Use Bash commands in Powershell via WSL: <a href="https://devblogs.microsoft.com/commandline/integrate-linux-commands-into-windows-with-powershell-and-the-windows-subsystem-for-linux/">https://devblogs.microsoft.com/commandline/integrate-linux-commands-into-windows-with-powershell-and-the-windows-subsystem-for-linux/</a></p>
-<p dir="ltr" style="text-align: left;">Translate Bash to Powershell: <a href="https://mathieubuisson.github.io/powershell-linux-bash/">https://mathieubuisson.github.io/powershell-linux-bash/</a> and <a href="https://www.phillipsj.net/posts/bash-to-powershell-simple-scripts/">https://www.phillipsj.net/posts/bash-to-powershell-simple-scripts/</a></p>
-<p dir="ltr" style="text-align: left;"><br></p>
+<div style="max-width: 50em;margin-right: auto;margin-left: auto;">
+    <p>
+        <strong>
+            What is Linux?
+        </strong>
+    </p>
+    <p>
+        Linux is an open source operating system (OS) alternative to DOS/Windows and MacOS. It has pretty much the same look-and-feel as Windows nowadays, if you like. Unlike Windows or MacOS there is not one current version of Linux but a whole range of '<em>distributions</em>', which has it's own advantages and disadvantages. Some distributions are <em>community-driven</em> but <em>commercially backed</em>, i.e. supported by IT companies (the name of the company is put in parenthesis), like Fedora (Red Hat), openSUSE (SUSE), Ubuntu (Canonical Ltd.) and they offer pretty much all the functionality of Windows, plus access to the world of Linux via package management systems that allow you to install new software tools with one line in your terminal. Some distributions are <em>entirely community-driven</em> , like Debian, Slackware, Gentoo, or Arch Linux and they oftentimes offer just a basic system and a package management system. In addition, there are many special-purpose OSs like Android, which are based on Linux.
+    </p>
+    <p>
+        While the desktop consumer market is clearly dominated by Windows, a lot of 'serious' (and loads of not-so-serious) IT-stuff beyond this is ususally done under UNIX/Linux, especially in the area of embedded and/or scientific computing and first of all high-performance computing (HPC). A core reason for this is that the open source approach is self-enhancing: evermore useful tools are developed on the basis of easily accessible existing tools.
+    </p>
+    <p>
+        A list of Linux distributions can be found on Wikipedia:
+        <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions">
+            https://en.wikipedia.org/wiki/List_of_Linux_distributions
+        </a>
+    </p>
+    <p>
+        (I would recommend to choose on of the more commonly used distributions like
+        Suse, see
+        <a href="https://www.opensuse.org/" onclick="window.open('https://www.opensuse.org/', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;">
+            https://www.opensuse.org/
+        </a>
+        , or Ubuntu, see
+        <a href="https://ubuntu.com/">https://ubuntu.com/</a>
+        .)
+    </p>
+    <p>
+        <strong>
+            How to run Linux?
+        </strong>
+    </p>
+    <p>
+        There are many ways how to run Linux and Windows:
+        The most obvious one is to get a second machine. The probably less obvious one is that
+        you can install more than one operating system on a machine, e.g. as dual boot for Linux and Windows. But as nowadays
+        virtualization technology has become quite good, it is usually easier to run either Linux or Windows in a virtual
+        machine on either Windows or Linux, or maybe on a distant (e.g. WWU-IT or IVV NWZ) server. A very nice option for NWZ
+        Windows machines is the installation of the Windows subsystem for Linux (WSL2), which allows
+        running
+        certain Linux distributions within a subsystem of your NWZ Windows (you will have to ask your group Admin for the
+        installation):
+        <br>
+        <div>
+            <a href="https://docs.microsoft.com/de-de/windows/wsl/install-win10">
+                https://docs.microsoft.com/de-de/windows/wsl/install-win10
+            </a>
+            <br>
+        </div>
+        <div>
+            (Currently, graphics are not availabe, but GUI access is upcoming. A nice addition is WindowsTerminal, which
+            
+            allows you to have PowerShell and Bash terminals side by side.)
+        </div>
+    </p>
+    <p>
+        <strong>
+            What is a CLI?
+            <br>
+        </strong>
+    </p>
+    <p>
+        While you can use modern Linux systems like Windows via graphical user interfaces (GUIs), the real strength of Linux is the fact that really everything can be done via command-line-interfaces (CLIs), which is usually a terminal, where you can type Bash ('Bourne-again shell') commands to modify data, processes etc. Why would you want to do that? First, you can avoid GUIs, which saves resources and is possible also on (even remote) computers where no graphical output is available. But it is even more important that, you can put your commands into scripts (small programs), to automate the work you are doing and to build up a tool box of scripts using simpler scripts, and so an, based on the basic Bash commands. 
+    </p>
+    <p>
+        
+        This philosophy of having small programs for specific tasks and solving more complex problems by 'piping' (handing over) data from one to the other is the core of Bash scripting. You should always strive to write scripts instead of doing things by hand, to increase the reproducibility of your work: if you make errors by hand, they are often basically impossible to find, but if your script contains an error, the problem is much easier to spot, as it occurs in a regular fashion. Also, if things go wrong, with a script you can simply delete the whole lot and easily set up directories, files etc. again (and again, ...).&nbsp; 
+    </p>
+    <p>
+        BTW: Windows offers PowerShell for the same purpose, but unlike Linux, where you have a simple shell at the bottom and would (according to the tool box philosophy) turn to a proper scripting language like Python for more complex tasks, PowerShell is a somewhat unfortunate mix-up of a basic shell and a more powerful scripting language. (Feel free to disagree, of course!)
+    </p>
+    <p>
+        To feel at home on a Linux system you will have to know a certain set of shell commands, so that you can move to and
+        from directories and manipulate files etc. Every Bash course (including the ones listed below) will guide you
+        through this set of commands.
+    </p>
+    <p>
+        Here is a list of what you <em>have to</em> know:
+    </p>
+    <ul>
+        <li>ls</li>
+        <li>cd</li>
+        <li>cp</li>
+        <li>mv</li>
+        <li>rm</li>
+        <li>md</li>
+        <li>rmdir</li>
+        <li>mkdir</li>
+        <li>echo</li>
+    </ul>
+    <p>
+        Here is a list of what you <em>should</em> know:
+    </p>
+    
+    <ul style="display: grid; grid-template-columns: repeat(3, 1fr);">
+        <li>cat</li>
+        <li>cut</li>
+        <li>paste</li>
+        <li>head</li>
+        <li>tail</li>
+        <li>sort</li>
+        <li>uniq</li>
+        <li>wc</li>
+        <li>seq</li>
+        <li>tr</li>
+        <li>bc</li>
+        <li>man</li>
+        <li>chmod</li>
+        <li>diff</li>
+        <li>find</li>
+        <li>tar</li>
+        <li>rsync</li>
+        <li>ssh</li>
+        <li>scptop</li>
+        <li>ps</li>
+        <li>kill</li>
+        <li>df</li>
+        <li>du</li>
+        <li>hostname</li>
+        <li>date</li>
+        <li>pwd</li>
+    </ulstyle>
+    <p>
+        And this is a list of things you <em>can never learn enough</em> about:
+        <br>
+    </p>
+    <ul>
+        <li>grep (textsuche)</li>
+        <li>sed (zeileneditor)</li>
+        <li>gawk (textprozessor)</li>
+    </ul>
+    <p>
+        In addition, you will have to learn how to assign variables, and how to do <em>loops</em> (do this so and so often ...) and how to use <em>conditions</em> (do this if ...) in your bash scripts.
+        <br>
+    </p>
+    <p>
+        <strong>
+            Vi
+        </strong>
+    </p>
+    <p>
+        Another central tool is the editor Vi, because work in a shell usually means the editing of files and Vi is the editor you will find on literally every
+        machine. Vi has a marvelous list of functions, but if you don't like Vi, I would still recommend learning
+        how to use it to just edit files (which is easy, so don't worry).
+        <br>
+    </p>
+    <p>
+        <strong>
+            SSH
+        </strong>
+    </p>
+    <p>
+        A very useful tool is SSH ('secure shell') which allows you to access remote computers from your shell via a cryptographic network protocol. It works as easy as
+        'ssh user@remotecomputer' and afterwards whatever you type will be executed on the distant machine. NWZ computers
+        usually do not allow direct SSH access from outside WWU, but you can first hop to the WWU-IT ssh gateway (e.g.
+        zivlts3.uni-muenster.de ) and then make another hop to the machine you want to access (it still has to allow for SSH
+        access).
+    </p>
+    <p>
+        To learn more about specific commands you can either:
+    </p>
+    <ul>
+        <li>call the command with the -h or --help option (good to look up
+            certain options you always forget again)</li>
+        <li>type info &lt;command&gt; or man &lt;command&gt; (good to get a basic idea
+            of the usage)</li>
+        <li>directly google whatever you are interested in, e.g. "bash echo" etc.</li>
+    <ul>
+</div>
