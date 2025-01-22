@@ -1,0 +1,345 @@
+<p dir="ltr" style="text-align: left">
+    <span class="" style="color: rgb(51, 51, 51)">
+        A lot of work in RSEng (and arguably most of it in science-related RSEng) is done under Linux and making use of
+        command line interfaces (CLIs). You should therefore try to get familiar with both before starting to work on
+        the following sections.
+    </span>
+</p>
+<p dir="ltr" style="text-align: left"><strong>Some notes on Linux:</strong></p>
+<p dir="ltr" style="text-align: left">
+    Linux is an open source operating system (OS) alternative to DOS/Windows and MacOS. It has pretty much the same
+    look-and-feel
+    <span class="" style="color: rgb(51, 51, 51)">as</span>
+    Windows nowadays, if you like. Unlike Windows or MacOS there is not one current version of Linux but a whole range
+    of '
+    <strong>distributions</strong>
+    ', which has it's own
+    <span class="" style="color: rgb(51, 51, 51)">advantages and disadvantages</span>
+    . Some distributions are
+    <strong>community-driven but</strong>
+    <strong>commercially backed</strong>
+    , i.e. supported by IT companies (the name of the company is put in parenthesis), like Fedora (Red Hat), openSUSE
+    (SUSE), Ubuntu (Canonical Ltd.) and they offer pretty much all the functionality of Windows, plus access to the
+    world of Linux via package management systems that allow you to install new software tools with one line in your
+    terminal. Some distributions are
+    <strong>entirely community-driven</strong>
+    , like Debian, Slackware, Gentoo, or Arch Linux and they
+    <span class="" style="color: rgb(51, 51, 51)">oftentimes</span>
+    offer just a basic system and a package management system. In addition, there are many special-purpose OSs like
+    Android, which are
+    <span class="" style="color: rgb(51, 51, 51)">based on Linux.</span>
+    While the desktop consumer market is clearly dominated by Windows, a lot of 'serious' (and loads of not-so-serious)
+    IT-stuff beyond this is ususally done under UNIX/Linux, especially in the area of embedded and/or scientific
+    computing and first of all high-performance computing (HPC). A core reason for this is that the open source approach
+    is self-enhancing: evermore useful tools are developed on the basis of easily accessible existing tools.
+    <br />
+</p>
+<p dir="ltr" style="text-align: left"></p>
+<div>
+    A list of Linux distributions can be found on Wikipedia:
+    <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions">
+        https://en.wikipedia.org/wiki/List_of_Linux_distributions
+    </a>
+</div>
+<div>
+    (I would recommend to choose on of the more commonly used distributions like
+    <span class="" style="color: rgb(239, 69, 64)"></span>
+    Suse, see
+    <a
+        href="https://www.opensuse.org/"
+        onclick="window.open('https://www.opensuse.org/', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;"
+    >
+        https://www.opensuse.org/
+    </a>
+    , or Ubuntu, see
+    <a href="https://ubuntu.com/">https://ubuntu.com/</a>
+    .)
+</div>
+<div><br /></div>
+There are many ways how to run Linux and Windows:
+<span class="" style="color: rgb(239, 69, 64)">
+    <span class="" style="color: rgb(51, 51, 51)">The most obvious one is to;</span>
+</span>
+get a second machine.
+<span class="" style="color: rgb(239, 69, 64)">
+    <span class="" style="color: rgb(51, 51, 51)">The probably less obvious one is that;</span>
+</span>
+you can install more than one operating system on a machine, e.g. as dual boot for Linux and Windows. But as nowadays
+virtualization technology has become quite good, it is usually easier to run either Linux or Windows in a virtual
+machine on either Windows or Linux, or maybe on a distant (e.g. WWU-IT or IVV NWZ) server. A very nice option for NWZ
+Windows machines is the installation of the Windows subsystem for Linux (WSL2), which allows
+<span class="" style="color: rgb(51, 51, 51)">running</span>
+certain Linux distributions within a subsystem of your NWZ Windows (you will have to ask your group Admin for the
+installation):
+<p></p>
+<div>
+    <a href="https://docs.microsoft.com/de-de/windows/wsl/install-win10">
+        https://docs.microsoft.com/de-de/windows/wsl/install-win10
+    </a>
+    <br />
+</div>
+<div>
+    (Currently, graphics are not availabe, but GUI access is upcoming. A nice addition is WindowsTerminal, which
+    <span class="" style="color: rgb(239, 69, 64)"></span>
+    allows you to have PowerShell and Bash terminals side by side.)
+</div>
+<br />
+<div>
+    <strong>
+        Some notes on CLIs, Bash and VI:
+        <br />
+    </strong>
+</div>
+<p></p>
+<p dir="ltr" style="text-align: left"></p>
+While you can use modern Linux systems like Windows via graphical user interfaces (GUIs), the real strength of Linux is
+the fact that really everything can be done via command-line-interfaces (CLIs), which is usually a terminal, where you
+can type Bash ('Bourne-again shell') commands to modify data, processes etc. Why would you want to do that? First, you
+can avoid GUIs, which saves resources and is possible also on (even remote) computers where no graphical output is
+available. But
+<span class="" style="color: rgb(239, 69, 64)"><span class="" style="color: rgb(51, 51, 51)">it is</span></span>
+even more important
+<span class="" style="color: rgb(51, 51, 51)">that</span>
+, you can put your commands into scripts (small programs), to automate the work you are doing and to build up a tool box
+of scripts using simpler scripts, and so an, based on the basic Bash commands. This philosophy of having small programs
+for specific tasks and solving more complex problems by 'piping' (handing over) data from one to the other is the
+<span class="" style="color: rgb(51, 51, 51)">core</span>
+of Bash scripting. You should always strive to write scripts instead of doing things by hand,
+<span class="" style="color: rgb(239, 69, 64)"></span>
+to increase the reproducibility of your work: if you make errors by hand, they are often basically impossible to find,
+but if your script contains an error, the problem is much easier to spot,
+<span class="" style="color: rgb(51, 51, 51)"></span>
+<span class="" style="color: rgb(51, 51, 51)">as</span>
+it occurs in a regular fashion. Also, if things go wrong, with a script you can simply delete the whole lot and easily
+set up directories, files etc. again (and again, ...).&nbsp; BTW: Windows offers PowerShell for the same purpose, but
+unlike Linux, where you have a simple shell at the bottom and would (according to the tool box philosophy) turn to a
+proper scripting language like Python for more complex tasks, PowerShell is a somewhat unfortunate mix-up of a basic
+shell and a more powerful scripting language. (Feel free to disagree, of course!)
+<br />
+<p dir="ltr"></p>
+<p dir="ltr">
+    To feel at home on a Linux system you will have to know a certain set of shell commands, so that you can move to and
+    from directories and manipulate files etc. Every Bash course (including the ones listed below) will guide you
+    through this set of commands.
+</p>
+<p dir="ltr">
+    <strong>Here is a list of what you have to know:</strong>
+    ls, cd, cp, mv, rm, md, rmdir, mkdir, echo
+</p>
+<p dir="ltr">
+    <strong>Here is a list of what you should now:</strong>
+    cat, cut, paste, head, tail, sort, uniq, wc, seq, tr, bc, man, chmod, diff, find, tar, rsync, ssh, scptop, ps, kill,
+    df, du, hostname, date, pwd, ...
+</p>
+<p dir="ltr">
+    <strong>And this is a list of things you can never learn enough about:</strong>
+    grep (textsuche), sed (zeileneditor), gawk (textprozessor), ...
+    <br />
+</p>
+<p dir="ltr">
+    In addition, you will have to learn how to assign variables, and how to do
+    <strong>loops</strong>
+    (do this so and so often ...) and how to use
+    <strong>conditions</strong>
+    (do this if ...) in your bash scripts.
+    <br />
+</p>
+<p dir="ltr"></p>
+<p dir="ltr">
+    Another central tool is the
+    <strong>editor Vi</strong>
+    , because work in a shell usually means the editing of files and Vi is the editor you will find on literally every
+    machine. Vi has a marvelous list of functions, but if you don't like Vi, I would still recommend
+    <span class="" style="color: rgb(51, 51, 51)">learning</span>
+    how to use it to just edit files (which is easy, so don't worry).
+    <br />
+</p>
+A very useful tool is
+<strong>SSH ('secure shell')</strong>
+which allows you to access remote computers from your shell via a cryptographic network protocol. It works as easy as
+'ssh user@remotecomputer' and afterwards whatever you type will be executed on the distant machine. NWZ computers
+usually do not allow direct SSH access from outside WWU, but you can first hop to the WWU-IT ssh gateway (e.g.
+zivlts3.uni-muenster.de ) and then make another hop to the machine you want to access (it still has to allow for SSH
+access).
+<br />
+<p></p>
+To learn more about specific commands you can either: 1. call the command with the -h or --help option (good to look up
+certain options you always forget again), 2. type info &lt;command&gt; or man &lt;command&gt; (good to get a basic idea
+of the usage), or directly google whatever you are interested in, e.g. "bash echo" etc.
+<br />
+<div><br /></div>
+<div>So, here are the online resources which will help you to learn all of this:</div>
+<div>
+    (There is a gigantic number of such tutorials on the web, but I very much like the HPC wiki, which is partly the
+    work of Holger Angenent from WWU-IT.)
+    <br />
+</div>
+<div><br /></div>
+<div>
+    <strong>
+        Linux tutorial from HPC.nrw:
+        <br />
+    </strong>
+</div>
+<div>
+    <a href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC">
+        https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC
+    </a>
+    <strong><br /></strong>
+</div>
+<div>
+    <strong><br /></strong>
+</div>
+<div><strong>including CLI/VI/Bash tutorials:</strong></div>
+<div>
+    <a href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/The_Command_Line">
+        https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/The_Command_Line
+    </a>
+</div>
+<div>
+    <a href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/The_vim_text_editor">
+        https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/The_vim_text_editor
+    </a>
+    <br />
+</div>
+<div>
+    <a href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/Shell_scripting">
+        https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/Shell_scripting
+    </a>
+    <strong></strong>
+</div>
+<div><strong></strong></div>
+<div>
+    <div>
+        <a href="https://hpc-wiki.info/hpc/Shell">https://hpc-wiki.info/hpc/Shell</a>
+        (a small command reference listing)
+        <br />
+    </div>
+    <strong></strong>
+</div>
+<div>
+    <strong><br /></strong>
+</div>
+<div>
+    <a
+        href="https://hpc-wiki.info/hpc/HPC_Wiki"
+        onclick="window.open('https://hpc-wiki.info/hpc/HPC_Wiki', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;"
+    >
+        https://hpc-wiki.info/hpc/HPC_Wiki
+    </a>
+    -- HPR.nrw
+    <span class="" style="color: rgb(51, 51, 51)">offers</span>
+    many more tutorials etc.!
+    <p dir="ltr">
+        <a
+            href="https://www.youtube.com/channel/UCQVg7fuJyBD9PDsgnZNwifA"
+            onclick="window.open('https://www.youtube.com/channel/UCQVg7fuJyBD9PDsgnZNwifA', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;"
+        >
+            https://www.youtube.com/channel/UCQVg7fuJyBD9PDsgnZNwifA
+        </a>
+        -- and this is their Youtube-Channel ...
+    </p>
+    <strong></strong>
+    <strong>
+        Other Linux, CLI, VI, Bash tutorials:
+        <br />
+    </strong>
+</div>
+<strong></strong>
+<div>
+    <a href="http://swcarpentry.github.io/shell-novice/">http://swcarpentry.github.io/shell-novice/</a>
+    - Software carpentry shell scripting course
+</div>
+<div>
+    <a href="https://scicomp.aalto.fi/scicomp/shell/">https://scicomp.aalto.fi/scicomp/shell/</a>
+    -- Aalto scientific computing shell scripting crash course
+</div>
+<div>
+    <a href="https://scicomp.aalto.fi/training/linux-shell-tutorial/">
+        https://scicomp.aalto.fi/training/linux-shell-tutorial/
+    </a>
+    -- Aalto scientific computing shell scripting tutorial
+</div>
+<div>
+    <div>
+        <a href="https://www.tutorialspoint.com/execute_bash_online.php">
+            https://www.tutorialspoint.com/execute_bash_online.php
+        </a>
+        -- online shell
+    </div>
+    <div>
+        <a href="https://www.shellcheck.net/">https://www.shellcheck.net/</a>
+        -- shell script checks
+    </div>
+    <br />
+</div>
+<div>
+    <strong>
+        ... and if you like certificates:
+        <br />
+    </strong>
+</div>
+<div>
+    <strong>
+        <div>
+            <span style="font-weight: normal">
+                <a href="https://www.linkedin.com/learning/linux-desktop-systemadministration-grundkurs">
+                    https://www.linkedin.com/learning/linux-desktop-systemadministration-grundkurs
+                </a>
+                <br />
+            </span>
+        </div>
+        <span style="font-weight: normal"></span>
+        <div>
+            <span style="font-weight: normal">
+                (and afterwards:
+                <a
+                    href="https://www.linkedin.com/learning/linux-administration-fur-fortgeschrittene-linux-foundation-certified-engineer-lfce"
+                >
+                    https://www.linkedin.com/learning/linux-administration-fur-fortgeschrittene-linux-foundation-certified-engineer-lfce
+                </a>
+                )
+                <br />
+            </span>
+        </div>
+        <div><strong></strong></div>
+    </strong>
+    <strong><br /></strong>
+</div>
+<div>
+    <strong>A final word on CLIs:</strong>
+    <br />
+</div>
+<div>
+    Really do learn proper 10 finger typing! Work through one of these pages for maybe 10 minutes each day for one
+    semester (do it right after reading Spiegel Online in the morning!) and you will be done:
+    <a
+        href="https://www.typing.com/"
+        onclick="window.open('https://www.typing.com/', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;"
+    >
+        https://www.typing.com/
+    </a>
+    ,
+    <a
+        href="https://www.tipp10.com/de/online/"
+        onclick="window.open('https://www.tipp10.com/de/online/', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;"
+    >
+        https://www.tipp10.com/de/online/
+    </a>
+    ,
+    <a
+        href="https://www.schreibtrainer-online.de/DE/Aspx/Start.aspx"
+        onclick="window.open('https://www.schreibtrainer-online.de/DE/Aspx/Start.aspx', '', 'width=800,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;"
+    >
+        https://www.schreibtrainer-online.de/DE/Aspx/Start.aspx
+    </a>
+    ' , etc.
+    <br />
+</div>
+<div>
+    <br />
+    <p dir="ltr">
+        <strong>A final word on Linux:</strong>
+        <a href="https://xkcd.com/456/">https://xkcd.com/456/</a>
+    </p>
+</div>
