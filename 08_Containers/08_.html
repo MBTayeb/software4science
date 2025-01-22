@@ -1,6 +1,9 @@
 <div style="max-width: 45em; margin-left: auto; margin-right: auto;">
     <p>
-        When Continuous Integration was introduced above, the main idea behind containers was explained. Here, you can dive deeper in this topic.
+        When Continuous Integration was introduced above, the main idea behind containers was explained. Here, you can dive deeper in this topic. To be able to run containers on your computer, we recommend installing <span style="font-style: italic;">Docker Desktop</span> software. It is available for Linux, Mac OS and Windows. 
+    </p>
+    <p>
+        Beside Continuous Integration, containers may make your life much easier. Whether a compiler is not available in your OS, or you don't want to waste time installing another version of it, containers can save you a lot of time. <span style="font-style: italic;">VS Code Dev Containers</span> brings the ease to another level, as only a couple of clicks are enough to set everything.
     </p>
     <h4>Links:</h4>
     <div style="padding-left: 1em;">
@@ -76,42 +79,58 @@
             </div>
         </div>
     </div>
+</div>
+<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
     <p>
-        To access JupyterLab or another web app running within the container, it is necessary to publish ports from the container to the host system. To understand this, some background in networking is needed. An IP address is the identifier of a computer in a network. But when one wants to share data between two entities within a network, we want it to go exactly where it is needed, that is why we need ports. Ports allow the system to specify the origin and the destination of data. Since the container is isolated from the computer, they can't share information. Publishing a port binds the port in the container to another one and thus allows everybody in the network to access the service, unless a firewall forbids it. You can get more information in this video<a href="https://www.youtube.com/watch?embed=no&amp;v=g2fT-g9PX9o">
+        Like mentioned before, containers are made from an image. Images are themselves built from a <span style="font-style: italic;">Dockerfile</span>. In fact, a dockerfile defines an image. In other word, it is a script including all the commands needed for the image. It must start with the command 
+        <code>FROM <span style="font-style: italic;">image:tag</style></code> to specify the name of the parent image and its version. If no tag is specified, the latest version is used.
+        <br><code>RUN <span style="font-style: italic;">command</style></code> is used to run some command inside the container, e.g. install a package. 
+        <br><code>WORKDIR <span style="font-style: italic;">path</style></code> specifies the path as the working directory inside the container.
+        <br><code>USER <span style="font-style: italic;">user[:group]</style></code></code> sets the user for the following commands and optionally the group.
+        <br><code>COPY</code> copies file from a path in the host system to a path in the container.
+        <br><code>ENTRYPOINT</code> sets the default command to run when the container starts.
+        <br>More details can be found in the official documentation <a href="https://docs.docker.com/reference/dockerfile/">https://docs.docker.com/reference/dockerfile/</a>. 
+    </p>
+    <p>
+        <code>docker build <span style="font-style: italic;">path</style></code> is used to build an image with the Dockerfile, which should be located in the specified path, named exactly "Dockerfile" and thus without an extension. <code>-t <span style="font-style: italic;">image:tag</style></code> flag sets the name and the version of the new image.  
+    </p>
+    <p>
+        A user is either specified with a username or a <span style="font-style: italic;">uid</span>, which is a unique number for the user. Analogously, the group can also be specified with a <span style="font-style: italic;">gid</span>. Non-root users have a uid and a gid that are higher or equal to 1000, such that the first user is 1000:1000. It is very important to think about which user rights are needed. Installing new packages inside the container needs the <code>root</code> user. However, it is not recommended to run a container with a root user, because it would have access to the host system. A good strategy would be to set the root user in the beginning of the Dockerfile to be able to install needed packages and select another user in the last lines of the Dockerfile, i.e. when root rights are not needed anymore. Moreover, one should know which user is in the parent image. If the user is root, it is not needed to set it again in the beginning of the Dockerfile. Furthermore, if the parent image specifies a non-root user, it would be practical to set the same one in the end of the Dockerfile, or else a new user should be created.
+    </p>
+    <p>
+        Writing a Dockerfile is not necessary, as one could use an image from the Docker Hub <a href="https://hub.docker.com/">https://hub.docker.com/</a> . But this comes to expense of flexibility and customization.
+    </p>
+    <p>
+        Next, we would like to make a container from the image. This is done with the command <code>docker run <span style="font-style: italic;">image:tag</style></code>.
+        <br><code>--rm</code> sets automatic deletion for the container once it is stopped.
+        <br><code>--name <span style="font-style: italic;">Container_name</style></code> sets a name for the container we are starting.
+        <br><code>-it</code> lets us interact with the container.
+        <br><code>-d</code> is used to run the container in the background.
+        <br>To automatically run something when the container starts, one should specify it in the end of the run command, e.g. one could add <code>/bin/bash</code> in the end  to start a bash shell from within the container.
+        <br>More details can be found in the official documentation <a href="https://docs.docker.com/reference/cli/docker/container/run/">https://docs.docker.com/reference/cli/docker/container/run/</a>. 
+    </p>
+    <p>
+        To access JupyterLab or another web app running within the container, it is necessary to publish ports from the container to the host system. This is done with 
+        <code>-p <span style="font-style: italic;">10000:8888</style></code> to publish the port 8888 from the container to the port 10000 in the host system.
+        To understand this, some background in networking is needed. An IP address is the identifier of a computer in a network. But when one wants to share data between two entities within a network, we want it to go exactly where it is needed, that is why we need ports. Ports allow the system to specify the origin and the destination of data. Since the container is isolated from the computer, they can't share information. Publishing a port binds the port in the container to another one and thus allows everybody in the network to access the service, unless a firewall forbids it. You can get more information in this video<a href="https://www.youtube.com/watch?embed=no&amp;v=g2fT-g9PX9o">
             https://www.youtube.com/watch?v=g2fT-g9PX9o
         </a>
     </p>
+    
     <p>
-        Beside Continuous Integration, containers may make your life much easier. Whether a compiler is not available in your OS, or you don't want to waste time installing another version of it, containers can save you a lot of time. <span style="font-style: italic;">VS Code Dev Containers</span> brings the ease to another level, as only a couple of clicks are enough to set everything.
+        To transfer data between the host system and the container, you can either copy the data or mount it. The first method, can be done in the Dockerfile before the image is built, as we have seen above, or when the container is already running, which is done with the command 
+        <code>docker cp <span style="font-style: italic;">path_host Container_name:path_container</style></code> .<br>
+        Switching the order of the paths would copy the data from the container to the host system. Copying within the Dockerfile has also the advantage that the owner of the copied data can be set to the user in the container with the flag.
     </p>
     <p>
-        To transfer data between the container and the host system, you can either mount data or copy it. To work with python 2.7 for example, the first option is done while starting the container. The following command mounts the current directory to the user folder Tom in the container:
-    </p>
-    <!-- <div style="background-color: #95A5A6 ;"> -->
-    <div style="border: 1px solid; border-radius: 5px;padding:1em">
-        <code>docker run --rm --name MyPython2 -v ${pwd}:/home/Tom -it python:2.7 /bin/bash</code>
-    </div>
-    <p>
-        <code>--rm</code> sets automatic deletion for the container once it is stopped.<br>
-        <code>--name</code> sets a name for the container we are starting.<br>
-        <code>-v ${pwd}:/home/Tom</code> mounts the current working directory in the host system to the user folder Tom in the container.<br>
-        <code>-it</code> lets us interact with the container.<br>
-        <code>/bin/bash</code> is the command we use to start a bash shell from within the container.
+        The second method would be to mount a path in the host system to a path in the container. It is done in the docker run command with the flag <code>-v <span style="font-style: italic;">path_host:path_container</style></code>.
+        This means that the container would have access to the data in the specified path in the host system.
     </p>
     <p>
-        Note: Instead of a path in the host system, the container can also be mounted to a volume, which is a directory that is easily accessible for containers. It allows for sharing and persisting data between containers, providing flexibility and scalability in managing data within a containerized environment. (Read more in <a href="https://docs.docker.com/storage/volumes/">https://docs.docker.com/storage/volumes/</a>)
+        Note: Instead of a path in the host system, data can also be transferred (copied or mounted) to the container from a volume, which is a directory that is easily accessible for containers. It allows sharing and persisting data between containers in a flexible and scalable way. (Read more in <a href="https://docs.docker.com/storage/volumes/">https://docs.docker.com/storage/volumes/</a>)
     </p>
+    
     <p>
-        The second method, that is copying data between the container and the host system, is done when the container is already running. Analogous to the first option, let us start the container and then copy the current directory to the user folder Tom in the container:
-    </p>
-    <!-- <div class="alert"> -->
-    <div style="border: 1px solid; border-radius: 5px;padding:1em">
-        <code>docker run --rm --name MyPython2 -d -it python:2.7 /bin/bash</code><br>
-        <code>docker cp ${pwd} MyPython2:/home/Tom</code><br>
-        <code>docker exec -it MyPython2 /bin/bash</code>
-    </div>
-    <p>
-        We use <code>-d</code> while starting the container to run it in the background.
-        The last line is needed to access and interact with the running container.
+        Last but not least, commands can be executed in the container using the host terminal with <br><code>docker exec <span style="font-style: italic;">Container_name command</style></code>
     </p>
 </div>
