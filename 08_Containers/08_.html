@@ -70,18 +70,34 @@
         </a>
     </p>
     <p>
-        Beside Continuous Integration, containers may make your life much easier. Whether a compiler is not available in your OS, or you don't want to waste time installing another version of it, containers can save you a lot of time. <span style="font-style: italic;">VS Code Dev Containers</span> brings the ease to another level, as only a couple of clicks are enough to set everything. 
+        Beside Continuous Integration, containers may make your life much easier. Whether a compiler is not available in your OS, or you don't want to waste time installing another version of it, containers can save you a lot of time. <span style="font-style: italic;">VS Code Dev Containers</span> brings the ease to another level, as only a couple of clicks are enough to set everything.
     </p>
     <p>
-        To transfer data between the container and the host system, you can either mount data or copy it. To work with python 2.7 for example, the first method can be done with the following command:
+        To transfer data between the container and the host system, you can either mount data or copy it. To work with python 2.7 for example, the first option is done while starting the container. The following command mounts the current directory to the user folder Tom in the container:
     </p>
     <code>
         docker run --rm --name MyPython2 -v ${pwd}:/home/Tom -it python:2.7 /bin/bash
     </code>
+    <br><br>
     <p>
-        <span style="font-style: italic;">-v ${pwd}:/home/Tom</span> mounts the current directory in the host system to the user folder Tom in the container.
-        <span style="font-style: italic;">--rm</span> sets automatic deletion for the container once it is stopped. 
-        <span style="font-style: italic;">-it</span> lets us interact with the container.
-        <span style="font-style: italic;">/bin/bash</span> is the command we use to start a bash shell from within the container.
+        <code>--rm</code> sets automatic deletion for the container once it is stopped.
+        <code>--name</code> sets a name for the container we are starting.
+        <code>-v ${pwd}:/home/Tom</code> mounts the current directory in the host system to the user folder Tom in the container.
+        <code>-it</code> lets us interact with the container.
+        <code>/bin/bash</code> is the command we use to start a bash shell from within the container.
+    </p>
+    <p>
+        The second method, that is copying data between the container and the host system, is done when the container is already running. Analogous to the first option, let us start the container and then copy the current directory to the user folder Tom in the container:
+    </p>
+    <pre>
+        <code>
+docker run --rm --name MyPython2 -d -it python:2.7 /bin/bash
+docker cp ${pwd} MyPython2:/home/Tom 
+docker exec -it MyPython2 /bin/bash
+        </code>
+    </pre>
+    <p>
+        We use <code>-d</code> while starting the container to run it in the background.
+        The last line is needed to access and interact with the running container.
     </p>
 </div>
