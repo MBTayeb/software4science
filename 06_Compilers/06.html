@@ -4,7 +4,6 @@
     </p>
 </div>
 <div style="max-width: 45em; margin-left: auto; margin-right: auto;">
-	<h4>Compilers:</h4>
 	<p>
 		If you are using an interpreted
 		language, you do not need a compiler: Upon execution of your script, a
@@ -94,8 +93,9 @@
 		</div>
 	  </div>
 	</div>
+</div>
 	
-	<h4>Build systems:</h4>
+<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
 	<p>
 		Once your projects has grown to more
 		than a handful of source code files (to make your project accessible to
@@ -118,7 +118,7 @@
 		program requires other software (usually libraries) to run, these can also
 		be automatically installed.
 	</p>
-	<h5>GNU make tutorial</h5>
+	<h4>GNU make tutorial</h4>
 	<p>
 		GNU make is a CLI build tool, i.e. it helps to easily build and rebuild the code in your project as needed. The make commands should normally be written in a extensionless file named "makefile" in the project folder. Building is then done by just running the shell command "make" within the same folder. What differs makefile from other script files is that they check dependencies before building. For example, let us compare between a makefile and a shell script in the following situation. We have a Fortran script that calculates a function f(x) in different x values and saves the results to a dat file. Then, we plot the results using a python script. We already run the programs and have a plot file. Now we edit the plot file to improve the plot. Using a shell script that compiles the Fortran script and runs the python file would calculate the function values again, which is actually not needed and may waste much time. Using a makefile, we can easily avoid this problem. In fact, it automatically finds out that only the python script was edited, that is, make just runs it again. This makefile may look like:
 	</p>
@@ -132,14 +132,26 @@
         <code>clean:</code>
         <div><pre>&#09;</pre><code>del *.exe *.png *.dat</code></div>
     </div> -->
-    <div style="border: 1px solid; border-radius: 5px;padding:1em">
+    <!-- <div style="border: 1px solid; border-radius: 5px;padding:1em">
         <div><code>fig.png:code.exe plot.py</code></div>
-        <pre>&#09;<code>.\code.exe</code></pre>
-        <pre>&#09;<code>python plot.py</code></pre>
+        <pre style="display: inline;">
+			&#09;<code>.\code.exe</code></pre>
+        	&#09;<code>python plot.py</code>
+		</pre>
         <div><code>code.exe:code.f90</code></div>
         <pre>&#09;<code>gfortran -Wall -Wextra -o code.exe code.f90</code></pre>
         <code>clean:</code>
         <pre>&#09;<code>del *.exe *.png *.dat</code></pre>
+    </div> -->
+	<div style="border: 1px solid; border-radius: 5px;padding:1em">
+        <pre><code class="language-makefile">
+		fig.png:code.exe plot.py
+        	.\code.exe
+        	python plot.py
+        code.exe:code.f90
+        	gfortran -Wall -Wextra -o code.exe code.f90
+        clean:
+        	del *.exe *.png *.dat</code></pre>
     </div>
     <p>
         One should note that this makefile also allows us to easily remove all files with the extensions .exe (binaries), .png (pictures) and .dat (datafiles) just by running "make clean". In fact, clean is here a target that no other target depends on, which means it does not happen unless it is specified in the prompt. You can find example python and Fortran files below.
@@ -208,9 +220,9 @@
             </div>
         </div>
     </div>
+</div>
 	
-	<hr>
-	<h4>Libraries:</h4>
+<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
 	Typical libraries include ...
 	<ul>
 		<li>BLAS (basic linear algebra software for vector and matrix operations
