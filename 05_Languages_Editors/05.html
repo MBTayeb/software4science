@@ -37,240 +37,300 @@
 </div>
 
 <div style="max-width: 45em; margin-left: auto; margin-right: auto;">
-    <div>Keeping all that in mind I would like to recommend the following
-      <strong>strategy</strong> here:
-      <ol>
-        <li>Start with learning Bash, so that you feel comfortable operating a
-          Linux system especially when writing scripts to automate your work.</li>
-        <li>Then visit Fortran; it's still very much at the center of scientific
-          computing and the basics are not hard to get; it is very straightforward
-          mathematical programming.</li>
-        <li>For doing your actual research move on to Python: it is much less
-          demanding than C++ and usually everything you could only wish for not to
-          write yourself will be available.</li>
-        <li>Once your project turns quasi-professional or if you anyhow have the
-          intention to make it that way, C++ will offer everything you need (but
-          be prepared to spend most of the time planning to write code, instead of
-          actually writing it).</li>
-        <li>Finally, learn R, Matlab, SQL etc. if you have to, because a project
-          requires it - you certainly won't find it impossible to do so once you
-          have worked through this course.</li>
-      </ol>
-    </div>
-    <br>
-    <p>In this course, we will follow the strategy outlined above and focus on
-      <em>Bash</em>, <em>Fortran</em> and especially <em>Python</em>. (This
-      strategy might not fit to your scientific field, especially if the whole
-      field -- like certain parts of bio- or geo-informatics -- developed long
-      after the high times of Fortran; in this case start with bash and move on to
-      R, Matlab or whatever is the accepted standard in your field.) See the
-      <em>Additonal resources </em> section for online resources on other
-      languages, especially concerning <em>C/C++</em>. Below you will also find a
-      <em>focus unit on R</em>.</p>
-    <details>
-      <summary>
-        <h4 style="display: inline;">Online resources for learning Bash:</h4>
-      </summary>
-      <div style="padding-left: 1em;">
-        <div>These can be found in a separate work unit above.</div>
-        <div>If you have worked through this unit, you have learned some
-          'universal' features of programming languages already:</div>
-        <div><strong>First</strong>, variables need to be assigned (and sometimes
-          declared, i.e. given a type).</div>
-        <div><strong>Second</strong>, the flow of programs requires control
-          structures like loops, conditions etc.</div>
-        <div>And <strong>third</strong>, sub-units (functions, sub-routines,
-          modules, etc.) are needed to structure code.</div>
-        <div>Apart from this, there is some general stuff to remember for each
-          language, like e.g. what line defines the start of a program or how do I
-          do in- and output etc. When learning a new programming language, you are
-          often times fine with remembering just the basics. If you then look for
-          the correct 'syntax' of an element, it's usually best practice to google
-          it ("fortran loop"), once you have understood what you are looking for.
-        </div>
-      </div>
-    </details>
-    <details>
-      <summary>
-        <h4 style="display: inline;">Online resources for learning Fortran:</h4>
-      </summary>
-      <div style="padding-left: 1em;">
-        <p>Fortran is a compiled language, so that apart from Fortran itself you
-          will have to learn how to use a compiler including the use of software
-          libraries and as compiling can be quite tedious for all but very small
-          projects, also about the most common 'build system' <em>make</em>.</p>
-        <p>One of the reasons why Fortran provides such excellence performance is
-          the existence of very high-quality<em> compilers</em> (the Intel Fortran
-          compiler is a legend), which manage to produce extremely fast code. But
-          unlike in the past, C++ compilers (including the GCC one) don't seem to
-          be utterly behind anymore.</p>
-        <p>The use of <em>software libraries</em> is essential for good
-          programming! Libraries provide code written by someone else (usually
-          more clever than you or me) that can be re-used for your purposes just
-          by sticking to the calling conventions (you have to supply the correct
-          inputs and understand what is given back). If you learn how to use
-          libraries you can save a lot of time by not re-rewriting existing code,
-          which in addition is usually much more error-proof than the ugly hack
-          you just made up.</p>
-        <p>The use of a <em>build system</em> like make is also considered good
-          programming, as it allows not only you, but also other people to compile
-          your code conveniently (or: at all).</p>
-        <p>You will learn more about compilers, software libraries and build
-          systems in the next work unit.</p>
-        <h5>Fortran tutorials offered by :</h5>
-        <ul>
-          <li>
-            <h6>Leibniz-Rechenzentrum (LRZ, Leibniz Supercomputing Centre):</h6>
-            <div style="padding-left: 2em;">
-              <div><a
-                  href="https://doku.lrz.de/programming-with-fortran-10746212.html">https://doku.lrz.de/programming-with-fortran-10746212.html</a>
-              </div>
-              <div style="padding-left: 2em; text-indent: -1em;">
-                <div><strong> -- </strong>"An introduction to the Fortran
-                  programming language course"</div>
-                <div><a
-                    href="https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf">https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf</a><strong>
-                    -- </strong>slides of the course</div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <h6>ARCHER:</h6>
-            <div style="padding-left: 2em;">
-              <!-- <div>(There is again a giant number of such tutorials online, but ARCHER, the UK National Supercomputer Service, is a great resource anyhow!)<br></div> -->
-              <!-- <div><a href="http://www.archer.ac.uk/training/course-material/2017/07/mfortran_camb/index.php">http://www.archer.ac.uk/training/course-material/2017/07/mfortran_camb/index.php</a> --  'Modern Fortran' course<br></div> -->
-              <div><a
-                  href="https://www.youtube.com/watch?embed=no&amp;v=5vkUlpKzepE">https://www.youtube.com/watch?v=5vkUlpKzepE</a>
-              </div>
-              <div style="padding-left: 2em; text-indent: -1em;"><strong> --
-                </strong><span style="text-decoration: underline;">Advanced</span>
-                Virtual Tutorial 'Modern Fortran'<br>
-                <div><a
-                    href="http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf">http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf</a><strong>
-                    -- </strong>slides of the tutorial</div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </details>
-    <details>
-      <summary>Online resources for learning Python:</summary>
-      <!-- <br>  -->
-      <div style="padding-left: 1em;">
-        <div>These can be found in a separate work unit below.</div>
-        <br>
-        <div>In this work unit you will also find a basic introduction to object
-          oriented programming (OOP).</div>
-      </div>
-    </details>
-    <details>
-      <summary>Editors:</summary>
-      <div style="padding-left: 1em;">
-        <div>How you <strong>edit your code</strong> is largely a question of
-          taste, but some tools like  VI are so widely used (and available on
-          basically every remote server you might want to access) that you should
-          have an idea of their basic usage, and some tools provide certain
-          functions (for building, linking, debugging, testing, managing code)
-          that you don't want to miss anymore once you are used to them.</div>
-        <br><!-- <div> -->
-        <div>This is a <strong>list of editors</strong> certainly worth checking
-          out:</div>
-        <ul>
-          <li style="text-indent: -1em; padding-left: 1em;">Vi: enjoy a plethora
-            of features with the most commonly used source code editor (behind
-            Windows/Java IDEs/editors)</li>
-        </ul>
-        <div style="padding-left: 2em; text-indent: -1em;">
-          <div>- a general overview: <a
-              href="https://missing.csail.mit.edu/2020/editors/">https://missing.csail.mit.edu/2020/editors/</a>
-          </div>
-          <div>- play a game to learn vim: <a
-              href="https://vim-adventures.com/">https://vim-adventures.com/</a>  
-          </div>
-          <div>- read a whole book on vim <a
-              href="https://pragprog.com/titles/dnvim2/practical-vim-second-edition/">https://pragprog.com/titles/dnvim2/practical-vim-second-edition/</a>
-            (most people would consider this as overkill)</div>
-          <div>- behold, Vi has it's own section on stackexchange: <a
-              href="https://vi.stackexchange.com/">https://vi.stackexchange.com/</a>
-          </div>
-          <div>- and of course a huge fan community, giving helpful and/or obscure
-            tips, if asked for or not: <a
-              href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">https://vim.fandom.com/wiki/Vim_Tips_Wiki</a>
-          </div>
-        </div>
-        <ul>
-          <li style="text-indent: -1em; padding-left: 1em;">
-            <!--<a href="https://www.sublimetext.com/" >https://www.sublimetext.com/</a>-->
-            Sublime text -- an advanced GUI (graphical user interface) editor</li>
-          <li style="text-indent: -1em; padding-left: 1em;">notepad++ -- another
-            advanced GUI editor, especially prominent under Windows</li>
-          <li style="text-indent: -1em; padding-left: 1em;">Jupyter Notebooks
-            (this is so cool, we will have a separate work unit for it below)</li>
-        </ul>
-        <!-- <div style="text-indent: -1em;padding-left: 1em;">
-                  Vi: enjoy a plethora of features with the most commonly used source code editor (behind Windows/Java IDEs/editors)<br></div>
-              <div style="padding-left: 2em;text-indent: -1em;">
-                  <div>- a general overview: <a href="https://missing.csail.mit.edu/2020/editors/">https://missing.csail.mit.edu/2020/editors/</a><br></div>
-                  <div>- play a game to learn vim: <a href="https://vim-adventures.com/">https://vim-adventures.com/</a>&nbsp;&nbsp; <br></div>
-                  <div>- read a whole book on vim <a href="https://pragprog.com/titles/dnvim2/practical-vim-second-edition/">https://pragprog.com/titles/dnvim2/practical-vim-second-edition/</a> (most people would consider this as overkill)</div>
-                  <div>- behold, Vi has it's own section on stackexchange: <a href="https://vi.stackexchange.com/">https://vi.stackexchange.com/</a></div>
-                  <div>- and of course a huge fan community, giving helpful and/or obscure tips, if asked for or not: <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">https://vim.fandom.com/wiki/Vim_Tips_Wiki</a><br></div>
-              </div>
-              <div style="text-indent: -1em;padding-left: 1em;">
-                  Sublime text -- an advanced GUI (graphical user interface) editor<br>
-              </div>
-              <div style="text-indent: -1em;padding-left: 1em;">
-                  notepad++ -- another advanced GUI editor, especially prominent under Windows
-              </div>
-              <div style="text-indent: -1em;padding-left: 1em;">
-                  Jupyter Notebooks (this is so cool, we will have a separate work unit for it below)
-              </div> -->
-      </div>
-    </details>
-    <details><!-- style="text-decoration: underline;" -->
-      <summary>Common integrated development environments(IDEs):</summary>
-      <div style="padding-left: 1em;">
-        <div style="text-indent: -1em; padding-left: 1em;"><a
-            href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a>
-          -- a lot of people really like Visual Studo Code, because it strikes a
-          good balance between too little and too much</div>
-        <div style="padding-left: 2em; text-indent: -1em;">
-          <div>- read more about it on Heise (German only): <a
-              href="https://www.heise.de/hintergrund/Visual-Studio-Code-Ein-Code-Editor-fuer-alle-s-6128966.html">https://www.heise.de/hintergrund/Visual-Studio-Code-Ein-Code-Editor-fuer-alle-s-6128966.html</a>
-          </div>
-        </div>
-        <div style="text-indent: -1em; padding-left: 1em;"><a
-            href="https://www.eclipse.org/downloads/">https://www.eclipse.org/downloads/</a>
-          -- Eclipse, supporting C/C++, Fortran, Python, R, Matlab, Julia, ...
-          Mathematica, LaTeX, etc.</div>
-        <div style="text-indent: -1em; padding-left: 1em;"><a
-            href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a>
-          -- PyCharm (Python IDE)</div>
-        <div style="padding-left: 2em; text-indent: -1em;">- or the 'next
-          generation IDE' Fleet: <a href="https://www.jetbrains.com/de-de/fleet/">
-            https://www.jetbrains.com/de-de/fleet/ </a></div>
-        <div style="text-indent: -1em; padding-left: 1em;"><a
-            href="https://rstudio.com/">https://rstudio.com/</a> -- R-Studio (R
-          IDE)</div>
-        <div><a
-            href="https://sso.uni-muenster.de/NWZ/Angebot/NWZatHome/Software/Microsoft-Azure-Dev-Tools/Softwarebestellung/index.html">https://sso.uni-muenster.de/NWZ/Angebot/NWZatHome/Software/Microsoft-Azure-Dev-Tools/Softwarebestellung/index.html</a>
-          -- MS Visual Studio</div>
-        <div style="padding-left: 2em; text-indent: -1em;">
-          <div>well integrated and most commonly used IDE for developing software
-            under Windows, now also available under macOS, supports all popular
-            languages</div>
-          <!-- supports 36 programming languages (but not Fortran?); -->
-          <div>itself anyhow free, but free even with compilers via NWZ@home Azure
-            Dev Tools for Teaching (AD4T), where you will also find a lot of other
-            free stuff</div>
-        </div>
-        <div style="text-indent: -1em; padding-left: 1em;"><a
-            href="https://vscodium.com/">https://vscodium.com/</a> -- get the
-          latest version of MIT-licensed VS Code</div>
-        <div style="text-indent: -1em; padding-left: 1em;"><a
-            href="https://neovim.io/">https://neovim.io/</a> -- Vim-based text
-          editor engineered for extensibility and usability</div>
-      </div>
-    </details>
+  <div>Keeping all that in mind I would like to recommend the following
+    <strong>strategy</strong> here:
+    <ol>
+      <li>Start with learning Bash, so that you feel comfortable operating a
+        Linux system especially when writing scripts to automate your work.</li>
+      <li>Then visit Fortran; it's still very much at the center of scientific
+        computing and the basics are not hard to get; it is very straightforward
+        mathematical programming.</li>
+      <li>For doing your actual research move on to Python: it is much less
+        demanding than C++ and usually everything you could only wish for not to
+        write yourself will be available.</li>
+      <li>Once your project turns quasi-professional or if you anyhow have the
+        intention to make it that way, C++ will offer everything you need (but
+        be prepared to spend most of the time planning to write code, instead of
+        actually writing it).</li>
+      <li>Finally, learn R, Matlab, SQL etc. if you have to, because a project
+        requires it - you certainly won't find it impossible to do so once you
+        have worked through this course.</li>
+    </ol>
   </div>
+  <br>
+  <p>In this course, we will follow the strategy outlined above and focus on
+    <em>Bash</em>, <em>Fortran</em> and especially <em>Python</em>. (This
+    strategy might not fit to your scientific field, especially if the whole
+    field -- like certain parts of bio- or geo-informatics -- developed long
+    after the high times of Fortran; in this case start with bash and move on to
+    R, Matlab or whatever is the accepted standard in your field.) See the
+    <em>Additonal resources </em> section for online resources on other
+    languages, especially concerning <em>C/C++</em>. Below you will also find a
+    <em>focus unit on R</em>.</p>
+  <details>
+    <summary>
+      <h4 style="display: inline;">Online resources for learning Bash:</h4>
+    </summary>
+    <div style="padding-left: 1em;">
+      <div>These can be found in a separate work unit above.</div>
+      <div>If you have worked through this unit, you have learned some
+        'universal' features of programming languages already:</div>
+      <div><strong>First</strong>, variables need to be assigned (and sometimes
+        declared, i.e. given a type).</div>
+      <div><strong>Second</strong>, the flow of programs requires control
+        structures like loops, conditions etc.</div>
+      <div>And <strong>third</strong>, sub-units (functions, sub-routines,
+        modules, etc.) are needed to structure code.</div>
+      <div>Apart from this, there is some general stuff to remember for each
+        language, like e.g. what line defines the start of a program or how do I
+        do in- and output etc. When learning a new programming language, you are
+        often times fine with remembering just the basics. If you then look for
+        the correct 'syntax' of an element, it's usually best practice to google
+        it ("fortran loop"), once you have understood what you are looking for.
+      </div>
+    </div>
+  </details>
+  <details>
+    <summary>
+      <h4 style="display: inline;">Online resources for learning Fortran:</h4>
+    </summary>
+    <div style="padding-left: 1em;">
+      <p>Fortran is a compiled language, so that apart from Fortran itself you
+        will have to learn how to use a compiler including the use of software
+        libraries and as compiling can be quite tedious for all but very small
+        projects, also about the most common 'build system' <em>make</em>.</p>
+      <p>One of the reasons why Fortran provides such excellence performance is
+        the existence of very high-quality<em> compilers</em> (the Intel Fortran
+        compiler is a legend), which manage to produce extremely fast code. But
+        unlike in the past, C++ compilers (including the GCC one) don't seem to
+        be utterly behind anymore.</p>
+      <p>The use of <em>software libraries</em> is essential for good
+        programming! Libraries provide code written by someone else (usually
+        more clever than you or me) that can be re-used for your purposes just
+        by sticking to the calling conventions (you have to supply the correct
+        inputs and understand what is given back). If you learn how to use
+        libraries you can save a lot of time by not re-rewriting existing code,
+        which in addition is usually much more error-proof than the ugly hack
+        you just made up.</p>
+      <p>The use of a <em>build system</em> like make is also considered good
+        programming, as it allows not only you, but also other people to compile
+        your code conveniently (or: at all).</p>
+      <p>You will learn more about compilers, software libraries and build
+        systems in the next work unit.</p>
+      <h5>Fortran tutorials offered by :</h5>
+      <ul>
+        <li>
+          <h6>Leibniz-Rechenzentrum (LRZ, Leibniz Supercomputing Centre):</h6>
+          <div style="padding-left: 2em;">
+            <div><a
+                href="https://doku.lrz.de/programming-with-fortran-10746212.html">https://doku.lrz.de/programming-with-fortran-10746212.html</a>
+            </div>
+            <div style="padding-left: 2em; text-indent: -1em;">
+              <div><strong> -- </strong>"An introduction to the Fortran
+                programming language course"</div>
+              <div><a
+                  href="https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf">https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf</a><strong>
+                  -- </strong>slides of the course</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <h6>ARCHER:</h6>
+          <div style="padding-left: 2em;">
+            <!-- <div>(There is again a giant number of such tutorials online, but ARCHER, the UK National Supercomputer Service, is a great resource anyhow!)<br></div> -->
+            <!-- <div><a href="http://www.archer.ac.uk/training/course-material/2017/07/mfortran_camb/index.php">http://www.archer.ac.uk/training/course-material/2017/07/mfortran_camb/index.php</a> --  'Modern Fortran' course<br></div> -->
+            <div><a
+                href="https://www.youtube.com/watch?embed=no&amp;v=5vkUlpKzepE">https://www.youtube.com/watch?v=5vkUlpKzepE</a>
+            </div>
+            <div style="padding-left: 2em; text-indent: -1em;"><strong> --
+              </strong><span style="text-decoration: underline;">Advanced</span>
+              Virtual Tutorial 'Modern Fortran'<br>
+              <div><a
+                  href="http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf">http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf</a><strong>
+                  -- </strong>slides of the tutorial</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </details>
+  <details>
+    <summary>
+      <h4 style="display: inline;">Online resources for learning GNU make:</h4>
+    </summary>
+    <div style="padding-left: 1em;">
+      GNU make is a CLI build tool, i.e. it helps to easily build and rebuild the code in your project as needed. The make commands should normally be written in a extensionless file named "makefile" in the project folder. Building is then done by just running the shell command "make" within the same folder. What differs makefile from other script files is that they check dependencies before building. For example, let us compare between a makefile and a shell script in the following situation. We have a Fortran script that calculates a function f(x) in different x values and saves the results to a dat file. Then, we plot the results using a python script. We already run the programs and have a plot file. Now we edit the plot file to improve the plot. Using a shell script that compiles the Fortran script and runs the python file would calculate the function values again, which is actually not needed and may waste much time. Using a makefile, we can easily avoid this problem. In fact, it automatically finds out that only the python script was edited, that is, make just runs it again. This makefile may look like:
+    </div>
+    <div style="border: 1px solid; border-radius: 5px;padding:1em">
+      <div><code>fig.png:code.exe plot.py</code></div>
+      <div>&nbsp&nbsp&nbsp&nbsp<code>.\code.exe</code></div>
+      <div>     &nbsp&nbsp&nbsp<code>python plot.py</code></div>
+      <div><code>code.exe:code.f90</code></div>
+      <div>&nbsp&nbsp&nbsp&nbsp<code>gfortran -Wall -Wextra -o code.exe code.f90</code></div>
+      <code>clean:</code>
+      <div>&nbsp&nbsp&nbsp&nbsp<code>del *.exe *.png *.dat</code></div>
+    </div>
+    <div style="padding-left: 1em;">
+      One should note that this makefile also allows us to easily remove all files with the extensions .exe (binaries), .png (pictures) and .dat (datafiles) just by running "make clean". In fact, clean is here a target that no other target depends on, which means it does not happen unless it is specified in the prompt. You can find example python and Fortran files below.
+    
+      <details>
+        <summary>code.f90</summary>
+        <div style="border: 1px solid; border-radius: 5px;padding:1em">
+          <div><code>program f</code></div>
+            <div>&nbsp&nbsp&nbsp&nbsp<code>implicit none</code></div>
+            <div>&nbsp&nbsp&nbsp&nbsp<code>real,parameter::a=-10,b=10</code></div>
+            <div>&nbsp&nbsp&nbsp&nbsp<code>integer,parameter::N=10000</code></div>
+            <div>&nbsp&nbsp&nbsp&nbsp<code>real,parameter::step=(b-a)/(N-1.)</code></div>
+            <div>&nbsp&nbsp&nbsp&nbsp<code>real,dimension(N)::x,y</code></div>
+            <div>&nbsp&nbsp&nbsp&nbsp<code>integer::i</code></div>
+            <div>&nbsp&nbsp&nbsp&nbsp<code>do i=1,N</code></div>
+              <div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<code>x(i)=a+(i-1.)*step</code></div>
+              <div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<code>y(i)=atan(x(i))</code></div>
+            <div>&nbsp&nbsp&nbsp&nbsp<code>end do</code></div>
+            <div>&nbsp&nbsp&nbsp&nbsp<code>open(1, file = 'data.dat')</code></div>
+            <div>&nbsp&nbsp&nbsp&nbsp<code>do i=1,N</code></div>
+              <div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<code>write(1,*) x(i), y(i)</code></div>
+            <div>&nbsp&nbsp&nbsp&nbsp<code>end do</code></div>
+          <div><code>end program f</code></div>
+        </div>
+      </details>
+      <details>
+        <summary>plot.py</summary>
+        <div style="border: 1px solid; border-radius: 5px;padding:1em">
+          <div><code>import matplotlib.pyplot as plt</code></div>
+          <div><code>import numpy as np</code></div>
+          <div><code>data = np.loadtxt('data.dat')</code></div>
+          <div><code>x = data[:,0]</code></div>
+          <div><code>y = data[:,1]</code></div>
+          <div><code>fig,ax=plt.subplots()</code></div>
+          <div><code>ax.plot(x,y)</code></div>
+          <div><code>ax.set_xlabel("x")</code></div>
+          <div><code>ax.set_ylabel("y")</code></div>
+          <div><code>ax.set_title("f(x)=arctan(x)")</code></div>
+          <div><code>ax.grid()</code></div>
+          <div><code>plt.savefig("fig.png")</code></div>
+          <div><code>plt.close()</code></div>
+        </div>
+      </details>
+    </div>
+  </details>
+  <details>
+    <summary><h4 style="display: inline;">Online resources for learning Python:</h4></summary>
+    <!-- <br>  -->
+    <div style="padding-left: 1em;">
+      <div>These can be found in a separate work unit below.</div>
+      <br>
+      <div>In this work unit you will also find a basic introduction to object
+        oriented programming (OOP).</div>
+    </div>
+  </details>
+  <details>
+    <summary><h4 style="display: inline;">Editors:</h4></summary>
+    <div style="padding-left: 1em;">
+      <div>How you <strong>edit your code</strong> is largely a question of
+        taste, but some tools like  VI are so widely used (and available on
+        basically every remote server you might want to access) that you should
+        have an idea of their basic usage, and some tools provide certain
+        functions (for building, linking, debugging, testing, managing code)
+        that you don't want to miss anymore once you are used to them.</div>
+      <br><!-- <div> -->
+      <div>This is a <strong>list of editors</strong> certainly worth checking
+        out:</div>
+      <ul>
+        <li style="text-indent: -1em; padding-left: 1em;">Vi: enjoy a plethora
+          of features with the most commonly used source code editor (behind
+          Windows/Java IDEs/editors)</li>
+      </ul>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>- a general overview: <a
+            href="https://missing.csail.mit.edu/2020/editors/">https://missing.csail.mit.edu/2020/editors/</a>
+        </div>
+        <div>- play a game to learn vim: <a
+            href="https://vim-adventures.com/">https://vim-adventures.com/</a>  
+        </div>
+        <div>- read a whole book on vim <a
+            href="https://pragprog.com/titles/dnvim2/practical-vim-second-edition/">https://pragprog.com/titles/dnvim2/practical-vim-second-edition/</a>
+          (most people would consider this as overkill)</div>
+        <div>- behold, Vi has it's own section on stackexchange: <a
+            href="https://vi.stackexchange.com/">https://vi.stackexchange.com/</a>
+        </div>
+        <div>- and of course a huge fan community, giving helpful and/or obscure
+          tips, if asked for or not: <a
+            href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">https://vim.fandom.com/wiki/Vim_Tips_Wiki</a>
+        </div>
+      </div>
+      <ul>
+        <li style="text-indent: -1em; padding-left: 1em;">
+          <!--<a href="https://www.sublimetext.com/" >https://www.sublimetext.com/</a>-->
+          Sublime text -- an advanced GUI (graphical user interface) editor</li>
+        <li style="text-indent: -1em; padding-left: 1em;">notepad++ -- another
+          advanced GUI editor, especially prominent under Windows</li>
+        <li style="text-indent: -1em; padding-left: 1em;">Jupyter Notebooks
+          (this is so cool, we will have a separate work unit for it below)</li>
+      </ul>
+      <!-- <div style="text-indent: -1em;padding-left: 1em;">
+                Vi: enjoy a plethora of features with the most commonly used source code editor (behind Windows/Java IDEs/editors)<br></div>
+            <div style="padding-left: 2em;text-indent: -1em;">
+                <div>- a general overview: <a href="https://missing.csail.mit.edu/2020/editors/">https://missing.csail.mit.edu/2020/editors/</a><br></div>
+                <div>- play a game to learn vim: <a href="https://vim-adventures.com/">https://vim-adventures.com/</a>&nbsp;&nbsp; <br></div>
+                <div>- read a whole book on vim <a href="https://pragprog.com/titles/dnvim2/practical-vim-second-edition/">https://pragprog.com/titles/dnvim2/practical-vim-second-edition/</a> (most people would consider this as overkill)</div>
+                <div>- behold, Vi has it's own section on stackexchange: <a href="https://vi.stackexchange.com/">https://vi.stackexchange.com/</a></div>
+                <div>- and of course a huge fan community, giving helpful and/or obscure tips, if asked for or not: <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">https://vim.fandom.com/wiki/Vim_Tips_Wiki</a><br></div>
+            </div>
+            <div style="text-indent: -1em;padding-left: 1em;">
+                Sublime text -- an advanced GUI (graphical user interface) editor<br>
+            </div>
+            <div style="text-indent: -1em;padding-left: 1em;">
+                notepad++ -- another advanced GUI editor, especially prominent under Windows
+            </div>
+            <div style="text-indent: -1em;padding-left: 1em;">
+                Jupyter Notebooks (this is so cool, we will have a separate work unit for it below)
+            </div> -->
+    </div>
+  </details>
+  <details><!-- style="text-decoration: underline;" -->
+    <summary><h4 style="display: inline;">Common integrated development environments(IDEs):</h4></summary>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a>
+        -- a lot of people really like Visual Studo Code, because it strikes a
+        good balance between too little and too much</div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>- read more about it on Heise (German only): <a
+            href="https://www.heise.de/hintergrund/Visual-Studio-Code-Ein-Code-Editor-fuer-alle-s-6128966.html">https://www.heise.de/hintergrund/Visual-Studio-Code-Ein-Code-Editor-fuer-alle-s-6128966.html</a>
+        </div>
+      </div>
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://www.eclipse.org/downloads/">https://www.eclipse.org/downloads/</a>
+        -- Eclipse, supporting C/C++, Fortran, Python, R, Matlab, Julia, ...
+        Mathematica, LaTeX, etc.</div>
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a>
+        -- PyCharm (Python IDE)</div>
+      <div style="padding-left: 2em; text-indent: -1em;">- or the 'next
+        generation IDE' Fleet: <a href="https://www.jetbrains.com/de-de/fleet/">
+          https://www.jetbrains.com/de-de/fleet/ </a></div>
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://rstudio.com/">https://rstudio.com/</a> -- R-Studio (R
+        IDE)</div>
+      <div><a
+          href="https://sso.uni-muenster.de/NWZ/Angebot/NWZatHome/Software/Microsoft-Azure-Dev-Tools/Softwarebestellung/index.html">https://sso.uni-muenster.de/NWZ/Angebot/NWZatHome/Software/Microsoft-Azure-Dev-Tools/Softwarebestellung/index.html</a>
+        -- MS Visual Studio</div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>well integrated and most commonly used IDE for developing software
+          under Windows, now also available under macOS, supports all popular
+          languages</div>
+        <!-- supports 36 programming languages (but not Fortran?); -->
+        <div>itself anyhow free, but free even with compilers via NWZ@home Azure
+          Dev Tools for Teaching (AD4T), where you will also find a lot of other
+          free stuff</div>
+      </div>
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://vscodium.com/">https://vscodium.com/</a> -- get the
+        latest version of MIT-licensed VS Code</div>
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://neovim.io/">https://neovim.io/</a> -- Vim-based text
+        editor engineered for extensibility and usability</div>
+    </div>
+  </details>
+</div>
