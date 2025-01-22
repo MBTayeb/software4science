@@ -1,4 +1,11 @@
 <div style="max-width: 45em; margin-left: auto; margin-right: auto;">
+    <p>
+        When Continuous Integration was introduced above, the main idea behind containers was explained. Here, you can dive deeper in this topic. 
+    </p>
+    <p>
+        Beside Continuous Integration, containers may make your life much easier. Whether a compiler is not available in your OS, or you don't want to waste time installing another version of it, containers can save you a lot of time. <span style="font-style: italic;">VS Code Dev Containers</span> brings the ease to another level, as only a couple of clicks are enough to set everything.
+    </p>
+    <h4>Links:</h4>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://www.youtube.com/watch?embed=no&amp;v=HelrQnm3v4g">
@@ -11,42 +18,43 @@
             </div>
         </div>
     </div>
-    <div style="padding-left: 1em;font-weight: bolder;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://codebase.helmholtz.cloud/hifis/software/education/hifis-workshops/workshop-using-containers-in-science">
-                https://codebase.helmholtz.cloud/hifis/software/education/hifis-workshops/workshop-using-containers-in-science
-            </a> 
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-                -- HIFIS Workshop "Using Containers in Science"
-            </div>
-        </div>
-    </div> 
-    <div style="padding-left: 1em;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://confluence.uni-muenster.de/display/RIAl/Deploye+dein+Modell+mit+Docker">
-                https://confluence.uni-muenster.de/display/RIAl/Deploye+dein+Modell+mit+Docker
-            </a> 
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-                -- Tutorial "<span style="font-style: italic;">Deploye dein Modell mit Docker</span>" by REACH, the incubator of the university of Münster.
-            </div>
-        </div>
-    </div> 
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://the-turing-way.netlify.app/reproducible-research/renv.html?utm_source=substack&amp;utm_medium=email">
                 https://the-turing-way.netlify.app/reproducible-research/renv.html?utm_source=substack&amp;utm_medium=email
-            </a> 
+            </a>
         </div>
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
                 -- Guide to reproducible research (includes containers, virtual boxes...) by The Turing Way
             </div>
         </div>
-    </div> 
+    </div>
+    <div style="padding-left: 1em;font-weight: bolder;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://codebase.helmholtz.cloud/hifis/software/education/hifis-workshops/workshop-using-containers-in-science">
+                https://codebase.helmholtz.cloud/hifis/software/education/hifis-workshops/workshop-using-containers-in-science
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- HIFIS Workshop "Using Containers in Science"
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em;padding-left: 1em;">
+            <a href="https://confluence.uni-muenster.de/display/RIAl/Deploye+dein+Modell+mit+Docker">
+                https://confluence.uni-muenster.de/display/RIAl/Deploye+dein+Modell+mit+Docker
+            </a>
+        </div>
+        <div style="padding-left: 2em;text-indent: -1em;">
+            <div>
+                -- Tutorial "<span style="font-style: italic;">Deploye dein Modell mit Docker</span>" by REACH, the incubator of the university of Münster.
+            </div>
+        </div>
+    </div>
+    
     <div style="padding-left: 1em;font-weight: bolder;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://www.youtube.com/watch?embed=no&amp;v=dihfA7Ol6Mw">
@@ -59,4 +67,9 @@
             </div>
         </div>
     </div>
+    <p>
+        To access JupyterLab or another web app running within the container, it is necessary to publish ports from the container to the host system. To understand this, some background in networking is needed. An IP adress is the identifier of a computer in a network. But when one wants to share data between two entities within a network, we want it to go exactly where it is needed, that is why we need ports. Ports allow the system to specify the origin and the destination of data. Since the container is isolated from the computer, they can't share information. Publishing a port binds the port in the container to another one and thus allows everybody in the network to access the service, unless a firewall forbids it. You can get more information in this video<a href="https://www.youtube.com/watch?embed=no&amp;v=g2fT-g9PX9o">
+            https://www.youtube.com/watch?v=g2fT-g9PX9o
+        </a>
+    </p>
 </div>
