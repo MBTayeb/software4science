@@ -224,23 +224,52 @@
     <h4 >CLI Editors:</h4>
     <p>
         How you edit your code is largely a question of
-        taste, but some tools like  Vi are so widely used (and available on
+        taste, but some tools like Vi are so widely used (and available on
         basically every remote server you might want to access) that you should
         have an idea of their basic usage, and some tools provide certain
         functions (for building, linking, debugging, testing, managing code)
         that you don't want to miss anymore once you are used to them.
     </p>
+    <h5 >Nano</h5>
     <p>
-        In 1991, an improved clone of Vi got released. It is called Vim, that is, VI improved.
+        Nano is a CLI editor that is available by default in a lot of Linux distros (distributions) and can also be installed if needed. The cool thing about it is that it gets the job done, that is, it's very beginner friendly. 
+    </p>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em; padding-left: 1em;">
+            <a href="https://www.youtube.com/watch?embed=no&amp;v=NV9PyPJKqH4">
+                https://www.youtube.com/watch?v=NV9PyPJKqH4
+            </a>
+        </div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+            <div>
+                -- Simple introduction into nano by Steven Gordon
+            </div>
+        </div>
+    </div>
+    <h5>Vi-m</h5>
+    <p>
+        Like mentioned above, Vi is also widely used. It has a relatively long learning curve, but can make the editing experience much faster. In 1991, an improved clone of Vi got released. It is called Vim, that is, VI IMproved.
         It introduced syntax highlighting and many other things. 
-        Now, Vi can't be installed, it comes by default in UNIX systems. Vim can be installed though.
+        Now, Vi can't be installed, it comes by default in UNIX systems.
+        The latest Linux distros don't ship vi anymore and often use vi as an alias for vim. 
+        Vim can be installed though.
         To customize Vim, one writes a Vimscript. One can basically custom anything in the editor.
         Then, a fork of vim got released in 2015. It has the name Neovim (abbreviated as nvim). This fork
         aims to be hyperextensible with Lua (another programming language) and is still compatible with Vimscript.
     </p>
-        enjoy a plethora of features with the most commonly used source code editor (behind
-            Windows/Java IDEs/editors)
-    <h5 >Vi</h5>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em; padding-left: 1em;">
+            <a href="https://www.vim.org/download.php">
+                https://www.vim.org/download.php
+            </a>
+        </div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+            <div>
+                -- Vim official web page
+                <br> Once you have vim installed, a program called vimtutor should also be available. It is basically an interactive tutorial for learning vim.  
+            </div>
+        </div>
+    </div>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em; padding-left: 1em;">
             <a href="https://missing.csail.mit.edu/2020/editors/">
@@ -302,6 +331,7 @@
             </div>
         </div>
     </div>
+    <h6>Neovim</h6>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em; padding-left: 1em;">
             <a href="https://neovim.io/">
@@ -310,23 +340,62 @@
         </div>
         <div style="padding-left: 2em; text-indent: -1em;">
             <div>
-                -- Neovim
+                -- Neovim official webpage
+                <br> Neovim also provides an interactive tutorial. After installing it, just open nvim with your shell an then, inside it, type :Tutor and press enter. 
             </div>
         </div>
     </div>
-    <h5 >Emacs</h5>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em; padding-left: 1em;">
-            <a href="https://www.gnu.org/software/emacs/">
-                https://www.gnu.org/software/emacs/
+            <a href="https://www.youtube.com/watch?embed=no&amp;v=m8C0Cq9Uv9o">
+                https://www.youtube.com/watch?v=m8C0Cq9Uv9o
             </a>
         </div>
         <div style="padding-left: 2em; text-indent: -1em;">
             <div>
-                -- Emacs
+                -- Neovim configuration tutorial for beginners by TJ DeVries, a Neovim core maintainer
+                <br> it uses the following repository
+                <br><a href="https://github.com/nvim-lua/kickstart.nvim/">
+                    https://github.com/nvim-lua/kickstart.nvim/
+                </a>
             </div>
         </div>
     </div>
+    <details>
+        <summary>
+        <h5 style="display: inline;">Emacs</h5>
+        </summary>
+        <div style="padding-left: 1em;">
+            <p>
+                Emacs, like Vim, is not beginner friendly. However, mastering it is really rewarding to the programming experience. 
+            </p>
+            <div style="padding-left: 1em;">
+                <div style="text-indent: -1em; padding-left: 1em;">
+                    <a href="https://www.gnu.org/software/emacs/">
+                        https://www.gnu.org/software/emacs/
+                    </a>
+                </div>
+                <div style="padding-left: 2em; text-indent: -1em;">
+                    <div>
+                        -- Emacs official website 
+                    </div>
+                </div>
+            </div>
+            <div style="padding-left: 1em;">
+                <div style="text-indent: -1em; padding-left: 1em;">
+                    <a href="https://www.youtube.com/watch?embed=no&amp;v=48JlgiBpw_I">
+                        https://www.youtube.com/watch?v=48JlgiBpw_I
+                    </a>
+                </div>
+                <div style="padding-left: 2em; text-indent: -1em;">
+                    <div>
+                        -- Introduction to Emacs for beginners by System Crafters 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </details>
+    
     
     <h4 >GUI (Graphical User Interface) Editors:</h4>
     <div style="padding-left: 1em;">
@@ -338,6 +407,7 @@
         <div style="padding-left: 2em; text-indent: -1em;">
             <div>
                 -- Sublime Text: an advanced GUI editor
+                <br> is not free
             </div>
         </div>
     </div>
@@ -362,6 +432,9 @@
     </details> -->
     <h4 >Common integrated development environments(IDEs):</h4>
     <h5>Microsoft IDEs</h5>
+    <p>
+        Microsoft offers two popular IDEs, Visual studio Code (VS Code) and Visual Studio. Their names are similar but they are quite different. VS Code is one of the most used IDEs in the world. It is available on all operation systems and can be used with all programming languages. Visual Studio, on the other hand, is mainly used for developing .Net or C++ under the Windows OS. 
+    </p>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em; padding-left: 1em;">
             <a href="https://code.visualstudio.com/download">
@@ -383,13 +456,25 @@
     </div>
     <div style="padding-left: 1em;">
         <div style="text-indent: -1em; padding-left: 1em;">
-            <a href="https://vscodium.com/">
-                https://vscodium.com/
+            <a href="https://www.youtube.com/watch?embed=no&amp;v=B-s71n0dHUk">
+                https://www.youtube.com/watch?v=B-s71n0dHUk
             </a>
         </div>
         <div style="padding-left: 2em; text-indent: -1em;">
             <div>
-                -- get the latest version of MIT-licensed VS Code
+                -- VS Code official beginner tutorial
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em; padding-left: 1em;">
+            <a href="https://vscodethemes.com/">
+                https://vscodethemes.com/
+            </a>
+        </div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+            <div>
+                -- Browse through VS Code themes
             </div>
         </div>
     </div>
@@ -402,11 +487,25 @@
         <div style="padding-left: 2em; text-indent: -1em;">
             <div>
                 -- MS Visual Studio
-                <br>well integrated and most commonly used IDE for developing software under Windows, now also available under macOS, supports all popular languages
+                <br>well integrated and most commonly used IDE for developing software under Windows
+                <br>supports all popular languages
                 <br>itself anyhow free, but free even with compilers via NWZ@home Azure Dev Tools for Teaching (AD4T), where you will also find a lot of other free stuff
             </div>
         </div>
     </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em; padding-left: 1em;">
+            <a href="https://vscodium.com/">
+                https://vscodium.com/
+            </a>
+        </div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+            <div>
+                -- get the latest version of MIT-licensed VS Code
+            </div>
+        </div>
+    </div>
+    
     <h5>Other famous IDEs</h5>
     
     <div style="padding-left: 1em;">
