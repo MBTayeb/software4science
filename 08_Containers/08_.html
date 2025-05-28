@@ -98,7 +98,7 @@
         A user is either specified with a username or a <span style="font-style: italic;">uid</span>, which is a unique number for the user. Analogously, the group can also be specified with a <span style="font-style: italic;">gid</span>. Non-root users have a uid and a gid that are higher or equal to 1000, such that the first user is 1000:1000. It is very important to think about which user rights are needed. Installing new packages inside the container needs the <code>root</code> user. However, it is not recommended to run a container with a root user, because it would have access to the host system. A good strategy would be to set the root user in the beginning of the Dockerfile to be able to install needed packages and select another user in the last lines of the Dockerfile, i.e. when root rights are not needed anymore. Moreover, one should know which user is in the parent image. If the user is root, it is not needed to set it again in the beginning of the Dockerfile. Furthermore, if the parent image specifies a non-root user, it would be practical to set the same one in the end of the Dockerfile, or else a new user should be created.
     </p>
     <p>
-        Writing a Dockerfile is not necessary, as one could use an image from the Docker Hub <a href="https://hub.docker.com/">https://hub.docker.com/</a> . But this comes to expense of flexibility and customization.
+        Writing a Dockerfile is not necessary, as one could use an image from the Docker Hub <a href="https://hub.docker.com/">https://hub.docker.com/</a> . But this comes to expense of flexibility and customization. One should also make sure that the dockerfile does not compomise security in someway by loading things from unknown pages for example. As this might be challenging for beginners, they could just filter out containers that are not marked as trusted.
     </p>
     <p>
         Next, we would like to make a container from the image. This is done with the command <code>docker run <span style="font-style: italic;">image:tag</style></code>.
@@ -116,7 +116,6 @@
             https://www.youtube.com/watch?v=g2fT-g9PX9o
         </a>
     </p>
-    
     <p>
         To transfer data between the host system and the container, you can either copy the data or mount it. The first method, can be done in the Dockerfile before the image is built, as we have seen above, or when the container is already running, which is done with the command 
         <code>docker cp <span style="font-style: italic;">path_host Container_name:path_container</style></code> .<br>

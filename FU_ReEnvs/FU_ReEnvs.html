@@ -1,0 +1,45 @@
+<p>(This informationen summarizes a de-rse.org mailing list thread.)</p>
+<p class="MsoPlainText">How to set up reproducible python environments:</p>
+<p class="MsoPlainText"> 1) <strong>Set up your environments per
+    project:</strong> Stick with dedicated virtual environments for each
+  project. Global library installations are convenient at first, but cumbersome
+  in the long run.</p>
+<p class="MsoPlainText"> 2) <strong>Keep track of used python version, libraries
+    and their exact versions:</strong> For Python several ways exist to achieve
+  this (see below for details on the available tools). A straightforward way is
+  to list Python version and libraries and their versions in text files in your
+  projects, often named "runtime.txt" (Python version) and "requirements.txt"
+  (libraries). (<span
+    style="mso-fareast-font-family: 'Times New Roman';">`environment.yml` from
+    conda etc. is an alternative.) Instead of these files one can also use
+    pipenv with a pipfile, which additionally 'freezes' the environment (and
+    therefore protects it against changes). </span></p>
+<p>Available tools:</p>
+<ul>
+  <li>pypi.org/pip, see e.g. <span
+      style="mso-fareast-font-family: 'Times New Roman';"><a
+        href="https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/18-environments.html">https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/18-environments.html</a></span>
+  </li>
+  <li>
+    <p class="MsoNormal"><span
+        style="mso-fareast-font-family: 'Times New Roman';"> Binder/repo2docker,
+        see e.g. </span><span
+        style="mso-fareast-font-family: 'Times New Roman';"> <a
+          href="https://arxiv.org/abs/2102.09562">https://arxiv.org/abs/2102.09562</a>
+        and <a
+          href="https://www.desy.de/~fangohr/publications/posters/2023-05-11_fangohr_JupyterCon_reproducible-workflows-with-jupyter.pdf">https://www.desy.de/~fangohr/publications/posters/2023-05-11_fangohr_JupyterCon_reproducible-workflows-with-jupyter.pdf</a></span>
+    </p>
+  </li>
+</ul>
+<p><span style="mso-fareast-font-family: 'Times New Roman';">Other:</span></p>
+<ul>
+  <li>uv: <a
+      href="https://github.com/astral-sh/uv">https://github.com/astral-sh/uv</a>
+    , see e.g. <a
+      href="https://www.youtube.com/watch?v=mFyE9xgeKcA">https://www.youtube.com/watch?v=mFyE9xgeKcA</a>
+  </li>
+  <li>
+    <p>Pixi: <a href="https://pixi.sh/">https://pixi.sh/</a></p>
+  </li>
+</ul>
+<p></p>
