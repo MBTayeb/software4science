@@ -5,5 +5,5 @@
 !.gitignore
 !.gitattributes
 
-# Allow .md files everywhere
+# Allow .html files everywhere
 !**/*.html
