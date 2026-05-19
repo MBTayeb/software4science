@@ -1,0 +1,370 @@
+<div style="max-width: 45em; margin-right: auto; margin-left: auto;">
+  <p>
+    Doing RSEng work usually means to write (source) code in a programming
+    language, using editors or integrated development environments (IDEs) to do
+    so efficiently. The proper choice of these elements (languages, editors or
+    IDEs) is not obvious or unambiguous, so it is worth the time to spend some
+    thoughts on this issue.
+  </p>
+  <p>
+    There is a very large number of programming languages available and
+    although for most of them there are good reasons why they are used for their
+    specific applications, some languages a certainly better suited for
+    scientific work. A core difference between languages is whether they must be
+    compiled (turned into machine-readable 'binaries' via a compiler before
+    execution) or whether they are 'interpreted', i.e. written as scripts which
+    are 'read' and executed by a separate program. Fortran would be an example
+    for the former, Python for the latter.
+  </p>
+  <p>
+    <span style="font-style: italic;">Compiled languages</span> usually have
+    static typing (variables must be defined as being of a certain type, e.g. a
+    real number, or a string of characters), but compilation can be optimized in
+    several ways and is hardware-specific, so that compiled languages are
+    considered to deliver high performance. Accordingly, most 'high performance
+    computing' (HPC) applications are based on compiled languages like Fortran
+    or C/C++. <span style="font-style: italic;">Interpreted languages
+    </span>usually have dynamic typing (the type of variables is determined upon
+    execution, depending on what values are given) and are considered to be
+    better suited for the quick and easy development of software solutions, also
+    since there is no time-consuming compilation step involved. Some new
+    languages like <span style="font-style: italic;">Julia</span> promise to
+    provide both high performance and easy development with 'just-in-time'
+    compilation. (Although for now I don't think Julia can be recommended as a
+    first programming language, you will probably hear a lot of praise for Julia
+    from experienced HPC people, which is why I have added some information on
+    Julia as a separate work unit below.) For more information, watch this video
+    <a href="https://www.youtube.com/watch?embed=no&amp;v=I1f45REi3k4">
+      https://www.youtube.com/watch?v=I1f45REi3k4 </a>.
+  </p>
+  <p>
+    Apart from <span style="font-style: italic;">performance</span>, the
+    existing software '<span style="font-style: italic;">ecosystem</span>' of a
+    language is very important for the proper choice of a programming language.
+    Fortran, 'the mother tongue of scientific computing' (C.E. Leith), is still
+    at the center of HPC, first of all because there is a huge ecosystem of
+    existing code, libraries, tools, etc. available, that makes it easy to
+    develop scientific applications in fortran, especially concerning so-called
+    'number-crunching' tasks (the computation of huge numbers of mathematical
+    operations). C/C++ is arguably the most widely used language for
+    'high-level' commercial work, so that a large pool of professional software
+    tools is available for C/C++, which has made C/C++ very attractive for
+    larger scientific software projects in recent years. Considering interpreted
+    or scripting languages, Python is well established in many fields in- and
+    outside of science, so that with this programming language easy access to
+    new technologies is available (cloud computing, machine learning etc.).
+  </p>
+  <p>
+    Once you have mastered one or two programming languages, you will see that
+    the core elements of programming languages are rather universal and that
+    learning new languages is often not more complicated than memorizing a new
+    syntax and probably keeping a few 'odd' features in mind. (The concept of
+    '<span style="font-style: italic;">object oriented programming</span>', or
+    OOP, is an exception: it is the basis for OOP-languages like C++ and Python
+    and we will therefore have to learn what it is about in the section devoted
+    to Python below.) This means that when choosing your programming languages
+    you don't have to worry too much about ending up in a dead end. Considering
+    performance and environment, the choice of programming languages for
+    scientific applications is practically often less confusing than it
+    initially seems, as it often simply makes sense to stick to 'popular'
+    solutions, for which a large pool of clever people constantly work on both
+    performance and new tools.
+  </p>
+  <p>
+    To find out which languages are most prominent in which sector you can turn
+    to community surveys for instance from Stack Overflow or take a look at StackShare
+    for a business perspective. There is also a Wikipedia article listing different
+    languages used in science.
+  </p>
+  <div style="padding-left: 1em;">
+    <div style="text-indent: -1em; padding-left: 1em;">
+      <a href="https://survey.stackoverflow.co/">
+        https://survey.stackoverflow.co/
+      </a>
+    </div>
+    <div style="padding-left: 2em; text-indent: -1em;">
+      <div>
+        -- The Stack Overflow survey
+      </div>
+    </div>
+  </div>
+  <div style="padding-left: 1em;">
+    <div style="text-indent: -1em; padding-left: 1em;">
+      <a href="https://stackshare.io/">
+        https://stackshare.io/
+      </a>
+    </div>
+    <div style="padding-left: 2em; text-indent: -1em;">
+      <div>
+        -- Stackshare
+      </div>
+    </div>
+  </div>
+  <div style="padding-left: 1em;">
+    <div style="text-indent: -1em; padding-left: 1em;">
+      <a href="https://en.wikipedia.org/wiki/Scientific_programming_language">
+        https://en.wikipedia.org/wiki/Scientific_programming_language
+      </a>
+    </div>
+    <div style="padding-left: 2em; text-indent: -1em;">
+      <div>
+        -- Wikipedia article: Scientific programming language
+      </div>
+    </div>
+  </div>
+  <br>
+  <p>
+    You will find
+    that while Java, C/C++ and Python are most popular for professional software
+    development, the most popular languages in science are <span
+      style="font-style: italic;">Python</span>, <span
+      style="font-style: italic;">C/C++</span>, <span
+      style="font-style: italic;">Fortran</span> (for HPC), and 'less general'
+    languages like R, Matlab, etc. These lists often do not include scripting
+    languages like <span style="font-style: italic;">Bash</span>, which underlie
+    the functionality of command line interfaces themselves (CLIs, which
+    basically means the terminals you're typing into), which is why in addition
+    everyone should have at least a basic understanding of 'their' CLI language.
+  </p>
+</div>
+
+<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
+  <div>
+    Keeping all that in mind I would like to recommend the following
+    strategy here:
+    <ol>
+      <li>
+        Start with learning Bash, so that you feel comfortable operating a Linux system especially when writing scripts to automate your work.
+      </li>
+      <li>
+        Then visit Fortran; it's still very much at the center of scientific computing and the basics are not hard to get; it is very straightforward mathematical programming.
+      </li>
+      <li>
+        For doing your actual research move on to Python: it is much less demanding than C++ and usually everything you could only wish for not to write yourself will be available.
+      </li>
+      <li>
+        Once your project turns quasi-professional or if you anyhow have the intention to make it that way, C++ will offer everything you need (but be prepared to spend most of the time planning to write code, instead of actually writing it).
+      </li>
+      <li>
+        Finally, learn R, Matlab, SQL etc. if you have to, because a project
+        requires it - you certainly won't find it impossible to do so once you
+        have worked through this course.</li>
+    </ol>
+  </div>
+  <br>
+  <p>
+    In this course, we will follow the strategy outlined above and focus on
+    <em>Bash</em>, <em>Fortran</em> and especially <em>Python</em>. (This
+    strategy might not fit to your scientific field, especially if the whole
+    field -- like certain parts of bio- or geo-informatics -- developed long
+    after the high times of Fortran; in this case start with bash and move on to
+    R, Matlab or whatever is the accepted standard in your field.) See the
+    <em>Additonal resources </em> section for online resources on other
+    languages, especially concerning <em>C/C++</em>. Below you will also find a
+    <em>focus unit on R</em>.
+  </p>
+  <details>
+    <summary>
+    <h4 style="display: inline;">Online resources for learning Bash:</h4>
+    </summary>
+    <div style="padding-left: 1em;">
+      <div>These can be found in a separate work unit above.</div>
+      <div>If you have worked through this unit, you have learned some 'universal' features of programming languages already:</div>
+      <div>First, variables need to be assigned (and sometimes declared, i.e. given a type).</div>
+      <div>Second, the flow of programs requires control structures like loops, conditions etc.</div>
+      <div>And third, sub-units (functions, sub-routines, modules, etc.) are needed to structure code.</div>
+      <div>
+        Apart from this, there is some general stuff to remember for each
+        language, like e.g. what line defines the start of a program or how do I
+        do in- and output etc. When learning a new programming language, you are
+        often times fine with remembering just the basics. If you then look for
+        the correct 'syntax' of an element, it's usually best practice to google
+        it ("fortran loop"), once you have understood what you are looking for.
+      </div>
+    </div>
+  </details>
+  <details>
+    <summary>
+      <h4 style="display: inline;">Online resources for learning Fortran:</h4>
+    </summary>
+    <div style="padding-left: 1em;">
+      <p>
+        Fortran is a compiled language, so that apart from Fortran itself you
+        will have to learn how to use a compiler including the use of software
+        libraries and as compiling can be quite tedious for all but very small
+        projects, also about the most common 'build system' <em>make</em>.
+      </p>
+      <p>
+        One of the reasons why Fortran provides such excellence performance is
+        the existence of very high-quality<em> compilers</em> (the Intel Fortran
+        compiler is a legend), which manage to produce extremely fast code. But
+        unlike in the past, C++ compilers (including the GCC one) don't seem to
+        be utterly behind anymore.
+      </p>
+      <p>
+        The use of <em>software libraries</em> is essential for good
+        programming! Libraries provide code written by someone else (usually
+        more clever than you or me) that can be re-used for your purposes just
+        by sticking to the calling conventions (you have to supply the correct
+        inputs and understand what is given back). If you learn how to use
+        libraries you can save a lot of time by not re-rewriting existing code,
+        which in addition is usually much more error-proof than the ugly hack
+        you just made up.</p>
+      <p>
+        The use of a <em>build system</em> like make is also considered good programming, as it allows not only you, but also other people to compile your code conveniently (or: at all).
+      </p>
+      <p>
+        You will learn more about compilers, software libraries and build systems in the next work unit.
+      </p>
+      <h5>Fortran tutorials offered by :</h5>
+      <ul>
+        <li>
+          <h6>Leibniz-Rechenzentrum (LRZ, Leibniz Supercomputing Centre):</h6>
+          <div style="padding-left: 2em;">
+            <div><a
+              href="https://doku.lrz.de/programming-with-fortran-10746212.html">https://doku.lrz.de/programming-with-fortran-10746212.html</a>
+            </div>
+            <div style="padding-left: 2em; text-indent: -1em;">
+            <div> -- "An introduction to the Fortran programming language course"</div>
+            <div>
+              <a href="https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf">
+                https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf
+              </a>
+                -- slides of the course</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <h6>ARCHER:</h6>
+          <div style="padding-left: 2em;">
+            <div>
+              <a href="https://www.youtube.com/watch?embed=no&amp;v=5vkUlpKzepE">
+                https://www.youtube.com/watch?v=5vkUlpKzepE
+              </a>
+            </div>
+            <div style="padding-left: 2em; text-indent: -1em;"> --
+            <span style="text-decoration: underline;">Advanced</span>
+            Virtual Tutorial 'Modern Fortran'<br>
+            <div><a
+              href="http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf">http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf</a>
+              -- slides of the tutorial</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </details>
+  <details>
+    <summary>
+      <h4 style="display: inline;">Online resources for learning GNU make:</h4>
+    </summary>
+    <div style="padding-left: 1em;">These can be found in a separate work unit
+    below.</div>
+  </details>
+  <details>
+    <summary>
+    <h4 style="display: inline;">Online resources for learning Python:</h4>
+    </summary>
+    <!-- <br>  -->
+    <div style="padding-left: 1em;">
+    <div>These can be found in a separate work unit below.</div>
+    <br>
+    <div>In this work unit you will also find a basic introduction to object
+      oriented programming (OOP).</div>
+    </div>
+  </details>
+  <details>
+    <summary>
+      <h4 style="display: inline;">
+        Online resources for quickly looking up syntax of different languages:
+      </h4>
+    </summary>
+    <div style="padding-left: 1em;">
+      <div style="padding-left: 1em;">
+        <div style="text-indent: -1em; padding-left: 1em;">
+          <a href="https://learnxinyminutes.com/">
+            https://learnxinyminutes.com/
+          </a>
+        </div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+          <div>
+            -- Learn X in Y minutes, where X is one of the many available languages to choose from.
+          </div>
+        </div>
+      </div>
+
+      <div style="padding-left: 1em;">
+        <div style="text-indent: -1em; padding-left: 1em;">
+          <a href="https://www.algorithm-archive.org/">
+            https://www.algorithm-archive.org/
+          </a>
+        </div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+          <div>
+            -- The Arcane algorithm archive
+            <br>It's a community driven archive aiming to provide a guide into the the important algorithms in all languages.
+          </div>
+        </div>
+      </div>
+
+      <div style="padding-left: 1em;">
+        <div style="text-indent: -1em; padding-left: 1em;">
+          <a href="https://quickref.me/">
+            https://quickref.me/
+          </a>
+        </div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+          <div>
+            -- QuickRef: online cheat sheets for many programming languages
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+  <details>
+    <summary>
+      <h4 style="display: inline;">
+        Easy offline documentation:
+      </h4>
+    </summary>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;">
+        <a href="https://zealdocs.org/">
+          https://zealdocs.org/
+        </a>
+      </div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>
+          -- Zeal: "offline documentation browser for software developers"
+        </div>
+      </div>
+    </div>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;">
+        <a href="https://github.com/smsearcy/zeal-feeds">
+          https://github.com/smsearcy/zeal-feeds
+        </a>
+      </div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>
+          -- Zeal-feeds: a simple CLI tool "for adding user contributed docsets to Zeal".
+        </div>
+      </div>
+    </div>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;">
+        <a href="https://devdocs.io/offline">
+          https://devdocs.io/offline
+        </a>
+      </div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>
+          -- DevDocs: offline webapp for ducs
+          <br>One should open the site and download the docs that one needs
+          <br>Then, the website can be accessed even when there is no internet access
+        </div>
+      </div>
+    </div>
+  </details>
+</div>
