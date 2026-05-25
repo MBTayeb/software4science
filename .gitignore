@@ -4,6 +4,7 @@
 
 */*
 !index.html
+!assets/*
 !.gitignore
 !.gitattributes
 !**/*.html
