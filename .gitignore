@@ -1,9 +1,10 @@
-# Ignore everything
 *
 
-# Allow .gitignore itself
+!*/
+
+*/*
+!index.html
 !.gitignore
 !.gitattributes
-
-# Allow .html files everywhere
 !**/*.html
+!**/title.txt
