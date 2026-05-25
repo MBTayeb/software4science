@@ -1,0 +1,197 @@
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --button-bg: #eeeeee;
+  --button-text: #222222;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --button-bg: #333333;
+  --button-text: #f5f5f5;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s; 
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.1rem);
+  max-width: 100%;
+  margin: 40px auto;
+  padding: 0;
+}
+div#theme-toggle-parent{
+    display: flex;
+    width: 100%;
+}
+button#theme-toggle {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  margin-left: auto;
+}
+
+@media (min-width: 1024px) {
+    body{max-width: 45em;}
+}
+@media (max-width: 1023px) {
+  body{
+      margin: 2em .3em;
+  }  
+  div#content-placeholder > div {
+      max-width: 100% !important; 
+  }
+}
+h1 {
+  color: var(--text-color);
+  border-bottom: 2px solid #eee;
+  padding: 0 0 .5em 0;
+  margin: 1.5em 0 0.5em 0;
+  font-weight: 600; 
+  line-height: 1.2;
+}
+h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 1.5em 0 0.5em 0;
+  color: var(--text-color);
+  font-weight: 600; 
+}
+
+h1 { font-size: clamp(1.8rem, 1.5rem + 1.5vw, 2.5rem); }
+h2 { font-size: clamp(1.5rem, 1.3rem + 1vw, 2.2rem); }
+h3 { font-size: clamp(1.3rem, 1.1rem + 1vw, 1.8rem); }
+
+h4 { font-size: clamp(1.15rem, 1rem + 0.75vw, 1.5rem); }
+h5 { font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem); }
+h6 { font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1.1rem); }
+
+p {
+    margin: 4px 0px 16px 0px;
+}
+
+ul {
+  list-style-type: disc; 
+  padding-left: 20px; 
+  margin:0px;
+}
+
+li {
+  margin:0px;/*margin: 10px 0;*/
+}
+
+li::marker {
+  color: #e74c3c; /* vibrant red */
+  /* font-size: 150%; clamp(.25rem, 4vw, 1.2em) slightly larger dots*/
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #2980b9;
+}
+
+a#overview-link {
+  all: inherit;
+}
+
+a#overview-link:hover {
+  text-decoration: underline;
+}
+
+nav#link-to-intro-parent {
+  display: grid;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 10px 0px;
+  font-family: sans-serif;
+}
+
+a#link-to-intro > div {
+  display: inline-flex; /* Allows centering inside the link */
+  align-items: center; /* Perfectly centers the arrow with the text */
+  gap: clamp(4px, 1vw, 16px);
+}
+
+a#link-to-intro > div::before {
+  content: "←";
+}
+
+nav.page-navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Creates 3 equal columns */
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin-top: 20px; 
+}
+
+nav.page-navigation > div {
+    height: 100%;
+    border-top: 3px solid #eee;
+    padding-top: .3em; 
+}
+nav.page-navigation > a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-top: 3px solid #eee;
+    padding-top: .3em; 
+    /*border-bottom: 3px solid #eee;*/
+}
+nav.page-navigation > a:hover {
+  text-decoration: underline;
+  color: #2980b9;
+}
+nav.page-navigation > a.prev {
+  justify-content: flex-start;  /* Pushes container to the far left */
+  /*border-right: 3px solid #eee;*/
+  padding-right: 0;/*20px;   Spacing between text and vertical line */
+}
+
+nav.page-navigation > a.toc {
+    display: grid;
+    place-items: center;
+}
+
+nav.page-navigation > a.next {
+  justify-content: flex-end;    /* Pushes container to the far right */
+  /*border-left: 3px solid #eee;*/
+  padding-left: 0;/* 20px;   Spacing between vertical line and text */
+}
+nav.page-navigation > a > div {
+  display: flex;
+  align-items: center; /* Centers the arrow vertically with the text */
+  width:100%;
+  gap: 0; /*clamp(4px, 1vw, 16px);*/
+}
+
+nav.page-navigation > a.prev > div {text-align: left;}
+nav.page-navigation > a.toc > div {text-align: center;justify-content: center;}
+nav.page-navigation > a.next > div {text-align: right;}
+nav.page-navigation > a.prev > div::before {
+  content: "←";
+  margin-right: 0.5em;
+}
+
+nav.page-navigation > a.next > div::after {
+  content: "→";
+  margin-left: 0.5em;
+}
+
+div.daughter-lists-bigger > ul {
+    font-size: 125%
+}
