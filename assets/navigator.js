@@ -1,11 +1,11 @@
 async function loadDynamicNavigation() {
   const links = {
     prev: {
-      el: document.querySelector('.nav-link.prev'),
+      el: document.querySelector('.page-navigation > .nav-link.prev'),
       format: (text) => `<div>${text}</div>`
     },
     next: {
-      el: document.querySelector('.nav-link.next'),
+      el: document.querySelector('.page-navigation > .nav-link.next'),
       format: (text) => `<div>${text}</div>`
     }
   };

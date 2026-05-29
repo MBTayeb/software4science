@@ -1,7 +1,8 @@
-// Use JavaScript to fetch the external file and inject it
+// Use JavaScript to fetch the external file and inject it at the beginning
 fetch("page.html")
   .then((response) => response.text())
   .then((data) => {
-    document.getElementById("content-placeholder").innerHTML = data
+    // 'afterbegin' inserts the HTML just inside the element, before its first child
+    document.getElementById("content-placeholder").insertAdjacentHTML('afterbegin', data);
   })
-  .catch((error) => console.error("Error loading the HTML:", error))
+  .catch((error) => console.error("Error loading the HTML:", error));
