@@ -3,9 +3,14 @@
 !*/
 
 */*
+
 !index.html
-!assets/*
 !.gitignore
 !.gitattributes
+!assets/*
+
 !**/*.html
 !**/title.txt
+
+kubernetes/*
+save.html
