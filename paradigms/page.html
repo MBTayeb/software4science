@@ -1,104 +1,7 @@
 <div style="max-width: 45em; margin-left: auto; margin-right: auto;">
-  <p>
-    One can think of programming paradigms as the theory behind programming.
-    Studying these gives more insight into how we communicate with the computer. 
-    Programming can be defined as writing some sort of messages that the computer can understand.
-    Programming languages allow us to translate this message to the computer, as everything known to it is a combination of zeroes and ones.
-    A programming paradigm describes the way we express that message.
-    Often, the paradigms don't impact what the computer does with it.
-  </p>
-  <h4>Imperative programming</h4>
-  <p>
-    The simplest and most intuitive paradigm would be imperative programming. That is to give the computer a list of commands that should be done, one after the other. Often, procedures and functions are used within this paradigm, to avoid writing the same commands for similar tasks. (One also uses the term procuderal programming.)
-  </p>
-  <span>Languages using this paradigm include </span>
-  <ul style="display: grid; grid-template-columns: repeat(3, 1fr);">
-    <li>C</li>
-    <li>Fortran</li>
-    <li>Pascal</li>
-  </ul>
-  <h5>Modularity</h5>
-  <p>
-    When one is not writing a quick script to do a small task, the number of lines of the code starts to grow which makes it increasingly hard to catch the errors. To quickly find errors and make our code organized, modularity comes to play. Instead of writing a hundred explicit commands, we try to factorize the code into small modules like functions and procedures. Thus, one could define procedural programming as modular imperative programming.
-  </p>
-  <h4>Declarative Programming</h4>
-  <p>
-    The more modular the code becomes, the less explicit the commands are. Reading the main part of the code has then more to do with the overall strategy and the goal of the code and less with <emph>how</emph> it's done. Of course, the tiny details are often dealt with by the language itself. SQL is an example of a language implementing this paradigm. With SQL you can say exactly what you need from a database and it gets it for you, i.e. one doesn't need to program how that is internly done.
-  </p>
-  <h4>OOP: Object-Oriented Programming</h4>
-  <p>
-    Another paradigm is OOP. Here, all the work starts by defining objects. This includes also defining functions that can run on them. But instead of the term functions, we call them methods. Actually, one doesn't define objects themselves but their classes, i.e. the class is the programmed model from which we generate as many objects (or instances) as we need. Often, instead of writing everything from scratch, the programmer imports classes from some library and looks up their methods in the documentation. 
-  </p>
-  <p>
-    One of the cool things about OOP, is that objects can only be changed and interacted with using the methods that the programmer defines for them. This gives the program much more security than in imperative languages like C where one has the freedom to do anything. From a programmer's perpective, Imperative Programming and OOP differ, but for the computer, a method is just another function, which first argument is the object.  
-  </p>
-  <span>Languages using this paradigm include </span>
-  <ul style="display: grid; grid-template-columns: repeat(3, 1fr);">
-    <li>C++</li>
-    <li>Python</li>
-    <li>Java</li>
-  </ul>
-  <h4>FP: Functionnal Programming</h4>
-  <p>
-    The other paradigm that should be mentionned is functionnal programming. What matters most in this paradigm is the return value of a function. While a function in the imperative paradigm might not have a return value (like void functions in C), it is a necessity here. Another major point is that a function must not have any side effects. In other words, after applying the function f on the arguments x and y,
-    <ol>
-      <li>x and y should not be changed,</li>
-      <li>no other variable in the whole code should be changed beside the variables defined within the function.</li>
-    </ol>
-   This way, the function always returns the same results. 
-  </p>
-  <p>
-    In OOP, the state, e.g. an instance of the main class, is crucial. When needed, methods are used to modify those instances. Meanwhile, FP avoids messing with the <emph>state</emph> of the program as much as possible. This also means that the use of variables is not appreciated. Loops also involve state changing, since some variable should be there to tell it when to stop. 
-  </p>
-  <p>
-    Using this paradigm brings a lot of advantages. 
-    It simplifies programming for parallel computing, 
-    For example, it solves one of the big challenges of parallel computing, i.e. doing different computations within the same program in parallel. When we know that a function is pure, we are sure that it doesn't interact with other things in the program and thus it's ready for parallel computing. Also debugging is more straightforward, when you know that functions are pure, since the programmer has less to worry about. 
-  </p>
-  <p>
-    Many concepts used in FP could be used even in OOP or other paradigms as they improve the overall quality of the code. We have made a python notebook that introduces the core concepts of FP. The notebook can be downloaded under the programming paradigms chapter. 
-  </p>
-  <span>Languages using this paradigm include </span>
-  <ul style="display: grid; grid-template-columns: repeat(3, 1fr);">
-    <li>Lisp</li>
-    <li>Scheme</li>
-    <li>Haskell</li>
-  </ul>
-  <h5>MapReduce</h5>
-  <p>
-    Instead of using loops, one of the common strategies is to use the map and reduce functions. It is easier to understand this in an example. Say we have parsed a book to a list and we want to know which words are the most frequent in it. We first define a general word formatter function. Then we use the map function, which applies the formatter function to each element of the list, so that all of the list elements containing the same word are indistinguishable. Then, we use the reduce function to reduce the list of formatted words to a dictionnary with the formatted words as keys and the number of times they occured as values. We say the dictionnary is being accumulated. The following sketch helps to visualize this example.
-  </p>
-  <div>
-    <img class="img-fluid" role="presentation"
-      src="https://sso.uni-muenster.de/LearnWeb/learnweb2/draftfile.php/4051585/user/draft/956085157/MapReduce.jpg"
-      style ="aspect-ratio:4480/3360" >
-      <!-- width="4480" height="3360" -->
-  </div>
-  <p>
-    The core benefit of this strategy is to solve the problem without having to think too much about the details, as they are handled by the predefined map and reduce functions. Behind the scenes, the reduce function goes through each element of the given iterable and adds it in a selected manner to the accumulated value, the accumulated dictionnary in this case. The start value should be given to the function, otherwise the first element of the iterable is used. (Of course, the first element doesn't get accumulated twice.)
-    Thus, one has to define the function that should be mapped, the formatter function in this case, and a function that tells the reduce function how to accumulate the iterable to a single value.
-  </p>
-
-  <h4>Multi-paradigm languages:</h4>
-  <p>
-    Python is an example of a multi-paradigm language.
-    Eventhough Python is an OOP language in its roots,
-    python allows programmers to use any of the paradigms they want. This is maybe another reason for its popularity. 
-  </p>
-  <h4>Which paradigm should I use?</h4>
-  <p>
-    One should note that it is the programmer in the end that decides how to program. Most people using C++ use it as if it was C. That is, there are often tricks that allow the programmer to use another paradigm eventhough that programming language is made for a certain different paradigm.
-  </p>
-  <p>
-    There is also nobody forcing you to use only one paradigm per project. Learning the different paradigms lets you decide which is best suited for each task. One can also benefit of the many ingenious ideas that the paradigms are based on.
-  </p>
-</div>
-
-
-<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
   <details open>
     <summary>
-      <h4 style="display: inline;">General Ressources</h4>
+      <h4 style="display: inline;">General Resources</h4>
     </summary>
     <div style="padding-left: 1em;">
       <div style="padding-left: 1em">
@@ -126,7 +29,7 @@
           <div>
             -- Classification of the principal programming paradigms by Peter Van Roy
             <br> Understanding all the terms is not expected
-            <br> The ressouce shows how most paradigms diverged from each other
+            <br> The resource shows how most paradigms diverged from each other
           </div>
         </div>
       </div>
@@ -224,7 +127,7 @@
         </div>
         <div style="padding-left: 2em; text-indent: -1em;">
           <div>
-            -- A beginner friedly, hands-on tutorial on FP in Python by Jeff Licquia 
+            -- A beginner friendly, hands-on tutorial on FP in Python by Jeff Licquia 
           </div>
         </div>
       </div>
