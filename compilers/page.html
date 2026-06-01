@@ -3,76 +3,44 @@
         Compilers, software libraries, and build systems are at the heart of RSEng
 		and we therefore have to understand them at least at a basic level.
     </p>
-</div>
-<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
 	<p>
-		If you are using an interpreted
-		language, you do not need a compiler: Upon execution of your script, a
-		program (for instance bash or python) reads your script and executes the
-		commands. If you are using a compiled language (like Fortran or C/C++) you
-		need a fitting compiler, which can 'translate' your source code into a
-		machine executable (and often optimized) program, the 'binary'. A range of
-		compilers is available both for Fortran and
-		C/C++. In the realm of Fortran, you'll commonly find the Intel Fortran
-		compiler and GCC (for Linux) as typical choices. When it comes to C/C++,
-		Microsoft Visual C++ (for Windows) and GCC (for Linux) are standard
-		compiler options.
+		If you are using an interpreted language, you do not need a compiler: Upon execution of your script, a program (for instance bash or python) reads your script and executes the commands. If you are using a compiled language (like Fortran or C/C++) you need a fitting compiler, which can 'translate' your source code into a machine executable (and often optimized) program, the 'binary'. A range of compilers is available both for Fortran and C/C++. In the realm of Fortran, you'll commonly find the Intel Fortran compiler and GFortran (for Linux) as typical choices. When it comes to C/C++, Microsoft Visual C++ (for Windows) and GCC (for Linux) are standard compiler options.
 	</p>
 	<p>
-		Compiling is usally a two-step process
-		(although as a default, a full program is produced if just one source code
-		file is given): First, <i>object files</i> are produced, then
-		these object files are '<i>linked</i>' to produce the final
-		program. The fun thing is that upon linking one can not only link to one's
-		own object file, but also to already available objects, which are usually
-		collected within so-called '<i>software libraries</i>'. These
-		libraries can be linked either<i> static</i> (the code is really
-		build into the binary) or <i>dynamic</i> (at run time, a call is
-		made to the library installed on the machine). Static linking does not
-		require the necessary libraries to be installed on the computer, where the
-		binary should run, but it blows up the size of the binary and
-		incompatibilities might arise. Dynamic linking does not only allow keeping
-		the binary small, but the underlying libraries can also be kept up to date,
-		for instance regarding security issues. On Linux, static libraries are named
-		lib&lt;name&gt;.a, while dynamic libraries are named lib&lt;name&gt;.so, on
-		Windows it's &lt;name&gt;.lib and &lt;name&gt;.dll - to link to one of these
-		libraries, you will not only have to give the name, but also the path to
-		where the library is placed on your system.
+		Compiling is usually a two-step process (although as a default, a full program is produced if just one source code file is given): First, <i>object files</i> are produced, then these object files are '<i>linked</i>' to produce the final program. The fun thing is that upon linking one can not only link to one's own object file, but also to already available objects, which are usually collected within so-called '<i>software libraries</i>'. These libraries can be linked either<i> static</i> (the code is really build into the binary) or <i>dynamic</i> (at run time, a call is made to the library installed on the machine). Static linking does not require the necessary libraries to be installed on the computer, where the binary should run, but it blows up the size of the binary and incompatibilities might arise. Dynamic linking does not only allow keeping the binary small, but the underlying libraries can also be kept up to date, for instance regarding security issues. On Linux, static libraries are named lib&lt;name&gt;.a, while dynamic libraries are named lib&lt;name&gt;.so, on Windows it's &lt;name&gt;.lib and &lt;name&gt;.dll respectively. To link to one of these libraries, you will not only have to give the name, but also the path to where the library is placed on your system.
 	</p>
 	<p>
-		<i>Whenever you can, you should
-		use existing libraries!</i> This saves not only your time and most
-		likely also execution time, but increases the reliability and
-		transferability of your work. Libraries to which basically every program
-		links are the Fortran and/or C/C++ 'run-time' libraries. Many scientific
-		programs link to mathematical libraries like the Intel Math Kernel Library
-		(MKL) for all sorts of mathematical operations or to computing-related
-		libraries like those for Message Passing Interface (MPI) calls. See below
-		for an -- necessarily incomplete -- list of interesting libraries for
-		scientific programming.
+		<i>Whenever you can, you should use existing libraries!</i> This saves not only your time and most likely also execution time, but increases the reliability and transferability of your work. Libraries to which basically every program links are the Fortran and/or C/C++ 'run-time' libraries. Many scientific programs link to mathematical libraries like the Intel Math Kernel Library (MKL) for all sorts of mathematical operations or to computing-related libraries like those for Message Passing Interface (MPI) calls. See below for a -- necessarily incomplete -- list of interesting libraries for scientific programming.
 	</p>
 	<p>
-		The tool <i>ldd</i> allows to
-		investigate binaries and shows, to which libraries a binary links; these
-		must be installed to allow execution. If you give it a try you will find
-		that even the simplest binary link to a set of 'run time' libraries which
-		account for very basic functionality, like input/output etc. Further
-		information on binaries can be acquired with the program
-		<i>nm</i>. You can create you own libraries from compiled object
-		files with the tool <i>ar</i>, which is often a good way to
-		organize programming projects. Besides linking, compilers usually have
-		options to adjust the level of optimization that is tried on the code and
-		that can also be switched off completely for debugging purposes via a
-		separate option. When developing your application, use this debugging flag,
-		to avoid 'weird' errors or messages from optimization.
+		The tool <i>ldd</i> allows to investigate binaries and shows, to which libraries a binary links; these must be installed to allow execution. If you give it a try you will find that even the simplest binary link to a set of 'run time' libraries which account for very basic functionality, like input/output etc. Further information on binaries can be acquired with the program <i>nm</i>. You can create you own libraries from compiled object files with the tool <i>ar</i>, which is often a good way to organize programming projects. Besides linking, compilers usually have options to adjust the level of optimization that is tried on the code and that can also be switched off completely for debugging purposes via a separate option. When developing your application, use this debugging flag, to avoid 'weird' errors or messages from optimization.
 	</p>
-	<h5 style="display: inline;">Example tutorials on using compilers :</h5>
+	Typical libraries include ...
+	<ul>
+		<li>
+		    BLAS (basic linear algebra software for vector and matrix operations etc.),
+			<br>LAPACK (linear algebra package for eigenvalue problems, matrix decomposition etc),
+			<br>FFT(fast fourier transform)
+			<br>- which are all available as part of the Intel MKL
+		</li>
+	    <li>
+			MPI (message passing interface)
+		</li>
+		<li>
+		    LIBINT (integral routines) or LIBXC (exchange/correlation functionals) in Quantum Chemistry
+		</li>
+		<li>...</li>
+	</ul>
+	<p>
+		Once you have linked the library, you can simply call the functions in your code supplied by the library like <code class="language-fortran">call dgemm(...)</code>in Fortran - but you first have to look up the interface, i.e. what values to give and to get for a proper call. This information can be taken from the documentation of the library which is usually available online.
+	</p>
+	<h5 style="display: inline;">Tutorials on compilers :</h5>
 	<div style="padding-left: 1em;">
 	  <div style="text-indent: -1em; padding-left: 1em;"><a
 		  href="https://www.youtube.com/watch?embed=no&amp;v=we0uAQ8otLQ">https://www.youtube.com/watch?v=we0uAQ8otLQ</a>
 	  </div>
 	  <div style="padding-left: 2em; text-indent: -1em;">
-		<div>-- tutorial for the installation of Visual Studio on Windows and
+		<div>-- tutorial on the installation of Visual Studio on Windows and
 		  using to it compile C++</div>
 	  </div>
 	</div>
@@ -81,7 +49,7 @@
 		  href="https://web.cs.ucla.edu/classes/fall14/cs143/project/cpp/gcc-intro.html">https://web.cs.ucla.edu/classes/fall14/cs143/project/cpp/gcc-intro.html</a>
 	  </div>
 	  <div style="padding-left: 2em; text-indent: -1em;">
-		<div>-- tutorial for the compilation of C/C++ using GNU compilers gcc/g++
+		<div>-- tutorial on the compilation of C/C++ using GNU compilers gcc/g++
 		  offered by University of California, Los Angeles (UCLA)</div>
 	  </div>
 	</div>
@@ -90,296 +58,87 @@
 		  href="https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html">https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html</a>
 	  </div>
 	  <div style="padding-left: 2em; text-indent: -1em;">
-		<div>-- Avanced gcc tutorial with an introduction to <em>make</em>
+		<div>-- Advanced GCC tutorial with an introduction to <em>make</em>
 		  offered by Nanyang Technological University, Singapore (NTU Singapore)
 		</div>
 	  </div>
 	</div>
-</div>
-	
-<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
-	<p>
-		Once your projects has grown to more
-		than a handful of source code files (to make your project accessible to
-		anyone but yourself, each source code file should not contain more than a
-		few hundred lines of code), the process of compiling your program can become
-		very tedious, especially if you have different compilers, options, variables
-		etc. for compilation on different systems. This is were build systems like
-		<i>make</i> come into play; they allow you to specify rules for
-		handling files and thereby to automate the process of compilation. Once you
-		download a code that makes proper use of make, you just have to change into
-		the source code directory and type make to do all necessary compilation
-		steps. The makefile itself can be generated on the target system, using
-		system specific variables and options. This is why most projects require you
-		to do the 'classic' three step procedure to compile and install a new
-		program: './configure &amp;&amp; make &amp;&amp; make install' (The first
-		one generates the specific makefile, the second does the compilation and the
-		third command copies the produced binaries to a pre-defined installation
-		directory like $HOME/bin or /usr/bin etc.). Package management systems are
-		build on top of this; they additionally resolve 'dependencies', i.e. if a
-		program requires other software (usually libraries) to run, these can also
-		be automatically installed.
-	</p>
-	<h4>GNU make tutorial</h4>
-	<p>
-		GNU make is a CLI build tool, i.e. it helps to easily build and rebuild
-		the code in your project as needed. The make commands should normally 
-		be written in a extensionless file named "makefile" in the project folder.
-		Building is then done by just running the shell command "make" within
-		the same folder. What differs makefile from other script files is that
-		they check dependencies before building. 
-		For example, let us compare between a makefile and a shell script 
-		in the following situation. We have a Fortran script that calculates 
-		a function f(x) in different x values and saves the results to a dat file.
-		Then, we plot the results using a python script. We already run the
-		programs and have a plot file. Now we edit the plot file to improve the plot. 
-		Using a shell script that compiles the Fortran script and runs the python 
-		file would calculate the function values again, which is actually not 
-		needed and may waste much time. Using a makefile, we can easily avoid this problem.
-		In fact, it automatically finds out that only the python script was edited,
-		that is, make just runs it again. This makefile may look like:
-	</p>
-	<div style="border: 1px solid; border-radius: 5px;padding:1em">
-        <pre><code class="language-makefile">fig.png : code.exe plot.py
-&#09;.\code.exe
-&#09;python plot.py
-code.exe : code.f90
-&#09;gfortran -Wall -Wextra -o code.exe code.f90
-clean : 
-&#09;del *.exe *.png *.dat</code></pre>
-    </div>
-    <p>
-        One should note that this makefile also allows us to easily remove all
-		files with the extensions .exe (binaries), .png (pictures) and .dat (datafiles) 
-		just by running "make clean". In fact, clean is here a target that no other 
-		target depends on, which means it does not happen unless it is specified 
-		in the prompt. You can find example python and Fortran files below.
-    </p>
-    <details>
-        <summary>code.f90</summary>
-        <div style="border: 1px solid; border-radius: 5px;padding:1em">
-			<pre><code class="language-fortran">program f
-    implicit none
-    real,parameter::a=-10,b=10
-    integer,parameter::N=10000
-    real,parameter::step=(b-a)/(N-1.)
-    real,dimension(N)::x,y
-    integer::i
-    do i=1,N
-        x(i)=a+(i-1.)*step
-        y(i)=atan(x(i))
-    end do
-    open(1, file = 'data.dat')
-    do i=1,N
-        write(1,*) x(i), y(i)
-    end do
-end program f</code></pre>
-        </div>
-    </details>
-    <details>
-        <summary>plot.py</summary>
-		<div style="border: 1px solid; border-radius: 5px;padding:1em">
-			<pre><code class="language-python">import matplotlib.pyplot as plt
-import numpy as np
-data = np.loadtxt('data.dat')
-x = data[:,0]
-y = data[:,1]
-fig,ax=plt.subplots()
-ax.plot(x,y)
-ax.set_xlabel("x")
-ax.set_ylabel("y")
-ax.set_title("f(x)=arctan(x)")
-ax.grid()
-plt.savefig("fig.png")
-plt.close()</code></pre>
-    </div>
-    </details>
-
-    <p>
-        The makefile above was used for explanation purposes. But the project 
-		makefiles you would normally see look more like the following one.
-    </p>
-    <div style="border: 1px solid; border-radius: 5px;padding:1em">
-        <pre><code class="language-makefile">#CONFIG_ADD = yes
-FC = ifc
-FC_FLAGS = -fast
-OBJECTS= main.o sub.o
-ifdef CONFIG_ADD
- OBJECTS= $(OBJECTS) add.o
-endif
-my-program : $(OBJECTS)
-&#09;$(FC) $(LD_FLAGS) -o $@ $(OBJECTS)
-%.o : %.f90
-&#09;$(FC) $(FC_FLAGS) -c -o $@ $<
-clean :
-&#09;rm *.o
-clean-all :
-&#09;rm *.o my-program</code></pre>
-    </div>
-    <p>
-        Here, the Intel Fortran compiler (ifc) is used for compilation.
-		The compiler and the flags are specified in the beginning of the file.
-		This makefile builds the final executable "my-program", and the objects 
-		needed for it are also listed.  
-		IF CONFIG_ADD is set to yes, add.o is added to the objects.  
-    </p>
-	<p>
-		The next makefile is a one that you could use to compile and run any simple Fortran 90
-		 program using gfortran without any editing.
-	</p>
-	<div style="border: 1px solid; border-radius: 5px;padding:1em">
-        <pre><code class="language-makefile">FC = gfortran
-FC_FLAGS = -Wall -Wextra -g -O0 -fbacktrace
-%.exe : %.f90 
-&#09;$(FC) $(FC_FLAGS) -o $@ $<
-&#09;$@
-clean:
-&#09;del *.exe
-.PHONY: clean</code></pre>
-    </div>
-	<p>
-		Now, let us discuss how to compile and run a Fortran 90 file called code.f90. 
-		%.f90 is used to replace any file in the same directory as the makefile that has 
-		the extension .f90. If such a file exists, there will be a target
-		with the same name but with the extension .exe instead. This is called
-		a pattern rule. In our case,
-		the target will be code.exe.  
-	</p>
-	<p>
-		Makefiles always start by making the prerequisites of the first target listed 
-		before making that target.
-		Still, running <code class="language-makefile">make</code> won't do anything, as 
-		using a pattern rule is not enough for making a target, the target should be 
-		explicitly specified. 
-		Thus, one solution would be to add a target called "all" and add code.exe as a prerequisite
-		for it. This, however, requires editing the makefile, which can be time consuming
-		when many different Fortran files
-		have to be compiled. 
-	</p>
-	<p>
-		The solution recommended here is to just run 
-		<code class="language-makefile">make code.exe</code>. 
-		This way, the target is specified on the fly
-		and it is recognized by the makefile since it matches the wildcard.
-		This is much simpler and requires less editing. 
-		One should also mention, that this is 
-		only possible because the task itself is not complicated, as we only have to compile a simple Fortran
-		program. Sometimes one needs to compile multiple sources, which can't be done with this makefile.
-		You could find help on this below in the tutorial made by NeuralNine. 
-	</p>
-	<p>
-		The compilation command includes <i>automatic variables</i>, i.e. is variables that don't have
-		to be defined beforehand. 
-		<code class="language-makefile">$@</code> is filled with the target.
-		<code class="language-makefile">$<</code> is filled with the prerequisites.
-		After the compilation, the executable is run with <code class="language-makefile">$@</code>.
-	</p>
-	<p>
-		Last but not least, we use the target .PHONY to specify the phony targets, i.e the fake ones
-		that are not actual files.
-		Indeed, there could be a file called clean in the same directory, which would confuse the 
-		makefile. Using .Phony makes sure that this problem doesn't happen. If one uses the first
-		solution mentioned above, all should also be added to the phony targets. 
-	</p>
-	<h5 style="display: inline;">Online resources</h5>
-	<div style="padding-left: 1em;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://missing.csail.mit.edu/2020/metaprogramming/">
-                https://missing.csail.mit.edu/2020/metaprogramming/
-            </a>
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-                -- MIT Missing semester course on metaprogramming
-            </div>
-        </div>
-    </div>
-	<div style="padding-left: 1em;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://swcarpentry.github.io/make-novice/">
-                https://swcarpentry.github.io/make-novice/
-            </a>
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-                -- Automation and Make course by the Software Carpentries
-            </div>
-        </div>
-    </div>
-	<div style="padding-left: 1em;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://www.youtube.com/watch?embed=no&amp;v=yWLkyN_Satk"> 
-                https://www.youtube.com/watch?v=yWLkyN_Satk
-            </a>
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-                -- Makefile tutorial by NeuralNine<br> 
-				Makefile for compiling different C files and <i>linking</i> 
-				their binaries to make one executable.
-            </div>
-        </div>
-    </div>
-	<div style="padding-left: 1em;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://makefiletutorial.com">
-                https://makefiletutorial.com
-            </a>
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-                -- Makefile tutorial by Chase Lambert 
-            </div>
-        </div>
-    </div>
-	<div style="padding-left: 1em;">
-        <div style="text-indent: -1em;padding-left: 1em;">
-            <a href="https://hpc-wiki.info/hpc/Make">
-                https://hpc-wiki.info/hpc/Make
-            </a>
-        </div>
-        <div style="padding-left: 2em;text-indent: -1em;">
-            <div>
-            -- Advanced Make tutorial in the HPC Wiki  
-            </div>
-        </div>
-    </div>
-</div>
-	
-<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
-	Typical libraries include ...
-	<ul>
-		<li>BLAS (basic linear algebra software for vector and matrix operations
-		etc.), LAPACK (linear algebra package for eigenvalue problems, matrix
-		decomposition etc), FFT(fast fourier transform) - which are all available
-		as part of the Intel MKL</li>
-		<li>MPI (message passing interface)</li>
-		<li>LIBINT (integral routines) or LIBXC (exchange/correlation functionals)
-		in Quantum Chemistry</li>
-		<li>...</li>
-	</ul>
-	<p>
-		Once you have linked the library, you
-		can simply call the functions in your code supplied by the library like
-		'call dgemm(...)' in Fortran - but you first have to look up the interface,
-		i.e. what values to give and to get for a proper call. This information can
-		be taken from the documentation of the library which is usally available
-		online, e.g. in the case of the Intel MKL library here:
-	</p>
+	<h5 style="display: inline;">Resources on libraries:</h5>
 	<div style="padding-left: 1em;">
 		<div style="text-indent: -1em;padding-left: 1em;">
-			<a href="https://software.intel.com/content/www/us/en/develop/articles/intel-math-kernel-library-documentation.html">
-				https://software.intel.com/content/www/us/en/develop/articles/intel-math-kernel-library-documentation.html
+			<a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html">
+			https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html
 			</a>
 		</div>
 		<div style="padding-left: 2em;text-indent: -1em;">
 			<div>
-				--  Intel oneAPI Math Kernel Library Documentation
+				-- Intel oneAPI Math Kernel Library Documentation
 			</div>
 		</div>
 	</div>
 	
-	<p>And if you are here already, why not enjoy this one:</p>
+	<div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;">
+        <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html">
+          https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html
+        </a>
+      </div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>
+          -- Intel MPI Library
+        </div>
+      </div>
+    </div>
+	<div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;">
+        <a href="https://github.com/evaleev/libint">
+          https://github.com/evaleev/libint
+        </a>
+      </div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>
+          -- Libint: "high-performance library for computing Gaussian integrals in quantum mechanics "
+        </div>
+      </div>
+    </div>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;">
+        <a href="https://gitlab.com/libxc/libxc">
+          https://gitlab.com/libxc/libxc
+        </a>
+      </div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>
+          -- Libxc: "Library of exchange-correlation functionals for density-functional theory."
+        </div>
+      </div>
+    </div>
+    <div style="padding-left: 1em; font-weight: bolder;">
+      <div style="text-indent: -1em; padding-left: 1em;">
+        <a href="https://www.youtube.com/watch?embed=no&amp;v=4oXc3EpUN4E">
+          https://www.youtube.com/watch?v=4oXc3EpUN4E
+        </a>
+      </div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>
+          -- "How software libraries work?" by Smok Code
+        </div>
+      </div>
+    </div>
+    <div style="padding-left: 1em; ">
+      <div style="text-indent: -1em; padding-left: 1em;">
+        <a href="https://www.youtube.com/watch?embed=no&amp;v=YtiPCPtmZrs">
+          https://www.youtube.com/watch?v=YtiPCPtmZrs
+        </a>
+      </div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>
+          -- Introduction to various tools used when working with libraries
+          <br>Tutorial by Mike Shah
+        </div>
+      </div>
+    </div>
+	<div>And if you are here already, why not enjoy this one:</div>
 	<div style="padding-left: 1em;">
 		<div style="text-indent: -1em;padding-left: 1em;">
 			<a href="https://www.nature.com/articles/d41586-021-00075-2">
