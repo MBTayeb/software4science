@@ -1,16 +1,24 @@
+# 1. Ignore absolutely everything by default
 *
 
+# 2. Allow Git to scan ALL directories/subdirectories so it can find the nested "Sub-" folders
 !*/
+!**/
 
-*/*
-
+# 3. Whitelist your root-level files and assets
 !index.html
 !.gitignore
 !.gitattributes
 !assets/*
 
-!**/*.html
-!**/title.txt
+# 4. Lock down everything inside regular directories, EXCEPT for "Sub-" folders
+/**/*
+!**/Sub-*/
 
-kubernetes/*
+# 5. Whitelist only the HTML and title files inside those "Sub-" folders
+!**/Sub-*/**/*.html
+!**/Sub-*/title.txt
+
+# 6. Specific overrides for folders you want completely blocked
+kubernetes/
 save.html
