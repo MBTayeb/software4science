@@ -1,24 +1,30 @@
-# 1. Ignore absolutely everything by default
+# 1. Ignore everything by default
 *
 
-# 2. Allow Git to scan ALL directories/subdirectories so it can find the nested "Sub-" folders
+# 2. Allow all directories so Git can scan them for the allowed files
 !*/
-!**/
 
-# 3. Whitelist your root-level files and assets
-!index.html
-!.gitignore
-!.gitattributes
-!assets/*
+# 3. Explicitly allow your specific files (wherever they are)
+!loader.html
+!page.html
+!title.txt
 
-# 4. Lock down everything inside regular directories, EXCEPT for "Sub-" folders
-/**/*
-!**/Sub-*/
+# 4. Explicitly allow the entire 'assets' folder and its contents
+!assets/
+!assets/**
 
-# 5. Whitelist only the HTML and title files inside those "Sub-" folders
-!**/Sub-*/**/*.html
-!**/Sub-*/title.txt
-
-# 6. Specific overrides for folders you want completely blocked
+# 5. Hard block specific files and folders (Overrides the allows above)
 kubernetes/
 save.html
+ToDo.md
+codebook.toml
+*.py
+my_loaders.txt
+
+# 6. Ignore private folders starting with a dot or an underscore
+**/.*
+**/_*
+
+# 7. Ensure Git configuration files are tracked
+!.gitignore
+!.gitattributes
