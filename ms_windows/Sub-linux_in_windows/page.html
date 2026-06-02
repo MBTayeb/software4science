@@ -1,0 +1,108 @@
+<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
+    <h4>Linux Environment within a Windows Computer: WSL/MinGW</h4>
+    <p>As mentioned before, Windows is often not the OS many programming languages
+        are built for. Now we will discuss the ways one can solve this problem.</p>
+    <h5>WSL</h5>
+    <p>Windows Subsystem for Linux is a Microsoft service that allows you to run a
+        Linux OS within Windows. This has been a revolutionary step from Windows, as
+        it allows one to have the best of both Worlds. This has improved further
+        with the WSL 2, with which one can open many GUIs. There are many WSL
+        distributions available directly in the Microsoft Store. We recommend using
+        Ubuntu, as it is the most popular Linux distribution and has the most
+        support.</p>
+    <p>The following tutorials may get a bit advanced for beginners, the first
+        parts of each tutorial are usually enough for most users. More advanced
+        users can continue with the rest.</p>
+    <div style="padding-left: 1em; font-weight: bolder;">
+        <div style="text-indent: -1em; padding-left: 1em;"><a
+            href="https://learn.microsoft.com/en-us/windows/wsl/setup/environment">
+            https://learn.microsoft.com/en-us/windows/wsl/setup/environment </a>
+        </div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- "Set up a WSL development environment" tutorial by Microsoft Learn
+        </div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em; padding-left: 1em;"><a
+            href="https://www.youtube.com/watch?embed=no&amp;v=vxTW22y8zV8">
+            https://www.youtube.com/watch?v=vxTW22y8zV8 </a></div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- WSL 2 tutorial by NetworkChuck</div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em; padding-left: 1em;"><a
+            href="https://www.youtube.com/watch?embed=no&amp;v=qYlgUDKKK5A">
+            https://www.youtube.com/watch?v=qYlgUDKKK5A </a></div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- WSL 1 tutorial by NeuralNine <br>This has been included, even
+            though it is not up to date, as it includes some good tips on the use of
+            WSL in general.</div>
+        </div>
+    </div>
+    <h5>MinGW</h5>
+    <p>MinGW (Minimalist GNU for Windows) is a tool that allows you to run many
+        Linux packages natively on Windows. For example, one could use the GNU
+        compilers like gcc for C and g++ for C++. This is a good alternative for
+        those who don't want to use WSL. However, it is limited as one can only use
+        the packages that are offered by MinGW. The initial MinGW project only
+        offers a 32-bit compiler, but the binaries can be executed in both 32 and 64
+        bit. This is not interesting, as it is not updated anymore.</p>
+    <p>In 2007, a fork was published which compiles into 64-bit, which is why it
+        is called MinGW-w64. To use this, there are various possibilities.
+        Strawberry Perl is an environment for the Perl interpreter on Windows, which
+        includes MinGW-w64. This method is maybe the most straightforward. However,
+        you can only use the binaries included. For more customization, MSYS2 offers
+        an environment very similar to Linux on Windows. It was built on Cygwin,
+        which is another alternative that we don't need to introduce here. After
+        installing MSYS2, different environment are available. The MSYS environment
+        is the parent environment, so the others inherit from it. These environment
+        differ by the compilers used for building their packages and other things.
+        The package-manager used in MSYS2 is pacman, which is the same as in Arch
+        Linux.</p>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em; padding-left: 1em;"><a
+            href="https://strawberryperl.com/"> https://strawberryperl.com/ </a>
+        </div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- Strawberry Perl download link <br>After installation, you would
+            need to add the MinGW-w64 binaries folder to the path variable. This is
+            normally located in <code>C:\Strawberry\c\bin</code>.</div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em; padding-left: 1em;"><a
+            href="https://www.msys2.org/"> https://www.msys2.org/ </a></div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- MSYS2 official website. It provides an installation tutorial.
+        </div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em; padding-left: 1em;"><a
+            href="https://www.youtube.com/watch?embed=no&amp;v=KHWlz1GnFJU">
+            https://www.youtube.com/watch?v=KHWlz1GnFJU </a></div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- MSYS2 tutorial by constref <br>This tutorial also introduces the
+            different environments and shows how to add these to Windows Terminal.
+        </div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em; padding-left: 1em;"><a
+            href="https://www.msys2.org/docs/environments/">
+            https://www.msys2.org/docs/environments/ </a></div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- Documentation on the differnent MSYS2 environments</div>
+        </div>
+    </div>
+    <div style="padding-left: 1em;">
+        <div style="text-indent: -1em; padding-left: 1em;"><a
+            href="https://wiki.archlinux.org/title/Pacman">
+            https://wiki.archlinux.org/title/Pacman </a></div>
+        <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- pacman tutorial in the official Arch Linux Wiki</div>
+        </div>
+    </div>
+</div>

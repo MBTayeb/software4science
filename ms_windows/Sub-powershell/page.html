@@ -1,0 +1,151 @@
+<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
+    <h4>PowerShell</h4>
+    <p>Windows PowerShell is a built-in command line shell in the Windows OS. Just
+      like the other Windows command line shell "cmd.exe", also known as "Command
+      Prompt", it is a scripting language, which means that it can be used to
+      automate tasks. What differentiates it from cmd is the fact that it is a
+      configuration management framework (it can be used to automatically track
+      and control many computers at once). Thus, it can do everything a cmd can do
+      and much more. This is why it has been named PowerShell. cmd.exe scripts are
+      called "batch files" and have the extensions ".cmd" or ".bat", while
+      PowerShell scripts have the extension ".ps1".</p>
+    <p>PowerShell can be compared to the Linux Bash shell. However, it is
+      systematically different. The output of Bash commands is in text format,
+      while the output of PowerShell commands is in object format (.NET objects).
+      This can cause a lot of confusion for those who are used to Bash. Moreover,
+      all the commands in PowerShell are called cmdlets (pronounced command-lets)
+      and named in the form of "verb-noun", which could be helpful for beginners.
+      This is very different from bash though, where the commands are usually one
+      word. For example, "Get-ChildItem" is the equivalent of "ls" in bash (short
+      for <span style="font-style: italic;">list</span>). Still, there are many
+      built-in aliases in PowerShell that rename the commands to their Bash
+      equivalent (e.g. "ls" works also on PowerShell).</p>
+    <p>Starting from the 6th version, PowerShell has become drastically different
+      from the previous versions. So the newer ones are called PowerShell Core to
+      differentiate them from the old ones, i.e Windows PowerShell. The reason
+      behind this is that the older ones, like PowerShell 5, are built on the .Net
+      Framework while the new ones are built on .Net Core. This change was done to
+      make PowerShell available on macOS and Linux too. However, there are still
+      some cmdlets that are not available on macOS and Linux. Furthermore, there
+      are are cmdlets that are only available in macOs and Linux. For more
+      information, visit <a
+        href="https://learn.microsoft.com/en-us/powershell/scripting/whats-new/unix-support">
+        https://learn.microsoft.com/en-us/powershell/scripting/whats-new/unix-support
+      </a> . Another major difference is that PowerShell core is open-source.</p>
+    <h5>Setup</h5>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell">
+          https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell
+        </a></div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- PowerShell download link (available for macOS and Linux too)</div>
+      </div>
+    </div>
+    <h5>Introduction:</h5>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://www.youtube.com/watch?embed=no&amp;v=H0gwnFV_SFs">
+          https://www.youtube.com/watch?v=H0gwnFV_SFs </a></div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- "Windows PowerShell vs Command Prompt: What's The Difference
+          Anyway?" video by ThioJoe</div>
+      </div>
+    </div>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://www.youtube.com/watch?embed=no&amp;v=PqHfuaF2EiY">
+          https://www.youtube.com/watch?v=PqHfuaF2EiY </a></div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- "Windows PowerShell vs PowerShell Core - What Is It?" video by
+          ThioJoe</div>
+      </div>
+    </div>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://www.linux-community.de/ausgaben/linuxuser/2007/04/bash-vs-powershell/">
+          https://www.linux-community.de/ausgaben/linuxuser/2007/04/bash-vs-powershell/
+        </a></div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- "Bash vs. PowerShell" article by Marcus Nasarek (in german)</div>
+      </div>
+    </div>
+    <h5>Online resources:</h5>
+    <div style="padding-left: 1em; font-weight: bolder;">
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://www.youtube.com/playlist?embed=no&amp;list=PLnK11SQMNnE4vcvuAahz4KhNOS7zOfmB3">
+          https://www.youtube.com/playlist?list=PLnK11SQMNnE4vcvuAahz4KhNOS7zOfmB3
+        </a></div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- "Beginner PowerShell 7 Tutorials" course by JackedProgrammer
+          <br>On this channel, you can find other more advanced PowerShell
+          tutorials.</div>
+      </div>
+    </div>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://www.youtube.com/playlist?embed=no&amp;list=PLCGGtLsUjhm2k22nFHHdupAK0hSNZVfXi">
+          https://www.youtube.com/playlist?list=PLCGGtLsUjhm2k22nFHHdupAK0hSNZVfXi
+        </a></div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- "All things Microsoft PowerShell" course by Shane Young <br>This
+          course is taught in Windows PowerShell, but one could use PowerShell
+          core instead.</div>
+      </div>
+    </div>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://learn.microsoft.com/en-us/training/paths/powershell/">
+          https://learn.microsoft.com/en-us/training/paths/powershell/ </a></div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- "Automate administrative tasks by using PowerShell" course by
+          Microsoft Learn</div>
+      </div>
+    </div>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/00-introduction?view=powershell-7.4">
+          https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/00-introduction?view=powershell-7.4
+        </a></div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- "PowerShell 101" book by Mike F. Robbins</div>
+      </div>
+    </div>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://www.powershellgallery.com/">
+          https://www.powershellgallery.com/ </a></div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- The PowerShell Gallery: the official PowerShell package repository
+          <br>The packages are coming from the community and are not always
+          verified by Microsoft.</div>
+      </div>
+    </div>
+    <h5>Translate Bash to PowerShell:</h5>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://mathieubuisson.github.io/powershell-linux-bash/">
+          https://mathieubuisson.github.io/powershell-linux-bash/ </a></div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- "PowerShell equivalents for common Linux/bash commands"</div>
+      </div>
+    </div>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://www.phillipsj.net/posts/bash-to-powershell-simple-scripts/">
+          https://www.phillipsj.net/posts/bash-to-powershell-simple-scripts/ </a>
+      </div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- "Bash to PowerShell: Simple Scripts"</div>
+      </div>
+    </div>
+    <h5>cmd.exe tutorials</h5>
+    <div style="padding-left: 1em;">
+      <div style="text-indent: -1em; padding-left: 1em;"><a
+          href="https://www.youtube.com/playlist?embed=no&amp;list=PL69BE3BF7D0BB69C4">
+          https://www.youtube.com/playlist?list=PL69BE3BF7D0BB69C4 </a></div>
+      <div style="padding-left: 2em; text-indent: -1em;">
+        <div>-- Batch tutorials by by John Hammond</div>
+      </div>
+    </div>
+</div>
