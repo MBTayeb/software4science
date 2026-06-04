@@ -17,18 +17,23 @@
     </h5>
     <div id="topics-placeholder" class="daughter-lists-bigger"></div>
     <script>
-        fetch("intro/page.html")
-            .then((response) => response.text())
-            .then((data) => {
-                document.getElementById("content-placeholder").innerHTML = data
-            })
-            .catch((error) => console.error("Error loading the HTML:", error))
-        fetch("topics/page.html")
-            .then((response) => response.text())
-            .then((data) => {
-                document.getElementById("topics-placeholder").innerHTML = data
-            })
-            .catch((error) => console.error("Error loading the HTML:", error))
+    fetch("intro/page.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.getElementById("content-placeholder").innerHTML = data;
+            const pageTitle = document.querySelector('h4');
+            if (pageTitle) {
+                document.title = pageTitle.textContent;
+            }
+        })
+        .catch((error) => console.error("Error loading the HTML:", error));
+    fetch("topics/page.html")
+        .then((response) => response.text())
+        .then((data) => {
+            let fixedData = data.replaceAll('href="../', 'href="');
+            document.getElementById("topics-placeholder").innerHTML = fixedData;
+        })
+        .catch((error) => console.error("Error loading the HTML:", error));
     </script>
 </body>
 </html>
