@@ -1,127 +1,135 @@
 <div style="max-width: 45em; margin-left: auto; margin-right: auto;">
+    <div style="margin: 4px 0px 16px 0px;">
+        GNU make is a CLI build tool, i.e. it helps to easily build and rebuild the code in your project as needed. The make commands should normally be written in a extensionless file named <code class="language-bash">makefile</code> in the project folder. Building is then done by just running the shell command <code class="language-bash">make</code> within the same folder. What differs makefile from other script files is that they check dependencies before building. 
+    </div>
     <p>
-		GNU make is a CLI build tool, i.e. it helps to easily build and rebuild
-		the code in your project as needed. The make commands should normally 
-		be written in a extensionless file named "makefile" in the project folder.
-		Building is then done by just running the shell command <code>make</code> within
-		the same folder. What differs makefile from other script files is that
-		they check dependencies before building. 
+        For example, let us compare between a makefile and a shell script in the following situation. We have a Fortran script that calculates a function f(x) in different x values and saves the results to a dat file. Then, we plot the results using a python script. We already run the programs and have a plot file. Now we edit the plot file to improve the plot. Using a shell script that compiles the Fortran script and runs the python file would calculate the function values again, which is actually not needed and may waste much time. Using a makefile, we can easily avoid this problem. In fact, it automatically finds out that only the python script was edited, that is, make just runs it again. This makefile may look like:
     </p>
-    <p>
-		For example, let us compare between a makefile and a shell script in the following situation. We have a Fortran script that calculates a function f(x) in different x values and saves the results to a dat file. Then, we plot the results using a python script. We already run the programs and have a plot file. Now we edit the plot file to improve the plot. Using a shell script that compiles the Fortran script and runs the python file would calculate the function values again, which is actually not needed and may waste much time. Using a makefile, we can easily avoid this problem. In fact, it automatically finds out that only the python script was edited, that is, make just runs it again. This makefile may look like:
-	</p>
-	<div style="border: 1px solid; border-radius: 5px;padding:1em">
-       <pre><code class="language-makefile">fig.png : code.exe plot.py
-&#09;.\code.exe
+    <div class="parent-of-pre">
+       <pre class="language-makefile"><code >fig.png: code.out plot.py
+&#09;./code.out
 &#09;python plot.py
-code.exe : code.f90
-&#09;gfortran -Wall -Wextra -o code.exe code.f90
-clean : 
-&#09;del *.exe *.png *.dat</code></pre>
-   </div>
-   <p>
-       One should note that this makefile also allows us to easily remove all
-		files with the extensions .exe (binaries), .png (pictures) and .dat (data files) 
-		just by running <code>make clean</code>. In fact, clean is here a target that no other 
-		target depends on, which means it does not happen unless it is specified 
-		in the prompt. You can find example python and Fortran files below.
-   </p>
-   <details>
+code.out: code.f90
+&#09;gfortran -Wall -Wextra -o code.out code.f90
+clean: 
+&#09;rm -f *.out *.png *.dat</code></pre>
+    </div>
+    <div style="margin: 4px 0px 16px 0px;">
+       One should note that this makefile also allows us to easily remove all files with the extensions ".out" (binaries), ".png" (pictures) and ".dat" (data files) just by running <code class="language-bash">make clean</code>. In fact, <code>clean</code> is here a target that no other target depends on, which means it does not happen unless it is specified in the prompt.
+    </div>
+    <div style="margin: 4px 0px 16px 0px;">
+        If you are running this on Windows, change the <code class="language-bash">rm -f</code> command to <code class="language-bash">del</code> and the ".out" extension to ".exe". Actually, linux binary files often don't have an extension at all, but we use the ".out" extension since it easier to clean.
+    </div>
+    <div style="margin: 4px 0px 16px 0px;">
+        You can find example python and Fortran files below.
+    </div>
+    <details>
        <summary>code.f90</summary>
-       <div style="border: 1px solid; border-radius: 5px;padding:1em">
-			<pre><code class="language-fortran">program f
+       <div class="parent-of-pre">
+            <pre class="language-fortran"><code>program f
    implicit none
-   real,parameter::a=-10,b=10
-   integer,parameter::N=10000
-   real,parameter::step=(b-a)/(N-1.)
-   real,dimension(N)::x,y
-   integer::i
-   do i=1,N
-       x(i)=a+(i-1.)*step
-       y(i)=atan(x(i))
+   real, parameter :: a = -10, b = 10
+   integer, parameter :: N = 10000
+   real, parameter :: step = (b - a) / (N - 1.)
+   real, dimension(N) :: x, y
+   integer :: i
+   do i = 1, N
+      x(i) = a + (i - 1.) * step
+      y(i) = atan(x(i))
    end do
-   open(1, file = 'data.dat')
-   do i=1,N
-       write(1,*) x(i), y(i)
+   open (1, file='data.dat')
+   do i = 1, N
+      write (1, *) x(i), y(i)
    end do
 end program f</code></pre>
        </div>
-   </details>
-   <details>
+    </details>
+    <details>
        <summary>plot.py</summary>
-		<div style="border: 1px solid; border-radius: 5px;padding:1em">
-			<pre><code class="language-python">import matplotlib.pyplot as plt
+        <div class="parent-of-pre">
+            <pre class="language-python"><code>import matplotlib.pyplot as plt
 import numpy as np
 data = np.loadtxt('data.dat')
-x = data[:,0]
-y = data[:,1]
-fig,ax=plt.subplots()
-ax.plot(x,y)
+x = data[:, 0]
+y = data[:, 1]
+fig, ax = plt.subplots()
+ax.plot(x, y)
 ax.set_xlabel("x")
 ax.set_ylabel("y")
-ax.set_title("f(x)=arctan(x)")
+ax.set_title("f(x) = arctan(x)")
 ax.grid()
 plt.savefig("fig.png")
 plt.close()</code></pre>
-   </div>
-   </details>
-   <p>
-       The makefile above was used for explanation purposes. But the project 
-		makefiles you would normally see look more like the following one.
-   </p>
-   <div style="border: 1px solid; border-radius: 5px;padding:1em">
-       <pre><code class="language-makefile">#CONFIG_ADD = yes
+    </div>
+    </details>
+    <p>
+       The makefile above was used for explanation purposes. But the project makefiles you would normally see look more like the following one.
+    </p>
+    <div class="parent-of-pre">
+       <pre class="language-makefile"><code>#CONFIG_ADD = yes
 FC = ifc
 FC_FLAGS = -fast
-OBJECTS= main.o sub.o
+OBJECTS = main.o sub.o
 ifdef CONFIG_ADD
-OBJECTS= $(OBJECTS) add.o
+OBJECTS = $(OBJECTS) add.o
 endif
-my-program : $(OBJECTS)
+my-program: $(OBJECTS)
 &#09;$(FC) $(LD_FLAGS) -o $@ $(OBJECTS)
-%.o : %.f90
+%.o: %.f90
 &#09;$(FC) $(FC_FLAGS) -c -o $@ $<
-clean :
-&#09;rm *.o
-clean-all :
-&#09;rm *.o my-program</code></pre>
-   </div>
-   <p>
-       Here, the Intel Fortran compiler (ifc) is used for compilation.
-		The compiler and the flags are specified in the beginning of the file.
-		This makefile builds the final executable "my-program", and the objects 
-		needed for it are also listed. 
-		IF CONFIG_ADD is set to yes, add.o is added to the objects. 
-   </p>
-	<p>
-		The next makefile is a one that you could use to compile and run any simple Fortran 90 program using gfortran without any editing.
-	</p>
-	<div style="border: 1px solid; border-radius: 5px;padding:1em">
-       <pre><code class="language-makefile">FC = gfortran
-FC_FLAGS = -Wall -Wextra -g -O0 -fbacktrace
-%.exe : %.f90 
-&#09;$(FC) $(FC_FLAGS) -o $@ $<
-&#09;$@
 clean:
-&#09;del *.exe
-.PHONY: clean</code></pre>
-   </div>
-	<p>
-		Now, let us discuss how to compile and run a Fortran 90 file called code.f90. %.f90 is used to replace any file in the same directory as the makefile that has the extension .f90. If such a file exists, there will be a target with the same name but with the extension .exe instead. This is called a pattern rule. In our case, the target will be code.exe.  
-	</p>
-	<p>
-		Makefiles always start by making the prerequisites of the first target listed  before making that target. Still, running <code>make</code> won't do anything, as  using a pattern rule is not enough for making a target, the target should be  explicitly specified.  Thus, one solution would be to add a target called <code class="language-makefile">all</code> and add <code class="language-makefile">code.exe</code> as a prerequisite for it. This, however, requires editing the makefile manually, preventing a truly dynamic workflow. 
-	</p>
-	<p>
-		The solution recommended here is to just run <code>make code.exe</code>. This way, the target is specified on the fly and it is recognized by the makefile since it matches the wildcard. This is much simpler and requires less editing. One should also mention, that this is only possible because the task itself is not complicated, as we only have to compile a simple Fortran program. Sometimes one needs to compile multiple sources, which can't be done with this makefile. You could find help on this below in the tutorial made by NeuralNine. 
-	</p>
-	<p>
-		The compilation command includes <i>automatic variables</i>, i.e. is variables that don't have to be defined beforehand. 
-		<code class="language-makefile">$@</code> is filled with the target.
-		<code class="language-makefile">$<</code> is filled with the prerequisites.
-		After the compilation, the executable is run with <code class="language-makefile">$@</code>.
-	</p>
-	<p>
-		Last but not least, we use the target <code class="language-makefile">.PHONY</code> to specify the phony targets, i.e the fake ones that are not actual files. Indeed, there could be a file called "clean" in the same directory, which would confuse the makefile. Using <code class="language-makefile">.Phony</code> makes sure that this problem doesn't happen. If one uses the first solution mentioned above, <code class="language-makefile">all</code> should also be added to the phony targets. 
-	</p>
+&#09;rm -f *.o
+clean-all:
+&#09;rm -f *.o my-program</code></pre>
+    </div>
+    <div style="margin: 4px 0px 16px 0px;">
+       Here, the Intel Fortran compiler (ifc) is used for compilation. The compiler and the flags are specified in the beginning of the file. This makefile builds the final executable <code class="language-bash">my-program</code>, and the objects needed for it are also listed. IF <code class="language-makefile">CONFIG_ADD</code> is set to yes, add.o is added to the objects. 
+    </div>
+    <p>
+        The next makefile could be used to compile and run any simple Fortran 90 program using gfortran without any editing.
+    </p>
+    <div class="parent-of-pre">
+       <pre class="language-makefile"><code>ifndef BIN
+  $(error You must specify BIN, e.g., 'make BIN=code')
+endif
+FC = gfortran
+FC_FLAGS = -Wall -Wextra -g -O3 -fbacktrace
+.PHONY: run clean
+run : $(BIN)
+	./$^
+%: %.f90 
+&#09;$(FC) $(FC_FLAGS) -o $@ $^
+clean:
+&#09;rm $(BIN)</code></pre>
+    </div>
+    <div style="margin: 4px 0px 16px 0px;">
+        Now, let us discuss how to compile and run a Fortran 90 file called <code class="language-bash">code.f90</code>. 
+        <code class="language-makefile">%.f90</code> is used to replace any file in the same directory as the makefile that has the extension ".f90". If such a file exists, there will be a target with the same name but without any extension. This is called a pattern rule. In our case, the target will be <code class="language-bash">code</code>. 
+    </div>
+    <div style="margin: 4px 0px 16px 0px;">
+        Makefiles always start by making the prerequisites of the first target listed before making that target. Still, running <code class="language-bash">make</code> won't do anything when using only a pattern rule as it is not enough for making a target, the target should be explicitly specified. Thus, one solution would be to add a target called <code class="language-makefile">all</code> and add <code class="language-makefile">code</code> as a prerequisite for it. This, however, requires editing the makefile manually, preventing a truly dynamic workflow. 
+    </div>
+    <div style="margin: 4px 0px 16px 0px;">
+        The solution recommended here is to define the <code class="language-bash">BIN</code> variable directly from the shell and fill it with the filename of the target binary as in <code class="language-bash">make BIN=code</code>. This way, the target is specified on the fly and recognized by the makefile since it matches the wildcard. One should also mention, that this is only possible because the task itself is not complicated, as we only have to compile a simple Fortran program. Sometimes one needs to compile multiple sources, which can't be done with this makefile. You could find help on this below in the tutorial made by NeuralNine. 
+    </div>
+    <div style="margin: 4px 0px 16px 0px;">
+        The compilation command includes <i>automatic variables</i>, i.e. is variables that don't have to be defined beforehand. 
+        <code class="language-makefile">$@</code> is filled with the target.
+        <code class="language-makefile">$^</code> is filled with the prerequisites.
+    </div>
+    <div style="margin: 4px 0px 16px 0px;">
+        Moreover, we use the target <code class="language-makefile">.PHONY</code> to specify the phony targets, i.e the fake ones that are not actual files. Indeed, there could be a file called <code class="language-bash">clean</code> in the same directory, which would confuse the makefile. Using <code class="language-makefile">.Phony</code> makes sure that this problem doesn't happen. If one uses the first solution mentioned above, <code class="language-makefile">all</code> should also be added to the phony targets. 
+    </div>
+    <div style="margin: 4px 0px 16px 0px;">
+        Last but not least, we substitute the value of the <code class="language-bash">BIN</code> variable by writing<code class="language-bash">$(BIN)</code> in the prerequisites of the <code class="language-makefile">run</code>phony target so that the binary is executed with <code class="language-makefile">./$^</code>. To prevent using the makefile without defining this variable, a condition was added in the beginning. 
+    </div>
+    <div style="margin: 4px 0px 16px 0px;">
+        Note:
+        <ul>
+            <li>We don't need to add <code class="language-bash">run</code> to the shell command, since it is the first target of the makefile. </li>
+            <li>Because of the used condition, we can only run the <code class="language-bash">clean</code> command if we define the <code class="language-bash">BIN</code> variable.</li>
+            <li>If we put the run command under the pattern rule too and the leave the <code class="language-bash">run</code> target with no commands, we would still get a result once. After that, there is nothing to be done for make, as it would only run again if the fortran file is edited and thus needs to be compiled.</li>
+            <li>We chose to give the binary file no extension here, since the variable lets us specify it under the <code class="language-makefile">clean</code> target.</li>
+        </ul>
+    </div>
 </div>
