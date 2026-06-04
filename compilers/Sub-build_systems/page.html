@@ -1,17 +1,15 @@
 <div style="max-width: 45em; margin-left: auto; margin-right: auto;">
-	<p>
-		Once your projects has grown to more than a handful of source code files (to make your project accessible to anyone but yourself, each source code file should not contain more than a few hundred lines of code), the process of compiling your program can become very tedious, especially if you have different compilers, options, variables etc. for compilation on different systems. This is were build systems like <i>make</i> come into play; they allow you to specify rules for handling files and thereby to automate the process of compilation. Once you download a code that makes proper use of make, you just have to change into the source code directory and type make to do all necessary compilation steps. The makefile itself can be generated on the target system, using system specific variables and options. This is why most projects require you to do the 'classic' three step procedure to compile and install a new program: 
-	</p>
-	<ol>
-	    <li><code class="language-bash">./configure</code></li>
-	    <li><code class="language-bash">make</code></li>
-	    <li><code class="language-bash">make install</code></li>
-	</ol>
-	<p>
-		The first one generates the specific makefile, the second does the compilation and the third command copies the produced binaries to a pre-defined installation directory like <code class="language-bash">$HOME/bin</code>, <code class="language-bash">/usr/bin</code>, etc. Package management systems are built on top of this; they additionally resolve 'dependencies', i.e. if a program requires other software (usually libraries) to run, these can also be automatically installed.
-	</p>
-	<h5 style="display: inline;">Online resources</h5>
-	<div style="padding-left: 1em;">
+    <p>
+        Once your projects has grown to more than a handful of source code files (to make your project accessible to anyone but yourself, each source code file should not contain more than a few hundred lines of code), the process of compiling your program can become very tedious, especially if you have different compilers, options, variables etc. for compilation on different systems. This is were build systems like <i>make</i> come into play; they allow you to specify rules for handling files and thereby to automate the process of compilation. Once you download a code that makes proper use of make, you just have to change into the source code directory and type make to do all necessary compilation steps. The makefile itself can be generated on the target system, using system specific variables and options. This is why most projects require you to do the 'classic' three step procedure to compile and install a new program: 
+    </p>
+    <pre class="language-bash"><code>./configure
+make
+make install</code></pre>
+    <div>
+        The first command generates the specific makefile, the second does the compilation and the third command copies the produced binaries to a pre-defined installation directory like <code class="language-bash">$HOME/bin</code>, <code class="language-bash">/usr/bin</code>, etc. Package management systems are built on top of this; they additionally resolve 'dependencies', i.e. if a program requires other software (usually libraries) to run, these can also be automatically installed.
+    </div>
+    <h5 style="display: inline;">Online resources</h5>
+    <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://missing.csail.mit.edu/2020/metaprogramming/">
                 https://missing.csail.mit.edu/2020/metaprogramming/
@@ -23,7 +21,7 @@
             </div>
         </div>
     </div>
-	<div style="padding-left: 1em;">
+    <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://swcarpentry.github.io/make-novice/">
                 https://swcarpentry.github.io/make-novice/
@@ -35,7 +33,7 @@
             </div>
         </div>
     </div>
-	<div style="padding-left: 1em;">
+    <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://www.youtube.com/watch?embed=no&amp;v=yWLkyN_Satk"> 
                 https://www.youtube.com/watch?v=yWLkyN_Satk
@@ -44,12 +42,12 @@
         <div style="padding-left: 2em;text-indent: -1em;">
             <div>
                 -- Makefile tutorial by NeuralNine<br> 
-				Makefile for compiling different C files and <i>linking</i> 
-				their binaries to make one executable.
+                Makefile for compiling different C files and <i>linking</i> 
+                their binaries to make one executable.
             </div>
         </div>
     </div>
-	<div style="padding-left: 1em;">
+    <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://makefiletutorial.com">
                 https://makefiletutorial.com
@@ -61,7 +59,7 @@
             </div>
         </div>
     </div>
-	<div style="padding-left: 1em;">
+    <div style="padding-left: 1em;">
         <div style="text-indent: -1em;padding-left: 1em;">
             <a href="https://hpc-wiki.info/hpc/Make">
                 https://hpc-wiki.info/hpc/Make
