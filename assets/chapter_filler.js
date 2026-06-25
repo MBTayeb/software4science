@@ -45,7 +45,7 @@ const PageInitializer = (() => {
     updateNavLink: (link, title, folderPath) => {
       if (!link) return;
 
-      link.href = `${folderPath}loader.html`;
+      link.href = `${folderPath}`;
       link.innerHTML = `<div>${title.trim()}</div>`;
     },
 
@@ -65,7 +65,7 @@ const PageInitializer = (() => {
         );
 
         if (title) {
-          button.href = `${baseFolder}loader.html`;
+          button.href = `${baseFolder}`;
           button.textContent = title.trim();
         }
       }

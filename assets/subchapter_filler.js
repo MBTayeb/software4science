@@ -7,7 +7,7 @@ const PageInitializer = (() => {
   const CONFIG = {
     CRITICAL_RESOURCES: [
       { name: 'pageContent', url: 'page.html' },
-      { name: 'parentLoader', url: '../loader.html' },
+      { name: 'parentLoader', url: '../index.html' },
       { name: 'parentTitle', url: '../title.txt' }
     ],
     SELECTORS: {
@@ -91,7 +91,7 @@ const PageInitializer = (() => {
 
         // Append title as a child div rather than overwriting textContent,
         // in case the link element already has other content or structure
-        link.setAttribute('href', `${baseFolder}loader.html`);
+        link.setAttribute('href', `${baseFolder}`);
           const div = document.createElement('div');
           div.textContent = title.trim();
           link.appendChild(div);
@@ -209,7 +209,7 @@ const PageInitializer = (() => {
 
         const h1Element = document.querySelector(CONFIG.SELECTORS.printedTitle);
         if (h1Element) {
-          h1Element.innerHTML = `<a href="../loader.html">${resources.parentTitle.trim()}</a>`;
+          h1Element.innerHTML = `<a href="../">${resources.parentTitle.trim()}</a>`;
         }
 
         // Order matters: content must be in the DOM before loadSubpageNavigation
