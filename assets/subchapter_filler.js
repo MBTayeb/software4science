@@ -73,8 +73,8 @@ const PageInitializer = (() => {
         // toc only needs its path rewritten — no title to fetch
         if (key === 'toc') {
           // Use getAttribute to get the raw href before browser resolution
-          const raw = link.getAttribute('href') ?? '';
-          link.setAttribute('href', utils.rewritePath(raw));
+          //const raw = link.getAttribute('href') ?? '';
+          //link.setAttribute('href', utils.rewritePath(raw));
           link.style.visibility = 'visible';
           continue;
         }
