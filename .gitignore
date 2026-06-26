@@ -8,6 +8,7 @@
 !loader.html
 !page.html
 !title.txt
+!README
 
 # 4. Explicitly allow the entire 'assets' folder and its contents
 !assets/
