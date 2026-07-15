@@ -6,7 +6,7 @@ To visit the website, open [https://mbtayeb.github.io/software4science/](https:/
 
 ## What this repository contains
 
-This repo holds the course materials, chapter structure, and curated resource links used to build the "Software for Science" self-study course.
+This repository holds the full source of the "Software for Science" site — both the static course content (chapters, subchapters) and the code that renders it (HTML, JS, and CSS in).
 
 ### Examples of topics covered:
 
