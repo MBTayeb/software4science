@@ -4,17 +4,21 @@ A self-study course that guides learners through structured pathways of external
 
 To visit the website, open [https://mbtayeb.github.io/software4science/](https://mbtayeb.github.io/software4science/)
 
-## What this repository contains
-
-This repository holds the full source of the "Software for Science" site — both the static course content (chapters, subchapters) and the code that renders it (HTML, JS, and CSS in).
-
-### Examples of topics covered:
+## Examples of topics covered:
 
 - Introduction to Linux and the command line
 - Editors and IDEs
 - Compilers, build systems, and software libraries
 - Version control and source code repositories
 - Debugging, testing, and optimizing scientific software
+
+## What this repository contains
+
+This repository holds the full source of the "Software for Science" site — both the static course content (chapters, subchapters) and the code that renders it (HTML, JS, and CSS in).
+
+# Reusing this template
+
+This repo's structure (static content + HTML/JS/CSS renderer) could be reused as a starting point for other simple static book/course-style sites.
 
 ## Site structure
 
@@ -56,6 +60,16 @@ Corrections, dead-link fixes, and better resource suggestions are welcome. Pleas
 - Course prepared by **Tayb Marrakchi-Benjaafar**, under the supervision of **Martin Korth**.
 - Funded by the **IVV NWZ** (Information Processing and Supply Unit) for the Faculties of Biology, Chemistry and Pharmacy, and Physics at the University of Münster.
 - Corrections and contributions from **Carsten Kemena** and **Daniel Nüst**.
+
+## Third-Party Code
+
+- `assets/highlight.js` — [highlight.js](https://github.com/highlightjs/highlight.js) v11.11.1, by Josh Goebel and contributors, licensed under [BSD-3-Clause](https://github.com/highlightjs/highlight.js/blob/main/LICENSE)
+- `assets/monokai.css` — Monokai style, ported by Luigi Maselli ([grigio.org](http://grigio.org))
+- `assets/downloads/vimrc` — from [The Missing Semester](https://missing.csail.mit.edu/), licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+## Development Notes
+
+The remaining JavaScript was written with the help of LLMs.
 
 ## License
 
