@@ -1,1 +1,4 @@
 * text=auto
+assets/highlight.js linguist-vendored
+assets/monokai.css linguist-vendored
+assets/downloads/vimrc
