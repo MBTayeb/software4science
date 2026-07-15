@@ -49,7 +49,10 @@ Each `page.html` holds only the static content for that chapter/subchapter.\
 1. Add an `index.html` entry point (copy the pattern from a sibling folder).
 1. Add a `title.txt` with the chapter's title.
 1. If it's a chapter (not a subchapter), add a reference to it in `topics/page.html`.
-1. Set the linking order. Chapters are linked like a linked list: to insert a chapter between chapter X and chapter Y, set it as the `next` of X and the `previous` of Y — and set the new chapter's own `previous` and `next` accordingly.
+1. To insert a new chapter between chapter X and chapter Y, you'll need to edit **three** `index.html` files:
+   - **The new chapter's `index.html`** — set `previous` to X and `next` to Y
+   - **Chapter X's `index.html`** — update `next` to point to the new chapter
+   - **Chapter Y's `index.html`** — update `previous` to point to the new chapter
 
 ## Contributing
 
