@@ -8,6 +8,7 @@
   --a-hover: #2980b9;
   --code-bg: #f4f4f5;
   --code-color: #d63384;
+  --page-nav-hover: #2980b9;
 }
 
 body.dark-mode {
@@ -17,6 +18,7 @@ body.dark-mode {
   --button-text: #f5f5f5;
   --code-bg: #2d2d30;
   --code-color: #f43f5e;
+  --page-nav-hover: #5dade2;
 }
 body {
   background-color: var(--bg-color);
@@ -161,12 +163,13 @@ nav.page-navigation > a {
     align-items: center;
     height: 100%;
     width:100%;
-    border-top: 3px solid #eee;
+    border: 3px solid transparent;
+    border-top-color: #eee;
     padding-top: .3em; 
 }
 nav.page-navigation > a:hover {
   text-decoration: none;
-  border: 3px solid #eee;
+  border-color: var(--page-nav-hover);
 }
 nav.page-navigation > a.prev {
   justify-content: flex-start;  
@@ -180,7 +183,6 @@ nav.page-navigation > a.toc {
 
 nav.page-navigation > a.next {
   justify-content: flex-end;    
-  /*border-left: 3px solid #eee;*/
   padding-left: 0;/* 20px;   Spacing between vertical line and text */
 }
 nav.page-navigation > a > div {
@@ -206,7 +208,7 @@ nav.page-navigation > a.next::after {
 }
 
 nav.page-navigation > a:hover > div{
-    text-decoration: underline;
+  /*text-decoration: underline;*/
 }
 
 div.daughter-lists-bigger > ul {
@@ -357,7 +359,7 @@ nav.subpage-navigation > a.next::after {
 }
 
 nav.subpage-navigation > a:hover > div {
-  text-decoration: underline;
+  /*text-decoration: underline;*/
 }
 
 :not(pre) > code {
