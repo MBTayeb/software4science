@@ -16,7 +16,7 @@ To visit the website, open [https://mbtayeb.github.io/software4science/](https:/
 
 This repository holds the full source of the "Software for Science" site — both the static course content (chapters, subchapters) and the code that renders it (HTML, JS, and CSS in).
 
-# Reusing this template
+## Reusing this template
 
 This repo's structure (static content + HTML/JS/CSS renderer) could be reused as a starting point for other simple static book/course-style sites.
 
