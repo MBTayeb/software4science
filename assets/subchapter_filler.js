@@ -13,6 +13,7 @@ const PageInitializer = (() => {
     SELECTORS: {
       contentPlaceholder: '#content-placeholder',
       printedTitle: '#printed-title',
+      printedSubTitle: '#printed-title-subchapter',
       parentNavContainer: '#parent-nav-container',
       subpageNavigation: '.subpage-navigation'
     },
@@ -181,7 +182,14 @@ const PageInitializer = (() => {
           'title.txt',
           CONFIG.ERROR_MESSAGES.loadFailed
         );
-        document.title = title.trim();
+        const trimmedTitle = title.trim();
+        
+        document.title = trimmedTitle;
+        
+        const h2Element = document.querySelector(CONFIG.SELECTORS.printedSubTitle);
+        if (h2Element) {
+          h2Element.textContent = trimmedTitle;
+        }
       } catch (error) {
         console.error('Error fetching current title:', error);
       }
