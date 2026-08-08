@@ -9,31 +9,29 @@
 <body>
     <div id="theme-toggle-parent"><button id="theme-toggle">Toggle Dark Mode</button></div>
     <script src="assets/dark.js" defer></script>
-    <div id="content-placeholder"></div>
-    <h5 style="color: red;">
-        <a href="topics/" id="overview-link">
-            Overview of the course:
-        </a>
-    </h5>
-    <div id="topics-placeholder" class="daughter-lists-bigger"></div>
+    <div id="content-placeholder">
+      <h5 style="color: red;">
+          <a href="topics/" id="overview-link">
+              Overview of the course:
+          </a>
+      </h5>
+      <div id="topics-placeholder" class="daughter-lists-bigger"></div>
+    </div>
+    <script src="assets/topics_filler.js"></script>
     <script>
     fetch("intro/page.html")
-        .then((response) => response.text())
-        .then((data) => {
-            document.getElementById("content-placeholder").innerHTML = data;
-            const pageTitle = document.querySelector('h4');
-            if (pageTitle) {
-                document.title = pageTitle.textContent;
-            }
-        })
-        .catch((error) => console.error("Error loading the HTML:", error));
-    fetch("topics/page.html")
-        .then((response) => response.text())
-        .then((data) => {
-            let fixedData = data.replaceAll('href="../', 'href="');
-            document.getElementById("topics-placeholder").innerHTML = fixedData;
-        })
-        .catch((error) => console.error("Error loading the HTML:", error));
+      .then((response) => response.text())
+      .then((data) => {
+        const placeholder = document.getElementById("content-placeholder");
+        placeholder.insertAdjacentHTML("afterbegin", data);
+    
+        const pageTitle = placeholder.querySelector('h4');
+        if (pageTitle) {
+          document.title = pageTitle.textContent;
+        }
+      })
+      .catch((error) => console.error("Error loading the HTML:", error));
+    loadTopics("topics-placeholder", "topics/page.html", true);
     </script>
 </body>
 </html>
