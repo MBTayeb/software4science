@@ -16,6 +16,22 @@
     <div id="topics-placeholder" class="daughter-lists-bigger"></div>
     <script src="../assets/topics_filler.js"></script>
     <script>
+    fetch('title.txt')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to load title.txt: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(text => {
+        const title = text.trim();
+        document.getElementById('printed-title').textContent = title;
+        document.title = title;
+      })
+      .catch(error => {
+        console.error(error);
+        document.getElementById('printed-title').textContent = 'Error loading title';
+      });
     loadTopics("topics-placeholder", "page.html", false);
     </script>
 </body>
