@@ -6,7 +6,6 @@ const PageInitializer = (() => {
       { name: 'title', url: 'title.txt' },
       { name: 'prevTitle', url: '../prev/title.txt', optional: true },
       { name: 'nextTitle', url: '../next/title.txt', optional: true },
-      { name: 'subchapterTitles', selector: '.subchapter-button', attribute: 'data-folder', urlPattern: '{folder}/title.txt' }
     ],
     SELECTORS: {
       contentPlaceholder: '#content-placeholder',
@@ -44,8 +43,8 @@ const PageInitializer = (() => {
      */
     updateNavLink: (link, title, folderPath) => {
       if (!link) return;
-
-      link.href = `${folderPath}`;
+      const normalizedFolder = folderPath.endsWith('/') ? folderPath : `${folderPath}/`;
+      link.setAttribute('href', normalizedFolder);
       link.innerHTML = `<div>${title.trim()}</div>`;
     },
 
@@ -54,7 +53,7 @@ const PageInitializer = (() => {
      */
     processSubchapterButtons: async (buttons) => {
       for (const button of buttons) {
-        const folderPath = button.getAttribute('data-folder');
+        const folderPath = button.getAttribute('href');
         if (!folderPath) continue;
 
         const baseFolder = folderPath.endsWith('/') ? folderPath : `${folderPath}/`;
@@ -65,7 +64,7 @@ const PageInitializer = (() => {
         );
 
         if (title) {
-          button.href = `${baseFolder}`;
+          button.setAttribute('href', baseFolder); 
           button.textContent = title.trim();
         }
       }
@@ -114,8 +113,8 @@ const PageInitializer = (() => {
         document.querySelector(CONFIG.SELECTORS.navLinkNext)
       ];
 
-      const prevFolder = prevLink?.getAttribute('data-folder');
-      const nextFolder = nextLink?.getAttribute('data-folder');
+      const prevFolder = prevLink?.getAttribute('href');
+      const nextFolder = nextLink?.getAttribute('href');
 
       const [prevTitle, nextTitle] = await Promise.all([
         prevFolder ? utils.fetchResource(

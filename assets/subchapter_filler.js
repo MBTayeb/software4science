@@ -45,7 +45,7 @@ const PageInitializer = (() => {
     },
 
     /**
-     * Rewrites a single raw relative href/data-folder value one level up
+     * Rewrites a single raw relative href value one level up
      */
     rewritePath: (raw) => raw.replace(/\.\.\//g, '../../'),
 
@@ -54,7 +54,7 @@ const PageInitializer = (() => {
      * Uses getAttribute/setAttribute to avoid browser-resolved absolute URLs.
      */
     updateNavigationPaths: (element) => {
-      element.querySelectorAll('[href], [data-folder]').forEach(el => {
+      element.querySelectorAll('[href]').forEach(el => {
         const href = el.getAttribute('href');
         if (href?.includes('../')) el.setAttribute('href', utils.rewritePath(href));
 
@@ -76,11 +76,11 @@ const PageInitializer = (() => {
           // Use getAttribute to get the raw href before browser resolution
           //const raw = link.getAttribute('href') ?? '';
           //link.setAttribute('href', utils.rewritePath(raw));
-          link.style.visibility = 'visible';
+          //link.style.visibility = 'visible';
           continue;
         }
 
-        const folderPath = link.getAttribute('data-folder');
+        const folderPath = link.getAttribute('href');
         if (!folderPath) continue;
 
         try {
@@ -90,8 +90,6 @@ const PageInitializer = (() => {
             CONFIG.ERROR_MESSAGES.loadFailed
           );
 
-        // Append title as a child div rather than overwriting textContent,
-        // in case the link element already has other content or structure
         link.setAttribute('href', `${baseFolder}`);
           const div = document.createElement('div');
           div.textContent = title.trim();
