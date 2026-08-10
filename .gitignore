@@ -5,7 +5,7 @@
 !*/
 
 # 3. Explicitly allow your specific files (wherever they are)
-!loader.html
+!index.html
 !page.html
 !title.txt
 !README
