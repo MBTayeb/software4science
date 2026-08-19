@@ -77,8 +77,6 @@ const PageInitializer = (() => {
       if (next) utils.replaceWithLink(nextEl, `../${next}`, nextTitle);
     },
 
-    // Builds .subchapter-container / .subchapter-button elements
-    // from the manifest, instead of reading them from static HTML
     loadSubchapterList: async (manifest) => {
       const container = document.querySelector(CONFIG.SELECTORS.subchapterList);
       if (!container) return;
