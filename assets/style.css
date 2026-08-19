@@ -216,11 +216,11 @@ nav.page-navigation > a.next::after {
   margin-left: 0.5em;
   display: inline-block;
 }
-
+/*
 nav.page-navigation > a:hover > div{
-  /*text-decoration: underline;*/
+  text-decoration: underline;
 }
-
+*/
 div.daughter-lists-bigger > ul {
     font-size: 125%
 }
@@ -367,10 +367,11 @@ nav.subpage-navigation > a.next::after {
   display: inline-block;
   line-height: 1;
 }
-
+/*
 nav.subpage-navigation > a:hover > div {
-  /*text-decoration: underline;*/
+  text-decoration: underline;
 }
+*/
 
 :not(pre) > code {
   display: inline;
