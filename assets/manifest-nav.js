@@ -1,7 +1,4 @@
 const ManifestNav = (() => {
-  const MANIFEST_URL = '/manifest.json';
-
-  // --- utils ---
   const utils = {
     fetchJSON: async (url) => {
       const res = await fetch(url);
@@ -22,14 +19,12 @@ const ManifestNav = (() => {
 
     currentPath: () => window.location.pathname,
 
-    // matches a manifest path (e.g. "recipes/") against the current URL
     matchesCurrent: (path) => {
       const current = utils.currentPath();
       return current.endsWith(`/${path}`) || current.endsWith(path);
     }
   };
 
-  // --- core lookups ---
   const core = {
     flattenChapters: (manifest) => manifest.map(ch => ch.path),
 
@@ -38,7 +33,6 @@ const ManifestNav = (() => {
       return chapters.findIndex(utils.matchesCurrent);
     },
 
-    // chapter-level prev/next (top-level chapters only)
     getPrevNext: (manifest) => {
       const chapters = core.flattenChapters(manifest);
       const idx = core.findChapterIndex(manifest);
@@ -49,7 +43,6 @@ const ManifestNav = (() => {
       };
     },
 
-    // subchapter-level prev/next, scoped within its parent chapter
     getSubPrevNext: (manifest) => {
       for (const entry of manifest) {
         const subs = entry.subchapters || [];
@@ -65,7 +58,6 @@ const ManifestNav = (() => {
       return { parentPath: null, prev: null, next: null };
     },
 
-    // the parent chapter's own prev/next (for a subchapter's #parent-nav-container)
     getParentChapterNav: (manifest, parentPath) => {
       const chapters = core.flattenChapters(manifest);
       const idx = chapters.indexOf(parentPath);
@@ -76,14 +68,15 @@ const ManifestNav = (() => {
       };
     },
 
-    // full nested structure with titles, for the topics page
-    buildTopicsList: async (manifest) => {
+    // rootPrefix: relative path back to site root from the calling page
+    // (e.g. '' at root, '../' from a chapter, '../../' from a subchapter)
+    buildTopicsList: async (manifest, rootPrefix) => {
       const items = [];
       for (const entry of manifest) {
-        const title = await utils.fetchText(`/${entry.path}title.txt`, true);
+        const title = await utils.fetchText(`${rootPrefix}${entry.path}title.txt`, true);
         const subs = [];
         for (const sub of entry.subchapters || []) {
-          const subTitle = await utils.fetchText(`/${entry.path}${sub}title.txt`, true);
+          const subTitle = await utils.fetchText(`${rootPrefix}${entry.path}${sub}title.txt`, true);
           subs.push({ path: `${entry.path}${sub}`, title: subTitle || sub });
         }
         items.push({ path: entry.path, title: title || entry.path, subchapters: subs });
@@ -93,7 +86,8 @@ const ManifestNav = (() => {
   };
 
   return {
-    getManifest: () => utils.fetchJSON(MANIFEST_URL),
+    // rootPrefix: relative path back to site root from the calling page
+    getManifest: (rootPrefix) => utils.fetchJSON(`${rootPrefix}manifest.json`),
     fetchText: utils.fetchText,
     getPrevNext: core.getPrevNext,
     getSubPrevNext: core.getSubPrevNext,
