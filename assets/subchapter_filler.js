@@ -122,27 +122,26 @@ const PageInitializer = (() => {
               .then(content => ({ [resource.name]: content }))
           )
         ).then(results => Object.assign({}, ...results));
-
+    
         const contentPlaceholder = document.querySelector(CONFIG.SELECTORS.contentPlaceholder);
         if (contentPlaceholder) {
           contentPlaceholder.insertAdjacentHTML('afterbegin', resources.pageContent);
         }
-
+    
         const h1 = document.querySelector(CONFIG.SELECTORS.printedTitle);
         if (h1) h1.innerHTML = `<a href="../">${resources.parentTitle.trim()}</a>`;
-
-        const manifest = await ManifestNav.getManifest();
+    
+        const manifest = await ManifestNav.getManifest('../../');
         const { parentPath } = ManifestNav.getSubPrevNext(manifest);
-
+    
         await core.processParentNavigation(manifest, parentPath, resources.parentTitle);
-
+    
         await Promise.all([
           core.loadSubpageNavigation(manifest, parentPath, resources.parentTitle),
           core.populateCurrentTitle()
         ]);
-
+    
         if (typeof hljs !== 'undefined') hljs.highlightAll();
-
       } catch (error) {
         console.error("Error initializing page:", error);
         const contentPlaceholder = document.querySelector(CONFIG.SELECTORS.contentPlaceholder);
