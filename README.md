@@ -54,6 +54,50 @@ Each `page.html` holds only the static content for that chapter/subchapter.\
    - **Chapter X's `index.html`** — update `next` to point to the new chapter
    - **Chapter Y's `index.html`** — update `previous` to point to the new chapter
 
+## Site structure
+
+The site is static content rendered with a small JS layer:
+
+```raw
+/<chapter>/             # one folder per chapter
+    page.html           # static chapter content
+    index.html          # entry point; JS imports page.html
+                        # and applies modifications
+    title.txt           # raw title of the chapter
+    /Sub-<subchapter>/  # one folder per subchapter
+                        # must start with "Sub-"
+        page.html       # static subchapter content
+        index.html      # subchapter entry point
+        title.txt       # raw title of the subchapter
+/assets/                # stylesheets and scripts
+    /downloads/         # downloadable files referenced by chapters
+manifest.json           # defines chapter/subchapter order and nesting
+```
+
+Each `page.html` holds only the static content for that chapter/subchapter.
+`index.html` uses JavaScript (from `/assets/`) to import the local `page.html` at runtime and apply layout/formatting changes (e.g. injecting navigation links, setting the page title) before displaying it.
+
+`manifest.json` is the single file that stores the site structure and ordering. It lists top-level chapters, in order, and each chapter's subchapters, in order.
+
+At runtime, `assets/manifest-nav.js` fetches this file to:
+- fill in each chapter/subchapter's nav tags with the links of the previous and next siblings,
+- build the parent chapter's nav on subchapter pages,
+- and generate the nested topics list on the topics page and the root page.
+
+Titles are not stored in the manifest — they're always read from each folder's own `title.txt`, so the manifest only needs to track structure and order.
+
+## Making a chapter/subchapter
+
+1. Create a new folder under the appropriate parent. For a subchapter, the folder name must start with `Sub-`.
+2. Add a `page.html` with the chapter's static content.
+3. Add an `index.html` entry point (copy the pattern from a sibling folder, make sure to remove custom ).
+4. Add a `title.txt` with the chapter's title.
+5. Add an entry to `manifest.json`, in the position where the chapter/subchapter should appear:
+   - Top-level chapter: add `{ "path": "new_chapter/" }` to the root array, in reading order.
+   - Subchapter: add `"Sub-new_subchapter/"` to its parent's `subchapters` array, in reading order.
+
+No other files need to be edited — navigation tags and topics lists are generated automatically from `manifest.json` at runtime.
+
 ## Contributing
 
 Corrections, dead-link fixes, and better resource suggestions are welcome. Please open an issue or pull request.
