@@ -7,31 +7,32 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <div id="theme-toggle-parent"><button id="theme-toggle">Toggle Dark Mode</button></div>
-    <script src="assets/dark.js" defer></script>
-    <div id="content-placeholder">
-      <h5 style="color: red;">
-          <a href="topics/" id="overview-link">
-              Overview of the course:
-          </a>
-      </h5>
-      <div id="topics-placeholder" class="daughter-lists-bigger"></div>
-    </div>
-    <script src="assets/topics_filler.js"></script>
-    <script>
-    fetch("intro/page.html")
-      .then((response) => response.text())
-      .then((data) => {
-        const placeholder = document.getElementById("content-placeholder");
-        placeholder.insertAdjacentHTML("afterbegin", data);
-    
-        const pageTitle = placeholder.querySelector('h4');
-        if (pageTitle) {
-          document.title = pageTitle.textContent;
-        }
-      })
-      .catch((error) => console.error("Error loading the HTML:", error));
-    loadTopics("topics-placeholder", "topics/page.html", true);
-    </script>
+  <div id="theme-toggle-parent"><button id="theme-toggle">Toggle Dark Mode</button></div>
+  <script src="assets/dark.js" defer></script>
+  <div id="content-placeholder">
+    <h5 style="color: red;">
+        <a href="topics/" id="overview-link">
+            Overview of the course:
+        </a>
+    </h5>
+    <div id="topics-placeholder" class="daughter-lists-bigger"></div>
+  </div>
+  <script src="assets/manifest-nav.js"></script>
+  <script src="assets/topics_filler.js"></script>
+  <script>
+  fetch("intro/page.html")
+    .then((response) => response.text())
+    .then((data) => {
+      const placeholder = document.getElementById("content-placeholder");
+      placeholder.insertAdjacentHTML("afterbegin", data);
+  
+      const pageTitle = placeholder.querySelector('h4');
+      if (pageTitle) {
+        document.title = pageTitle.textContent;
+      }
+    })
+    .catch((error) => console.error("Error loading the HTML:", error));
+  TopicsPage.load("topics-placeholder", true);
+  </script>
 </body>
 </html>
