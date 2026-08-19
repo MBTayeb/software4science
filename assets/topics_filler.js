@@ -35,10 +35,15 @@ const TopicsPage = (() => {
       const container = document.getElementById(placeholderId);
       if (!container) return;
       try {
-        // Always fetch as if running from topics/ (one level deep) —
-        // buildHTMLForContext corrects the paths afterward for root
-        const manifest = await ManifestNav.getManifest('../');
-        const items = await ManifestNav.buildTopicsList(manifest, '../');
+        // Real fetch prefix depends on where this page actually is:
+        // root page -> '', topics/ page -> '../'
+        const fetchPrefix = is_parent ? '' : '../';
+
+        const manifest = await ManifestNav.getManifest(fetchPrefix);
+        const items = await ManifestNav.buildTopicsList(manifest, fetchPrefix);
+
+        // buildListHTML always assumes '../' for the rendered links,
+        // then buildHTMLForContext strips it back down for root
         container.innerHTML = buildHTMLForContext(items, is_parent);
       } catch (error) {
         console.error("Error building topics list:", error);
