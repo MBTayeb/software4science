@@ -1,38 +1,56 @@
-function loadTopics(placeholderId, topicsPath = "topics/page.html", is_parent = false) {
-    fetch(topicsPath)
-        .then((response) => response.text())
-        .then((data) => {
-            let fixedData = is_parent ? data.replaceAll('href="../', 'href="') : data;
-            document.getElementById(placeholderId).innerHTML = fixedData;
+const TopicsPage = (() => {
+  // Builds the nested list HTML with paths relative to topics/
+  // (i.e. every link prefixed with "../", since topics/ is one level deep)
+  const buildListHTML = (items) => {
+    const rows = items
+      .map((item) => {
+        const subHTML = item.subchapters.length
+          ? `<ul>
+            ${item.subchapters
+              .map(
+                (sub) => `
+              <li>
+                <a href="../${sub.path}">${sub.title}</a>
+              </li>
+            `,
+              )
+              .join("")}
+          </ul>`
+          : "";
 
-            // Links are in the DOM now — safe to fill in titles
-            fillTitlesFromFiles();
-        })
-        .catch((error) => console.error("Error loading the HTML:", error));
-}
+        return `
+        <li>
+          <a href="../${item.path}">${item.title}</a>
+          ${subHTML}
+        </li>`;
+      })
+      .join("");
 
-function fillTitlesFromFiles() {
-    const links = document.querySelectorAll('ul.topics > li > a[href]');
-    links.forEach((link) => {
-        const href = link.getAttribute('href');
-        if (!href) return;
+    return `<ul class="topics">${rows}</ul>`;
+  };
 
-        const base = href.endsWith('/') ? href : href + '/';
-        const titleUrl = base + 'title.txt';
+  // is_parent = true when embedding at root index.html (depth 0),
+  // which needs paths one level shallower than topics/ itself (depth 1)
+  const buildHTMLForContext = (items, is_parent = false) => {
+    const html = buildListHTML(items);
+    return is_parent ? html.replaceAll('href="../', 'href="') : html;
+  };
 
-        fetch(titleUrl)
-            .then((response) => {
-                if (!response.ok) {
-                    console.warn(`Could not load ${titleUrl}: ${response.status}`);
-                    return null;
-                }
-                return response.text();
-            })
-            .then((text) => {
-                if (text && text.trim()) {
-                    link.textContent = text.trim();
-                }
-            })
-            .catch((error) => console.warn(`Error fetching ${titleUrl}:`, error));
-    });
-}
+  return {
+    // placeholderId: id of the element to inject into
+    // is_parent: true when calling from root index.html, false from topics/index.html
+    load: async (placeholderId, is_parent = false) => {
+      const container = document.getElementById(placeholderId);
+      if (!container) return;
+
+      try {
+        const manifest = await ManifestNav.getManifest();
+        const items = await ManifestNav.buildTopicsList(manifest);
+        container.innerHTML = buildHTMLForContext(items, is_parent);
+      } catch (error) {
+        console.error("Error building topics list:", error);
+        container.innerHTML = "<p>Error loading topics.</p>";
+      }
+    },
+  };
+})();

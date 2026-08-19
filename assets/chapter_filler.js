@@ -1,11 +1,8 @@
 const PageInitializer = (() => {
-  // Configuration constants
   const CONFIG = {
     RESOURCES: [
       { name: 'pageContent', url: 'page.html' },
       { name: 'title', url: 'title.txt' },
-      { name: 'prevTitle', url: '../prev/title.txt', optional: true },
-      { name: 'nextTitle', url: '../next/title.txt', optional: true },
     ],
     SELECTORS: {
       contentPlaceholder: '#content-placeholder',
@@ -21,11 +18,7 @@ const PageInitializer = (() => {
     }
   };
 
-  // Utility functions
   const utils = {
-    /**
-     * Fetches a resource with error handling
-     */
     fetchResource: async (url, errorMsg, optional = false) => {
       try {
         const response = await fetch(url);
@@ -38,19 +31,15 @@ const PageInitializer = (() => {
       }
     },
 
-    /**
-     * Updates navigation link with title and href
-     */
-    updateNavLink: (link, title, folderPath) => {
-      if (!link) return;
-      const normalizedFolder = folderPath.endsWith('/') ? folderPath : `${folderPath}/`;
-      link.setAttribute('href', normalizedFolder);
-      link.innerHTML = `<div>${title.trim()}</div>`;
+    replaceWithLink: (el, href, title) => {
+      if (!el || !title) return;
+      const a = document.createElement('a');
+      a.className = el.className;
+      a.href = href;
+      a.innerHTML = `<div>${title.trim()}</div>`;
+      el.replaceWith(a);
     },
 
-    /**
-     * Processes subchapter buttons
-     */
     processSubchapterButtons: async (buttons) => {
       for (const button of buttons) {
         const folderPath = button.getAttribute('href');
@@ -64,18 +53,14 @@ const PageInitializer = (() => {
         );
 
         if (title) {
-          button.setAttribute('href', baseFolder); 
+          button.setAttribute('href', baseFolder);
           button.textContent = title.trim();
         }
       }
     }
   };
 
-  // Core functions
   const core = {
-    /**
-     * Loads and injects page content
-     */
     loadPageContent: async () => {
       const content = await utils.fetchResource(
         CONFIG.RESOURCES.find(r => r.name === 'pageContent').url,
@@ -88,9 +73,6 @@ const PageInitializer = (() => {
       }
     },
 
-    /**
-     * Loads and sets page title
-     */
     setPageTitle: async () => {
       const title = await utils.fetchResource(
         CONFIG.RESOURCES.find(r => r.name === 'title').url,
@@ -104,38 +86,24 @@ const PageInitializer = (() => {
       }
     },
 
-    /**
-     * Loads navigation titles
-     */
     loadNavigation: async () => {
-      const [prevLink, nextLink] = [
+      const [prevEl, nextEl] = [
         document.querySelector(CONFIG.SELECTORS.navLinkPrev),
         document.querySelector(CONFIG.SELECTORS.navLinkNext)
       ];
 
-      const prevFolder = prevLink?.getAttribute('href');
-      const nextFolder = nextLink?.getAttribute('href');
+      const manifest = await ManifestNav.getManifest();
+      const { prev, next } = ManifestNav.getPrevNext(manifest);
 
       const [prevTitle, nextTitle] = await Promise.all([
-        prevFolder ? utils.fetchResource(
-          `${prevFolder.endsWith('/') ? prevFolder : prevFolder + '/'}title.txt`,
-          CONFIG.ERROR_MESSAGES.loadFailed,
-          true
-        ) : Promise.resolve(null),
-        nextFolder ? utils.fetchResource(
-          `${nextFolder.endsWith('/') ? nextFolder : nextFolder + '/'}title.txt`,
-          CONFIG.ERROR_MESSAGES.loadFailed,
-          true
-        ) : Promise.resolve(null)
+        prev ? ManifestNav.fetchText(`/${prev}title.txt`, true) : Promise.resolve(null),
+        next ? ManifestNav.fetchText(`/${next}title.txt`, true) : Promise.resolve(null)
       ]);
 
-      if (prevTitle) utils.updateNavLink(prevLink, prevTitle, prevFolder);
-      if (nextTitle) utils.updateNavLink(nextLink, nextTitle, nextFolder);
+      if (prev) utils.replaceWithLink(prevEl, `../${prev}`, prevTitle);
+      if (next) utils.replaceWithLink(nextEl, `../${next}`, nextTitle);
     },
 
-    /**
-     * Loads subchapter navigation
-     */
     loadSubchapterNavigation: async () => {
       const buttons = document.querySelectorAll(CONFIG.SELECTORS.subchapterButtons);
       if (buttons.length > 0) {
@@ -143,9 +111,6 @@ const PageInitializer = (() => {
       }
     },
 
-    /**
-     * Highlights code blocks if hljs is available
-     */
     highlightCode: () => {
       if (typeof hljs !== 'undefined') {
         hljs.highlightAll();
@@ -153,36 +118,17 @@ const PageInitializer = (() => {
     }
   };
 
-  // Main initialization function
   return {
     initializePage: async () => {
       try {
-        // Single DOM read for all selectors we'll need
-        const elements = {
-          contentPlaceholder: document.querySelector(CONFIG.SELECTORS.contentPlaceholder),
-          printedTitle: document.querySelector(CONFIG.SELECTORS.printedTitle),
-          navLinks: {
-            prev: document.querySelector(CONFIG.SELECTORS.navLinkPrev),
-            next: document.querySelector(CONFIG.SELECTORS.navLinkNext)
-          },
-          subchapterButtons: document.querySelectorAll(CONFIG.SELECTORS.subchapterButtons)
-        };
-
-        // Step 1: Load and inject content
         await core.loadPageContent();
-
-        // Step 2: Load and set title
         await core.setPageTitle();
 
-        // Step 3: Load navigation (can run in parallel with subchapter nav)
-        const navigationPromises = [
+        await Promise.all([
           core.loadNavigation(),
           core.loadSubchapterNavigation()
-        ];
+        ]);
 
-        await Promise.all(navigationPromises);
-
-        // Step 4: Highlight code blocks
         core.highlightCode();
 
       } catch (error) {
@@ -196,7 +142,6 @@ const PageInitializer = (() => {
   };
 })();
 
-// Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', PageInitializer.initializePage);
 } else {

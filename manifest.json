@@ -1,0 +1,97 @@
+[
+  {
+    "path": "motivation/"
+  },
+  {
+    "path": "background/"
+  },
+  {
+    "path": "computer_basics/"
+  },
+  {
+    "path": "linux_cli/",
+    "subchapters": [
+      "Sub-linux_tutorial/",
+      "Sub-prompt_cust/"
+    ]
+  },
+  {
+    "path": "ms_windows/",
+    "subchapters": [
+      "Sub-package_managers/",
+      "Sub-win_terminal/",
+      "Sub-powershell/",
+      "Sub-linux_in_windows/"
+    ]
+  },
+  {
+    "path": "languages/",
+    "subchapters": [
+      "Sub-important_notes/"
+    ]
+  },
+  {
+    "path": "recipes/"
+  },
+  {
+    "path": "paradigms/",
+    "subchapters": [
+      "Sub-intro/"
+    ]
+  },
+  {
+    "path": "editors/"
+  },
+  {
+    "path": "compilers/",
+    "subchapters": [
+      "Sub-build_systems/",
+      "Sub-make_tutorial/"
+    ]
+  },
+  {
+    "path": "git/"
+  },
+  {
+    "path": "continuous_integration/"
+  },
+  {
+    "path": "containers/",
+    "subchapters": [
+      "Sub-container_tutorial/"
+    ]
+  },
+  {
+    "path": "debugging_testing/"
+  },
+  {
+    "path": "templates/"
+  },
+  {
+    "path": "optimization_style/"
+  },
+  {
+    "path": "further_topics/"
+  },
+  {
+    "path": "jupyter/"
+  },
+  {
+    "path": "python/"
+  },
+  {
+    "path": "julia/"
+  },
+  {
+    "path": "r_lang/"
+  },
+  {
+    "path": "reproducible_workflow/"
+  },
+  {
+    "path": "licensing/"
+  },
+  {
+    "path": "typing_latex_markdown/"
+  }
+]

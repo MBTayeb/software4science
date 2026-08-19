@@ -1,4 +1,3 @@
-
 :root {
   --bg-color: #ffffff;
   --text-color: #222222;
@@ -23,7 +22,9 @@ body.dark-mode {
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s; 
+  transition:
+    background-color 0.3s,
+    color 0.3s;
   font-family: Arial, sans-serif;
   line-height: 1.6;
   font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.1rem);
@@ -31,9 +32,9 @@ body {
   margin: 40px auto;
   padding: 0;
 }
-div#theme-toggle-parent{
-    display: flex;
-    width: 100%;
+div#theme-toggle-parent {
+  display: flex;
+  width: 100%;
 }
 button#theme-toggle {
   background-color: var(--button-bg);
@@ -43,69 +44,89 @@ button#theme-toggle {
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
   margin-left: auto;
 }
 
 @media (min-width: 1024px) {
-    body{max-width: 45em;}
+  body {
+    max-width: 45em;
+  }
 }
 @media (max-width: 1023px) {
-  body{
-      margin: 2em .3em;
-  }  
+  body {
+    margin: 2em 0.3em;
+  }
   div#content-placeholder > div {
-      max-width: 100% !important; 
+    max-width: 100% !important;
   }
 }
 h1 {
   color: var(--text-color);
   border-bottom: 2px solid #eee;
-  padding: 0 0 .5em 0;
+  padding: 0 0 0.5em 0;
   margin: 1.5em 0 0.5em 0;
-  font-weight: 600; 
+  font-weight: 600;
   line-height: 1.2;
 }
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   padding: 0;
   margin: 1.5em 0 0.5em 0;
   color: var(--text-color);
-  font-weight: 600; 
+  font-weight: 600;
 }
 
-h1 { font-size: clamp(1.8rem, 1.5rem + 1.5vw, 2.5rem); }
-h2 { font-size: clamp(1.5rem, 1.3rem + 1vw, 2.2rem); }
-h3 { font-size: clamp(1.3rem, 1.1rem + 1vw, 1.8rem); }
+h1 {
+  font-size: clamp(1.8rem, 1.5rem + 1.5vw, 2.5rem);
+}
+h2 {
+  font-size: clamp(1.5rem, 1.3rem + 1vw, 2.2rem);
+}
+h3 {
+  font-size: clamp(1.3rem, 1.1rem + 1vw, 1.8rem);
+}
 
-h4 { font-size: clamp(1.15rem, 1rem + 0.75vw, 1.5rem); }
-h5 { font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem); }
-h6 { font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1.1rem); }
+h4 {
+  font-size: clamp(1.15rem, 1rem + 0.75vw, 1.5rem);
+}
+h5 {
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+}
+h6 {
+  font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1.1rem);
+}
 
-h1.subchapter-page{
+h1.subchapter-page {
   border-bottom: 4px dashed #eee;
 }
-h2.subchapter-page{
-  margin-top:.5em;
+h2.subchapter-page {
+  margin-top: 0.5em;
   font-size: clamp(1.3rem, 1.1rem + 1vw, 1.8rem);
   border-bottom: 2px solid #eee;
 }
 h2.subchapter-page::before {
   content: "› ";
   color: #999;
-  font-weight: normal; 
+  font-weight: normal;
 }
 p {
-    margin: 4px 0px 16px 0px;
+  margin: 4px 0px 16px 0px;
 }
 
 ul {
-  list-style-type: disc; 
-  padding-left: 20px; 
-  margin:0px;
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0px;
 }
 
 li {
-  margin:0px;/*margin: 10px 0;*/
+  margin: 0px; /*margin: 10px 0;*/
 }
 
 li::marker {
@@ -132,7 +153,7 @@ a#overview-link:hover {
   text-decoration: underline;
 }
 div#content-placeholder {
-    margin: 2em 0 4em 0;
+  margin: 2em 0 4em 0;
 }
 nav#link-to-intro-parent {
   display: grid;
@@ -143,8 +164,8 @@ nav#link-to-intro-parent {
 }
 
 a#link-to-intro > div {
-  display: inline-flex; 
-  align-items: center; 
+  display: inline-flex;
+  align-items: center;
   gap: clamp(4px, 1vw, 16px);
 }
 
@@ -159,51 +180,58 @@ nav.page-navigation {
   width: 100%;
   box-sizing: border-box;
   font-family: sans-serif;
-  font-size: 110%; 
-  margin-top: 20px; 
+  font-size: 110%;
+  margin-top: 20px;
 }
 
 nav.page-navigation > div {
-    height: 100%;
-    border-top: 3px solid #eee;
-    padding-top: .3em; 
+  height: 100%;
+  border-top: 3px solid #eee;
+  padding-top: 0.3em;
 }
 nav.page-navigation > a {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    width:100%;
-    border: 3px solid transparent;
-    border-top-color: #eee;
-    padding-top: .3em; 
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border: 3px solid transparent;
+  border-top-color: #eee;
+  padding-top: 0.3em;
 }
 nav.page-navigation > a:hover {
   text-decoration: none;
   border-color: var(--page-nav-hover);
 }
 nav.page-navigation > a.prev {
-  justify-content: flex-start;  
-  padding-right: 0;/*20px;   Spacing between text and vertical line */
+  justify-content: flex-start;
+  padding-right: 0; /*20px;   Spacing between text and vertical line */
 }
 
 nav.page-navigation > a.toc {
-    display: grid;
-    place-items: center;
+  display: grid;
+  place-items: center;
 }
 
 nav.page-navigation > a.next {
-  justify-content: flex-end;    
-  padding-left: 0;/* 20px;   Spacing between vertical line and text */
+  justify-content: flex-end;
+  padding-left: 0; /* 20px;   Spacing between vertical line and text */
 }
 nav.page-navigation > a > div {
   display: flex;
-  align-items: center; 
+  align-items: center;
   gap: 0; /*clamp(4px, 1vw, 16px);*/
 }
 
-nav.page-navigation > a.prev > div {text-align: left;}
-nav.page-navigation > a.toc > div {text-align: center;justify-content: center;}
-nav.page-navigation > a.next > div {text-align: right;}
+nav.page-navigation > a.prev > div {
+  text-align: left;
+}
+nav.page-navigation > a.toc > div {
+  text-align: center;
+  justify-content: center;
+}
+nav.page-navigation > a.next > div {
+  text-align: right;
+}
 
 nav.page-navigation > a.prev::before {
   content: "←";
@@ -221,8 +249,18 @@ nav.page-navigation > a:hover > div{
   text-decoration: underline;
 }
 */
-div.daughter-lists-bigger > ul {
-    font-size: 125%
+div.daughter-lists-bigger > ul > li > a {
+  font-size: 125%;
+}
+div.daughter-lists-bigger > ul > li::marker {
+  /*font-weight: 900;*/
+  font-size: 1.5em;
+}
+div.daughter-lists-bigger > ul > li > ul {
+  list-style-type: circle;
+}
+div.daughter-lists-bigger > ul > li > ul > li::marker {
+  font-size: 1.25em;
 }
 
 a.subchapter-button {
@@ -239,13 +277,13 @@ a.subchapter-button {
 
 div.subchapter-container {
   width: 66%;
-  max-width: 800px; 
+  max-width: 800px;
   margin: 2em auto 0 auto;
 }
-div.subchapter-container > small{
+div.subchapter-container > small {
   display: block;
   text-align: center;
-  margin-top: 8px; 
+  margin-top: 8px;
   font-size: 0.75rem;
 }
 
@@ -263,7 +301,7 @@ a.subchapter-button[download] > div.subchapter-button__text {
 }
 
 a.subchapter-button[download] > div.subchapter-button__icon {
-  width:  1.5em;
+  width: 1.5em;
   height: 1.5em;
   display: flex;
   align-items: center;
@@ -301,8 +339,8 @@ nav.subpage-navigation {
 nav.subpage-navigation > div {
   height: 100%;
   width: 100%;
-  border-top: 1px solid #ddd; 
-  padding-top: .4em; 
+  border-top: 1px solid #ddd;
+  padding-top: 0.4em;
 }
 
 nav.subpage-navigation > a {
@@ -310,21 +348,21 @@ nav.subpage-navigation > a {
   align-items: center;
   height: 100%;
   width: 100%;
-  border-top: 1px solid #ddd; 
-  padding-top: .4em; 
-  color: #00838f; 
+  border-top: 1px solid #ddd;
+  padding-top: 0.4em;
+  color: #00838f;
   letter-spacing: 0.05em;
   transition: all 0.2s ease;
 }
 
 nav.subpage-navigation > a:hover {
-  opacity: 0.7; 
+  opacity: 0.7;
   text-decoration: none;
-  border-top: 1px solid #2980b9; 
+  border-top: 1px solid #2980b9;
 }
 
 nav.subpage-navigation > a.prev {
-  justify-content: flex-start;  
+  justify-content: flex-start;
   padding-right: 0;
 }
 
@@ -338,22 +376,29 @@ nav.subpage-navigation > a.parent:hover {
   color: #2980b9;
 }
 nav.subpage-navigation > a.next {
-  justify-content: flex-end;    
+  justify-content: flex-end;
   padding-left: 0;
 }
 
 nav.subpage-navigation > a > div {
   display: flex;
-  align-items: center; 
+  align-items: center;
   gap: 0;
 }
 
-nav.subpage-navigation > a.prev > div { text-align: left; }
-nav.subpage-navigation > a.parent > div { text-align: center; justify-content: center; }
-nav.subpage-navigation > a.next > div { text-align: right; }
+nav.subpage-navigation > a.prev > div {
+  text-align: left;
+}
+nav.subpage-navigation > a.parent > div {
+  text-align: center;
+  justify-content: center;
+}
+nav.subpage-navigation > a.next > div {
+  text-align: right;
+}
 
 nav.subpage-navigation > a.prev::before {
-  content: "‹"; 
+  content: "‹";
   margin-right: 0.5em;
   font-size: 1.2rem;
   display: inline-block;
@@ -382,5 +427,7 @@ nav.subpage-navigation > a:hover > div {
   border-radius: 4px;
   background-color: var(--code-bg);
   color: var(--code-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
