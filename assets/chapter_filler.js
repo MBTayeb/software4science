@@ -65,30 +65,27 @@ const PageInitializer = (() => {
         document.querySelector(CONFIG.SELECTORS.navLinkPrev),
         document.querySelector(CONFIG.SELECTORS.navLinkNext)
       ];
-
+    
       const { prev, next } = ManifestNav.getPrevNext(manifest);
-
+    
       const [prevTitle, nextTitle] = await Promise.all([
-        prev ? ManifestNav.fetchText(`/${prev}title.txt`, true) : Promise.resolve(null),
-        next ? ManifestNav.fetchText(`/${next}title.txt`, true) : Promise.resolve(null)
+        prev ? ManifestNav.fetchText(`../${prev}title.txt`, true) : Promise.resolve(null),
+        next ? ManifestNav.fetchText(`../${next}title.txt`, true) : Promise.resolve(null)
       ]);
-
+    
       if (prev) utils.replaceWithLink(prevEl, `../${prev}`, prevTitle);
       if (next) utils.replaceWithLink(nextEl, `../${next}`, nextTitle);
     },
-
+    
     loadSubchapterList: async (manifest) => {
       const container = document.querySelector(CONFIG.SELECTORS.subchapterList);
       if (!container) return;
-
       const currentEntry = manifest.find(entry => window.location.pathname.endsWith(`/${entry.path}`));
       const subchapters = currentEntry?.subchapters || [];
       if (subchapters.length === 0) return;
-
       const titles = await Promise.all(
         subchapters.map(sub => ManifestNav.fetchText(`${sub}title.txt`, true))
       );
-
       container.innerHTML = subchapters.map((sub, i) => `
         <div class="subchapter-container">
           <a href="./${sub}" class="subchapter-button">${titles[i] || sub}</a>
@@ -106,16 +103,12 @@ const PageInitializer = (() => {
       try {
         await core.loadPageContent();
         await core.setPageTitle();
-
-        const manifest = await ManifestNav.getManifest();
-
+        const manifest = await ManifestNav.getManifest('../');
         await Promise.all([
           core.loadNavigation(manifest),
           core.loadSubchapterList(manifest)
         ]);
-
         core.highlightCode();
-
       } catch (error) {
         console.error("Error initializing page:", error);
         const placeholder = document.querySelector(CONFIG.SELECTORS.contentPlaceholder);
