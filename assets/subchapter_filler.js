@@ -49,8 +49,8 @@ const PageInitializer = (() => {
       const { prev, next } = ManifestNav.getParentChapterNav(manifest, parentPath);
 
       const [prevTitle, nextTitle] = await Promise.all([
-        prev ? ManifestNav.fetchText(`/${prev}title.txt`, true) : Promise.resolve(null),
-        next ? ManifestNav.fetchText(`/${next}title.txt`, true) : Promise.resolve(null)
+        prev ? ManifestNav.fetchText(`../../${prev}title.txt`, true) : Promise.resolve(null),
+        next ? ManifestNav.fetchText(`../../${next}title.txt`, true) : Promise.resolve(null)
       ]);
 
       const prevHTML = prev && prevTitle
@@ -84,8 +84,8 @@ const PageInitializer = (() => {
       const { prev, next } = ManifestNav.getSubPrevNext(manifest);
 
       const [prevTitle, nextTitle] = await Promise.all([
-        prev ? ManifestNav.fetchText(`/${parentPath}${prev}title.txt`, true) : Promise.resolve(null),
-        next ? ManifestNav.fetchText(`/${parentPath}${next}title.txt`, true) : Promise.resolve(null)
+        prev ? ManifestNav.fetchText(`../${prev}title.txt`, true) : Promise.resolve(null),
+        next ? ManifestNav.fetchText(`../${next}title.txt`, true) : Promise.resolve(null)
       ]);
 
       if (prev) utils.replaceWithLink(prevEl, `../${prev}`, prevTitle);
