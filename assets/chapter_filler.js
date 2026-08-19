@@ -7,10 +7,9 @@ const PageInitializer = (() => {
     SELECTORS: {
       contentPlaceholder: '#content-placeholder',
       printedTitle: '#printed-title',
-      pageNavigation: '.page-navigation',
       navLinkPrev: '.page-navigation > .nav-link.prev',
       navLinkNext: '.page-navigation > .nav-link.next',
-      subchapterButtons: '.subchapter-button'
+      subchapterList: '#subchapter-list'
     },
     ERROR_MESSAGES: {
       loadFailed: 'Failed to load resource: ',
@@ -38,25 +37,6 @@ const PageInitializer = (() => {
       a.href = href;
       a.innerHTML = `<div>${title.trim()}</div>`;
       el.replaceWith(a);
-    },
-
-    processSubchapterButtons: async (buttons) => {
-      for (const button of buttons) {
-        const folderPath = button.getAttribute('href');
-        if (!folderPath) continue;
-
-        const baseFolder = folderPath.endsWith('/') ? folderPath : `${folderPath}/`;
-        const title = await utils.fetchResource(
-          `${baseFolder}title.txt`,
-          CONFIG.ERROR_MESSAGES.loadFailed,
-          true
-        );
-
-        if (title) {
-          button.setAttribute('href', baseFolder);
-          button.textContent = title.trim();
-        }
-      }
     }
   };
 
@@ -66,11 +46,8 @@ const PageInitializer = (() => {
         CONFIG.RESOURCES.find(r => r.name === 'pageContent').url,
         CONFIG.ERROR_MESSAGES.loadFailed
       );
-
       const placeholder = document.querySelector(CONFIG.SELECTORS.contentPlaceholder);
-      if (placeholder) {
-        placeholder.insertAdjacentHTML('afterbegin', content);
-      }
+      if (placeholder) placeholder.insertAdjacentHTML('afterbegin', content);
     },
 
     setPageTitle: async () => {
@@ -78,21 +55,17 @@ const PageInitializer = (() => {
         CONFIG.RESOURCES.find(r => r.name === 'title').url,
         CONFIG.ERROR_MESSAGES.loadFailed
       );
-
       document.title = title.trim();
       const heading = document.querySelector(CONFIG.SELECTORS.printedTitle);
-      if (heading) {
-        heading.textContent = title.trim();
-      }
+      if (heading) heading.textContent = title.trim();
     },
 
-    loadNavigation: async () => {
+    loadNavigation: async (manifest) => {
       const [prevEl, nextEl] = [
         document.querySelector(CONFIG.SELECTORS.navLinkPrev),
         document.querySelector(CONFIG.SELECTORS.navLinkNext)
       ];
 
-      const manifest = await ManifestNav.getManifest();
       const { prev, next } = ManifestNav.getPrevNext(manifest);
 
       const [prevTitle, nextTitle] = await Promise.all([
@@ -104,17 +77,29 @@ const PageInitializer = (() => {
       if (next) utils.replaceWithLink(nextEl, `../${next}`, nextTitle);
     },
 
-    loadSubchapterNavigation: async () => {
-      const buttons = document.querySelectorAll(CONFIG.SELECTORS.subchapterButtons);
-      if (buttons.length > 0) {
-        await utils.processSubchapterButtons(buttons);
-      }
+    // Builds .subchapter-container / .subchapter-button elements
+    // from the manifest, instead of reading them from static HTML
+    loadSubchapterList: async (manifest) => {
+      const container = document.querySelector(CONFIG.SELECTORS.subchapterList);
+      if (!container) return;
+
+      const currentEntry = manifest.find(entry => window.location.pathname.endsWith(`/${entry.path}`));
+      const subchapters = currentEntry?.subchapters || [];
+      if (subchapters.length === 0) return;
+
+      const titles = await Promise.all(
+        subchapters.map(sub => ManifestNav.fetchText(`${sub}title.txt`, true))
+      );
+
+      container.innerHTML = subchapters.map((sub, i) => `
+        <div class="subchapter-container">
+          <a href="./${sub}" class="subchapter-button">${titles[i] || sub}</a>
+        </div>
+      `).join('');
     },
 
     highlightCode: () => {
-      if (typeof hljs !== 'undefined') {
-        hljs.highlightAll();
-      }
+      if (typeof hljs !== 'undefined') hljs.highlightAll();
     }
   };
 
@@ -124,9 +109,11 @@ const PageInitializer = (() => {
         await core.loadPageContent();
         await core.setPageTitle();
 
+        const manifest = await ManifestNav.getManifest();
+
         await Promise.all([
-          core.loadNavigation(),
-          core.loadSubchapterNavigation()
+          core.loadNavigation(manifest),
+          core.loadSubchapterList(manifest)
         ]);
 
         core.highlightCode();
