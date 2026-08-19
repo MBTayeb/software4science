@@ -11,23 +11,23 @@
   {
     "path": "linux_cli/",
     "subchapters": [
-      "Sub-linux_tutorial/",
-      "Sub-prompt_cust/"
+      "linux_tutorial/",
+      "prompt_cust/"
     ]
   },
   {
     "path": "ms_windows/",
     "subchapters": [
-      "Sub-package_managers/",
-      "Sub-win_terminal/",
-      "Sub-powershell/",
-      "Sub-linux_in_windows/"
+      "package_managers/",
+      "win_terminal/",
+      "powershell/",
+      "linux_in_windows/"
     ]
   },
   {
     "path": "languages/",
     "subchapters": [
-      "Sub-important_notes/"
+      "important_notes/"
     ]
   },
   {
@@ -36,7 +36,7 @@
   {
     "path": "paradigms/",
     "subchapters": [
-      "Sub-intro/"
+      "intro/"
     ]
   },
   {
@@ -45,8 +45,8 @@
   {
     "path": "compilers/",
     "subchapters": [
-      "Sub-build_systems/",
-      "Sub-make_tutorial/"
+      "build_systems/",
+      "make_tutorial/"
     ]
   },
   {
@@ -58,7 +58,7 @@
   {
     "path": "containers/",
     "subchapters": [
-      "Sub-container_tutorial/"
+      "container_tutorial/"
     ]
   },
   {
