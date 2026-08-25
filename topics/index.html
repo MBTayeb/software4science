@@ -1,39 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
     <title></title>
-    <link rel="stylesheet" href="../assets/style.css">
-    <link rel="stylesheet" href="../assets/monokai.css">
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="../assets/monokai.css" />
     <script src="../assets/highlight.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div id="theme-toggle-parent"><button id="theme-toggle">Toggle Dark Mode</button></div>
     <script src="../assets/dark.js" defer></script>
     <h1 id="printed-title">Loading ...</h1>
-    <nav id="link-to-intro-parent"><a href="../" id="link-to-intro"><div>Introduction page</div></a></nav>
+    <nav id="link-to-intro-parent">
+      <a href="../" id="link-to-intro"><div>Introduction page</div></a>
+    </nav>
     <div id="topics-placeholder" class="daughter-lists-bigger"></div>
     <script src="../assets/manifest-nav.js"></script>
     <script src="../assets/topics_filler.js"></script>
     <script>
-    fetch('title.txt')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`Failed to load title.txt: ${response.status}`);
-        }
-        return response.text();
-      })
-      .then(text => {
-        const title = text.trim();
-        document.getElementById('printed-title').textContent = title;
-        document.title = title;
-      })
-      .catch(error => {
-        console.error(error);
-        document.getElementById('printed-title').textContent = 'Error loading title';
-      });
-    TopicsPage.load("topics-placeholder", false, '../');
+      fetch("title.txt")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Failed to load title.txt: ${response.status}`);
+          }
+          return response.text();
+        })
+        .then((text) => {
+          const title = text.trim();
+          document.getElementById("printed-title").textContent = title;
+          document.title = title;
+        })
+        .catch((error) => {
+          console.error(error);
+          document.getElementById("printed-title").textContent = "Error loading title";
+        });
+      TopicsPage.load("topics-placeholder", false, "../");
     </script>
-</body>
+  </body>
 </html>

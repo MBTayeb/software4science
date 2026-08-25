@@ -1,222 +1,208 @@
-<div style="max-width: 45em; margin-left: auto; margin-right: auto;">
+<div style="max-width: 45em; margin-left: auto; margin-right: auto">
   <div>
-    Keeping all that in mind I would like to recommend the following
-    strategy here:
+    Keeping all that in mind I would like to recommend the following strategy here:
     <ol>
       <li>
-        Start with learning Bash, so that you feel comfortable operating a Linux system especially when writing scripts to automate your work.
+        Start with learning Bash, so that you feel comfortable operating a Linux system especially when writing scripts
+        to automate your work.
       </li>
       <li>
-        Then visit Fortran; it's still very much at the center of scientific computing and the basics are not hard to get; it is very straightforward mathematical programming.
+        Then visit Fortran; it's still very much at the center of scientific computing and the basics are not hard to
+        get; it is very straightforward mathematical programming.
       </li>
       <li>
-        For doing your actual research move on to Python: it is much less demanding than C++ and usually everything you could only wish for not to write yourself will be available.
+        For doing your actual research move on to Python: it is much less demanding than C++ and usually everything you
+        could only wish for not to write yourself will be available.
       </li>
       <li>
-        Once your project turns quasi-professional or if you anyhow have the intention to make it that way, C++ will offer everything you need (but be prepared to spend most of the time planning to write code, instead of actually writing it).
+        Once your project turns quasi-professional or if you anyhow have the intention to make it that way, C++ will
+        offer everything you need (but be prepared to spend most of the time planning to write code, instead of actually
+        writing it).
       </li>
       <li>
-        Finally, learn R, Matlab, SQL etc. if you have to, because a project
-        requires it - you certainly won't find it impossible to do so once you
-        have worked through this course.</li>
+        Finally, learn R, Matlab, SQL etc. if you have to, because a project requires it - you certainly won't find it
+        impossible to do so once you have worked through this course.
+      </li>
     </ol>
   </div>
-  <br>
+  <br />
   <p>
     In this course, we will follow the strategy outlined above and focus on
-    <em>Bash</em>, <em>Fortran</em> and especially <em>Python</em>. (This
-    strategy might not fit to your scientific field, especially if the whole
-    field -- like certain parts of bio- or geo-informatics -- developed long
-    after the high times of Fortran; in this case start with bash and move on to
-    R, Matlab or whatever is the accepted standard in your field.) See the
-    <em>Additonal resources </em> section for online resources on other
-    languages, especially concerning <em>C/C++</em>. Below you will also find a
-    <em>focus unit on R</em>.
+    <em>Bash</em>, <em>Fortran</em> and especially <em>Python</em>. (This strategy might not fit to your scientific
+    field, especially if the whole field -- like certain parts of bio- or geo-informatics -- developed long after the
+    high times of Fortran; in this case start with bash and move on to R, Matlab or whatever is the accepted standard in
+    your field.) See the <em>Additonal resources </em> section for online resources on other languages, especially
+    concerning <em>C/C++</em>. Below you will also find a <em>focus unit on R</em>.
   </p>
   <details>
     <summary>
-    <h4 style="display: inline;">Online resources for learning Bash:</h4>
+      <h4 style="display: inline">Online resources for learning Bash:</h4>
     </summary>
-    <div style="padding-left: 1em;">
+    <div style="padding-left: 1em">
       <div>These can be found in a separate work unit above.</div>
-      <div>If you have worked through this unit, you have learned some 'universal' features of programming languages already:</div>
+      <div>
+        If you have worked through this unit, you have learned some 'universal' features of programming languages
+        already:
+      </div>
       <div>First, variables need to be assigned (and sometimes declared, i.e. they need to be given a type).</div>
       <div>Second, the flow of programs requires control structures like loops, conditions etc.</div>
       <div>And third, sub-units (functions, sub-routines, modules, etc.) are needed to structure code.</div>
       <div>
-        Apart from this, there is some general stuff to remember for each
-        language, like e.g. what line defines the start of a program or how do I
-        do in- and output etc. When learning a new programming language, you are
-        often times fine with remembering just the basics. If you then look for
-        the correct 'syntax' of an element, it's usually best practice to google
-        it ("fortran loop"), once you have understood what you are looking for.
+        Apart from this, there is some general stuff to remember for each language, like e.g. what line defines the
+        start of a program or how do I do in- and output etc. When learning a new programming language, you are often
+        times fine with remembering just the basics. If you then look for the correct 'syntax' of an element, it's
+        usually best practice to google it ("fortran loop"), once you have understood what you are looking for.
       </div>
     </div>
   </details>
   <details>
     <summary>
-      <h4 style="display: inline;">Online resources for learning Fortran:</h4>
+      <h4 style="display: inline">Online resources for learning Fortran:</h4>
     </summary>
-    <div style="padding-left: 1em;">
+    <div style="padding-left: 1em">
       <p>
-        Fortran is a compiled language, so that apart from Fortran itself you
-        will have to learn how to use a compiler including the use of software
-        libraries and as compiling can be quite tedious for all but very small
-        projects, also about the most common 'build system' <em>make</em>.
+        Fortran is a compiled language, so that apart from Fortran itself you will have to learn how to use a compiler
+        including the use of software libraries and as compiling can be quite tedious for all but very small projects,
+        also about the most common 'build system' <em>make</em>.
       </p>
       <p>
-        One of the reasons why Fortran provides such excellence performance is
-        the existence of very high-quality<em> compilers</em> (the Intel Fortran
-        compiler is a legend), which manage to produce extremely fast code. But
-        unlike in the past, C++ compilers (including the GCC one) don't seem to
-        be utterly behind anymore.
+        One of the reasons why Fortran provides such excellence performance is the existence of very high-quality<em>
+          compilers</em
+        >
+        (the Intel Fortran compiler is a legend), which manage to produce extremely fast code. But unlike in the past,
+        C++ compilers (including the GCC one) don't seem to be utterly behind anymore.
       </p>
       <p>
-        The use of <em>software libraries</em> is essential for good
-        programming! Libraries provide code written by someone else (usually
-        more clever than you or me) that can be re-used for your purposes just
-        by sticking to the calling conventions (you have to supply the correct
-        inputs and understand what is given back). If you learn how to use
-        libraries you can save a lot of time by not re-rewriting existing code,
-        which in addition is usually much more error-proof than the ugly hack
-        you just made up.</p>
-      <p>
-        The use of a <em>build system</em> like make is also considered good programming, as it allows not only you, but also other people to compile your code conveniently (or: at all).
+        The use of <em>software libraries</em> is essential for good programming! Libraries provide code written by
+        someone else (usually more clever than you or me) that can be re-used for your purposes just by sticking to the
+        calling conventions (you have to supply the correct inputs and understand what is given back). If you learn how
+        to use libraries you can save a lot of time by not re-rewriting existing code, which in addition is usually much
+        more error-proof than the ugly hack you just made up.
       </p>
       <p>
-        You will learn more about compilers, software libraries and build systems in the next work unit.
+        The use of a <em>build system</em> like make is also considered good programming, as it allows not only you, but
+        also other people to compile your code conveniently (or: at all).
       </p>
+      <p>You will learn more about compilers, software libraries and build systems in the next work unit.</p>
       <h5>Fortran tutorials</h5>
-      <div style="padding-left: 1em;">
-        <div style="text-indent: -1em; padding-left: 1em;">
+      <div style="padding-left: 1em">
+        <div style="text-indent: -1em; padding-left: 1em">
           <a href="https://www.youtube.com/watch?embed=no&amp;v=__2UgFNYgf8">
             https://www.youtube.com/watch?v=__2UgFNYgf8
           </a>
         </div>
-        <div style="padding-left: 2em; text-indent: -1em;">
+        <div style="padding-left: 2em; text-indent: -1em">
           <div>
-            <span style="font-weight: bolder;">
-              -- A one hour introduction into Fortran by Derek Banas
-            </span>
+            <span style="font-weight: bolder"> -- A one hour introduction into Fortran by Derek Banas </span>
           </div>
         </div>
       </div>
-      <div style="padding-left: 1em;">
-        <div style="text-indent: -1em; padding-left: 1em;">
+      <div style="padding-left: 1em">
+        <div style="text-indent: -1em; padding-left: 1em">
           <a href="https://www.youtube.com/watch?embed=no&amp;v=d_ZNWPNzspg">
             https://www.youtube.com/watch?v=d_ZNWPNzspg
           </a>
         </div>
-        <div style="padding-left: 2em; text-indent: -1em;">
+        <div style="padding-left: 2em; text-indent: -1em">
           <div>
             -- A 35-min introduction to Fortran 90 by Daniel Price
-            <br> given as a part of a computational astrophysics course at Monash University in Melbourne, Australia.
-            <br>Tutorial videos following this one can be found in Daniel's channel
-            <br>Script of the tutorial:
-            <br><a href="https://users.monash.edu.au/~dprice/teaching/fortran/lab-Fortran.pdf">
-                https://users.monash.edu.au/~dprice/teaching/fortran/lab-Fortran.pdf
+            <br />
+            given as a part of a computational astrophysics course at Monash University in Melbourne, Australia.
+            <br />Tutorial videos following this one can be found in Daniel's channel <br />Script of the tutorial:
+            <br /><a href="https://users.monash.edu.au/~dprice/teaching/fortran/lab-Fortran.pdf">
+              https://users.monash.edu.au/~dprice/teaching/fortran/lab-Fortran.pdf
             </a>
           </div>
         </div>
       </div>
-      <div style="padding-left: 1em;">
-        <div style="text-indent: -1em; padding-left: 1em;">
-            <a href="https://doku.lrz.de/programming-with-fortran-10746212.html">
-                https://doku.lrz.de/programming-with-fortran-10746212.html
-            </a>
+      <div style="padding-left: 1em">
+        <div style="text-indent: -1em; padding-left: 1em">
+          <a href="https://doku.lrz.de/programming-with-fortran-10746212.html">
+            https://doku.lrz.de/programming-with-fortran-10746212.html
+          </a>
         </div>
-        <div style="text-indent: -1em; padding-left: 2em;">
-            -- "An introduction to the Fortran programming language course"
-            <br> Offered by Leibniz-Rechenzentrum (LRZ, Leibniz Supercomputing Centre)
-            <br>The slides of the course:
-            <br>
-            <a href="https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf">
-                https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf
-            </a>
+        <div style="text-indent: -1em; padding-left: 2em">
+          -- "An introduction to the Fortran programming language course"
+          <br />
+          Offered by Leibniz-Rechenzentrum (LRZ, Leibniz Supercomputing Centre) <br />The slides of the course:
+          <br />
+          <a href="https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf">
+            https://doku.lrz.de/dyn/Doku_Kurse/Fortran/basics/Fortran_3days.pdf
+          </a>
         </div>
       </div>
-      <div style="padding-left: 1em;">
-        <div style="text-indent: -1em; padding-left: 1em;">
+      <div style="padding-left: 1em">
+        <div style="text-indent: -1em; padding-left: 1em">
           <a href="https://www.youtube.com/watch?embed=no&amp;v=5vkUlpKzepE">
             https://www.youtube.com/watch?v=5vkUlpKzepE
           </a>
         </div>
-        <div style="text-indent: -1em; padding-left: 2em;">
-            -- <span style="text-decoration: underline;">Advanced</span>
-            Virtual Tutorial 'Modern Fortran'
-            <br>offered by ARCHER
-            <br>The slides of the tutorial:
-            <br>
-            <a href="http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf">
-                http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf
-            </a>
+        <div style="text-indent: -1em; padding-left: 2em">
+          -- <span style="text-decoration: underline">Advanced</span>
+          Virtual Tutorial 'Modern Fortran'
+          <br />offered by ARCHER <br />The slides of the tutorial:
+          <br />
+          <a
+            href="http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf"
+          >
+            http://www.archer.ac.uk/training/virtual/2017-01-11-Modern-Fortran/Fortran-f77-f90-VirtualTutorial11-01-17.pdf
+          </a>
         </div>
       </div>
     </div>
   </details>
   <details>
     <summary>
-      <h4 style="display: inline;">Online resources for learning GNU make:</h4>
+      <h4 style="display: inline">Online resources for learning GNU make:</h4>
     </summary>
-    <div style="padding-left: 1em;">These can be found in a separate work unit
-    below.</div>
+    <div style="padding-left: 1em">These can be found in a separate work unit below.</div>
   </details>
   <details>
     <summary>
-    <h4 style="display: inline;">Online resources for learning Python:</h4>
+      <h4 style="display: inline">Online resources for learning Python:</h4>
     </summary>
     <!-- <br>  -->
-    <div style="padding-left: 1em;">
-    <div>These can be found in a separate work unit below.</div>
-    <br>
-    <div>In this work unit you will also find a basic introduction to object
-      oriented programming (OOP).</div>
+    <div style="padding-left: 1em">
+      <div>These can be found in a separate work unit below.</div>
+      <br />
+      <div>In this work unit you will also find a basic introduction to object oriented programming (OOP).</div>
     </div>
   </details>
   <details>
     <summary>
-      <h4 style="display: inline;">
-        Online resources for quickly looking up syntax of different languages:
-      </h4>
+      <h4 style="display: inline">Online resources for quickly looking up syntax of different languages:</h4>
     </summary>
-    <div style="padding-left: 1em;">
-      <div style="padding-left: 1em;">
-        <div style="text-indent: -1em; padding-left: 1em;">
-          <a href="https://learnxinyminutes.com/">
-            https://learnxinyminutes.com/
-          </a>
+    <div style="padding-left: 1em">
+      <div style="padding-left: 1em">
+        <div style="text-indent: -1em; padding-left: 1em">
+          <a href="https://learnxinyminutes.com/"> https://learnxinyminutes.com/ </a>
         </div>
-        <div style="padding-left: 2em; text-indent: -1em;">
-          <div>
-            -- Learn X in Y minutes, where X is one of the many available languages to choose from.
-          </div>
+        <div style="padding-left: 2em; text-indent: -1em">
+          <div>-- Learn X in Y minutes, where X is one of the many available languages to choose from.</div>
         </div>
       </div>
 
-      <div style="padding-left: 1em;">
-        <div style="text-indent: -1em; padding-left: 1em;">
-          <a href="https://www.algorithm-archive.org/">
-            https://www.algorithm-archive.org/
-          </a>
+      <div style="padding-left: 1em">
+        <div style="text-indent: -1em; padding-left: 1em">
+          <a href="https://www.algorithm-archive.org/"> https://www.algorithm-archive.org/ </a>
         </div>
-        <div style="padding-left: 2em; text-indent: -1em;">
+        <div style="padding-left: 2em; text-indent: -1em">
           <div>
             -- The Arcane algorithm archive
-            <br>It's a community driven archive aiming to provide a guide into all the important algorithms in all languages.
+            <br />It's a community driven archive aiming to provide a guide into all the important algorithms in all
+            languages.
           </div>
         </div>
       </div>
 
-      <div style="padding-left: 1em;">
-        <div style="text-indent: -1em; padding-left: 1em;">
-          <a href="https://quickref.me/">
-            https://quickref.me/
-          </a>
+      <div style="padding-left: 1em">
+        <div style="text-indent: -1em; padding-left: 1em">
+          <a href="https://quickref.me/"> https://quickref.me/ </a>
         </div>
-        <div style="padding-left: 2em; text-indent: -1em;">
+        <div style="padding-left: 2em; text-indent: -1em">
           <div>
             -- QuickRef: online cheat sheets for many programming languages
-            <br>
+            <br />
           </div>
         </div>
       </div>
@@ -224,45 +210,33 @@
   </details>
   <details>
     <summary>
-      <h4 style="display: inline;">
-        Easy offline documentation:
-      </h4>
+      <h4 style="display: inline">Easy offline documentation:</h4>
     </summary>
-    <div style="padding-left: 1em;">
-      <div style="text-indent: -1em; padding-left: 1em;">
-        <a href="https://zealdocs.org/">
-          https://zealdocs.org/
-        </a>
+    <div style="padding-left: 1em">
+      <div style="text-indent: -1em; padding-left: 1em">
+        <a href="https://zealdocs.org/"> https://zealdocs.org/ </a>
       </div>
-      <div style="padding-left: 2em; text-indent: -1em;">
-        <div>
-          -- Zeal: "offline documentation browser for software developers"
-        </div>
+      <div style="padding-left: 2em; text-indent: -1em">
+        <div>-- Zeal: "offline documentation browser for software developers"</div>
       </div>
     </div>
-    <div style="padding-left: 1em;">
-      <div style="text-indent: -1em; padding-left: 1em;">
-        <a href="https://github.com/smsearcy/zeal-feeds">
-          https://github.com/smsearcy/zeal-feeds
-        </a>
+    <div style="padding-left: 1em">
+      <div style="text-indent: -1em; padding-left: 1em">
+        <a href="https://github.com/smsearcy/zeal-feeds"> https://github.com/smsearcy/zeal-feeds </a>
       </div>
-      <div style="padding-left: 2em; text-indent: -1em;">
-        <div>
-          -- Zeal-feeds: a simple CLI tool "for adding user contributed docsets to Zeal".
-        </div>
+      <div style="padding-left: 2em; text-indent: -1em">
+        <div>-- Zeal-feeds: a simple CLI tool "for adding user contributed docsets to Zeal".</div>
       </div>
     </div>
-    <div style="padding-left: 1em;">
-      <div style="text-indent: -1em; padding-left: 1em;">
-        <a href="https://devdocs.io/offline">
-          https://devdocs.io/offline
-        </a>
+    <div style="padding-left: 1em">
+      <div style="text-indent: -1em; padding-left: 1em">
+        <a href="https://devdocs.io/offline"> https://devdocs.io/offline </a>
       </div>
-      <div style="padding-left: 2em; text-indent: -1em;">
+      <div style="padding-left: 2em; text-indent: -1em">
         <div>
           -- DevDocs: offline webapp for ducs
-          <br>One should open the site and download the docs that one needs
-          <br>Then, the website can be accessed even when there is no internet access
+          <br />One should open the site and download the docs that one needs <br />Then, the website can be accessed
+          even when there is no internet access
         </div>
       </div>
     </div>
