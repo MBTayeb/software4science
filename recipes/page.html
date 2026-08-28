@@ -1,8 +1,16 @@
 <div style="max-width: 45em; margin-left: auto; margin-right: auto">
   <p>
-    The word 'algorithm' comes from Algorithmi, the Latinized form of Muhammad ibn Musa al-Khwarizmi's name (c.
-    780–850). In software engineering, the term refers to a concrete recipe that solves a problem in a finite number of
-    steps.
+    The word 'algorithm' comes from Algorithmi, the Latinized form of Muhammad
+    ibn Musa al-Khwarizmi's name (c. 780–850). In software engineering, the term
+    refers to a concrete recipe that solves a problem in a finite number of
+    steps. It's the essence of software engineering. Especially in RSE, where
+    most code consists of calculations and plots.
+  </p>
+  <p>
+    Because of the importance of algorithms in our code base, we want to make
+    sure that they are of a high quality and efficiency. Analyzing this in a
+    scientific manner was achieved with the big-oh notation. Its a "qualitative"
+    but correct and allgemeingueltig.
   </p>
 
   <div>
@@ -10,11 +18,18 @@
       <div style="width: 100%; display: flex; justify-content: center">
         <img
           src="../assets/downloads/plotComplexitiesTheoryEqualAxis.svg"
-          style="aspect-ratio: 1/1; display: block; height: 25em; border: 4px solid gray; box-sizing: border-box"
+          style="
+            aspect-ratio: 1/1;
+            display: block;
+            height: 25em;
+            border: 4px solid gray;
+            box-sizing: border-box;
+          "
         />
       </div>
       <figcaption style="text-align: center">
-        <strong>Figure 1:</strong> Equal-axis log-log plot: y = x appears as a clean diagonal.
+        <strong>Figure 1:</strong> Common time-complexity classes on a log-log
+        plot with equal axis scaling.
       </figcaption>
     </figure>
 
@@ -22,11 +37,18 @@
       <div style="width: 100%; display: flex; justify-content: center">
         <img
           src="../assets/downloads/plotComplexitiesTheoryNotEqualAxis.svg"
-          style="aspect-ratio: 1/1; display: block; height: 25em; border: 4px solid gray; box-sizing: border-box"
+          style="
+            aspect-ratio: 1/1;
+            display: block;
+            height: 25em;
+            border: 4px solid gray;
+            box-sizing: border-box;
+          "
         />
       </div>
       <figcaption style="text-align: center">
-        <strong>Figure 2:</strong> Free-aspect log-log plot: axes auto-scaled to the data range.
+        <strong>Figure 2:</strong> The same complexity classes with axes
+        auto-scaled to the data range.
       </figcaption>
     </figure>
 
@@ -34,13 +56,51 @@
       <div style="width: 100%; display: flex; justify-content: center">
         <img
           src="../assets/downloads/plotComplexitiesTheoryFasterThanExponential.svg"
-          style="aspect-ratio: 1/1; display: block; height: 25em; border: 4px solid gray; box-sizing: border-box"
+          style="
+            aspect-ratio: 1/1;
+            display: block;
+            height: 25em;
+            border: 4px solid gray;
+            box-sizing: border-box;
+          "
         />
       </div>
       <figcaption style="text-align: center">
-        <strong>Figure 3:</strong> Free-aspect log-log plot: Growth rates excluding the O(2^N) complexity.
+        <strong>Figure 3:</strong> Growth rates with O(2ⁿ) removed, axes
+        auto-scaled.
       </figcaption>
     </figure>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a
+        href="https://www.edx.org/learn/algorithms/stanford-university-algorithms-design-and-analysis-part-1"
+      >
+        https://www.edx.org/learn/algorithms/stanford-university-algorithms-design-and-analysis-part-1
+      </a>
+    </div>
+    <div style="padding-left: 2em; text-indent: -1em">
+      <div>
+        <span style="font-weight: bolder">
+          -- Stanford's introduction to algorithms by Tim Roughgarden
+        </span>
+        <br />
+        The course doesn't use a specific programming language but only pseudo
+        code.
+        <br />
+        The course is offered on edX. <br />
+        Prefer YouTube? The full lecture series is available there for free.
+        <br />
+        <a
+          href="https://www.youtube.com/playlist?embed=no&amp;list=PLXFMmlk03Dt7Q0xr1PIAriY5623cKiH7V"
+        >
+          https://www.youtube.com/playlist?list=PLXFMmlk03Dt7Q0xr1PIAriY5623cKiH7V
+        </a>
+        <br />
+        Find more content by Tim on his own website. <br />
+        <a href="https://timroughgarden.org/"> https://timroughgarden.org/ </a>
+      </div>
+    </div>
   </div>
   <div style="padding-left: 1em">
     <div style="text-indent: -1em; padding-left: 1em">
@@ -51,28 +111,10 @@
     <div style="padding-left: 2em; text-indent: -1em">
       <div>
         -- Algorithms and Data Structures Tutorial by Pasan Premaratne
-        <br />Offered by freecodecamp.org.
-      </div>
-    </div>
-  </div>
-  <div style="padding-left: 1em">
-    <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://www.edx.org/learn/algorithms/stanford-university-algorithms-design-and-analysis-part-1">
-        https://www.edx.org/learn/algorithms/stanford-university-algorithms-design-and-analysis-part-1
-      </a>
-    </div>
-    <div style="padding-left: 2em; text-indent: -1em">
-      <div>
-        -- Stanford's introduction to algorithms by Tim Roughgarden
-        <br />
-        The course is offered on edX. <br />Prefer YouTube? The full lecture series is available there for free.
-        <br /><a href="https://www.youtube.com/playlist?embed=no&amp;list=PLXFMmlk03Dt7Q0xr1PIAriY5623cKiH7V">
-          https://www.youtube.com/playlist?list=PLXFMmlk03Dt7Q0xr1PIAriY5623cKiH7V
-        </a>
-        <br />
-        Find more content by Tim on his own website. <br /><a href="https://timroughgarden.org/">
-          https://timroughgarden.org/
-        </a>
+        <br />Offered by freecodecamp.org. <br />
+        The tutorial uses python and has many visulasations. <br />
+        One could follow the tutorial and test the programs in other programming
+        languages as well.
       </div>
     </div>
   </div>
@@ -86,7 +128,8 @@
     <div style="padding-left: 2em; text-indent: -1em">
       <div>
         <span style="font-weight: bolder">
-          -- Lecture on algorithms and their efficiency in MIT's 6.006 in the spring of 2020 by Jason Ku.
+          -- Lecture on algorithms and their efficiency in MIT's 6.006 in the
+          spring of 2020 by Jason Ku.
         </span>
         <br />Here is the playlist of the whole course <br /><a
           href="https://www.youtube.com/playlist?embed=no&amp;list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY"
@@ -109,8 +152,13 @@
     </div>
     <div style="padding-left: 2em; text-indent: -1em">
       <div>
-        -- Lecture on the efficiency of algorithms in MIT's 6.00SC in the spring of 2011 by John Guttag.
-        <br />Here is the playlist of the whole course <br /><a
+        -- Lecture on the efficiency of algorithms in MIT's 6.00SC in the spring
+        of 2011 by John Guttag.
+        <br />
+        The lecture gives a nice introduction but uses python2 code. <br />
+        The syntax differences are quite clear, however. <br />
+        Here is the playlist of the whole course <br />
+        <a
           href="https://www.youtube.com/playlist?embed=no&amp;list=PLB2BE3D6CA77BB8F7"
         >
           https://www.youtube.com/playlist?list=PLB2BE3D6CA77BB8F7
