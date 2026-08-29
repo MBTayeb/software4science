@@ -430,4 +430,6 @@ nav.subpage-navigation > a:hover > div {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
