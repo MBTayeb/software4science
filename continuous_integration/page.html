@@ -1,104 +1,132 @@
 <div style="max-width: 45em; margin-left: auto; margin-right: auto">
   <p>
-    Version control systems are a mean to store all the versions of a code online so that they are easily accessible for
-    many people. Continuous Integration (CI) and continuous deployment (CD) are useful tools offered by many of the
-    version control systems nowadays. As their name implies, they allow to automatically integrate and deploy code after
-    each push. For example, they can be used to test the new code, so that the programmer is notified when it fails. The
-    start of this service has caused a crucial shift in the DevOps (Software Development and IT Operations) industry,
-    because it made the teamwork between developers, who write the code, and operators, who test it, much faster.
+    Version control systems are a mean to store all the versions of a code
+    online so that they are easily accessible for many people. Continuous
+    Integration (CI) and continuous deployment (CD) are useful tools offered by
+    many of the version control systems nowadays. As their name implies, they
+    allow to automatically integrate and deploy code after each push. For
+    example, they can be used to test the new code, so that the programmer is
+    notified when it fails. The start of this service has caused a crucial shift
+    in the DevOps (Software Development and IT Operations) industry, because it
+    made the teamwork between developers, who write the code, and operators, who
+    test it, much faster.
   </p>
   <p>
-    To test code for example, one wants to have exactly the same operating system used by developers. For this purpose,
-    <span style="font-style: italic">containers</span> come in handy. They are similar to virtual machines, that is
-    simulated machines within a real machine, but they are much lighter. A container is built from a container image and
-    has no access to the operating system of the developer. Containers are much lighter than virtual boxes, because
-    virtual boxes don't only contain the application layer but also the kernel layer, that is the layer that
-    communicates between hardware and applications, whereas container images only include the application layer. That is
-    containers share the kernel layer with the host computer. Due to the small size of container images, running them is
-    also much faster than running a virtual box.
+    To test code for example, one wants to have exactly the same operating
+    system used by developers. For this purpose,
+    <span style="font-style: italic">containers</span>
+    come in handy. They are similar to virtual machines, that is simulated
+    machines within a real machine, but they are much lighter. A container is
+    built from a container image and has no access to the operating system of
+    the developer. Containers are much lighter than virtual boxes, because
+    virtual boxes don't only contain the application layer but also the kernel
+    layer, that is the layer that communicates between hardware and
+    applications, whereas container images only include the application layer.
+    That is containers share the kernel layer with the host computer. Due to the
+    small size of container images, running them is also much faster than
+    running a virtual box.
   </p>
   <p>
-    DockerHub (<a href="https://hub.docker.com/">hub.docker.com</a>) is the go-to container image library. One can with
-    its help easily access to remote container images, and make a container with exactly the wanted version of an
-    operating system or a programming language.
+    DockerHub (
+    <a href="https://hub.docker.com/">hub.docker.com</a>
+    ) is the go-to container image library. One can with its help easily access
+    to remote container images, and make a container with exactly the wanted
+    version of an operating system or a programming language.
   </p>
   <p>
-    A standard use of CI/CD is in combination with <span style="font-style: italic">Kubernetes</span>, which is a system
-    that manages the use of many containers, so that it fits the needs of the developer. First, he defines the desired
-    state, then Kubernetes uses all its resources to meet that state. For example, when a container goes down,
-    Kubernetes makes a new one to replace it.
+    A standard use of CI/CD is in combination with
+    <span style="font-style: italic">Kubernetes</span>
+    , which is a system that manages the use of many containers, so that it fits
+    the needs of the developer. First, he defines the desired state, then
+    Kubernetes uses all its resources to meet that state. For example, when a
+    container goes down, Kubernetes makes a new one to replace it.
   </p>
   <p>
-    Setting CI/CD and Kubernetes involves <span style="font-style: italic">YAML</span>, which is a configuration
-    language. What sets this one apart is the fact that it is easily readable by humans. Another cool feature in it,
-    that may also be seen as a drawback, is that, often, different variants exist that do the same thing.
+    Setting CI/CD and Kubernetes involves
+    <span style="font-style: italic">YAML</span>
+    , which is a configuration language. What sets this one apart is the fact
+    that it is easily readable by humans. Another cool feature in it, that may
+    also be seen as a drawback, is that, often, different variants exist that do
+    the same thing.
   </p>
   <p>
-    There are various CI/CD providers. Since the university of Münster offers Gitlab on
-    <a href="https://zivgitlab.uni-muenster.de/"> zivgitlab.uni-muenster.de </a>, we will focus on Gitlab CI/CD.
+    There are various CI/CD providers. Since the university of Münster offers
+    Gitlab on
+    <a href="https://zivgitlab.uni-muenster.de/">zivgitlab.uni-muenster.de</a>
+    , we will focus on Gitlab CI/CD.
   </p>
-
   <h5>Gitlab CI/CD courses:</h5>
-
   <div style="padding-left: 1em">
     <div style="text-indent: -1em; padding-left: 1em">
       <a href="https://www.youtube.com/watch?embed=no&amp;v=PGyhBwLyK2U">
         https://www.youtube.com/watch?v=PGyhBwLyK2U
       </a>
     </div>
-    <div style="padding-left: 2em; text-indent: -1em">
-      <div>
-        <span style="font-weight: bolder">
-          -- 4 hour Course on CI/CD with GitLab (and optional deployement on AWS)
-        </span>
-        <br />offered by<a href="freeCodeCamp.org">freeCodeCamp.org</a>
-      </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em; font-weight: bolder">
+        -- 4 hour Course on CI/CD with GitLab (and optional deployement on AWS)
+      </span>
+      <span>
+        offered by
+        <a href="freeCodeCamp.org">freeCodeCamp.org</a>
+      </span>
     </div>
   </div>
-
   <div style="padding-left: 1em">
     <div style="text-indent: -1em; padding-left: 1em">
       <a href="https://www.youtube.com/watch?embed=no&amp;v=qP8kir2GUgo">
         https://www.youtube.com/watch?v=qP8kir2GUgo
       </a>
     </div>
-    <div style="padding-left: 2em; text-indent: -1em">
-      <div>-- Course on GitLab CI/CD</div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">-- Course on GitLab CI/CD</span>
     </div>
   </div>
-
   <div style="padding-left: 1em">
     <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://codebase.helmholtz.cloud/hifis/software/education/hifis-workshops/gitlab-ci">
+      <a
+        href="https://codebase.helmholtz.cloud/hifis/software/education/hifis-workshops/gitlab-ci"
+      >
         https://codebase.helmholtz.cloud/hifis/software/education/hifis-workshops/gitlab-ci
       </a>
     </div>
-    <div style="padding-left: 2em; text-indent: -1em">
-      <div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
         -- HIFIS Workshop "Continuous Integration in GitLab" (advanced)
-        <br />In this course, you might need to get informed about licensing and copyright in the chapter below.
-      </div>
+      </span>
+      <span>
+        In this course, you might need to get informed about licensing and
+        copyright in the chapter below.
+      </span>
     </div>
   </div>
   <h5>CI/CD on other platforms:</h5>
   <div style="padding-left: 1em">
     <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://www.edx.org/learn/continuous-integration/ibm-continuous-integration-and-delivery-ci-cd">
+      <a
+        href="https://www.edx.org/learn/continuous-integration/ibm-continuous-integration-and-delivery-ci-cd"
+      >
         https://www.edx.org/learn/continuous-integration/ibm-continuous-integration-and-delivery-ci-cd
       </a>
     </div>
-    <div style="padding-left: 2em; text-indent: -1em">
-      <div>-- Complete IBM course CI/CD with GitHub on edX</div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- Complete IBM course CI/CD with GitHub on edX
+      </span>
     </div>
   </div>
   <div style="padding-left: 1em">
     <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://youtube.com/playlist?list=PLy7NrYWoggjzSIlwxeBbcgfAdYoxCIrM2&amp;si=vLvvsm_L8RrxpoCY">
+      <a
+        href="https://youtube.com/playlist?list=PLy7NrYWoggjzSIlwxeBbcgfAdYoxCIrM2&amp;si=vLvvsm_L8RrxpoCY"
+      >
         https://youtube.com/playlist?list=PLy7NrYWoggjzSIlwxeBbcgfAdYoxCIrM2&amp;si=vLvvsm_L8RrxpoCY
       </a>
     </div>
-    <div style="padding-left: 2em; text-indent: -1em">
-      <div>-- Tutorials on different platforms offered by TechWorld with Nana</div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- Tutorials on different platforms offered by TechWorld with Nana
+      </span>
     </div>
   </div>
   <h5>Background:</h5>
@@ -108,8 +136,8 @@
         https://www.youtube.com/watch?v=Xrgk023l4lI
       </a>
     </div>
-    <div style="padding-left: 2em; text-indent: -1em">
-      <div>-- A short introduction to DevOps</div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">-- A short introduction to DevOps</span>
     </div>
   </div>
   <div style="padding-left: 1em">
@@ -118,8 +146,10 @@
         https://www.youtube.com/watch?v=2cxBftrVc2Y
       </a>
     </div>
-    <div style="padding-left: 2em; text-indent: -1em">
-      <div>-- A short introduction to YAML files</div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- A short introduction to YAML files
+      </span>
     </div>
   </div>
   <div style="padding-left: 1em">
@@ -128,8 +158,10 @@
         https://www.youtube.com/watch?v=1uFVr15xDGg
       </a>
     </div>
-    <div style="padding-left: 2em; text-indent: -1em">
-      <div>-- YAML tutorial by TechWorld with Nana</div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- YAML tutorial by TechWorld with Nana
+      </span>
     </div>
   </div>
   <div style="padding-left: 1em">
@@ -138,21 +170,26 @@
         https://www.youtube.com/watch?v=rOTqprHv1YE
       </a>
     </div>
-    <div style="padding-left: 2em; text-indent: -1em">
-      <div>-- A short introduction to Docker</div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">-- A short introduction to Docker</span>
     </div>
   </div>
   <div style="padding-left: 1em">
     <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://learning.edx.org/course/course-v1:RedHat+DO081x+2T2017/home">
+      <a
+        href="https://learning.edx.org/course/course-v1:RedHat+DO081x+2T2017/home"
+      >
         https://learning.edx.org/course/course-v1:RedHat+DO081x+2T2017/home
       </a>
     </div>
-    <div style="padding-left: 2em; text-indent: -1em">
-      <div>
-        -- Course "Containers, Kubernetes, and Red Hat OpenShift" offered by RedHat on edx
-        <br />Only the first chapter of this course is relevant at this stage.
-      </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- Course "Containers, Kubernetes, and Red Hat OpenShift" offered by
+        RedHat on edx
+      </span>
+      <span>
+        Only the first chapter of this course is relevant at this stage.
+      </span>
     </div>
   </div>
   <h5>Related topics:</h5>
@@ -160,29 +197,37 @@
     <div style="text-indent: -1em; padding-left: 1em">
       <a href="https://githooks.com/">https://githooks.com/</a>
     </div>
-    <div style="padding-left: 2em; text-indent: -1em">
-      <div>-- "A simple guide to the wonders of Git Hooks"</div>
-    </div>
-  </div>
-
-  <div style="padding-left: 1em">
-    <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://nox.thea.codes/en/stable/">https://nox.thea.codes/en/stable/</a>
-    </div>
-    <div style="padding-left: 2em; text-indent: -1em">
-      <div>-- "Flexible test automation for Python"</div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- "A simple guide to the wonders of Git Hooks"
+      </span>
     </div>
   </div>
   <div style="padding-left: 1em">
     <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://black.readthedocs.io/en/stable/">https://black.readthedocs.io/en/stable/</a>
+      <a href="https://nox.thea.codes/en/stable/">
+        https://nox.thea.codes/en/stable/
+      </a>
     </div>
-    <div style="padding-left: 2em; text-indent: -1em">
-      <div>-- "The uncompromising Python code formatter"</div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- "Flexible test automation for Python"
+      </span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://black.readthedocs.io/en/stable/">
+        https://black.readthedocs.io/en/stable/
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- "The uncompromising Python code formatter"
+      </span>
     </div>
   </div>
 </div>
-
 <!-- 
 <div style="padding-left: 1em;">
     <div style="text-indent: -1em;padding-left: 1em;">
