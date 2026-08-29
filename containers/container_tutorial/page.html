@@ -113,41 +113,49 @@
     for beginners, they could just filter out containers that are not marked as
     trusted.
   </p>
-  <p>
-    Next, we would like to make a container from the image. This is done with
-    the command
-    <code>
-      docker run
-      <span style="font-style: italic">image:tag</span>
-    </code>
-    .
-    <br />
-    <code>--rm</code>
-    sets automatic deletion for the container once it is stopped.
-    <br />
-    <code>
-      --name
-      <span style="font-style: italic">Container_name</span>
-    </code>
-    sets a name for the container we are starting.
-    <br />
-    <code>-it</code>
-    lets us interact with the container.
-    <br />
-    <code>-d</code>
-    is used to run the container in the background.
-    <br />
-    To automatically run something when the container starts, one should specify
-    it in the end of the run command, e.g. one could add
-    <code>/bin/bash</code>
-    in the end to start a bash shell from within the container.
-    <br />
-    More details can be found in the official documentation
-    <a href="https://docs.docker.com/reference/cli/docker/container/run/">
-      https://docs.docker.com/reference/cli/docker/container/run/
-    </a>
-    .
-  </p>
+  <div style="margin: 4px 0px 16px 0px">
+    <div>
+      Next, we would like to make a container from the image. This is done with
+      the command
+      <code
+        >docker run
+        <span style="font-style: italic">image:tag</span>
+      </code>
+      .
+    </div>
+    <div>
+      <code>--rm</code>
+      sets automatic deletion for the container once it is stopped.
+    </div>
+    <div>
+      <code>
+        --name
+        <span style="font-style: italic">Container_name</span>
+      </code>
+      sets a name for the container we are starting.
+    </div>
+    <div>
+      <code>-it</code>
+      lets us interact with the container.
+    </div>
+    <div>
+      <code>-d</code>
+      is used to run the container in the background.
+    </div>
+    <div>
+      To automatically run something when the container starts, one should
+      specify it in the end of the run command, e.g. one could add
+      <code>/bin/bash</code>
+      in the end to start a bash shell from within the container.
+    </div>
+    <div>
+      More details can be found in the official documentation
+      <a href="https://docs.docker.com/reference/cli/docker/container/run/">
+        https://docs.docker.com/reference/cli/docker/container/run/
+      </a>
+      .
+    </div>
+  </div>
   <p>
     To access JupyterLab or another web app running within the container, it is
     necessary to publish ports from the container to the host system. This is
@@ -211,13 +219,14 @@
     </a>
     )
   </p>
-  <p>
-    Last but not least, commands can be executed in the container using the host
-    terminal with
-    <br />
+  <div style="margin: 4px 0px 16px 0px">
+    <div>
+      Last but not least, commands can be executed in the container using the
+      host terminal with
+    </div>
     <code>
       docker exec
-      <span style="font-style: italic">Container_name command</span>
-    </code>
-  </p>
+      <span style="font-style: italic">Container_name command</span> </code
+    >.
+  </div>
 </div>

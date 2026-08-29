@@ -10,35 +10,32 @@
     discussion will focus specifically on Python.
   </p>
   <h4>How to set up reproducible python environments</h4>
-  <ol>
-    <li>
-      Set up your environments per project:
-      <br />
-      Stick with dedicated virtual environments for each project. Global library
-      installations are convenient at first, but cumbersome in the long run.
-    </li>
-    <li>
-      Keep track of used python version, libraries and their exact versions:
-      <p>
-        For Python several ways exist to achieve this (see below for details on
-        the available tools). A common but limited approach to managing
-        reproducible Python environments is to list the Python version and
-        library dependencies in text files such as runtime.txt (for the Python
-        version) and requirements.txt (for libraries). Alternatively, tools like
-        Conda’s environment.yml or pipenv with a Pipfile and Pipfile.lock can be
-        used to define and freeze the environment.
-      </p>
-      <p>
-        However, these methods can be hard to maintain or may not fully capture
-        the actual state of the environment. To solve this problem, more modern
-        and robust alternatives have been released. The one standing out is uv,
-        a fast Python package manager that builds and locks environments. Using
-        uv's pyproject.toml and lockfile (uv.lock) approach can lead to more
-        reliable and consistent setups, especially in collaborative or long-term
-        projects.
-      </p>
-    </li>
-  </ol>
+  <h5>Rule 1: Set up your environments per project</h5>
+  <p>
+    Stick with dedicated virtual environments for each project. Global library
+    installations are convenient at first, but cumbersome in the long run.
+  </p>
+  <h5>
+    Rule 2: Keep track of used python version, libraries and their exact
+    versions
+  </h5>
+  <p>
+    For Python several ways exist to achieve this (see below for details on the
+    available tools). A common but limited approach to managing reproducible
+    Python environments is to list the Python version and library dependencies
+    in text files such as runtime.txt (for the Python version) and
+    requirements.txt (for libraries). Alternatively, tools like Conda’s
+    environment.yml or pipenv with a Pipfile and Pipfile.lock can be used to
+    define and freeze the environment.
+  </p>
+  <p>
+    However, these methods can be hard to maintain or may not fully capture the
+    actual state of the environment. To solve this problem, more modern and
+    robust alternatives have been released. The one standing out is uv, a fast
+    Python package manager that builds and locks environments. Using uv's
+    pyproject.toml and lockfile (uv.lock) approach can lead to more reliable and
+    consistent setups, especially in collaborative or long-term projects.
+  </p>
   <h5>Ressources</h5>
   <div style="padding-left: 1em">
     <div style="text-indent: -1em; padding-left: 1em">
@@ -49,7 +46,7 @@
       </a>
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">-- Use pip in a reproducible manner</span>
+      <span style="text-indent: -1em">-- Use pip in a reproducible manner</span>
     </div>
   </div>
   <div style="padding-left: 1em">
@@ -59,7 +56,7 @@
       </a>
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">
+      <span style="text-indent: -1em">
         -- uv: "An extremely fast Python package and project manager, written in
         Rust."
       </span>
@@ -72,7 +69,7 @@
       </a>
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">
+      <span style="text-indent: -1em">
         -- uv-based Python Project Layout for Production Apps
       </span>
       <span>Tutorial by Hynek Schlawack</span>
@@ -85,7 +82,7 @@
       </a>
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">-- uv tutorial by NeuralNine</span>
+      <span style="text-indent: -1em">-- uv tutorial by NeuralNine</span>
     </div>
   </div>
   <div style="padding-left: 1em">
@@ -93,7 +90,7 @@
       <a href="https://pixi.sh/">https://pixi.sh/</a>
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">
+      <span style="text-indent: -1em">
         -- Pixi: "Package management made easy"
       </span>
       <span>Not python specific</span>
@@ -106,28 +103,24 @@
     reproducibility and version control difficult.
   </p>
   <p>To improve this, some new ideas have been developed:</p>
-  <ul>
-    <li>
-      Reactive notebooks:
-      <br />
-      After running a cell, these notebooks update automatically all cells that
-      depend on it. This keeps notebooks consistent and up-to-date, which saves
-      time and prevents a lot of errors.
-    </li>
-    <li>
-      The percent format:
-      <br />
-      Jupyter notebooks include outputs of the cells and reading them as text
-      files is far from being practical. This makes version control complicated.
-      With the percent format, plain script files (e.g. '.py') are used like
-      jupyter notebooks. Here, special comments like
-      <code># %%</code>
-      are used to split code into cells. This allows a much simpler version
-      control, Many IDEs are now supporting this. Installing jupytext makes this
-      also available in Jupyter. Moreover, Jupytext allows to convert a Notebook
-      file to the percent format.
-    </li>
-  </ul>
+  <h5>Reactive notebooks</h5>
+  <p>
+    After running a cell, these notebooks update automatically all cells that
+    depend on it. This keeps notebooks consistent and up-to-date, which saves
+    time and prevents a lot of errors.
+  </p>
+  <h5>The percent format</h5>
+  <p>
+    Jupyter notebooks include outputs of the cells and reading them as text
+    files is far from being practical. This makes version control complicated.
+    With the percent format, plain script files (e.g. '.py') are used like
+    jupyter notebooks. Here, special comments like
+    <code># %%</code>
+    are used to split code into cells. This allows a much simpler version
+    control, Many IDEs are now supporting this. Installing jupytext makes this
+    also available in Jupyter. Moreover, Jupytext allows to convert a Notebook
+    file to the percent format.
+  </p>
   <h5>Ressources</h5>
   <div style="padding-left: 1em">
     <div style="text-indent: -1em; padding-left: 1em">
@@ -136,7 +129,7 @@
       </a>
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">
+      <span style="text-indent: -1em">
         -- "Using Jupyter for reproducible scientific workflows" by Marijan Beg
         et al.
       </span>
@@ -152,7 +145,7 @@
       </a>
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">
+      <span style="text-indent: -1em">
         -- "Reproducible workflows with Jupyter: case study in materials
         simulation research" by Hans Fangohr et al.
       </span>
@@ -173,7 +166,7 @@
       </a>
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">
+      <span style="text-indent: -1em">
         -- Marimo: "a reactive notebook for Python"
       </span>
     </div>
@@ -185,7 +178,7 @@
       </a>
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">-- Marimo tutorial by NeuralNine</span>
+      <span style="text-indent: -1em">-- Marimo tutorial by NeuralNine</span>
       <span>includes how to use it to easily make a webapp</span>
     </div>
   </div>
@@ -196,10 +189,10 @@
       </a>
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">
+      <span style="text-indent: -1em">
         -- Ipyflow: "a reactive Python kernel for Jupyter notebooks"
       </span>
-      <span>This way one doesn't need to change the IDE</span>
+      <span>This way, there's no need to switch IDEs.</span>
     </div>
   </div>
   <div style="padding-left: 1em">
@@ -211,7 +204,7 @@
       </a>
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">
+      <span style="text-indent: -1em">
         -- Tutorial on the percent format and similar other formats by Jupytext
       </span>
     </div>
@@ -223,7 +216,7 @@
       </a>
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">-- Jupytext installation tutorial</span>
+      <span style="text-indent: -1em">-- Jupytext installation tutorial</span>
     </div>
   </div>
   <div style="padding-left: 1em">
@@ -233,7 +226,7 @@
       </a>
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">
+      <span style="text-indent: -1em">
         -- Tutorial for configuring Jupytext
       </span>
     </div>
