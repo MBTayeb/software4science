@@ -1,74 +1,134 @@
 <div style="max-width: 45em; margin-left: auto; margin-right: auto">
   <p>
-    The word 'algorithm' comes from Algorithmi, the Latinized form of Muhammad
-    ibn Musa al-Khwarizmi's name (c. 780–850). In software engineering, the term
-    refers to a concrete recipe that solves a problem in a finite number of
-    steps. It's the essence of software engineering. Especially in RSE, where
-    most code consists of calculations and plots.
+    The word 'algorithm' comes from <i>Algorithmi</i>, the Latinized form of
+    Muhammad ibn Musa al-Khwarizmi's name (c. 780–850). In software engineering,
+    the term refers to a concrete recipe that solves a problem in a finite
+    number of steps. It's the essence of software engineering, especially in
+    RSE, where much of the work involves data processing, calculations, and
+    visualizations.
   </p>
   <p>
-    Because of the importance of algorithms in our code base, we want to make
-    sure that they are of a high quality and efficiency. Analyzing this in a
-    scientific manner was achieved with the big-oh notation. Its a "qualitative"
-    but correct and allgemeingueltig.
+    Because of the importance of algorithms in RSE, we want to make sure that
+    they are of high quality and efficiency so that the algorithm finishes in a
+    reasonable amount of time regardless of the size of the problem. We achieve
+    this by analyzing algorithms quantitatively, focusing on what matters rather
+    than the tiny details. That analysis lets us classify algorithms according
+    to their input size using the Big-O notation, which gives us what's known as
+    the time complexity of the algorithm. The higher that complexity, the worse
+    the algorithm scales as the data grows, and past a certain point, it may
+    simply never finish.
   </p>
-  <div>
-    <figure style="margin: 0 0 2em 0">
-      <div style="width: 100%; display: flex; justify-content: center">
-        <img
-          src="../assets/downloads/plotComplexitiesTheoryEqualAxis.svg"
-          style="
-            aspect-ratio: 1/1;
-            display: block;
-            height: 25em;
-            border: 4px solid gray;
-            box-sizing: border-box;
-          "
-        />
-      </div>
-      <figcaption style="text-align: center">
-        <strong>Figure 1:</strong>
-        Common time-complexity classes on a log-log plot with equal axis
-        scaling.
-      </figcaption>
-    </figure>
-    <figure style="margin: 0 0 2em 0">
-      <div style="width: 100%; display: flex; justify-content: center">
-        <img
-          src="../assets/downloads/plotComplexitiesTheoryNotEqualAxis.svg"
-          style="
-            aspect-ratio: 1/1;
-            display: block;
-            height: 25em;
-            border: 4px solid gray;
-            box-sizing: border-box;
-          "
-        />
-      </div>
-      <figcaption style="text-align: center">
-        <strong>Figure 2:</strong>
-        The same complexity classes with axes auto-scaled to the data range.
-      </figcaption>
-    </figure>
-    <figure style="margin: 0 0 2em 0">
-      <div style="width: 100%; display: flex; justify-content: center">
-        <img
-          src="../assets/downloads/plotComplexitiesTheoryFasterThanExponential.svg"
-          style="
-            aspect-ratio: 1/1;
-            display: block;
-            height: 25em;
-            border: 4px solid gray;
-            box-sizing: border-box;
-          "
-        />
-      </div>
-      <figcaption style="text-align: center">
-        <strong>Figure 3:</strong>
-        Growth rates with O(2ⁿ) removed, axes auto-scaled.
-      </figcaption>
-    </figure>
-  </div>
+  <p>
+    When studying space complexity, we focus on how much extra memory an
+    algorithm requires beyond the input data itself. This is critical in
+    research computing, where exceeding memory limits can trigger out-of-memory
+    errors and fail long-running cluster jobs.
+  </p>
+  <p>
+    When designing an algorithm, you'll frequently trade memory for speed, using
+    extra storage to avoid repeating expensive computations. It's a decision to
+    make based on your hardware constraints, dataset size, and the nature of the
+    problem.
+  </p>
+  <figure style="margin: 0 0 2em 0">
+    <div style="width: 100%; display: flex; justify-content: center">
+      <img
+        src="../assets/downloads/plotComplexitiesTheoryEqualAxis.svg"
+        style="
+          aspect-ratio: 1/1;
+          display: block;
+          height: 25em;
+          border: 4px solid gray;
+          box-sizing: border-box;
+        "
+      />
+    </div>
+    <figcaption style="text-align: center">
+      <strong>Figure 1:</strong>
+      Common time-complexity classes on a log-log plot with equal axis scaling.
+    </figcaption>
+  </figure>
+  <p>
+    To get a preliminary feel for how different complexities scale, we plot
+    their growth curves. In Figure 1, both axes are constrained equally so that
+    a simple linear relationship forms an exact diagonal baseline. This equal
+    ratio gives us a visual benchmark. Anything curving above the diagonal is a
+    warning sign, it grows faster than your input size, meaning it'll slow you
+    down more and more as your data scales up. Anything below the diagonal is
+    the opposite: it grows slower, so scaling up your data barely touches its
+    runtime.
+  </p>
+  <figure style="margin: 0 0 2em 0">
+    <div style="width: 100%; display: flex; justify-content: center">
+      <img
+        src="../assets/downloads/plotComplexitiesTheoryNotEqualAxis.svg"
+        style="
+          aspect-ratio: 1/1;
+          display: block;
+          height: 25em;
+          border: 4px solid gray;
+          box-sizing: border-box;
+        "
+      />
+    </div>
+    <figcaption style="text-align: center">
+      <strong>Figure 2:</strong>
+      The same complexity classes with axes auto-scaled to the data range.
+    </figcaption>
+  </figure>
+  <p>
+    However, forcing equal axes makes it hard to see the true gap between these
+    curves. In Figure 2, allowing the vertical axis to auto-scale highlights the
+    stark contrast. The exponential curve shoots straight up, completely
+    dominating the plot and squishing every other line toward the bottom.
+  </p>
+  <figure style="margin: 0 0 2em 0">
+    <div style="width: 100%; display: flex; justify-content: center">
+      <img
+        src="../assets/downloads/plotComplexitiesTheoryFasterThanExponential.svg"
+        style="
+          aspect-ratio: 1/1;
+          display: block;
+          height: 25em;
+          border: 4px solid gray;
+          box-sizing: border-box;
+        "
+      />
+    </div>
+    <figcaption style="text-align: center">
+      <strong>Figure 3:</strong>
+      Growth rates with O(2ⁿ) removed, axes auto-scaled.
+    </figcaption>
+  </figure>
+  <p>
+    Because the exponential curve distorts the view, Figure 3 removes it
+    entirely. With the extreme outlier out of the way, auto-scaling opens up the
+    plot, making it easy to compare the remaining growth shapes side by side.
+    Consider this a quick preview of how vastly different scaling behaviors can
+    be.
+  </p>
+  <h4>Data types</h4>
+  <p>
+    Algorithms don't operate in a vacuum, which is why they are traditionally
+    taught alongside data structures. While an algorithm defines the steps to
+    solve a problem, data structures define how information is organized. That
+    structure directly shapes how fast your algorithm can run. Data structures
+    are themselves composed of many smaller elements, each holding its own kind
+    of value, be it a number, a piece of text, or something else.
+  </p>
+  <p>
+    To keep our analysis general, we focus on abstract data types rather than
+    data language-specific code. An abstract data type defines what operations
+    you need, not how to implement them. Many different data structures can
+    fulfill that same model. Understanding abstract data types helps you weigh
+    time and space trade-offs, making it much easier to pick the right data
+    structure for your problem.
+  </p>
+  <h4>Resources</h4>
+  <p>
+    This was the appetizer. For a complete understanding of these concepts, make
+    sure to dive into the other ressources.
+  </p>
   <div style="padding-left: 1em">
     <div style="text-indent: -1em; padding-left: 1em">
       <a
@@ -78,7 +138,7 @@
       </a>
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em">
+      <span style="text-indent: -1em; font-weight: bolder">
         -- Stanford's introduction to algorithms by Tim Roughgarden
       </span>
       <span>
@@ -160,6 +220,57 @@
       >
         https://www.youtube.com/playlist?list=PLB2BE3D6CA77BB8F7
       </a>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=Ee0HzlnIYWQ">
+        https://www.youtube.com/watch?v=Ee0HzlnIYWQ
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em; font-weight: bolder">
+        -- Big-O: How Code Slows as Data Grows
+      </span>
+      <span>given by Ned Batchelder at PyCon 2018</span>
+      <span
+        >The talk aims to introduce time complexity with the bare minimum of
+        math knowledge needed.</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=SHIg5UIfBnI">
+        https://www.youtube.com/watch?v=SHIg5UIfBnI
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Tutorial on space complexity by Full Stack Hax</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://learnxinyminutes.com/asymptotic-notation/">
+        https://learnxinyminutes.com/asymptotic-notation/
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Summary of the different complexity classifications</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://bigocheatsheet.io/"> https://bigocheatsheet.io/ </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Cheat sheet of the Big-O notation</span
+      >
     </div>
   </div>
 </div>
