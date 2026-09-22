@@ -10,10 +10,7 @@
   },
   {
     "path": "linux_cli/",
-    "subchapters": [
-      "linux_tutorial/",
-      "prompt_cust/"
-    ]
+    "subchapters": ["linux_tutorial/", "prompt_cust/"]
   },
   {
     "path": "ms_windows/",
@@ -26,28 +23,24 @@
   },
   {
     "path": "languages/",
-    "subchapters": [
-      "important_notes/"
-    ]
+    "subchapters": ["important_notes/"]
   },
   {
     "path": "recipes/"
   },
   {
+    "path": "types/"
+  },
+  {
     "path": "paradigms/",
-    "subchapters": [
-      "intro/"
-    ]
+    "subchapters": ["intro/"]
   },
   {
     "path": "editors/"
   },
   {
     "path": "compilers/",
-    "subchapters": [
-      "build_systems/",
-      "make_tutorial/"
-    ]
+    "subchapters": ["build_systems/", "make_tutorial/"]
   },
   {
     "path": "git/"
@@ -57,9 +50,7 @@
   },
   {
     "path": "containers/",
-    "subchapters": [
-      "container_tutorial/"
-    ]
+    "subchapters": ["container_tutorial/"]
   },
   {
     "path": "debugging_testing/"

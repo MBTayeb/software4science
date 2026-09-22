@@ -1,0 +1,497 @@
+<div style="max-width: 45em; margin-left: auto; margin-right: auto">
+  <h4>What are data types?</h4>
+  <p>
+    Imagine watching a long-running data simulation crash at 2 AM because 0.1 +
+    0.2 evaluated to 0.30000000000000004. The hardware isn't broken, it's just
+    executing the unforgiving, precise logic of memory representation.
+  </p>
+  <p>
+    This connects back to space complexity in the algorithm chapters, which lets
+    us reason about memory usage. But space complexity isn't the whole story.
+    The type of each element also determines the memory use of the whole
+    structure, and how those bits get read back out.
+  </p>
+  <p>
+    While programming, we deal with different kinds of data, be it text or
+    numbers. But at its core, every piece of data in computers is composed of
+    bits, i.e. ones and zeroes. In other words, the underlying hardware
+    represents all programming data using binary digits.
+  </p>
+  <p>
+    Bits are collected in memory in <em>bytes</em>, i.e. a unit of eight bits.
+    Indeed, bytes are the smallest addressable unit of memory. Since 8 bits with
+    two states each can only represent 2 ^ 8 = 256 cases, they are not enough
+    for all numbers. Thus, the representable data depends on the number of used
+    bytes. Hence, the data type dictates how many bytes each element occupies.
+  </p>
+  <p>
+    Now, representing positive whole numbers with binary digits in a byte is
+    simple.
+  </p>
+  <table style="border-collapse: collapse; text-align: center">
+    <thead>
+      <tr>
+        <th
+          style="
+            padding: 0 1.5em;
+            border-right: 1px solid #999;
+            border-bottom: 1px solid #999;
+          "
+        >
+          Decimal
+        </th>
+        <th style="padding: 0 1.5em; border-bottom: 1px solid #999">Binary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 0 1.5em; border-right: 1px solid #999">000</td>
+        <td style="padding: 0 1.5em"><code>0000 0000</code></td>
+      </tr>
+      <tr>
+        <td style="padding: 0 1.5em; border-right: 1px solid #999">001</td>
+        <td style="padding: 0 1.5em"><code>0000 0001</code></td>
+      </tr>
+      <tr>
+        <td style="padding: 0 1.5em; border-right: 1px solid #999">002</td>
+        <td style="padding: 0 1.5em"><code>0000 0010</code></td>
+      </tr>
+      <tr>
+        <td style="padding: 0 1.5em; border-right: 1px solid #999">003</td>
+        <td style="padding: 0 1.5em"><code>0000 0011</code></td>
+      </tr>
+      <tr>
+        <td style="padding: 0 1.5em; border-right: 1px solid #999">004</td>
+        <td style="padding: 0 1.5em"><code>0000 0100</code></td>
+      </tr>
+      <tr>
+        <td style="padding: 0 1.5em; border-right: 1px solid #999">005</td>
+        <td style="padding: 0 1.5em"><code>0000 0101</code></td>
+      </tr>
+      <tr>
+        <td style="padding: 0 1.5em; border-right: 1px solid #999">...</td>
+        <td style="padding: 0 1.5em">...</td>
+      </tr>
+      <tr>
+        <td style="padding: 0 1.5em; border-right: 1px solid #999">254</td>
+        <td style="padding: 0 1.5em"><code>1111 1110</code></td>
+      </tr>
+      <tr>
+        <td style="padding: 0 1.5em; border-right: 1px solid #999">255</td>
+        <td style="padding: 0 1.5em"><code>1111 1111</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    But what about negative numbers? Decimal values? Text? None of these fit
+    cleanly into plain binary: they demand far more complex patterns. Without a
+    defined data type telling the system how to interpret those raw bits, the
+    data could mean anything.
+  </p>
+  <div style="margin: 4px 0px 16px 0px; display: flex; flex-direction: column">
+    <span>We can introduce some basic types:</span>
+    <span
+      ><em>Booleans</em> which represent a logical state, i.e. true or
+      false</span
+    >
+    <span><em>Integers</em> which represent whole numbers</span>
+    <span><em>Floats</em> which represent decimal numbers</span>
+    <span><em>Chars</em> which represent a single character</span>
+    <span><em>Strings</em> which represent a string of characters</span>
+  </div>
+  <p>
+    Each of these types comes in different sizes, measured in bytes. More bytes
+    means more possible bit patterns, so more values can be stored exactly.
+    Single precision floats use 4 bytes, doubles use 8, and the extra bytes give
+    doubles more precision and a wider range of values. Exactly how many bytes a
+    given type uses varies between programming languages, and even between
+    implementations of the same language.
+  </p>
+  <p>
+    The byte <code>1100 0001</code> can mean an unsigned integer of 193, a
+    signed integer of -63, or the Latin-1 character 'Á' depending on the
+    reader's assumptions. Interpreted as an E4M3 float, that identical bit
+    pattern becomes -2.25. Four distinct interpretations from a single sequence
+    of bits prove a fundamental truth of computing: raw memory is meaningless
+    without a data type to decode it.
+  </p>
+  <p>
+    Back to the crash from the opening: 0.1 is one of the values that doesn't
+    fit exactly: it has no exact binary representation, the same way 1/3 has no
+    exact decimal one, it repeats forever. The float stores the closest
+    approximation that fits in its bits. 0.2 gets the same treatment. Add the
+    two rounded values together, and the errors surface as 0.30000000000000004.
+    Thus, the crash is normal and the programmer should take rounding errors in
+    consideration.
+  </p>
+  <p>
+    <em>Minifloats</em> are small floating-point formats used when dealing with
+    large data structures that don't need much precision. While standard floats
+    usually take 4 to 8 bytes, machine learning's demand for lower precision has
+    produced two-byte, one-byte, and even half-byte (nibble) formats. They
+    sacrifice precision and range for big savings in memory and bandwidth.
+  </p>
+  <h4>Resources</h4>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://web.cecs.pdx.edu/~harry/videos-binary/">
+        https://web.cecs.pdx.edu/~harry/videos-binary/
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Online course on binary data representation by Harry H. Porter
+        III</span
+      >
+      <span
+        >it gives a deep understanding of how standard data types are
+        represented in computer memory</span
+      >
+      <span style="font-weight: bolder"
+        >the video on floats make them crystal clear</span
+      >
+      <span
+        >it's worth checking the other videos for the data types that you need
+        more explanation for</span
+      >
+      <span
+        >The course website hosts the videos directly, rather than linking out
+        to YouTube.</span
+      >
+      <span
+        >The course is also available on YT, but the playlist videos aren't in
+        the correct order.</span
+      >
+      <a
+        href="https://www.youtube.com/playlist?embed=no&amp;list=PLbtzT1TYeoMgzLyE9n-pJrTFZX18EUKw_"
+      >
+        https://www.youtube.com/playlist?list=PLbtzT1TYeoMgzLyE9n-pJrTFZX18EUKw_
+      </a>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.mathsisfun.com/binary-number-system.html">
+        https://www.mathsisfun.com/binary-number-system.html
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Tutorial on the binary number system by Math is Fun</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://sw23.github.io/fp-conv//formats/fp64.html">
+        https://sw23.github.io/fp-conv//formats/fp64.html
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- This website shows the details of the double precision.</span
+      >
+      <span>One can select other data types and read about them.</span>
+      <span
+        >(The main goal of the website is converting between these
+        encodings.)</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a
+        href="https://moocaholic.medium.com/fp64-fp32-fp16-bfloat16-tf32-and-other-members-of-the-zoo-a1ca7897d407"
+      >
+        https://moocaholic.medium.com/fp64-fp32-fp16-bfloat16-tf32-and-other-members-of-the-zoo-a1ca7897d407
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Medium article on the different float encodings by Grigory
+        Sapunov</span
+      >
+      <span>great introduction, but from 2020</span>
+      <span>it stops at TF32/BFLOAT16, before FP8/FP6/FP4 existed.</span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a
+        href="https://blog.kubesimplify.com/day-4-quantization-demystified-bf16-fp8-nvfp4-mxfp4-int4-gguf-and-why-it-all-matters"
+      >
+        https://blog.kubesimplify.com/day-4-quantization-demystified-bf16-fp8-nvfp4-mxfp4-int4-gguf-and-why-it-all-matters
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Deep dive into the 4-bit zoo (NVFP4, MXFP4, GGUF)</span
+      >
+      <span>
+        skip the DGX-Spark benchmark tables since they're one blogger's
+        single-device, single-day numbers, not general performance facts, and
+        they date quickly.</span
+      >
+      <span>
+        The conceptual explanations (why 4-bit is hard, how microscaling works)
+        are the durable part.</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://en.wikipedia.org/wiki/IEEE_754">
+        https://en.wikipedia.org/wiki/IEEE_754
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- IEEE 754: the standard float encoding</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://en.wikipedia.org/wiki/Minifloat"
+        >https://en.wikipedia.org/wiki/Minifloat
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">-- Wikipedia article on Minifloats</span>
+    </div>
+  </div>
+  <h4>Static vs dynamic programming languages</h4>
+  <p>
+    Now, there are languages that require fixing the type of a variable when
+    defining it. In other words, the type of a variable can't be changed once
+    it's defined. These are static programming languages. On the other hand,
+    dynamic programming languages allow this.
+  </p>
+  <p>
+    Dynamic typing makes programming simpler to beginners, as many things are
+    done automatically. But, this could lead to type errors that are hard to
+    catch. Static programming makes programming a bit harder, but has the reward
+    of avoiding such errors by default and getting results faster.
+  </p>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=GqXpFycPWLE">
+        https://www.youtube.com/watch?v=GqXpFycPWLE
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Beginner video on the difference between statically and dynamically
+        typed languages</span
+      >
+      <span>by Lane Wagner on boot.dev</span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=Tf5EbYQ5OL0">
+        https://www.youtube.com/watch?v=Tf5EbYQ5OL0
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em; font-weight: bolder"
+        >-- Discussion between Lex Fridman and David Heinemeier Hansson, aka DHH
+      </span>
+      <span
+        >DHH created Ruby on Rails, the web framework that GitHub, Shopify and
+        many other projects were built on</span
+      >
+      <span
+        >He argues that dynamic typing is the right choice for smaller
+        projects</span
+      >
+    </div>
+  </div>
+  <h4>Strongly vs weakly typed programming languages</h4>
+  <p>
+    Another important aspect of programming languages is how strict they are
+    when dealing with unexpected operations involving different types. Strongly
+    typed languages would then raise an error. Weakly typed languages try to
+    figure out which operation would make more sense in each case. For example
+  </p>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=qJr1PjTt2S8">
+        https://www.youtube.com/watch?v=qJr1PjTt2S8
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Tutorial on the difference between weekly and strongly typed
+        languages</span
+      >
+      <span>by Coding with John</span>
+      <span
+        >The tutorial starts by explaining the difference between static and
+        dynamic programming languages</span
+      >
+    </div>
+  </div>
+  <h4>Type hints - Gradual typing</h4>
+  <p>
+    To get the best of both dynamic and static languages, many dynamic languages
+    have begun allowing type hints. These are optional type specifications that
+    allow to catch bugs before runtime. In other words, projects built with
+    dynamic languages can gradually include type hints without affecting the
+    usability of the code. In fact, incorrect type specifications don't prevent
+    the code from running. Type checkers catch these errors, and IDEs use them
+    to show you errors while you are coding.
+  </p>
+  <p>
+    Type checkers are similar to linters: both analyze your code statically,
+    i.e. without running it. Type checkers look for type errors; linters look
+    for other kinds of issues (style, unused code, suspicious patterns,
+    potential bugs).
+  </p>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=HDQXWr5TOnI">
+        https://www.youtube.com/watch?v=HDQXWr5TOnI
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">-- What are linters used for? </span>
+      <span>video by CoderDave</span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://github.com/python/mypy">
+        https://github.com/python/mypy
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- mypy: a Python Type checker that is hosted on the python official
+        repository</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=kSXZHRsWXfU">
+        https://www.youtube.com/watch?v=kSXZHRsWXfU
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em; font-weight: bolder"
+        >-- Discussion between Guido van Rossum (the creator of the python
+        language) and Lex Fridman</span
+      >
+      <span
+        >topics include the difference between static and dynamic languages, an
+        introduction to the python type system, and an introduction of mypy and
+        its history</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://github.com/astral-sh/ty">
+        https://github.com/astral-sh/ty
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Python type checker made py Astral (the developers of <em>uv</em>)
+      </span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://github.com/microsoft/pyright">
+        https://github.com/microsoft/pyright
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Python Type checker made by Microsoft</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=RwH2UzC2rIo">
+        https://www.youtube.com/watch?v=RwH2UzC2rIo
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em; font-weight: bolder"
+        >-- Introduction to type hints in Python by Corey Shafer</span
+      >
+      <span
+        >The tutorial also goes into generics, which are advanced features in
+        the type system that allow to generate new types.</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=cv1F_c66utw">
+        https://www.youtube.com/watch?v=cv1F_c66utw
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Video on the deprecated aliases in the python type hint system</span
+      >
+      <span>made by Indently</span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=uJHD2xyv7xo">
+        https://www.youtube.com/watch?v=uJHD2xyv7xo
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Advanced comparison of type systems in JavaScript, Python,
+        etc...</span
+      >
+      <span>Talk by Ben Weissmann in the Strange Loop Conference</span>
+      <span>The talk focuses on the limits of these type systems</span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=fM4O9bModsE">
+        https://www.youtube.com/watch?v=fM4O9bModsE
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Tutorial explaining the difference between type hints, type checking
+        and data validation</span
+      >
+      <span>Offered by Corey Schafer</span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://github.com/pydantic/pydantic">
+        https://github.com/pydantic/pydantic
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">-- Pydantic: data validation tool</span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=502XOB0u8OY">
+        https://www.youtube.com/watch?v=502XOB0u8OY
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Introduction to Pydantic by ArjanCodes</span
+      >
+    </div>
+  </div>
+</div>
