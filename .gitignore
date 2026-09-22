@@ -10,6 +10,7 @@
 !title.txt
 !README.md
 !manifest.json
+!recipes/plotComplexitiesTheory.py
 
 # 4. Explicitly allow the entire 'assets' folder and its contents
 !assets/
@@ -20,7 +21,6 @@ kubernetes/
 save.html
 ToDo.md
 codebook.toml
-*.py
 my_loaders.txt
 
 # 6. Ignore private folders starting with a dot or an underscore

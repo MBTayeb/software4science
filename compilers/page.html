@@ -14,23 +14,23 @@
     GFortran (GNU Fortran, Linux native) as typical choices. When it comes to
     C/C++, Microsoft Visual C++ (for Windows) and GCC (GNU C Compiler, Linux
     native) are standard compiler options. Note that both GFortran and GCC are
-    built by the GNU Compiler Collection — the latter being what is more often
+    built by the GNU Compiler Collection, the latter being what is more often
     meant by 'GCC' today.
   </p>
   <p>
     Compiling is usually a two-step process (although as a default, a full
     program is produced if just one source code file is given): First,
-    <i>object files</i>
+    <em>object files</em>
     are produced, then these object files are '
-    <i>linked</i>
+    <em>linked</em>
     ' to produce the final program. The fun thing is that upon linking one can
     not only link to one's own object file, but also to already available
     objects, which are usually collected within so-called '
-    <i>software libraries</i>
+    <em>software libraries</em>
     '. These libraries can be linked either
-    <i>static</i>
+    <em>static</em>
     (the code is really build into the binary) or
-    <i>dynamic</i>
+    <em>dynamic</em>
     (at run time, a call is made to the library installed on the machine).
     Static linking does not require the necessary libraries to be installed on
     the computer, where the binary should run, but it blows up the size of the
@@ -49,7 +49,7 @@
     name, but also the path to where the library is placed on your system.
   </p>
   <p>
-    <i>Whenever you can, you should use existing libraries!</i>
+    <em>Whenever you can, you should use existing libraries!</em>
     This saves not only your time and most likely also execution time, but
     increases the reliability and transferability of your work. Libraries to
     which basically every program links are the Fortran and/or C/C++ 'run-time'
