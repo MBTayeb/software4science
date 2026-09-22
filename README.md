@@ -14,7 +14,7 @@ To visit the website, open [https://mbtayeb.github.io/software4science/](https:/
 
 ## What this repository contains
 
-This repository holds the full source of the "Software for Science" site — both the static course content (chapters, subchapters) and the code that renders it (HTML, JS, and CSS in).
+This repository holds the full source of the "Software for Science" site, both the static course content (chapters, subchapters) and the code that renders it (HTML, JS, and CSS in).
 
 ## Reusing this template
 
@@ -45,15 +45,16 @@ Each `page.html` holds only the static content for that chapter/subchapter.
 `manifest.json` is the single file that stores the site structure and ordering. It lists top-level chapters, in order, and each chapter's subchapters, in order.
 
 At runtime, `assets/manifest-nav.js` fetches this file to:
+
 - fill in each chapter/subchapter's nav tags with the links of the previous and next siblings,
 - build the parent chapter's nav on subchapter pages,
 - and generate the nested topics list on the topics page and the root page.
 
-Titles are not stored in the manifest — they're always read from each folder's own `title.txt`, so the manifest only needs to track structure and order.
+Titles are not stored in the manifest, they're always read from each folder's own `title.txt`, so the manifest only needs to track structure and order.
 
 ## Making a chapter/subchapter
 
-1. Create a new folder under the appropriate parent. 
+1. Create a new folder under the appropriate parent.
 2. Add a `page.html` with the chapter's static content.
 3. Add an `index.html` entry point (copy the pattern from a sibling folder, make sure to remove custom ).
 4. Add a `title.txt` with the chapter's title.
@@ -61,7 +62,7 @@ Titles are not stored in the manifest — they're always read from each folder's
    - Top-level chapter: add `{ "path": "new_chapter/" }` to the root array, in reading order.
    - Subchapter: add `"new_subchapter/"` to its parent's `subchapters` array, in reading order.
 
-No other files need to be edited — navigation tags and topics lists are generated automatically from `manifest.json` at runtime.
+No other files need to be edited as navigation tags and topics lists are generated automatically from `manifest.json` at runtime.
 
 ## Contributing
 
@@ -75,9 +76,9 @@ Corrections, dead-link fixes, and better resource suggestions are welcome. Pleas
 
 ## Third-Party Code
 
-- `assets/highlight.js` — [highlight.js](https://github.com/highlightjs/highlight.js) v11.11.1, by Josh Goebel and contributors, licensed under [BSD-3-Clause](https://github.com/highlightjs/highlight.js/blob/main/LICENSE)
-- `assets/monokai.css` — Monokai style, ported by Luigi Maselli ([grigio.org](http://grigio.org))
-- `assets/downloads/vimrc` — from [The Missing Semester](https://missing.csail.mit.edu/), licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+- `assets/highlight.js`: [highlight.js](https://github.com/highlightjs/highlight.js) v11.11.1, by Josh Goebel and contributors, licensed under [BSD-3-Clause](https://github.com/highlightjs/highlight.js/blob/main/LICENSE)
+- `assets/monokai.css`: Monokai style, ported by Luigi Maselli ([grigio.org](http://grigio.org))
+- `assets/downloads/vimrc`: from [The Missing Semester](https://missing.csail.mit.edu/), licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## Development Notes
 
