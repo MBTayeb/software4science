@@ -183,6 +183,18 @@
   </div>
   <div style="padding-left: 1em">
     <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.h-schmidt.net/FloatConverter/IEEE754.html">
+        https://www.h-schmidt.net/FloatConverter/IEEE754.html
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Interactive conversion of 32 bits to a single precision float</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
       <a href="https://sw23.github.io/fp-conv//formats/fp64.html">
         https://sw23.github.io/fp-conv//formats/fp64.html
       </a>
@@ -336,11 +348,20 @@
   <p>
     To get the best of both dynamic and static languages, many dynamic languages
     have begun allowing type hints. These are optional type specifications that
-    allow to catch bugs before runtime. In other words, projects built with
-    dynamic languages can gradually include type hints without affecting the
-    usability of the code. In fact, incorrect type specifications don't prevent
-    the code from running. Type checkers catch these errors, and IDEs use them
-    to show you errors while you are coding.
+    help catch bugs before runtime. In other words, projects built with dynamic
+    languages can gradually include type hints without affecting the execution
+    of the code. Because type hints are ignored at runtime, mistakes won't crash
+    your program. Instead, IDEs run type checkers behind the scenes to flag
+    errors in your editor as you write code.
+  </p>
+  <p>
+    Gradually introducing types to an existing project is not trivial. It might
+    look simple for small programs, but once the code gets larger and different
+    cases need to be considered, it becomes hard to get your head around what
+    type each object in the code is. Because of this, it might take some time to
+    fix all the type errors flagged by the type checker (chatbots might be
+    helpful here). Still, it is reassuring to know that these errors don't stop
+    the code from functioning.
   </p>
   <p>
     Type checkers are similar to linters: both analyze your code statically,
@@ -441,6 +462,37 @@
         >-- Video on the deprecated aliases in the python type hint system</span
       >
       <span>made by Indently</span>
+    </div>
+  </div>
+
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://typing.python.org/en/latest/spec/historical.html">
+        https://typing.python.org/en/latest/spec/historical.html
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Official list of deprecated typing features in python</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a
+        href="https://typing.python.org/en/latest/guides/typing_anti_pitch.html"
+      >
+        https://typing.python.org/en/latest/guides/typing_anti_pitch.html
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- "Reasons to avoid static type checking"</span
+      >
+      <span
+        >Listed in the documentation of the typing module in the Python Standard
+        Library</span
+      >
     </div>
   </div>
   <div style="padding-left: 1em">
