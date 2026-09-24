@@ -22,25 +22,19 @@
     ]
   },
   {
+    "path": "editors/"
+  },
+  {
     "path": "languages/",
-    "subchapters": ["important_notes/"]
-  },
-  {
-    "path": "recipes/"
-  },
-  {
-    "path": "types/"
+    "subchapters": ["important_notes/", "compilers/", "types/", "algorithms/"]
   },
   {
     "path": "paradigms/",
     "subchapters": ["intro/"]
   },
   {
-    "path": "editors/"
-  },
-  {
-    "path": "compilers/",
-    "subchapters": ["build_systems/", "make_tutorial/"]
+    "path": "build_systems/",
+    "subchapters": ["make_tutorial/"]
   },
   {
     "path": "git/"
