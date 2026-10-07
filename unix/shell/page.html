@@ -1,139 +1,89 @@
 <div style="max-width: 50em; margin-right: auto; margin-left: auto">
-  <h4>What is Linux?</h4>
+  <h4>The toolbox philosophy</h4>
   <p>
-    Linux is an open source operating system (OS) alternative to DOS/Windows and
-    MacOS. It has pretty much the same look-and-feel as Windows nowadays, if you
-    like. Unlike Windows or MacOS there is not one current version of Linux but
-    a whole range of '
-    <em>distributions</em>
-    ', which has it's own advantages and disadvantages. Some distributions are
-    <em>community-driven</em>
-    but
-    <em>commercially backed</em>
-    , i.e. supported by IT companies (the name of the company is put in
-    parenthesis), like Fedora (Red Hat), openSUSE (SUSE), Ubuntu (Canonical
-    Ltd.) and they offer pretty much all the functionality of Windows, plus
-    access to the world of Linux via package management systems that allow you
-    to install new software tools with one line in your terminal. Some
-    distributions are
-    <em>entirely community-driven</em>
-    , like Debian, Slackware, Gentoo, or Arch Linux and they oftentimes offer
-    just a basic system and a package management system. In addition, there are
-    many special-purpose OSs like Android, which are based on Linux.
-  </p>
-  <p>
-    While the desktop consumer market is clearly dominated by Windows, a lot of
-    'serious' (and loads of not-so-serious) IT-stuff beyond this is ususally
-    done under UNIX/Linux, especially in the area of embedded and/or scientific
-    computing and first of all high-performance computing (HPC). A core reason
-    for this is that the open source approach is self-enhancing: evermore useful
-    tools are developed on the basis of easily accessible existing tools.
-  </p>
-  <p>
-    A list of Linux distributions can be found on Wikipedia:
-    <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions">
-      https://en.wikipedia.org/wiki/List_of_Linux_distributions
-    </a>
-  </p>
-  <p>
-    (I would recommend to choose on of the more commonly used distributions like
-    Suse, see
-    <a href="https://www.opensuse.org/">https://www.opensuse.org/</a>
-    , or Ubuntu, see
-    <a href="https://ubuntu.com/">https://ubuntu.com/</a>
-    .)
-  </p>
-  <h4 style="margin-top: 0.75rem">How to run Linux?</h4>
-  <p>
-    There are many ways how to run Linux and Windows: The most obvious one is to
-    get a second machine. The probably less obvious one is that you can install
-    more than one operating system on a machine, e.g. as dual boot for Linux and
-    Windows. But as nowadays virtualization technology has become quite good, it
-    is usually easier to run either Linux or Windows in a virtual machine on
-    either Windows or Linux.
-  </p>
-  <p>
-    Another convinient option is to run linux on a distant server. The easiest
-    way is with the JupyterHub service provided by the university. After logging
-    in, you can keep the default settings and press start at the bottom of the
-    page. Then, scroll down on the launcher tab and select terminal.
-    Congratulations! You are running a linux terminal from your personal
-    virtual machine on the cloud. Other similar services might be offered by the
-    CIT or IVV NWZ or your group...
-  </p>
-  <div style="padding-left: 1em">
-    <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://jupyterhub.uni-muenster.de/">
-        https://jupyterhub.uni-muenster.de/
-      </a>
-    </div>
-    <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">
-        -- JupyterHub provided by the University of Münster
-      </span>
-    </div>
-  </div>
-  <div style="padding-left: 1em">
-    <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://jupyterhub.uni-muenster.de/docs/">
-        https://jupyterhub.uni-muenster.de/docs/
-      </a>
-    </div>
-    <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em;">
-        -- JupyterHub docs provided by the University of Münster
-      </span>
-    </div>
-  </div>
-  <p>
-    A very nice option for Windows machines is the installation of the Windows
-    subsystem for Linux (WSL), which allows running certain Linux distributions
-    within a subsystem of your Windows. Find more on this, on the chapter on
-    Windows. If you need to install WSL on an NWZ windows machine, you will have
-    to ask your group Admin for the installation.
-  </p>
-  <h4 style="margin-top: 0.75rem">What is a CLI?</h4>
-  <p>
-    While you can use modern Linux systems like Windows via graphical user
-    interfaces (GUIs), the real strength of Linux is the fact that really
-    everything can be done via command-line-interfaces (CLIs), which is usually
-    a terminal, where you can type Bash ('Bourne-again shell') commands to
-    modify data, processes etc. Why would you want to do that? First, you can
-    avoid GUIs, which saves resources and is possible also on (even remote)
-    computers where no graphical output is available. But it is even more
-    important that, you can put your commands into scripts (small programs), to
-    automate the work you are doing and to build up a tool box of scripts using
-    simpler scripts, and so an, based on the basic Bash commands.
+    While you can use unix-like systems like Windows via graphical user
+    interfaces (GUIs), their real strength is their CLI. (Read more on CLIs on a
+    previous unit.) Why would you want to do that? First, you can avoid GUIs,
+    which saves resources and is possible also on (even remote) computers where
+    no graphical output is available. But it is even more important that, you
+    can put your commands into scripts (small programs), to automate the work
+    you are doing. As the time goes, you build up a toolbox of scripts using
+    simpler scripts, and so an, based on the basic commands.
   </p>
   <p>
     This philosophy of having small programs for specific tasks and solving more
     complex problems by 'piping' (handing over) data from one to the other is
-    the core of Bash scripting. You should always strive to write scripts
+    the core of shell scripting. You should always strive to write scripts
     instead of doing things by hand, to increase the reproducibility of your
-    work: if you make errors by hand, they are often basically impossible to
-    find, but if your script contains an error, the problem is much easier to
-    spot, as it occurs in a regular fashion. Also, if things go wrong, with a
-    script you can simply delete the whole lot and easily set up directories,
-    files etc. again (and again, ...). 
+    work. In fact, if you make errors by hand, they are often basically
+    impossible to find, but if your script contains an error, the problem is
+    much easier to spot, as it occurs in a regular fashion. Also, if things go
+    wrong, with a script you can simply delete the whole lot and easily set up
+    directories, files etc. again (and again, ...). 
   </p>
   <p>
-    BTW: Windows offers PowerShell for the same purpose, but unlike Linux, where
-    you have a simple shell at the bottom and would (according to the tool box
-    philosophy) turn to a proper scripting language like Python for more complex
-    tasks, PowerShell is a somewhat unfortunate mix-up of a basic shell and a
-    more powerful scripting language. (Feel free to disagree, of course!)
+    By the way, Windows offers PowerShell for the same purpose, but it's
+    different that Linux shells which are simple at the bottom and would turn to
+    a proper scripting language like Python for more complex tasks. (This is the
+    tool box philosophy.) PowerShell is a somewhat unfortunate mix-up of a basic
+    shell and a more powerful scripting language. (Feel free to disagree, of
+    course!) There is a separate unit introducing PowerShell for Windows users.
+  </p>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=bKzonnwoR2I">
+        https://www.youtube.com/watch?v=bKzonnwoR2I
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Introduction to Unix pipelines by Brian Kernighan on
+        Computerphile</span
+      >
+      <span>Brian contributed to the development of Unix at Bell Labs</span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=v0ON23Y4W68">
+        https://www.youtube.com/watch?v=v0ON23Y4W68
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Discussion between Lex Fridman and Brian Kernighan</span
+      >
+      <span
+        >topics include the target audiance of Unix, the development of the
+        standard CLI programs, and some history side notes</span
+      >
+    </div>
+  </div>
+  <h4>Important commands/tools</h4>
+  <p>
+    To feel at home on a Unix-like system, it helps to know common command-line
+    tools for navigating directories and managing files. Bash (Bourne Again
+    Shell) and Zsh (Z shell) are among the most widely used Unix-like shells.
+    Bash is common on Linux systems, while Zsh is the default shell on modern
+    macOS.
   </p>
   <p>
-    To feel at home on a Linux system you will have to know a certain set of
-    shell commands, so that you can move to and from directories and manipulate
-    files etc. Every Bash course (including the ones listed below) will guide
-    you through this set of commands.
+    Bash and Zsh have some differences in syntax and behavior, but for basic
+    command-line tasks, those differences usually matter little. Many commonly
+    used tools, such as <code>cat</code>, <code>grep</code>, and
+    <code>find</code>, are separate programs, not commands specific to either
+    shell. You can use them from Bash, Zsh, and many other shells, so learning
+    them transfers well. This reflects the Unix philosophy of combining small
+    tools.
   </p>
   <p>
-    Here is a list of what you
-    <em>have to</em>
-    know:
+    One caveat: command-line tools can differ between operating systems. macOS
+    includes many BSD-derived tools, while Linux distributions commonly provide
+    GNU versions. Most everyday usage is similar, but some options behave
+    differently. For example, <code>sed -i</code> takes different forms on macOS
+    and GNU systems.
   </p>
+  <p>Here is a list of what you <em>have to</em> know:</p>
   <ul>
     <li><code class="language-bash">ls</code></li>
     <li><code class="language-bash">cd</code></li>
@@ -177,33 +127,18 @@
     <li><code class="language-bash">date</code></li>
     <li><code class="language-bash">pwd</code></li>
   </ul>
-  <p>
-    And this is a list of things you
-    <em>can never learn enough</em>
-    about:
-  </p>
+  <p>And this is a list of things you <em>can never learn enough</em> about:</p>
   <ul>
-    <li>
-      <code class="language-bash">grep</code>
-      (search within files)
-    </li>
-    <li>
-      <code class="language-bash">sed</code>
-      (stream editor)
-    </li>
-    <li>
-      <code class="language-bash">gawk</code>
-      (text processor)
-    </li>
+    <li><code class="language-bash">grep</code> (search within files)</li>
+    <li><code class="language-bash">sed</code> (stream editor)</li>
+    <li><code class="language-bash">gawk</code> (text processor)</li>
   </ul>
   <p>
     In addition, you will have to learn how to assign variables, and how to do
-    <em>loops</em>
-    (do this so and so often ...) and how to use
-    <em>conditions</em>
-    (do this if ...) in your bash scripts.
+    <em>loops</em> (do this so and so often ...) and how to use
+    <em>conditions</em> (do this if ...) in your shell scripts.
   </p>
-  <h4 style="margin-top: 0.75rem">Vi</h4>
+  <h4>Vi</h4>
   <p>
     Another central tool is the editor Vi, because work in a shell usually means
     the editing of files and Vi is the editor you will find on literally every
@@ -211,15 +146,15 @@
     would still recommend learning how to use it to just edit files (which is
     easy, so don't worry). Find more on this in a following chapter.
   </p>
-  <h4 style="margin-top: 0.75rem">SSH</h4>
+  <h4>SSH</h4>
   <p>
     A very useful tool is SSH ('secure shell') which allows you to access remote
     computers from your shell via a cryptographic network protocol. It works as
     easy as 'ssh user@remotecomputer' and afterwards whatever you type will be
     executed on the distant machine. NWZ computers usually do not allow direct
-    SSH access from outside the university network, but you can first hop to the
-    CIT ssh and then make another hop to the machine you want to access (it
-    still has to allow for SSH access). Read more in
+    SSH access from outside the university network. To get around this, first
+    hop to the CIT ssh and then make another hop to the machine you want to
+    access (it still has to allow for SSH access). Read more in
     <a
       href="https://www.uni-muenster.de/IT/en/services/arbeitsplatz/jumphost/index.html"
     >
@@ -227,7 +162,7 @@
     </a>
     .
   </p>
-  <h4 style="margin-top: 0.75rem">Where to find help</h4>
+  <h4>Where To Find Help</h4>
   <p>To learn more about specific commands you can either:</p>
   <ul>
     <li>
@@ -246,42 +181,255 @@
     </li>
     <li>
       <div style="display: flex; flex-direction: column">
-        <span>Directly google whatever you are interested in, e.g. "bash echo".</span>
-        <span>You will often find a forum post explaining it on StackExchange or
-      similar.</span>
+        <span
+          >Directly google whatever you are interested in, e.g. "bash
+          echo".</span
+        >
+        <span
+          >You will often find a forum post explaining it on StackExchange or
+          similar.</span
+        >
       </div>
     </li>
     <li>
       <div style="display: flex; flex-direction: column">
-        <span>Install tldr: "collaboratively made simple cheatsheets for console
-        commands"</span>
+        <span
+          >Install tldr: "collaboratively made simple cheatsheets for console
+          commands"</span
+        >
         <span>tldr stands for "Too Long; Didn't Read" xD</span>
-        <a href="https://tldr.sh/#installation">https://tldr.sh/#installation</a>
+        <a href="https://tldr.sh/#installation"
+          >https://tldr.sh/#installation</a
+        >
         <span>or browse it on</span>
         <a href="https://tldr.inbrowser.app/">https://tldr.inbrowser.app/</a>
-        <span>Note, once you open this website online, its content will be saved in the
-        cache of your browser, so that you can reach it even without internet
-        access.</span>
+        <span
+          >Note, once you open this website online, its content will be saved in
+          the cache of your browser, so that you can reach it even without
+          internet access.</span
+        >
+      </div>
     </li>
   </ul>
+  <h4>Courses and tutorials</h4>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC">
+        https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em; font-weight: bolder">
+        -- Introduction to Linux in HPC by the HPC Wiki
+      </span>
+      <span>
+        It is partly the work of Holger Angenent from the CIT, i.e the IT center
+        of the University of Münster
+      </span>
+      <span>Topics include...</span>
+      <span>CLI:</span>
+      <a
+        href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/The_Command_Line"
+      >
+        https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/The_Command_Line
+      </a>
+      <span>Vim:</span>
+      <a
+        href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/The_vim_text_editor"
+      >
+        https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/The_vim_text_editor
+      </a>
+      <span>Bash:</span>
+      <a
+        href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/Shell_scripting"
+      >
+        https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/Shell_scripting
+      </a>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://hpc-wiki.info/hpc/Shell">
+        https://hpc-wiki.info/hpc/Shell
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- a small Shell command reference listing by the HPC Wiki
+      </span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="http://swcarpentry.github.io/shell-novice/">
+        http://swcarpentry.github.io/shell-novice/
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- Software carpentry shell scripting course
+      </span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://scicomp.aalto.fi/scicomp/shell/">
+        https://scicomp.aalto.fi/scicomp/shell/
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- Kickstart shell tutorial for RSE by Aalto
+      </span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://aaltoscicomp.github.io/linux-shell/">
+        https://aaltoscicomp.github.io/linux-shell/
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- Thorough linux shell tutorial for RSE by Aalto
+      </span>
+      <span>Part 1 is for beginners</span>
+      <span>Part 2 is for more experienced people</span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://missing.csail.mit.edu/2026/course-shell/">
+        https://missing.csail.mit.edu/2026/course-shell/
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- Lecture on the shell in the missing semester
+      </span>
+      <span>There is also a lecture on the command line environment</span>
+      <a href="https://missing.csail.mit.edu/2026/command-line-environment/">
+        https://missing.csail.mit.edu/2026/command-line-environment/
+      </a>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.tutorialspoint.com/execute_bash_online.php">
+        https://www.tutorialspoint.com/execute_bash_online.php
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">-- Test the shell online</span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.shellcheck.net/">https://www.shellcheck.net/</a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">-- Shell script checker</span>
+      <span>The checker can either be directly used online or installed.</span>
+    </div>
+  </div>
   <details>
     <summary>
-      <h4 style="display: inline;">If you would like to get deeper into how linux works</h4>
+      <h4 style="display: inline; margin-top: 0.75rem">
+        If you like certificates:
+      </h4>
     </summary>
-    <div style="padding-left: 1em;">
-      <div style="padding-left: 1em; font-weight: bolder;">
-        <div style="text-indent: -1em; padding-left: 1em;">
-          <a href="https://www.youtube.com/playlist?embed=no&amp;list=PLbtzT1TYeoMj_YvECDl0YqipVZqucZHXs">
+    <div style="padding-left: 1em">
+      <div style="padding-left: 1em">
+        <div style="text-indent: -1em; padding-left: 1em">
+          <a
+            href="https://www.coursera.org/learn/hands-on-introduction-to-linux-commands-and-shell-scripting"
+          >
+            https://www.coursera.org/learn/hands-on-introduction-to-linux-commands-and-shell-scripting
+          </a>
+        </div>
+        <div style="padding-left: 2em; display: flex; flex-direction: column">
+          <span style="text-indent: -1em">
+            -- Hands-on Introduction to Linux Commands and Shell Scripting
+          </span>
+          <span>The course is offered by IBM</span>
+        </div>
+      </div>
+      <div style="padding-left: 1em">
+        <div style="text-indent: -1em; padding-left: 1em">
+          <a
+            href="https://www.linkedin.com/learning/linux-desktop-systemadministration-grundkurs"
+          >
+            https://www.linkedin.com/learning/linux-desktop-systemadministration-grundkurs
+          </a>
+        </div>
+        <div style="padding-left: 2em; display: flex; flex-direction: column">
+          <span style="text-indent: -1em">
+            -- Linux-Desktop Systemadministration Grundkurs mit Tom Wechsler (in
+            german)
+          </span>
+        </div>
+      </div>
+      <div style="padding-left: 1em">
+        <div style="text-indent: -1em; padding-left: 1em">
+          <a
+            href="https://www.coursera.org/specializations/linux-for-lfca-certification"
+          >
+            https://www.coursera.org/specializations/linux-for-lfca-certification
+          </a>
+        </div>
+        <div style="padding-left: 2em; display: flex; flex-direction: column">
+          <span style="text-indent: -1em">
+            -- Learning Linux for LFCA Certification Specialization with Aspen
+            Olmsted
+          </span>
+          <span>LFCA stands for Linux Foundation Certified IT Associate</span>
+        </div>
+      </div>
+      <div style="padding-left: 1em">
+        <div style="text-indent: -1em; padding-left: 1em">
+          <a
+            href="https://www.linkedin.com/learning/linux-administration-fur-fortgeschrittene-linux-foundation-certified-engineer-lfce"
+          >
+            https://www.linkedin.com/learning/linux-administration-fur-fortgeschrittene-linux-foundation-certified-engineer-lfce
+          </a>
+        </div>
+        <div style="padding-left: 2em; display: flex; flex-direction: column">
+          <span style="text-indent: -1em">
+            -- Linux-Administration für Fortgeschrittene mit Tom Wechsler
+          </span>
+          <span>
+            prepares for the Linux Foundation Certified Engineer (LFCE)
+          </span>
+        </div>
+      </div>
+    </div>
+  </details>
+  <details>
+    <summary>
+      <h4 style="display: inline">
+        If you would like to get deeper into how linux works
+      </h4>
+    </summary>
+    <div style="padding-left: 1em">
+      <div style="padding-left: 1em">
+        <div style="text-indent: -1em; padding-left: 1em">
+          <a
+            href="https://www.youtube.com/playlist?embed=no&amp;list=PLbtzT1TYeoMj_YvECDl0YqipVZqucZHXs"
+          >
             https://www.youtube.com/playlist?list=PLbtzT1TYeoMj_YvECDl0YqipVZqucZHXs
           </a>
         </div>
-        <div style="padding-left: 2em; display: flex; flex-direction: column;">
-          <span style="text-indent: -1em;">-- </span>
-          <span>-- Course introducing the xv6 Kernel by Harry Porter</span>
+        <div style="padding-left: 2em; display: flex; flex-direction: column">
+          <span style="text-indent: -1em"
+            >-- Course introducing the xv6 Kernel by Harry Porter</span
+          >
           <span>xv6 is a kernel made for educational purposes</span>
           <span>The expected level is of university-level CS students</span>
         </div>
       </div>
     </div>
   </details>
+  <h4>A final word on CLIs:</h4>
+  Really do learn proper 10 finger typing! You can find more about it in a
+  separate Focus Unit.
 </div>

@@ -1,228 +1,32 @@
 <div style="max-width: 45em; margin-left: auto; margin-right: auto">
+  <h4>What is Linux?</h4>
   <p>
-    A lot of work in RSEng (and arguably most of it in science-related RSEng) is
-    done under Linux and making use of command line interfaces (CLIs). You
-    should therefore try to get familiar with both before starting to work on
-    the following sections.
+    Linux is an open-source kernel. The kernel is the core of an operating
+    system (OS): the part that manages the hardware and lets programs run.
+    Operating systems built on Linux offer an alternative to Windows and macOS.
+    However, unlike those, there isn't a single Linux OS, but a whole range of
+    <em>distributions</em> (or just <em>distros</em>). This variety has its own
+    advantages and disadvantages. In addition, there are many special-purpose
+    OSs like Android, which are based on Linux.
   </p>
-  <div>
-    You can find our own tutorial linked above in this chapter. Topics include:
-    <ul>
-      <li>What is Linux?</li>
-      <li>How to run Linux?</li>
-      <li>What is a CLI?</li>
-      <li>What are Vi and SSH used for?</li>
-      <li>Where to find help?</li>
-    </ul>
-  </div>
-  <div>
-    So, here are the online resources which will help you to learn all of this:
-  </div>
-  <h4 style="margin-top: 0.75rem">Linux essentials</h4>
-  <div style="padding-left: 1em">
-    <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC">
-        https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC
-      </a>
-    </div>
-    <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em; font-weight: bolder">
-        -- Introduction to Linux in HPC by the HPC Wiki
-      </span>
-      <span>
-        It is partly the work of Holger Angenent from the CIT, i.e the IT center
-        of the University of Münster
-      </span>
-      <span>Topics include... CLI:</span>
-      <a
-        href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/The_Command_Line"
-      >
-        https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/The_Command_Line
-      </a>
-      <span>Vim:</span>
-      <a
-        href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/The_vim_text_editor"
-      >
-        https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/The_vim_text_editor
-      </a>
-      <span>Bash:</span>
-      <a
-        href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/Shell_scripting"
-      >
-        https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC/Shell_scripting
-      </a>
-    </div>
-  </div>
-  <div style="padding-left: 1em">
-    <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://hpc-wiki.info/hpc/Shell">
-        https://hpc-wiki.info/hpc/Shell
-      </a>
-    </div>
-    <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em">
-        -- a small Shell command reference listing by the HPC Wiki
-      </span>
-    </div>
-  </div>
-  <div style="padding-left: 1em">
-    <div style="text-indent: -1em; padding-left: 1em">
-      <a href="http://swcarpentry.github.io/shell-novice/">
-        http://swcarpentry.github.io/shell-novice/
-      </a>
-    </div>
-    <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em">
-        -- Software carpentry shell scripting course
-      </span>
-    </div>
-  </div>
-  <div style="padding-left: 1em">
-    <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://scicomp.aalto.fi/scicomp/shell/">
-        https://scicomp.aalto.fi/scicomp/shell/
-      </a>
-    </div>
-    <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em">
-        -- Kickstart shell tutorial for RSE by Aalto
-      </span>
-    </div>
-  </div>
-  <div style="padding-left: 1em">
-    <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://aaltoscicomp.github.io/linux-shell/">
-        https://aaltoscicomp.github.io/linux-shell/
-      </a>
-    </div>
-    <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em">
-        -- Thorough linux shell tutorial for RSE by Aalto
-      </span>
-      <span>Part 1 is for beginners</span>
-      <span>Part 2 is for more experienced people</span>
-    </div>
-  </div>
-  <div style="padding-left: 1em">
-    <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://missing.csail.mit.edu/2026/course-shell/">
-        https://missing.csail.mit.edu/2026/course-shell/
-      </a>
-    </div>
-    <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em">
-        -- Lecture on the shell in the missing semester
-      </span>
-      <span>There is also a lecture on the command line environment</span>
-      <a href="https://missing.csail.mit.edu/2026/command-line-environment/">
-        https://missing.csail.mit.edu/2026/command-line-environment/
-      </a>
-    </div>
-  </div>
-  <div style="padding-left: 1em">
-    <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://www.tutorialspoint.com/execute_bash_online.php">
-        https://www.tutorialspoint.com/execute_bash_online.php
-      </a>
-    </div>
-    <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em">-- online shell</span>
-    </div>
-  </div>
-  <div style="padding-left: 1em">
-    <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://www.shellcheck.net/">https://www.shellcheck.net/</a>
-    </div>
-    <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em">-- shell script checks</span>
-    </div>
-  </div>
-  <details>
-    <summary>
-      <h4 style="display: inline; margin-top: 0.75rem">
-        If you like certificates:
-      </h4>
-    </summary>
-    <div style="padding-left: 1em">
-      <div style="padding-left: 1em">
-        <div style="text-indent: -1em; padding-left: 1em">
-          <a
-            href="https://www.coursera.org/learn/hands-on-introduction-to-linux-commands-and-shell-scripting"
-          >
-            https://www.coursera.org/learn/hands-on-introduction-to-linux-commands-and-shell-scripting
-          </a>
-        </div>
-        <div style="padding-left: 2em; display: flex; flex-direction: column">
-          <span style="text-indent: -1em">
-            -- Hands-on Introduction to Linux Commands and Shell Scripting
-          </span>
-          <span>The course is offered by IBM</span>
-        </div>
-      </div>
-      <div style="padding-left: 1em">
-        <div style="text-indent: -1em; padding-left: 1em">
-          <a
-            href="https://www.linkedin.com/learning/linux-desktop-systemadministration-grundkurs"
-          >
-            https://www.linkedin.com/learning/linux-desktop-systemadministration-grundkurs
-          </a>
-        </div>
-        <div style="padding-left: 2em; display: flex; flex-direction: column">
-          <span style="text-indent: -1em">
-            -- Linux-Desktop Systemadministration Grundkurs mit Tom Wechsler (in
-            german)
-          </span>
-        </div>
-      </div>
-      <div style="padding-left: 1em">
-        <div style="text-indent: -1em; padding-left: 1em">
-          <a
-            href="https://www.coursera.org/specializations/linux-for-lfca-certification"
-          >
-            https://www.coursera.org/specializations/linux-for-lfca-certification
-          </a>
-        </div>
-        <div style="padding-left: 2em; display: flex; flex-direction: column">
-          <span style="text-indent: -1em">
-            -- Learning Linux for LFCA Certification Specialization with Aspen
-            Olmsted
-          </span>
-          <span>LFCA stands for Linux Foundation Certified IT Associate</span>
-        </div>
-      </div>
-      <div style="padding-left: 1em">
-        <div style="text-indent: -1em; padding-left: 1em">
-          <a
-            href="https://www.linkedin.com/learning/linux-administration-fur-fortgeschrittene-linux-foundation-certified-engineer-lfce"
-          >
-            https://www.linkedin.com/learning/linux-administration-fur-fortgeschrittene-linux-foundation-certified-engineer-lfce
-          </a>
-        </div>
-        <div style="padding-left: 2em; display: flex; flex-direction: column">
-          <span style="text-indent: -1em">
-            -- Linux-Administration für Fortgeschrittene mit Tom Wechsler
-          </span>
-          <span>
-            prepares for the Linux Foundation Certified Engineer (LFCE)
-          </span>
-        </div>
-      </div>
-    </div>
-  </details>
-  <h4 style="margin-top: 0.75rem">Important terms/concepts</h4>
-  <div style="padding-left: 1em">
-    <div style="text-indent: -1em; padding-left: 1em">
-      <a href="https://www.youtube.com/watch?embed=no&amp;v=hMSByvFHOro">
-        https://www.youtube.com/watch?v=hMSByvFHOro
-      </a>
-    </div>
-    <div style="padding-left: 2em; display: flex; flex-direction: column">
-      <span style="text-indent: -1em">
-        -- "Terminal vs. Bash vs. Command line vs. Prompt"
-      </span>
-      <span>Tutorial by Luke Smith</span>
-    </div>
-  </div>
+  <h4>What is Unix?</h4>
+  <p>
+    In fact, Linux exists only because of decades of earlier work on operating
+    systems (OSs) in the second half of the 20th century, far more than we can
+    cover here. One of the most influential ones was Unix, which Ken Thompson,
+    Dennis Ritchie, and others began developing at Bell Labs in 1969. Unix has
+    since received many updates and forks. A notable one is BSD (short for
+    Berkeley Software Distribution), developed at UC Berkeley. Today, macOS is
+    built on a foundation that includes a large amount of BSD code.
+  </p>
+  <p>
+    In 1991, Linus Torvalds released the Linux kernel. Linux was not built from
+    Unix code. Instead, it was written from scratch to work like Unix, which is
+    why it is called "Unix-like." Because of this history, most major operating
+    systems today, including Linux, macOS, Android, and iOS, are Unix or
+    Unix-like. Windows is the main exception. (Interestingly, before releasing
+    Windows, Microsoft sold its own version of Unix called Xenix.)
+  </p>
   <div style="padding-left: 1em">
     <div style="text-indent: -1em; padding-left: 1em">
       <a href="https://www.youtube.com/watch?embed=no&amp;v=jowCUo_UGts">
@@ -235,9 +39,145 @@
       </span>
     </div>
   </div>
-  <h4 style="margin-top: 0.75rem">A final word on CLIs:</h4>
-  Really do learn proper 10 finger typing! You can find more about it in a
-  separate Focus Unit.
-  <h4 style="margin-top: 0.75rem">A final word on Linux:</h4>
+  <h4>Why should you care about "Unix-like" sytems?</h4>
+  <p>
+    While the desktop consumer market is clearly dominated by Windows, a lot of
+    'serious' (and loads of not-so-serious) IT-stuff beyond this is usually done
+    under Unix-like systems. These shine especially in the area of embedded
+    and/or scientific computing and high-performance computing (HPC). A core
+    reason for this is that the open source approach is self-enhancing: evermore
+    useful tools are developed on the basis of easily accessible existing tools.
+  </p>
+  <p>
+    Unix-like systems differ in many details, but they share a common way of
+    working. In other words, what you learn on one Unix-like system largely
+    carries over to all the others. A script written on your laptop will usually
+    run on a university compute cluster with little or no change, and most
+    scientific software, tutorials, and documentation assume this kind of
+    environment.
+  </p>
+  <h4>Choosing a Linux distribution</h4>
+  <p>
+    Nowadays, there are a lot of Linux distributions. They can have the same
+    look-and-feel as Windows or macOS, if you like. They also offer pretty much
+    all the functionality of Windows, plus access to the world of Linux via
+    package management systems that allow you to install new software tools with
+    one line in your terminal. Some distributions are
+    <em>community-driven</em> but <em>commercially backed</em>, i.e. supported
+    by IT companies. Let's name some examples (the name of the company is put in
+    parenthesis): Fedora (Red Hat), openSUSE (SUSE), Ubuntu (Canonical Ltd.).
+    Some distributions are <em>entirely community-driven</em>, like Debian or
+    Arch Linux, and they oftentimes offer just a basic system and a package
+    management system.
+  </p>
+  <p>
+    I would still recommend to choose one of the more commonly used
+    distributions like openSuse, Ubuntu, and Mint.
+  </p>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions">
+        https://en.wikipedia.org/wiki/List_of_Linux_distributions
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Wikipedia list of Linux distributions</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://ubuntu.com/"> https://ubuntu.com/ </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">-- Ubuntu</span>
+      <span>(based on Debian)</span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.opensuse.org/"> https://www.opensuse.org/ </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">-- OpenSUSE </span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.linuxmint.com/"> https://www.linuxmint.com/ </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">-- Linux Mint</span>
+      <span>(based on both Debian and Ubuntu)</span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://www.youtube.com/watch?embed=no&amp;v=dL05DoJ0qsQ">
+        https://www.youtube.com/watch?v=dL05DoJ0qsQ
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em; font-weight: bolder"
+        >-- Video on choosing the right Linux distro by Chris Titus Tech</span
+      >
+      <span
+        >it also introduces the different components used in a Linux
+        desktop</span
+      >
+    </div>
+  </div>
+  <h4>How to Run Linux?</h4>
+  <p>
+    There are many ways how to run Linux and keep your current OS: The most
+    obvious one is to get a second machine. The probably less obvious one is
+    that you can install more than one operating system on a machine, e.g. as
+    dual boot for Linux and your currend OS. But as nowadays virtualization
+    technology has become quite good, it is usually easier to run the second OS
+    in a virtual machine. (Most OSs allow hosting a virtual machine.)
+  </p>
+  <p>
+    Another convenient option is to run linux on a distant server. The easiest
+    way is with the JupyterHub service provided by the university. After logging
+    in, you can keep the default settings and press start at the bottom of the
+    page. Then, scroll down on the launcher tab and select terminal.
+    Congratulations! You are running a linux terminal from your personal virtual
+    machine on the cloud. Other similar services might be offered by the CIT or
+    IVV NWZ or your group...
+  </p>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://jupyterhub.uni-muenster.de/">
+        https://jupyterhub.uni-muenster.de/
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- JupyterHub provided by the University of Münster
+      </span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://jupyterhub.uni-muenster.de/docs/">
+        https://jupyterhub.uni-muenster.de/docs/
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- JupyterHub docs provided by the University of Münster
+      </span>
+    </div>
+  </div>
+  <p>
+    A very nice option for Windows machines is the installation of the Windows
+    subsystem for Linux (WSL), which allows running certain Linux distributions
+    within a subsystem of your Windows. Find out more on WSL and other ways to
+    have a Linux environment within Windows on another chapter. (If you need to
+    install WSL on an NWZ windows machine, you will have to ask your group Admin
+    for the installation.)
+  </p>
+  <h4>A final word on Linux:</h4>
   <a href="https://xkcd.com/456/">https://xkcd.com/456/</a>
 </div>
