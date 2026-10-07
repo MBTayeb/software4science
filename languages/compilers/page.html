@@ -34,15 +34,14 @@
     allow keeping the binary small, but the underlying libraries can also be
     kept up to date, for instance regarding security issues. On Linux, static
     libraries are named
-    <code class="language-bash">lib&lt;name&gt;.a</code>
-    , while dynamic libraries are named
-    <code class="language-bash">lib&lt;name&gt;.so</code>
-    . On Windows, it's respectively
+    <code class="language-bash">lib&lt;name&gt;.a</code>, while dynamic
+    libraries are named <code class="language-bash">lib&lt;name&gt;.so</code>.
+    On Windows, it's respectively
     <code class="language-bash">&lt;name&gt;.lib</code>
     and
-    <code class="language-bash">&lt;name&gt;.dll</code>
-    . To link to one of these libraries, you will not only have to give the
-    name, but also the path to where the library is placed on your system.
+    <code class="language-bash">&lt;name&gt;.dll</code>. To link to one of these
+    libraries, you will not only have to give the name, but also the path to
+    where the library is placed on your system.
   </p>
   <p>
     <em>Whenever you can, you should use existing libraries!</em>
@@ -63,15 +62,13 @@
     find that even the simplest binary link to a set of 'run time' libraries
     which account for very basic functionality, like input/output etc. Further
     information on binaries can be acquired with the program
-    <code class="language-bash">nm</code>
-    . You can create you own libraries from compiled object files with the tool
-    <code class="language-bash">ar</code>
-    , which is often a good way to organize programming projects. Besides
-    linking, compilers usually have options to adjust the level of optimization
-    that is tried on the code and that can also be switched off completely for
-    debugging purposes via a separate option. When developing your application,
-    use this debugging flag, to avoid 'weird' errors or messages from
-    optimization.
+    <code class="language-bash">nm</code>. You can create you own libraries from
+    compiled object files with the tool <code class="language-bash">ar</code>,
+    which is often a good way to organize programming projects. Besides linking,
+    compilers usually have options to adjust the level of optimization that is
+    tried on the code and that can also be switched off completely for debugging
+    purposes via a separate option. When developing your application, use this
+    debugging flag, to avoid 'weird' errors or messages from optimization.
   </p>
   Following are examples of typical libraries.
   <ul>
@@ -108,7 +105,7 @@
     To make the process of compilation, library linking and execution smoother,
     build systems are needed. A separate unit is dedicated to them.
   </p>
-  <h5 style="display: inline">Tutorials on compilers :</h5>
+  <h5 style="display: inline">Tutorials on compilers:</h5>
   <div style="padding-left: 1em">
     <div style="text-indent: -1em; padding-left: 1em">
       <a href="https://www.youtube.com/watch?embed=no&amp;v=we0uAQ8otLQ">

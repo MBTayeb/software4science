@@ -1,83 +1,77 @@
 <div style="max-width: 45em; margin-left: auto; margin-right: auto">
-  <div>
+  <p>
     Keeping all that in mind I would like to recommend the following strategy
     here:
-    <ol>
-      <li>
-        Start with learning Bash, so that you feel comfortable operating a Linux
-        system especially when writing scripts to automate your work.
-      </li>
-      <li>
-        Then visit Fortran; it's still very much at the center of scientific
-        computing and the basics are not hard to get; it is very straightforward
-        mathematical programming.
-      </li>
-      <li>
-        For doing your actual research move on to Python: it is much less
-        demanding than C++ and usually everything you could only wish for not to
-        write yourself will be available.
-      </li>
-      <li>
-        Once your project turns quasi-professional or if you anyhow have the
-        intention to make it that way, C++ will offer everything you need (but
-        be prepared to spend most of the time planning to write code, instead of
-        actually writing it).
-      </li>
-      <li>
-        Finally, learn R, Matlab, SQL etc. if you have to, because a project
-        requires it - you certainly won't find it impossible to do so once you
-        have worked through this course.
-      </li>
-    </ol>
-  </div>
+  </p>
+  <ol>
+    <li>
+      Start with learning Bash, so that you feel comfortable operating a Linux
+      system especially when writing scripts to automate your work.
+    </li>
+    <li>
+      Then visit Fortran; it's still very much at the center of scientific
+      computing and the basics are not hard to get; it is very straightforward
+      mathematical programming.
+    </li>
+    <li>
+      For doing your actual research move on to Python: it is much less
+      demanding than C++ and usually everything you could only wish for not to
+      write yourself will be available.
+    </li>
+    <li>
+      Once your project turns quasi-professional or if you anyhow have the
+      intention to make it that way, C++ will offer everything you need. (But be
+      prepared to spend most of the time planning to write code, instead of
+      actually writing it).
+    </li>
+    <li>
+      Finally, if a project requires it, learn R, Matlab, SQL etc. This should
+      be relatively easy, since learning a second programming language mainly
+      involves re‑learning the same concepts with a different syntax.
+    </li>
+  </ol>
   <p>
     In this course, we will follow the strategy outlined above and focus on
-    <em>Bash</em>
-    ,
-    <em>Fortran</em>
-    and especially
-    <em>Python</em>
-    . (This strategy might not fit to your scientific field, especially if the
-    whole field -- like certain parts of bio- or geo-informatics -- developed
-    long after the high times of Fortran; in this case start with bash and move
-    on to R, Matlab or whatever is the accepted standard in your field.) See the
-    <em>Additonal resources</em>
-    section for online resources on other languages, especially concerning
-    <em>C/C++</em>
-    . Below you will also find a
-    <em>focus unit on R</em>
-    .
+    <em>Bash</em>, <em>Fortran</em>, and especially <em>Python</em>. This
+    strategy may not suit every scientific discipline, particularly those that
+    belong to bio‑ or geo‑informatics, fields that developed long after the
+    heyday of Fortran. In such cases, it is often better to start with Bash and
+    then move on to R, MATLAB, or whatever language is the community’s accepted
+    standard. See the <em>Additional resources</em> section for online resources
+    on other languages, especially concerning <em>C/C++</em>. Below you will
+    also find a <em>focus unit on R</em>.
   </p>
   <details>
     <summary>
       <h4 style="display: inline">Online resources for learning Bash:</h4>
     </summary>
     <div style="padding-left: 1em">
-      <div>These can be found in a separate work unit above.</div>
-      <div>
+      <p>These can be found in a separate work unit above.</p>
+      <p>
         If you have worked through this unit, you have learned some 'universal'
         features of programming languages already:
-      </div>
-      <div>
+      </p>
+      <p>
         First, variables need to be assigned (and sometimes declared, i.e. they
         need to be given a type).
-      </div>
-      <div>
+      </p>
+      <p>
         Second, the flow of programs requires control structures like loops,
         conditions etc.
-      </div>
-      <div>
-        And third, sub-units (functions, sub-routines, modules, etc.) are needed
+      </p>
+      <p>
+        And third, sub-units (functions, subroutines, modules, etc.) are needed
         to structure code.
-      </div>
-      <div>
+      </p>
+      <p>
         Apart from this, there is some general stuff to remember for each
-        language, like e.g. what line defines the start of a program or how do I
-        do in- and output etc. When learning a new programming language, you are
-        often times fine with remembering just the basics. If you then look for
-        the correct 'syntax' of an element, it's usually best practice to google
-        it ("fortran loop"), once you have understood what you are looking for.
-      </div>
+        language. For example, what line defines the start of a program or how
+        to do in- and output etc. When learning a new programming language, you
+        are often times fine with remembering just the basics. If you then look
+        for the correct 'syntax' of an element, it's usually best practice to
+        google it ("fortran loop"), once you have understood what you are
+        looking for.
+      </p>
     </div>
   </details>
   <details>
@@ -86,42 +80,36 @@
     </summary>
     <div style="padding-left: 1em">
       <p>
-        Fortran is a compiled language, so that apart from Fortran itself you
-        will have to learn how to use a compiler including the use of software
-        libraries and as compiling can be quite tedious for all but very small
-        projects, also about the most common 'build system'
-        <em>make</em>
-        .
+        Fortran’s compiled nature means you must learn both the language and its
+        compiler, including library management. As codebases expand, manual
+        compilation becomes tedious, so learning a build system such as
+        <code>make</code> is recommended.
       </p>
       <p>
         One of the reasons why Fortran provides such excellence performance is
-        the existence of very high-quality
-        <em>compilers</em>
-        (the Intel Fortran compiler is a legend), which manage to produce
-        extremely fast code. But unlike in the past, C++ compilers (including
-        the GCC one) don't seem to be utterly behind anymore.
+        the existence of very high-quality <em>compilers</em> (the Intel Fortran
+        compiler is a legend), which manage to produce extremely fast code. But
+        unlike in the past, C++ compilers (including the GCC one) don't seem to
+        be utterly behind anymore.
       </p>
       <p>
-        The use of
-        <em>software libraries</em>
-        is essential for good programming! Libraries provide code written by
-        someone else (usually more clever than you or me) that can be re-used
-        for your purposes just by sticking to the calling conventions (you have
-        to supply the correct inputs and understand what is given back). If you
-        learn how to use libraries you can save a lot of time by not
-        re-rewriting existing code, which in addition is usually much more
-        error-proof than the ugly hack you just made up.
+        The use of <em>software libraries</em> is essential for good
+        programming! Libraries provide code written by someone else (usually
+        more clever than you or me) that can be reused for your purposes. You
+        still need a good understanding of the third-party code to provide it
+        with the correct inputs and know what results to expect.. If you learn
+        how to use libraries you can save a lot of time by not re-rewriting
+        existing code, which in addition is usually much more error-proof than
+        the ugly hack you just made up.
       </p>
       <p>
-        The use of a
-        <em>build system</em>
-        like make is also considered good programming, as it allows not only
-        you, but also other people to compile your code conveniently (or: at
-        all).
+        The use of a <em>build system</em> like make is also considered good
+        programming, as it allows not only you, but also other people to compile
+        your code conveniently (or: at all).
       </p>
       <p>
-        You will learn more about compilers, software libraries and build
-        systems in the next work unit.
+        You will learn more about compilers, software libraries in another
+        subchapter and build systems in the next work unit.
       </p>
       <h5>Fortran tutorials</h5>
       <div style="padding-left: 1em">
@@ -144,7 +132,7 @@
         </div>
         <div style="padding-left: 2em; display: flex; flex-direction: column">
           <span style="text-indent: -1em">
-            -- A 35-min introduction to Fortran 90 by Daniel Price
+            -- A 35-minute introduction to Fortran 90 by Daniel Price
           </span>
           <span>
             given as a part of a computational astrophysics course at Monash
@@ -173,7 +161,7 @@
           </span>
           <span>
             Offered by Leibniz-Rechenzentrum (LRZ, Leibniz Supercomputing
-            Centre)
+            Center)
           </span>
           <span> The slides of the course: </span>
           <a

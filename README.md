@@ -4,7 +4,7 @@ A self-study course that guides learners through structured pathways of external
 
 To visit the website, open [https://mbtayeb.github.io/software4science/](https://mbtayeb.github.io/software4science/)
 
-## Examples of topics covered:
+## Examples of Topics Covered:
 
 - Introduction to Linux and the command line
 - Editors and IDEs
@@ -12,15 +12,15 @@ To visit the website, open [https://mbtayeb.github.io/software4science/](https:/
 - Version control and source code repositories
 - Debugging, testing, and optimizing scientific software
 
-## What this repository contains
+## What This Repository Contains
 
 This repository holds the full source of the "Software for Science" site, both the static course content (chapters, subchapters) and the code that renders it (HTML, JS, and CSS in).
 
-## Reusing this template
+## Reusing This Template
 
 This repo's structure (static content + HTML/JS/CSS renderer) could be reused as a starting point for other simple static book/course-style sites.
 
-## Site structure
+## Site Structure
 
 The site is static content rendered with a small JS layer:
 
@@ -52,7 +52,7 @@ At runtime, `assets/manifest-nav.js` fetches this file to:
 
 Titles are not stored in the manifest, they're always read from each folder's own `title.txt`, so the manifest only needs to track structure and order.
 
-## Making a chapter/subchapter
+## Making a Chapter/Subchapter
 
 1. Create a new folder under the appropriate parent.
 2. Add a `page.html` with the chapter's static content.
@@ -88,4 +88,4 @@ The remaining JavaScript was written with the help of LLMs.
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-You are free to share and adapt this material for non-commercial purposes, as long as you give appropriate credit and distribute any derivative works under the same license.
+You are free to share and adapt this material for noncommercial purposes, as long as you give appropriate credit and distribute any derivative works under the same license.

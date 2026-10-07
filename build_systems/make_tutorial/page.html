@@ -35,8 +35,7 @@ clean:
     One should note that this makefile also allows us to easily remove all files
     with the extensions ".out" (binaries), ".png" (pictures) and ".dat" (data
     files) just by running
-    <code class="language-bash">make clean</code>
-    . In fact,
+    <code class="language-bash">make clean</code>. In fact,
     <code>clean</code>
     is here a target that no other target depends on, which means it does not
     happen unless it is specified in the prompt.
@@ -117,8 +116,8 @@ clean-all:
     Here, the Intel Fortran compiler (ifc) is used for compilation. The compiler
     and the flags are specified in the beginning of the file. This makefile
     builds the final executable
-    <code class="language-bash">my-program</code>
-    , and the objects needed for it are also listed. IF
+    <code class="language-bash">my-program</code>, and the objects needed for it
+    are also listed. IF
     <code class="language-makefile">CONFIG_ADD</code>
     is set to yes, add.o is added to the objects.
   </div>
@@ -142,15 +141,13 @@ clean:
   </div>
   <div style="margin: 4px 0px 16px 0px">
     Now, let us discuss how to compile and run a Fortran 90 file called
-    <code class="language-bash">code.f90</code>
-    .
+    <code class="language-bash">code.f90</code>.
     <code class="language-makefile">%.f90</code>
     is used to replace any file in the same directory as the makefile that has
     the extension ".f90". If such a file exists, there will be a target with the
     same name but without any extension. This is called a pattern rule. In our
     case, the target will be
-    <code class="language-bash">code</code>
-    .
+    <code class="language-bash">code</code>.
   </div>
   <div style="margin: 4px 0px 16px 0px">
     Makefiles always start by making the prerequisites of the first target
@@ -170,18 +167,18 @@ clean:
     <code class="language-bash">BIN</code>
     variable directly from the shell and fill it with the filename of the target
     binary as in
-    <code class="language-bash">make BIN=code</code>
-    . This way, the target is specified on the fly and recognized by the
-    makefile since it matches the wildcard. One should also mention, that this
-    is only possible because the task itself is not complicated, as we only have
-    to compile a simple Fortran program. Sometimes one needs to compile multiple
-    sources, which can't be done with this makefile. You could find help on this
-    below in the tutorial made by NeuralNine.
+    <code class="language-bash">make BIN=code</code>. This way, the target is
+    specified on the fly and recognized by the makefile since it matches the
+    wildcard. One should also mention, that this is only possible because the
+    task itself is not complicated, as we only have to compile a simple Fortran
+    program. Sometimes one needs to compile multiple sources, which can't be
+    done with this makefile. You could find help on this below in the tutorial
+    made by NeuralNine.
   </div>
   <div style="margin: 4px 0px 16px 0px">
     The compilation command includes
-    <em>automatic variables</em>
-    , i.e. is variables that don't have to be defined beforehand.
+    <em>automatic variables</em>, i.e. is variables that don't have to be
+    defined beforehand.
     <code class="language-makefile">$@</code>
     is filled with the target.
     <code class="language-makefile">$^</code>
@@ -208,9 +205,8 @@ clean:
     in the prerequisites of the
     <code class="language-makefile">run</code>
     phony target so that the binary is executed with
-    <code class="language-makefile">./$^</code>
-    . To prevent using the makefile without defining this variable, a condition
-    was added in the beginning.
+    <code class="language-makefile">./$^</code>. To prevent using the makefile
+    without defining this variable, a condition was added in the beginning.
   </div>
   <div style="margin: 4px 0px 16px 0px">
     Note:

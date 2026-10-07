@@ -2,10 +2,9 @@
   <p>
     Like mentioned before, containers are made from an image. Images are
     themselves built from a
-    <span style="font-style: italic">Dockerfile</span>
-    . In fact, a dockerfile defines an image. In other word, it is a script
-    including all the commands needed for the image. It must start with the
-    command
+    <span style="font-style: italic">Dockerfile</span>. In fact, a dockerfile
+    defines an image. In other word, it is a script including all the commands
+    needed for the image. It must start with the command
     <code>
       FROM
       <span style="font-style: italic">image:tag</span>
@@ -79,29 +78,24 @@
     A user is either specified with a
     <code>username</code>
     or a
-    <code>uid</code>
-    , which is a unique number for the user. Analogously, the group can also be
-    specified with a
-    <code>gid</code>
-    . Non-root users have a
+    <code>uid</code>, which is a unique number for the user. Analogously, the
+    group can also be specified with a <code>gid</code>. Non-root users have a
     <code>uid</code>
     and a
     <code>gid</code>
     that are higher or equal to
-    <code>1000</code>
-    , such that the first user is
-    <code>1000:1000</code>
-    . It is very important to think about which user rights are needed.
-    Installing new packages inside the container needs the root user. However,
-    it is not recommended to run a container with a root user, because it would
-    have access to the host system. A good strategy would be to set the root
-    user in the beginning of the Dockerfile to be able to install needed
-    packages and select another user in the last lines of the Dockerfile, i.e.
-    when root rights are not needed anymore. Moreover, one should know which
-    user is in the parent image. If the user is root, it is not needed to set it
-    again in the beginning of the Dockerfile. Furthermore, if the parent image
-    specifies a non-root user, it would be practical to set the same one in the
-    end of the Dockerfile, or else a new user should be created.
+    <code>1000</code>, such that the first user is <code>1000:1000</code>. It is
+    very important to think about which user rights are needed. Installing new
+    packages inside the container needs the root user. However, it is not
+    recommended to run a container with a root user, because it would have
+    access to the host system. A good strategy would be to set the root user in
+    the beginning of the Dockerfile to be able to install needed packages and
+    select another user in the last lines of the Dockerfile, i.e. when root
+    rights are not needed anymore. Moreover, one should know which user is in
+    the parent image. If the user is root, it is not needed to set it again in
+    the beginning of the Dockerfile. Furthermore, if the parent image specifies
+    a non-root user, it would be practical to set the same one in the end of the
+    Dockerfile, or else a new user should be created.
   </p>
   <p>
     Writing a Dockerfile is not necessary, as one could use an image from the
@@ -117,11 +111,8 @@
     <div>
       Next, we would like to make a container from the image. This is done with
       the command
-      <code
-        >docker run
-        <span style="font-style: italic">image:tag</span>
-      </code>
-      .
+      <code>docker run <span style="font-style: italic">image:tag</span> </code
+      >.
     </div>
     <div>
       <code>--rm</code>
@@ -190,23 +181,19 @@
       docker cp
       <span style="font-style: italic">
         path_host Container_name:path_container
-      </span>
-    </code>
-    . Switching the order of the paths would copy the data from the container to
-    the host system. Copying within the Dockerfile has also the advantage that
-    the owner of the copied data can be set to the user in the container with
-    the flag
-    <code>--chown</code>
-    .
+      </span> </code
+    >. Switching the order of the paths would copy the data from the container
+    to the host system. Copying within the Dockerfile has also the advantage
+    that the owner of the copied data can be set to the user in the container
+    with the flag <code>--chown</code>.
   </p>
   <p>
     The second method would be to mount a path in the host system to a path in
     the container. It is done in the docker run command with the flag
     <code>
       -v
-      <span style="font-style: italic">path_host:path_container</span>
-    </code>
-    . This means that the container would have access to the data in the
+      <span style="font-style: italic">path_host:path_container</span> </code
+    >. This means that the container would have access to the data in the
     specified path in the host system.
   </p>
   <p>
