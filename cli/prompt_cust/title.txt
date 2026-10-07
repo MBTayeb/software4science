@@ -1,1 +1,1 @@
-Prompt customization
+Excursus: Prompt customization
