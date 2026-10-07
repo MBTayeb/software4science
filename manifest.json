@@ -9,24 +9,23 @@
     "path": "computer_basics/"
   },
   {
-    "path": "linux_cli/",
-    "subchapters": ["linux_tutorial/", "prompt_cust/"]
+    "path": "cli/",
+    "subchapters": ["terminals/", "prompt_cust/"]
+  },
+  {
+    "path": "unix/",
+    "subchapters": ["shell/"]
   },
   {
     "path": "ms_windows/",
-    "subchapters": [
-      "package_managers/",
-      "win_terminal/",
-      "powershell/",
-      "linux_in_windows/"
-    ]
+    "subchapters": ["package_managers/", "powershell/", "linux_in_windows/"]
   },
   {
     "path": "editors/"
   },
   {
     "path": "languages/",
-    "subchapters": ["important_notes/", "compilers/", "types/", "algorithms/"]
+    "subchapters": ["notes/", "compilers/", "types/", "algorithms/"]
   },
   {
     "path": "paradigms/",
@@ -44,7 +43,7 @@
   },
   {
     "path": "containers/",
-    "subchapters": ["container_tutorial/"]
+    "subchapters": ["tutorial/"]
   },
   {
     "path": "debugging_testing/"
