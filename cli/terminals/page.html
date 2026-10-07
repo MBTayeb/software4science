@@ -1,0 +1,143 @@
+<div style="max-width: 45em; margin-left: auto; margin-right: auto">
+  <h4>Terminals</h4>
+  <p>
+    Most OSs/distros provide a terminal emulator by default, but they might not
+    be the best option. Just search for terminal or console to find them. This
+    unit is optional, but a good terminal helps you feel at home in the command
+    line and can take your CLI experience to another level.
+  </p>
+  <p>
+    We focus here on terminals that are cross-platform. The term can mean
+    different things, but we mean here that it is available in Windows, macOS,
+    and Linux. Still, we will mention some that run on only one or two of these
+    but shine there.
+  </p>
+  <p>
+    Terminals differ in how you configure them, which matters for
+    <em>reproducibility</em>. A text-based configuration file can be used to
+    recreate the same setup in a new machine. We use three terms to describe
+    configuration styles:
+  </p>
+  <ul>
+    <li>
+      <em>GUI-configured</em>: settings are changed only through graphical
+      menus. They are stored internally and are not meant to be edited by hand.
+    </li>
+    <li>
+      <em>File-configured</em>: settings live in a plain-text file (for example,
+      TOML, YAML, JSON, or Lua) that you edit directly. There is no graphical
+      settings menu.
+    </li>
+    <li>
+      <em>Hybrid configuration</em>: settings can be changed either through a
+      graphical menu or by editing text files. Both stay in sync, so a change in
+      the menu is written to the file, and vice versa.
+    </li>
+  </ul>
+  <p>Here is our non-complete pick:</p>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://alacritty.org/"> https://alacritty.org/ </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Alacritty: a GPU-accelerated cross-platform open-source
+        file-configured terminal emulator with a large community
+      </span>
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://sw.kovidgoyal.net/kitty/">
+        https://sw.kovidgoyal.net/kitty/
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Kitty: a popular GPU-accelerated open-source file-configured teminal
+        only available in Linux and macOS</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://wezterm.org/"> https://wezterm.org/ </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Wezterm: a cross-platform GPU-accelerated open-source
+        file-configured terminal emulator with a large community</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://learn.microsoft.com/en-us/windows/terminal/install">
+        https://learn.microsoft.com/en-us/windows/terminal/install
+      </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em">
+        -- "Install and get started setting up Windows Terminal" tutorial by
+        Microsoft Learn
+      </span>
+      <span
+        >Windows Terminal is of course only for Windows and is has hybrid
+        configuration .
+      </span>
+      <span
+        >On Windows 11, it comes preinstalled by default and serves as the
+        default application for running command-line interpreters like Command
+        Prompt (cmd.exe) and PowerShell.</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://iterm2.com/index.html">https://iterm2.com/index.html </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- iTerm2: the alternative to the default terminal in macOS</span
+      >
+      <span
+        >one of the things that make it special is that it has native support
+        for the tmux multiplexer</span
+      >
+    </div>
+  </div>
+  <h4>Terminal multiplexers</h4>
+  <p>
+    Terminal multiplexers let you run several shell sessions inside a single
+    terminal window, arranged as tabs or split panes. This has two main
+    advantages. First, they add tabs and pane splitting to any terminal, even a
+    simple one that lacks these features. Second, the sessions run independently
+    of the terminal window. If the terminal closes or crashes, or your SSH
+    connection drops, the sessions keep running, and you can reattach to them
+    later. Popular examples include tmux, and Zellij.
+  </p>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://tmux.app/">https://tmux.app/ </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- tmux: the classical terminal multiplexer</span
+      >
+      <span
+        >only for unix-like systems (it can be used on Windows with
+        workarounds)</span
+      >
+    </div>
+  </div>
+  <div style="padding-left: 1em">
+    <div style="text-indent: -1em; padding-left: 1em">
+      <a href="https://zellij.dev/">https://zellij.dev/ </a>
+    </div>
+    <div style="padding-left: 2em; display: flex; flex-direction: column">
+      <span style="text-indent: -1em"
+        >-- Zellij: a modern terminal multiplexer</span
+      >
+    </div>
+  </div>
+</div>
