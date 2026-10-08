@@ -234,11 +234,7 @@ nav.page-navigation {
   margin-top: 20px;
 }
 
-nav.page-navigation > div {
-  height: 100%;
-  border-top: 3px solid #eee;
-  padding-top: 0.3em;
-}
+nav.page-navigation > div,
 nav.page-navigation > a {
   display: flex;
   align-items: center;
