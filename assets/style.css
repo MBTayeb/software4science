@@ -43,17 +43,19 @@ div#theme-toggle-parent {
 button#theme-toggle {
   background-color: var(--button-bg);
   color: var(--button-text);
-  border: none;
+  border: 1px solid var(--bg-color);
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 14px;
   transition:
     background-color 0.3s,
     color 0.3s;
   margin-left: auto;
 }
-
+button#theme-toggle:hover {
+  border: 1px solid var(--text-color);
+}
 .site-header {
   display: flex;
   align-items: center;
@@ -61,7 +63,6 @@ button#theme-toggle {
 }
 .site-link {
   display: inline-flex;
-  border-radius: 14px;
 }
 
 .site-title-div {
@@ -73,7 +74,7 @@ button#theme-toggle {
   color: var(--text-color);
   background: var(--button-bg);
   border: 1px solid var(--subchapter-border);
-  border-radius: 12px;
+  border-radius: 14px;
   box-shadow: var(--logo-shadow);
   transition:
     transform 180ms ease,
