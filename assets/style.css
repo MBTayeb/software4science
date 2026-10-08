@@ -64,14 +64,10 @@ button#theme-toggle {
   border-radius: 14px;
 }
 
-.site-title-div::before {
-  content: ">";
-  color: #e87500;
-  font: 700 1.1em monospace;
-}
 .site-title-div {
   display: inline-flex;
   align-items: center;
+  line-height: 1;
   gap: 0.35em;
   padding: 0.35em 0.7em;
   color: var(--text-color);
@@ -84,17 +80,25 @@ button#theme-toggle {
     border-color 180ms ease,
     box-shadow 180ms ease;
 }
-
-.site-title {
-  color: var(--text-color);
+.site-title-div span {
+  display: inline-block;
   font:
     800 clamp(1.7rem, 5vw, 2.5rem)/1 "Helvetica Neue",
     Helvetica,
     Arial,
     sans-serif;
+  text-box-trim: trim-both;
+}
+.site-prefix {
+  color: #e87500;
+  text-box-edge: ex alphabetic;
+}
+.site-title {
+  color: var(--text-color);
   letter-spacing: 0.04em;
   display: inline-block;
   transform: skewX(-15deg);
+  text-box-edge: cap alphabetic;
 }
 
 .site-link:hover .site-title-div {
