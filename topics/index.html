@@ -9,12 +9,18 @@
     <script src="../assets/highlight.js"></script>
   </head>
   <body>
-    <div id="theme-toggle-parent"><button id="theme-toggle">Toggle Dark Mode</button></div>
+    <header class="site-header">
+      <a href="../" class="site-link">
+        <div class="site-title-div">
+          <span class="site-title">S4S</span>
+        </div>
+      </a>
+      <div id="theme-toggle-parent">
+        <button id="theme-toggle">Toggle Dark Mode</button>
+      </div>
+    </header>
     <script src="../assets/dark.js" defer></script>
     <h1 id="printed-title">Loading ...</h1>
-    <nav id="link-to-intro-parent">
-      <a href="../" id="link-to-intro"><div>Introduction page</div></a>
-    </nav>
     <div id="topics-placeholder" class="daughter-lists-bigger"></div>
     <script src="../assets/manifest-nav.js"></script>
     <script src="../assets/topics_filler.js"></script>
@@ -33,7 +39,8 @@
         })
         .catch((error) => {
           console.error(error);
-          document.getElementById("printed-title").textContent = "Error loading title";
+          document.getElementById("printed-title").textContent =
+            "Error loading title";
         });
       TopicsPage.load("topics-placeholder", false, "../");
     </script>

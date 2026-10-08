@@ -8,6 +8,8 @@
   --code-bg: #f4f4f5;
   --code-color: #d63384;
   --page-nav-hover: #2980b9;
+  --logo-shadow: 0 2px 6px rgb(0 0 0 / 12%);
+  --logo-shadow-hover: 0 5px 12px rgb(0 0 0 / 18%);
 }
 
 body.dark-mode {
@@ -18,6 +20,8 @@ body.dark-mode {
   --code-bg: #2d2d30;
   --code-color: #f43f5e;
   --page-nav-hover: #5dade2;
+  --logo-shadow: 0 2px 8px rgb(255 255 255 / 10%);
+  --logo-shadow-hover: 0 5px 14px rgb(255 255 255 / 16%);
 }
 body {
   background-color: var(--bg-color);
@@ -50,6 +54,64 @@ button#theme-toggle {
   margin-left: auto;
 }
 
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-link {
+  display: inline-flex;
+  border-radius: 14px;
+}
+
+.site-title-div::before {
+  content: ">";
+  color: #e87500;
+  font: 700 1.1em monospace;
+}
+.site-title-div {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.35em 0.7em;
+  color: var(--text-color);
+  background: var(--button-bg);
+  border: 1px solid var(--subchapter-border);
+  border-radius: 12px;
+  box-shadow: var(--logo-shadow);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.site-title {
+  color: var(--text-color);
+  font:
+    800 clamp(1.7rem, 5vw, 2.5rem)/1 "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+  letter-spacing: 0.04em;
+  display: inline-block;
+  transform: skewX(-15deg);
+}
+
+.site-link:hover .site-title-div {
+  transform: translateY(-2px);
+  border-color: #e87500;
+  box-shadow: var(--logo-shadow-hover);
+}
+.site-link:focus-visible {
+  outline: 3px solid #e87500;
+  outline-offset: 4px;
+}
+.site-link,
+.site-link:hover,
+.site-link:focus,
+.site-link:active {
+  text-decoration: none;
+}
 @media (min-width: 1024px) {
   body {
     max-width: 45em;
@@ -67,7 +129,7 @@ h1 {
   color: var(--text-color);
   border-bottom: 2px solid #eee;
   padding: 0 0 0.5em 0;
-  margin: 1.5em 0 0.5em 0;
+  margin: 0.5em 0 0.5em 0;
   font-weight: 600;
   line-height: 1.2;
 }
@@ -154,23 +216,6 @@ a#overview-link:hover {
 }
 div#content-placeholder {
   margin: 2em 0 4em 0;
-}
-nav#link-to-intro-parent {
-  display: grid;
-  align-items: center;
-  box-sizing: border-box;
-  margin: 10px 0px;
-  font-family: sans-serif;
-}
-
-a#link-to-intro > div {
-  display: inline-flex;
-  align-items: center;
-  gap: clamp(4px, 1vw, 16px);
-}
-
-a#link-to-intro > div::before {
-  content: "←";
 }
 
 nav.page-navigation {
