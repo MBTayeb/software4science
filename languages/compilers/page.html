@@ -3,9 +3,9 @@
     If you are using an interpreted language, you do not need a compiler: Upon
     execution of your script, a program (for instance bash or python) reads your
     script and executes the commands. If you are using a compiled language (like
-    Fortran or C/C++) you need a fitting compiler, which can 'translate' your
+    Fortran or C/C++) you need a fitting compiler, which can <i>translate</i> your
     source code into a machine executable (and often optimized) program, the
-    'binary'. A range of compilers is available both for Fortran and C/C++. In
+    <i>binary</i>. A range of compilers is available both for Fortran and C/C++. In
     the realm of Fortran, you'll commonly find the Intel Fortran compiler and
     GFortran (GNU Fortran, Linux native) as typical choices. When it comes to
     C/C++, Microsoft Visual C++ (for Windows) and GCC (GNU C Compiler, Linux
@@ -16,17 +16,15 @@
   <p>
     Compiling is usually a two-step process (although as a default, a full
     program is produced if just one source code file is given): First,
-    <em>object files</em>
-    are produced, then these object files are '
-    <em>linked</em>
-    ' to produce the final program. The fun thing is that upon linking one can
+    <i>object files</i>
+    are produced, then these object files are
+    <i>linked</i> to produce the final program. The fun thing is that upon linking one can
     not only link to one's own object file, but also to already available
-    objects, which are usually collected within so-called '
-    <em>software libraries</em>
-    '. These libraries can be linked either
-    <em>static</em>
+    objects, which are usually collected within so-called
+    <i>software libraries</i>. These libraries can be linked either
+    <i>static</i>
     (the code is really build into the binary) or
-    <em>dynamic</em>
+    <i>dynamic</i>
     (at run time, a call is made to the library installed on the machine).
     Static linking does not require the necessary libraries to be installed on
     the computer, where the binary should run, but it blows up the size of the
@@ -44,10 +42,10 @@
     where the library is placed on your system.
   </p>
   <p>
-    <em>Whenever you can, you should use existing libraries!</em>
+    <i>Whenever you can, you should use existing libraries!</i>
     This saves not only your time and most likely also execution time, but
     increases the reliability and transferability of your work. Libraries to
-    which basically every program links are the Fortran and/or C/C++ 'run-time'
+    which basically every program links are the Fortran and/or C/C++ <i>run-time</i>
     libraries. Many scientific programs link to mathematical libraries like the
     Intel Math Kernel Library (MKL) for all sorts of mathematical operations or
     to computing-related libraries like those for Message Passing Interface
@@ -59,7 +57,7 @@
     <code class="language-bash">ldd</code>
     allows to investigate binaries and shows, to which libraries a binary links;
     these must be installed to allow execution. If you give it a try you will
-    find that even the simplest binary link to a set of 'run time' libraries
+    find that even the simplest binary link to a set of <i>run-time</i> libraries
     which account for very basic functionality, like input/output etc. Further
     information on binaries can be acquired with the program
     <code class="language-bash">nm</code>. You can create you own libraries from
@@ -68,7 +66,7 @@
     compilers usually have options to adjust the level of optimization that is
     tried on the code and that can also be switched off completely for debugging
     purposes via a separate option. When developing your application, use this
-    debugging flag, to avoid 'weird' errors or messages from optimization.
+    debugging flag, to avoid <i>weird</i> errors or messages from optimization.
   </p>
   Following are examples of typical libraries.
   <ul>

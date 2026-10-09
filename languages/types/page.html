@@ -18,7 +18,7 @@
     represents all programming data using binary digits.
   </p>
   <p>
-    Bits are collected in memory in <em>bytes</em>, i.e. a unit of eight bits.
+    Bits are collected in memory in <i>bytes</i>, i.e. a unit of eight bits.
     Indeed, bytes are the smallest addressable unit of memory. Since 8 bits with
     two states each can only represent 2 ^ 8 = 256 cases, they are not enough
     for all numbers. Thus, the representable data depends on the number of used
@@ -91,13 +91,13 @@
   <div style="margin: 4px 0px 16px 0px; display: flex; flex-direction: column">
     <span>We can introduce some basic types:</span>
     <span
-      ><em>Booleans</em> which represent a logical state, i.e. true or
+      ><i>Booleans</i> which represent a logical state, i.e. true or
       false</span
     >
-    <span><em>Integers</em> which represent whole numbers</span>
-    <span><em>Floats</em> which represent decimal numbers</span>
-    <span><em>Chars</em> which represent a single character</span>
-    <span><em>Strings</em> which represent a string of characters</span>
+    <span><i>Integers</i> which represent whole numbers</span>
+    <span><i>Floats</i> which represent decimal numbers</span>
+    <span><i>Chars</i> which represent a single character</span>
+    <span><i>Strings</i> which represent a string of characters</span>
   </div>
   <p>
     Each of these types comes in different sizes, measured in bytes. More bytes
@@ -109,7 +109,7 @@
   </p>
   <p>
     The byte <code>1100 0001</code> can mean an unsigned integer of 193, a
-    signed integer of -63, or the Latin-1 character 'Á' depending on the
+    signed integer of -63, or the Latin-1 character "Á" depending on the
     reader's assumptions. Interpreted as an E4M3 float, that identical bit
     pattern becomes -2.25. Four distinct interpretations from a single sequence
     of bits prove a fundamental truth of computing: raw memory is meaningless
@@ -125,7 +125,7 @@
     consideration.
   </p>
   <p>
-    <em>Minifloats</em> are small floating-point formats used when dealing with
+    <i>Minifloats</i> are small floating-point formats used when dealing with
     large data structures that don't need much precision. While standard floats
     usually take 4 to 8 bytes, machine learning's demand for lower precision has
     produced two-byte, one-byte, and even half-byte (nibble) formats. They
@@ -419,7 +419,7 @@
     </div>
     <div style="padding-left: 2em; display: flex; flex-direction: column">
       <span style="text-indent: -1em"
-        >-- Python type checker made py Astral (the developers of <em>uv</em>)
+        >-- Python type checker made py Astral (the developers of <i>uv</i>)
       </span>
     </div>
   </div>

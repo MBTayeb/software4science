@@ -127,7 +127,7 @@ clean-all:
   </p>
   <div class="parent-of-pre">
     <pre class="language-makefile"><code>ifndef BIN
-  $(error You must specify BIN, e.g., 'make BIN=code')
+  $(error You must specify BIN, e.g., "make BIN=code")
 endif
 FC = gfortran
 FC_FLAGS = -Wall -Wextra -g -O3 -fbacktrace
@@ -177,8 +177,8 @@ clean:
   </div>
   <div style="margin: 4px 0px 16px 0px">
     The compilation command includes
-    <em>automatic variables</em>, i.e. is variables that don't have to be
-    defined beforehand.
+    <i>automatic variables</i>, i.e. is variables that don't have to be defined
+    beforehand.
     <code class="language-makefile">$@</code>
     is filled with the target.
     <code class="language-makefile">$^</code>

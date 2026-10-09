@@ -11,15 +11,16 @@
     place in your code, where things seem to go wrong. If (lots of) errors turn
     up upon compilation, it is often helpful to just fix the first error, as the
     other errors might just be follow-up ones. If you have no idea what (or
-    actually where) the problem is, 'delta debugging' might help: put a
+    actually where) the problem is, <i>delta debugging</i> might help: put a
     statement in the middle of your code and see whether the problem occurs
-    before or after. Then again 'half' the problem again and again until you
-    narrowed it down to a few lines. On the command line, but usually more
+    before or after. Then again <i>half</i> the problem again and again until
+    you narrowed it down to a few lines. On the command line, but usually more
     comfortable as part of GUI editors or IDEs, proper debugging programs are
     available, which let you step line by line through your code during
     execution while at the same time showing you the values of the variables
     involved. More complex problems can often be found more easily this way, as
-    you spot 'weird' values for your variables ('not-a-number' etc.) early on.
+    you spot <i>weird</i> values for your variables ("not-a-number" etc.) early
+    on.
   </p>
   <p>
     Professional software
@@ -27,27 +28,26 @@
     is a business on its own, but you can easily integrate some ideas into your
     code development process. At the basic level, languages like Python and
     C/C++ (but not Fortran -- see why commercial software developers hate it?)
-    allow you to use '
-    <span style="font-style: italic">assertions</span>
-    ' in your code, where you can make your code stop as soon as things develop
-    in an unexpected direction. The next step up is
-    <span style="font-style: italic">unit testing</span>, i.e. to write tests
-    with known in- and output for 'units' of your code. For languages like
-    Python and C/C++, unit testing frameworks are available to speed up this
-    process. A good strategy is to also turn all 'complex' bugs which you find
-    later on into tests to avoid running into them again. Another step up is
-    <span style="font-style: italic">integration testing,</span>
+    allow you to use
+    <i>assertions</i> in your code, where you can make your code stop as soon as
+    things develop in an unexpected direction. The next step up is
+    <i>unit testing</i>, i.e. to write tests with known in- and output for
+    <i>units</i> of your code. For languages like Python and C/C++, unit testing
+    frameworks are available to speed up this process. A good strategy is to
+    also turn all <i>complex</i> bugs which you find later on into tests to
+    avoid running into them again. Another step up is
+    <i>integration testing,</i>
     i.e. checking whether units are working together correctly and then
     <span style="font-style: italic">system testing</span>, where you can for
     instance include a test suite with example cases and known results as part
     of your code directory. (People of course have invented many more
     intermediate levels of testing... ) A very interesting option is continuous
     integration, which means that after each git push, a whole range of tests
-    (unit or up to system level) is run automatically. Some people advocate '
-    <span style="font-style: italic">test-driven development</span>
-    ', i.e. to first make specifications (what should the program or part do?),
-    then write tests based on these specifications and make them properly fail,
-    and only then start to write solutions that will not trigger the tests.
+    (unit or up to system level) is run automatically. Some people advocate
+    <i>test-driven development</i>, i.e. to first make specifications (what
+    should the program or part do?), then write tests based on these
+    specifications and make them properly fail, and only then start to write
+    solutions that will not trigger the tests.
   </p>
   <h4>Debugging tutorials:</h4>
   <div style="padding-left: 1em">

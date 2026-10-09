@@ -1,12 +1,12 @@
 <div style="max-width: 45em; margin-left: auto; margin-right: auto">
   <h4>Optimization</h4>
   <p>
-    Optimization is a complicated topic, as 'premature optimization is the root
-    of all evil' (D. Knuth). While initially writing code you should focus on
+    Optimization is a complicated topic, as "premature optimization is the root
+    of all evil" (D. Knuth). While initially writing code you should focus on
     good programming rather than on optimization. Additionally, simple
     optimizations (of loop structures etc.) are usually done more satisfactory
     by the compiler. The greatest potential for optimization is most often at
-    the algorithmic level, i.e. in the way people have 'translated' their
+    the algorithmic level, i.e. in the way people have <i>translated</i> their
     scientific insight into a computing recipe - and this is something the
     compiler knows nothing about. To find the performance bottleneck of your
     code, profilers are available, which show you how much time your code spends
@@ -70,9 +70,9 @@
       </span>
     </div>
   </div>
-  <h4>'Good' programming style:</h4>
+  <h4>What is a <em>Good</em> programming style:</h4>
   <p>
-    There are few criteria for 'good' which are not questioned by one or the
+    There are few criteria for <i>a good programming style</i> which are not questioned by one or the
     other developer, but I think it is fair to say that some general rules can
     be found, although these of course still depend on the purpose you are
     coding for. In science, your code should normally be accurate and fast.
@@ -80,7 +80,7 @@
     the size of the project increases. This means the code has to be accessible
     (intellectually), extendable and testable. Probably the most important
     strategy to achieve these goals is to
-    <strong>'modularize' your code</strong>: put separate functionality in
+    <i>modularize</i> your code: put separate functionality in
     separate files, modules, libraries etc... and make use of this by resorting
     to existing libraries etc. where possible. Code generators (available or
     self-written) can be a very good option to generate very complex scientific
@@ -88,12 +88,12 @@
     also part of good programming style. Concerning the code itself, most
     important is a clear structure, with meaningful names (there is no real time
     to save here with tmp1 to tmp10...) and helpful comments, which document
-    interfaces and reasons, not implementations ('this is a loop'). If you have
+    interfaces and reasons, not implementations ("this is a loop"). If you have
     the feeling that you have to explain a lot about a certain piece of code, it
-    is often recommended to instead 'refactor' it, which means to break it down
+    is often recommended to instead <i>refactor</i> it, which means to break it down
     into simpler units, each requiring only a few lines of comments. Finally,
-    remember that 'any code of your own that you haven't looked at for six or
-    more months might as well have been written by someone else' (Eagleson's
+    remember that "any code of your own that you haven't looked at for six or
+    more months might as well have been written by someone else" (Eagleson's
     law), so really make sure you include enough documentation for your future
     self. (Now spend the rest of the day enjoying more clever bits on
     programming:
