@@ -1,1 +1,1 @@
-The Command-line interface (CLI)
+The command-line interface (CLI)

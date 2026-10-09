@@ -1,1 +1,1 @@
-Shell Fundamentals for Unix-like Systems
+Shell fundamentals for Unix-like systems

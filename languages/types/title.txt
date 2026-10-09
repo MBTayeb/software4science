@@ -1,1 +1,1 @@
-Data Types, Static Typing, and Type Hints
+Data types, static typing, and type hints

@@ -1,1 +1,1 @@
-Excursus: Terminal emulators and multiplexers
+Helpful extras: terminal emulators and multiplexers

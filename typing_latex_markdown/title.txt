@@ -1,1 +1,1 @@
-FU: Typing / LaTeX / MarkDown 
+FU: typing, LaTeX, and Markdown 

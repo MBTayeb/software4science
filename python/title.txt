@@ -1,1 +1,1 @@
-FU: Python / OOP
+FU: Python

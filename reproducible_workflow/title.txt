@@ -1,1 +1,1 @@
-FU: Maintaining a Reproducible Workflow
+FU: Maintaining a reproducible workflow
